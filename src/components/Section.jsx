@@ -5,7 +5,9 @@ const Section = () => {
   return (
     <>
       <div>
-        <h1 style={{ marginLeft: '20px', textAlign: 'center' }}>Ustazdar</h1>
+        <h1 style={{ textAlign: 'center' }}>
+          ААЛЫМДАР ПАЙГАМБАРЛАРДЫН МУРАСКОРЛОРУ.
+        </h1>
       </div>
       <div
         style={{
@@ -22,6 +24,7 @@ const Section = () => {
             backgroundColor: '#f0f0f0',
             borderRadius: '8px',
             boxShadow: '0 0 10px rgba(0,0,0,0.1)',
+            textAlign: 'center',
           }}
         >
           <img
@@ -30,12 +33,9 @@ const Section = () => {
             style={{ width: '100%', borderRadius: '8px' }}
           />
           <h1 style={{ fontSize: '1.5rem', marginTop: '10px' }}>
-            Card 1 Heading
+            Шейх ЧУБАК ажы ЖАЛИЛОВ(р.х)
           </h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            vehicula dolor quis quam accumsan, sed scelerisque est aliquam.
-          </p>
+          <p>Аллах бизден жана сиздерден жакшы амалдардын кабыл кылсын</p>
         </div>
 
         {/* Card 2 */}
@@ -46,6 +46,7 @@ const Section = () => {
             backgroundColor: '#f0f0f0',
             borderRadius: '8px',
             boxShadow: '0 0 10px rgba(0,0,0,0.1)',
+            textAlign: 'center',
           }}
         >
           <img
@@ -54,12 +55,9 @@ const Section = () => {
             style={{ width: '100%', borderRadius: '8px' }}
           />
           <h1 style={{ fontSize: '1.5rem', marginTop: '10px' }}>
-            Card 2 Heading
+            Шейх Абдушукур Ажы Нарматов
           </h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            vehicula dolor quis quam accumsan, sed scelerisque est aliquam.
-          </p>
+          <p>Аллах бизден жана сиздерден жакшы амалдардын кабыл кылсын</p>
         </div>
 
         {/* Card 3 */}
@@ -70,6 +68,7 @@ const Section = () => {
             backgroundColor: '#f0f0f0',
             borderRadius: '8px',
             boxShadow: '0 0 10px rgba(0,0,0,0.1)',
+            textAlign: 'center',
           }}
         >
           <img
@@ -78,12 +77,9 @@ const Section = () => {
             style={{ width: '100%', borderRadius: '8px' }}
           />
           <h1 style={{ fontSize: '1.5rem', marginTop: '10px' }}>
-            Card 3 Heading
+            Шейх Максатбек ажы Токтомушев
           </h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            vehicula dolor quis quam accumsan, sed scelerisque est aliquam.
-          </p>
+          <p>Аллах бизден жана сиздерден жакшы амалдардын кабыл кылсын</p>
         </div>
 
         {/* Card 4 */}
@@ -94,6 +90,7 @@ const Section = () => {
             backgroundColor: '#f0f0f0',
             borderRadius: '8px',
             boxShadow: '0 0 10px rgba(0,0,0,0.1)',
+            textAlign: 'center',
           }}
         >
           <img
@@ -102,12 +99,9 @@ const Section = () => {
             style={{ width: '100%', borderRadius: '8px' }}
           />
           <h1 style={{ fontSize: '1.5rem', marginTop: '10px' }}>
-            Card 4 Heading
+            Устаз Бахтияр ажы Шарапов
           </h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            vehicula dolor quis quam accumsan, sed scelerisque est aliquam.
-          </p>
+          <p>Аллах бизден жана сиздерден жакшы амалдардын кабыл кылсын</p>
         </div>
         {/* Card 5 */}
         <div
@@ -117,6 +111,7 @@ const Section = () => {
             backgroundColor: '#f0f0f0',
             borderRadius: '8px',
             boxShadow: '0 0 10px rgba(0,0,0,0.1)',
+            textAlign: 'center',
           }}
         >
           <img
@@ -125,12 +120,9 @@ const Section = () => {
             style={{ width: '100%', borderRadius: '8px' }}
           />
           <h1 style={{ fontSize: '1.5rem', marginTop: '10px' }}>
-            Card 4 Heading
+            Устаз Эрмек ажы Тынай уулу
           </h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            vehicula dolor quis quam accumsan, sed scelerisque est aliquam.
-          </p>
+          <p>Аллах бизден жана сиздерден жакшы амалдардын кабыл кылсын</p>
         </div>
         {/* Card 6 */}
         <div
@@ -140,6 +132,7 @@ const Section = () => {
             backgroundColor: '#f0f0f0',
             borderRadius: '8px',
             boxShadow: '0 0 10px rgba(0,0,0,0.1)',
+            textAlign: 'center',
           }}
         >
           <img
@@ -148,12 +141,9 @@ const Section = () => {
             style={{ width: '100%', borderRadius: '8px' }}
           />
           <h1 style={{ fontSize: '1.5rem', marginTop: '10px' }}>
-            Card 4 Heading
+            Устаз Садыбакас Ажы Доолов
           </h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            vehicula dolor quis quam accumsan, sed scelerisque est aliquam.
-          </p>
+          <p>Аллах бизден жана сиздерден жакшы амалдардын кабыл кылсын</p>
         </div>
         {/* Card 7 */}
         <div
@@ -163,6 +153,7 @@ const Section = () => {
             backgroundColor: '#f0f0f0',
             borderRadius: '8px',
             boxShadow: '0 0 10px rgba(0,0,0,0.1)',
+            textAlign: 'center',
           }}
         >
           <img
@@ -171,12 +162,9 @@ const Section = () => {
             style={{ width: '100%', borderRadius: '8px' }}
           />
           <h1 style={{ fontSize: '1.5rem', marginTop: '10px' }}>
-            Card 4 Heading
+            Устаз Илёс Абдувалиев
           </h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            vehicula dolor quis quam accumsan, sed scelerisque est aliquam.
-          </p>
+          <p>Аллах бизден жана сиздерден жакшы амалдардын кабыл кылсын</p>
         </div>
         {/* Card 8 */}
         <div
@@ -186,6 +174,7 @@ const Section = () => {
             backgroundColor: '#f0f0f0',
             borderRadius: '8px',
             boxShadow: '0 0 10px rgba(0,0,0,0.1)',
+            textAlign: 'center',
           }}
         >
           <img
@@ -194,12 +183,9 @@ const Section = () => {
             style={{ width: '100%', borderRadius: '8px' }}
           />
           <h1 style={{ fontSize: '1.5rem', marginTop: '10px' }}>
-            Card 4 Heading
+            Устаз Калысбек ажы Заманбеков
           </h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            vehicula dolor quis quam accumsan, sed scelerisque est aliquam.
-          </p>
+          <p>Аллах бизден жана сиздерден жакшы амалдардын кабыл кылсын</p>
         </div>
       </div>
     </>

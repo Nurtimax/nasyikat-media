@@ -17,7 +17,12 @@ const Contact = () => {
 
   return (
     <div style={{ margin: '20px' }}>
-      <Box display="flex" justifyContent="center" alignItems="center">
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        marginBottom="20px"
+      >
         <Typography
           variant="h4"
           component="span"
@@ -57,10 +62,10 @@ const Contact = () => {
         <Grid item xs={12} style={{ textAlign: 'center' }}>
           <Button
             variant="contained"
-            color="primary"
+            color="success"
             onClick={handleWhatsAppMessage}
           >
-            Отправить сообщение WhatsApp
+            Отправить сообщение
           </Button>
         </Grid>
       </Grid>
