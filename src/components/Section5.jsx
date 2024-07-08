@@ -12,9 +12,10 @@ const StyledAccordion = styled(Accordion)(({ theme }) => ({
   marginBottom: theme.spacing(2),
   boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
   borderRadius: '8px',
+  backgroundColor: '#eeecc9', // Light background color
 
   '& .MuiAccordionSummary-root': {
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#dedac9',
     borderBottom: '1px solid #ddd',
     marginBottom: -1,
     minHeight: 56,
@@ -27,6 +28,7 @@ const StyledAccordion = styled(Accordion)(({ theme }) => ({
     margin: '12px 0',
     '& .MuiTypography-root': {
       fontWeight: 'bold',
+      textAlign: 'center',
     },
   },
 
@@ -40,34 +42,45 @@ const StyledAccordion = styled(Accordion)(({ theme }) => ({
   },
 }));
 
+const Header = styled('h2')({
+  textAlign: 'center',
+  color: '#333', // Dark color for good contrast
+  marginBottom: '20px',
+});
+
+const Paragraph = styled('p')({
+  color: '#666', // Comfortable reading color
+  lineHeight: '1.6', // Increased line height for better readability
+});
+
 const Section5 = () => {
   return (
     <div>
-      <div style={{ textAlign: 'center' }}>
-        <h2>
-          Дуба - момундун куралы, диндин түркүгү жана асман менен жердин нуру.
-        </h2>
-      </div>
+      <Header>
+        Дуба - момундун куралы, диндин түркүгү жана асман менен жердин нуру.
+      </Header>
       <div>
         <StyledAccordion>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography>Роббана атина дубасы</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
-              <p>Арабча</p>
-              اللَّهُمَّ رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي
-              الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ
-              <p>Tранскрипция</p>
-              <p>
+            <Typography component="div">
+              <Paragraph>Арабча</Paragraph>
+              <Paragraph>
+                اللَّهُمَّ رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي
+                الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ
+              </Paragraph>
+              <Paragraph>Tранскрипция</Paragraph>
+              <Paragraph>
                 Раббана атина фид-дунья хасанатау ва филь-ахирати хасанатау ва
                 кыйна газабаннар
-              </p>
-              <p>Кыргызча мааниси:</p>
-              <p>
+              </Paragraph>
+              <Paragraph>Кыргызча мааниси:</Paragraph>
+              <Paragraph>
                 «Оо, Жараткан Раббим бизге бул дүйнөнүн жана акыреттин
                 жакшылыгын бер. Бизди тозок отунан сактагын.»
-              </p>
+              </Paragraph>
             </Typography>
           </AccordionDetails>
         </StyledAccordion>
@@ -76,16 +89,20 @@ const Section5 = () => {
             <Typography>Уктоо алдындагы дуба</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
-              <p>Арабча</p>
-              اللَّهُمَّ قِنِى عَذَابَكَ يَوْمَ تَبْعَثُ عِبَادَكَ
-              <p>Tранскрипция</p>
-              <p>Аллаhумма ḱини ‘аҙабака явма таб’аҫу ‘ибадака</p>
-              <p>Кыргызча мааниси:</p>
-              <p>
+            <Typography component="div">
+              <Paragraph>Арабча</Paragraph>
+              <Paragraph>
+                اللَّهُمَّ قِنِى عَذَابَكَ يَوْمَ تَبْعَثُ عِبَادَكَ
+              </Paragraph>
+              <Paragraph>Tранскрипция</Paragraph>
+              <Paragraph>
+                Аллаhумма ḱини ‘аҙабака явма таб’аҫу ‘ибадака
+              </Paragraph>
+              <Paragraph>Кыргызча мааниси:</Paragraph>
+              <Paragraph>
                 Эй Алла! Өзүңдүн пенделериңди Кыямат Күнү кабырдан тургузган
                 убакта мени өзүңдүн азабындан куткар!
-              </p>
+              </Paragraph>
             </Typography>
           </AccordionDetails>
         </StyledAccordion>
@@ -94,21 +111,23 @@ const Section5 = () => {
             <Typography>Кырсык балээден сактоочу дуба</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
-              <p>Арабча</p>
-              بِاسْمِ اللهِ الَّذِي لاَ يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الأَرْضِ
-              وَلاَ فِي السَّمَاء وَهُوَ السَّمِيعُ العَلِيمُ
-              <p>Tранскрипция</p>
-              <p>
+            <Typography component="div">
+              <Paragraph>Арабча</Paragraph>
+              <Paragraph>
+                بِاسْمِ اللهِ الَّذِي لاَ يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي
+                الأَرْضِ وَلاَ فِي السَّمَاء وَهُوَ السَّمِيعُ العَلِيمُ
+              </Paragraph>
+              <Paragraph>Tранскрипция</Paragraph>
+              <Paragraph>
                 "БИСМИЛЛААХИЛЛАЗИИ ЛАА ЯЗУРРУ МАЬА СМИХИИ ШАЙ-УН ФИЛ-АРЗИ ВА ЛАА
                 ФИС-САМАА-И ВА ХУВА-ССАМИИЬУЛ ЬАЛИИМ"
-              </p>
-              <p>Кыргызча мааниси:</p>
-              <p>
+              </Paragraph>
+              <Paragraph>Кыргызча мааниси:</Paragraph>
+              <Paragraph>
                 Алла Тааланын аты менен баштаймын, Анын аты менен эч бир нерсе
                 жерде да, асманда да зыян жеткире албайт. Ал Зат ар бир нерсени
                 угуп туруучу жана ар бир нерсени билип туруучу
-              </p>
+              </Paragraph>
             </Typography>
           </AccordionDetails>
         </StyledAccordion>
@@ -117,13 +136,13 @@ const Section5 = () => {
             <Typography>Кыйынчылыктан карыздан куткаруучу дуба</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
-              <p>
+            <Typography component="div">
+              <Paragraph>
                 Пайгамбарыбыз ﷺ : “Сага Аллах кыйынчылыктарыңды жоюп,
                 карыздарыңды төлөөдө сага жардам бериши үчүн окула турган
                 келмелерди үйрөтөйүнбү?
-              </p>
-              <p>
+              </Paragraph>
+              <Paragraph>
                 Эртели-кеч төмөнкү дубаны оку
                 <b>
                   “Оо, Жараткан Аллах, кыйынчылыктардан, кайгы-капалардан сакта.
@@ -131,7 +150,7 @@ const Section5 = () => {
                   коркоктуктан сакта. Карызга батуудан жана аласасы барлардын
                   каалгамды кагышынан сакта!
                 </b>
-              </p>{' '}
+              </Paragraph>
             </Typography>
           </AccordionDetails>
         </StyledAccordion>
@@ -140,14 +159,18 @@ const Section5 = () => {
             <Typography>Күзгүнү карагандагы дуба</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
-              <p>اللَّهُمَّ كَمَا حَسَّنْت خَلْقِي فَحَسِّنْ خُلُقِي</p>
-              <p>Аллоо-хумма анта хассанта холкии фахассин хулкии.</p>
-              <p>
+            <Typography component="div">
+              <Paragraph>
+                اللَّهُمَّ كَمَا حَسَّنْت خَلْقِي فَحَسِّنْ خُلُقِي
+              </Paragraph>
+              <Paragraph>
+                Аллоо-хумма анта хассанта холкии фахассин хулкии.
+              </Paragraph>
+              <Paragraph>
                 Эй Алла Сен мени чырайлуу кылып жараттың. Эми Сен менин
                 мүнөзүмдү да жакшы кыл.
-              </p>
-              <p>(Ахмад)</p>
+              </Paragraph>
+              <Paragraph>(Ахмад)</Paragraph>
             </Typography>
           </AccordionDetails>
         </StyledAccordion>

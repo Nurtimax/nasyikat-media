@@ -45,7 +45,7 @@ const Header = () => {
 
   const handleNavigation = (path) => {
     navigate(path);
-    setMenuOpen(false); // Close the drawer after navigation
+    setMenuOpen(false);
   };
 
   return (
@@ -73,11 +73,11 @@ const Header = () => {
         <List>
           {[
             { text: 'Башкы бет', path: '/app' },
-            { text: 'Islam', path: '/islam' },
-            { text: 'Quran', path: '/quran' },
-            { text: 'Hadis', path: '/hadis' },
-            { text: 'Duba', path: '/duba' },
-            { text: 'Store', path: '/store' },
+            { text: 'Ислам деген эмне?', path: '/islam' },
+            { text: 'Куран', path: '/quran' },
+            { text: 'Хадис', path: '/hadis' },
+            { text: 'Дуба', path: '/duba' },
+            { text: 'Дүкөн', path: '/store' },
           ].map((item, index) => (
             <ListItem
               button

@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './components/Header';
-import NavBar from './components/NavBar';
+
 import Section from './components/Section';
 import Section2 from './components/Section2';
 import Section4 from './components/Section4';
@@ -9,12 +9,13 @@ import Section6 from './components/Section6';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { Outlet } from 'react-router-dom';
+import Welcome from './components/Welcome';
 
 const App = () => {
   return (
     <>
       <Header />
-      <NavBar />
+      <Welcome />
       <Section2 />
       <Section />
       <Section4 />

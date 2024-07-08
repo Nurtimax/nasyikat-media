@@ -69,7 +69,7 @@ const Footer = () => {
           <FooterRight item xs={12} sm={4}>
             <IconButton
               component={Link}
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/nasyikat.media/"
               target="_blank"
               rel="noopener"
               color="inherit"
@@ -78,7 +78,7 @@ const Footer = () => {
             </IconButton>
             <IconButton
               component={Link}
-              href="https://www.youtube.com"
+              href="https://www.youtube.com/@nasyikat_media"
               target="_blank"
               rel="noopener"
               color="inherit"

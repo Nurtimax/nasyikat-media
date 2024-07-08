@@ -37,6 +37,7 @@ const Section4 = () => {
         padding: '20px',
         borderRadius: '8px',
         boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+        textAlign: 'center',
       }}
     >
       <h2 style={{ textAlign: 'center', color: '#333' }}>
@@ -46,7 +47,7 @@ const Section4 = () => {
       <div style={{ textAlign: 'center', fontSize: '1.5rem', color: '#555' }}>
         {texts[textIndex]}
       </div>
-      <h3>
+      <h3 style={{ textAlign: 'center' }}>
         "ЭСКЕРТКИН,- ЭСКЕРТҮҮ МОМУНДАРГА ПАЙДА БЕРЕТ" (ЗАРИЯТ СҮРӨСҮ 55 АЯТ).
       </h3>
     </div>
