@@ -12,6 +12,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import { Box, styled } from '@mui/system';
 import { Verified } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
 
 const StyledAppBar = styled(AppBar)({
   backgroundColor: '#84baf0',
@@ -29,6 +30,7 @@ const BurgerMenu = styled(IconButton)({
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -41,11 +43,16 @@ const Header = () => {
     setMenuOpen(open);
   };
 
+  const handleNavigation = (path) => {
+    navigate(path);
+    setMenuOpen(false); // Close the drawer after navigation
+  };
+
   return (
     <div>
       <StyledAppBar position="fixed">
         <Toolbar>
-          <Logo variant="h6">
+          <Logo variant="h4">
             <Box display="flex" justifyContent="start" alignItems="center">
               <Typography
                 variant="h6"
@@ -64,9 +71,20 @@ const Header = () => {
       </StyledAppBar>
       <Drawer anchor="right" open={menuOpen} onClose={toggleDrawer(false)}>
         <List>
-          {['Islam', 'Quran', 'Hadis', 'Dua', 'Store'].map((text) => (
-            <ListItem button key={text}>
-              <ListItemText primary={text} />
+          {[
+            { text: 'Башкы бет', path: '/app' },
+            { text: 'Islam', path: '/islam' },
+            { text: 'Quran', path: '/quran' },
+            { text: 'Hadis', path: '/hadis' },
+            { text: 'Duba', path: '/duba' },
+            { text: 'Store', path: '/store' },
+          ].map((item, index) => (
+            <ListItem
+              button
+              key={index}
+              onClick={() => handleNavigation(item.path)}
+            >
+              <ListItemText primary={item.text} />
             </ListItem>
           ))}
         </List>

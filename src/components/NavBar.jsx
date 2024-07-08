@@ -1,27 +1,30 @@
 import React from 'react';
 import { Toolbar, styled } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const StyledNavList = styled('ul')({
   display: 'flex',
   listStyleType: 'none',
-  justifyContent: 'space-between',
+  justifyContent: 'space-around',
   padding: 0,
-  margin: 0,
-  flexDirection: 'none',
+  margin: 10,
   '@media (max-width: 600px)': {
     flexDirection: 'row',
     WebkitOverflowScrolling: 'touch',
-    margin: '10px',
   },
 });
 
 const StyledNavItem = styled('li')(({ theme }) => ({
-  marginRight: theme.spacing(4),
+  marginRight: theme.spacing(2),
 }));
 
-const StyledNavLink = styled('a')({
+const StyledNavLink = styled('button')({
+  background: 'none',
+  border: 'none',
   textDecoration: 'none',
   color: '#000000',
+  cursor: 'pointer',
+  fontSize: 'inherit',
   '&:hover': {
     textDecoration: 'underline',
     color: 'green',
@@ -29,23 +32,39 @@ const StyledNavLink = styled('a')({
 });
 
 const NavBar = () => {
+  const navigate = useNavigate();
+
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
+
   return (
     <Toolbar style={{ marginTop: '80px' }}>
       <StyledNavList>
         <StyledNavItem>
-          <StyledNavLink href="#">Islam</StyledNavLink>
+          <StyledNavLink onClick={() => handleNavigation('/islam')}>
+            Islam
+          </StyledNavLink>
         </StyledNavItem>
         <StyledNavItem>
-          <StyledNavLink href="#">Quran</StyledNavLink>
+          <StyledNavLink onClick={() => handleNavigation('/quran')}>
+            Quran
+          </StyledNavLink>
         </StyledNavItem>
         <StyledNavItem>
-          <StyledNavLink href="#">Hadis</StyledNavLink>
+          <StyledNavLink onClick={() => handleNavigation('/hadis')}>
+            Hadis
+          </StyledNavLink>
         </StyledNavItem>
         <StyledNavItem>
-          <StyledNavLink href="#">Dua</StyledNavLink>
+          <StyledNavLink onClick={() => handleNavigation('/duba')}>
+            Duba
+          </StyledNavLink>
         </StyledNavItem>
         <StyledNavItem>
-          <StyledNavLink href="#">Store</StyledNavLink>
+          <StyledNavLink onClick={() => handleNavigation('/store')}>
+            Store
+          </StyledNavLink>
         </StyledNavItem>
       </StyledNavList>
     </Toolbar>

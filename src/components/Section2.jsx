@@ -5,7 +5,7 @@ const Section2 = () => {
   return (
     <div>
       <div>
-        <h1 style={{ textAlign: 'center' }}>Islamdyn 5 turkugu</h1>
+        <h1 style={{ textAlign: 'center' }}>ИСЛАМДАГЫ БЕШ ПАРЗ</h1>
       </div>
       <div
         style={{
@@ -22,6 +22,7 @@ const Section2 = () => {
             backgroundColor: '#f0f0f0',
             borderRadius: '8px',
             boxShadow: '0 0 10px rgba(0,0,0,0.1)',
+            textAlign: 'center',
           }}
         >
           <img
@@ -30,11 +31,11 @@ const Section2 = () => {
             style={{ width: '100%', borderRadius: '8px' }}
           />
           <h2 style={{ fontSize: '1.2rem', marginTop: '10px' }}>
-            Card 1 Title
+            Лаa илaаха иллаллaх Мухаммадур расуллалaх
           </h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            vehicula dolor quis quam accumsan, sed scelerisque est aliquam.
+            Бир Алладан башка Кудай жок жана Мухаммад анын элчиси деп күбөлүк
+            берүү
           </p>
         </div>
 
@@ -45,6 +46,7 @@ const Section2 = () => {
             backgroundColor: '#f0f0f0',
             borderRadius: '8px',
             boxShadow: '0 0 10px rgba(0,0,0,0.1)',
+            textAlign: 'center',
           }}
         >
           <img
@@ -52,12 +54,10 @@ const Section2 = () => {
             alt=""
             style={{ width: '100%', borderRadius: '8px' }}
           />
-          <h2 style={{ fontSize: '1.2rem', marginTop: '10px' }}>
-            Card 2 Title
-          </h2>
+          <h2 style={{ fontSize: '1.2rem', marginTop: '10px' }}>Намаз окуу;</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            vehicula dolor quis quam accumsan, sed scelerisque est aliquam.
+            «Бейиштин ачкычы – намаз, намаздын ачкычы – даарат» <br /> (Ахмаддын
+            Муснады).
           </p>
         </div>
 
@@ -68,6 +68,7 @@ const Section2 = () => {
             backgroundColor: '#f0f0f0',
             borderRadius: '8px',
             boxShadow: '0 0 10px rgba(0,0,0,0.1)',
+            textAlign: 'center',
           }}
         >
           <img
@@ -76,11 +77,12 @@ const Section2 = () => {
             style={{ width: '100%', borderRadius: '8px' }}
           />
           <h2 style={{ fontSize: '1.2rem', marginTop: '10px' }}>
-            Card 3 Title
+            Зекет берүү;
           </h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            vehicula dolor quis quam accumsan, sed scelerisque est aliquam.
+            «Алардын мал-мүлктөрүндө кайырчынын жана муктаждын акысы бар».{' '}
+            <br />
+            (Зарият сүрөөсү, 19-аят)
           </p>
         </div>
 
@@ -91,6 +93,7 @@ const Section2 = () => {
             backgroundColor: '#f0f0f0',
             borderRadius: '8px',
             boxShadow: '0 0 10px rgba(0,0,0,0.1)',
+            textAlign: 'center',
           }}
         >
           <img
@@ -99,12 +102,10 @@ const Section2 = () => {
             style={{ width: '100%', borderRadius: '8px' }}
           />
           <h2 style={{ fontSize: '1.2rem', marginTop: '10px' }}>
-            Card 4 Title
+            {' '}
+            Орозо кармоо;{' '}
           </h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            vehicula dolor quis quam accumsan, sed scelerisque est aliquam.
-          </p>
+          <p>Рамазан айында орозо кармоо —мусулмандардын парзы</p>
         </div>
 
         {/* Card 5 */}
@@ -114,6 +115,7 @@ const Section2 = () => {
             backgroundColor: '#f0f0f0',
             borderRadius: '8px',
             boxShadow: '0 0 10px rgba(0,0,0,0.1)',
+            textAlign: 'center',
           }}
         >
           <img
@@ -121,13 +123,8 @@ const Section2 = () => {
             alt=""
             style={{ width: '100%', borderRadius: '8px' }}
           />
-          <h2 style={{ fontSize: '1.2rem', marginTop: '10px' }}>
-            Card 5 Title
-          </h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            vehicula dolor quis quam accumsan, sed scelerisque est aliquam.
-          </p>
+          <h2 style={{ fontSize: '1.2rem', marginTop: '10px' }}>Ажыга баруу</h2>
+          <p>(кимдин мүмкүнчүлүгү болсо).</p>
         </div>
       </div>
     </div>
