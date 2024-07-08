@@ -11,7 +11,7 @@ const MainRouter = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/app" element={<App />} />
+        <Route path="*" element={<App />} />
         <Route path="/islam" element={<Islam />} />
         <Route path="/quran" element={<Quran />} />
         <Route path="/hadis" element={<Hadis />} />
