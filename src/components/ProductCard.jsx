@@ -37,7 +37,6 @@ const ImageSlider = ({ images }) => {
           alt={`product image ${index}`}
           height="300"
           image={image}
-          style={{ marginLeft: '50px' }}
         />
       ))}
     </Slider>
@@ -46,7 +45,7 @@ const ImageSlider = ({ images }) => {
 
 const ProductCard = ({ product }) => {
   return (
-    <StyledCard style={{ justifyContent: 'start' }}>
+    <StyledCard>
       <ImageSlider images={product.images} />
       <CardContent>
         <Typography variant="h6" component="div">
@@ -63,9 +62,7 @@ const ProductCard = ({ product }) => {
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton>
-        <IconButton aria-label="add to cart">
-          <Button color="secondary">Secondary</Button>
-        </IconButton>
+        <Button color="secondary">Добавить в корзину</Button>
       </Grid>
     </StyledCard>
   );
