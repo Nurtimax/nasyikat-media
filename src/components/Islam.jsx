@@ -1,5 +1,8 @@
-import { Container, Typography, Box } from '@mui/material';
+import React from 'react';
+import { Container, Typography, Box, Grid } from '@mui/material';
 import Header from './Header';
+import img from '../assetts/images/islam/namaz.avif';
+import img2 from '../assetts/images/islam/namaz.avif';
 
 const Islam = () => {
   return (
@@ -11,17 +14,48 @@ const Islam = () => {
             Ислам деген эмне ?
           </Typography>
         </Box>
+        <Grid container spacing={3} mb={3} justifyContent="center">
+          <Grid item xs={12} sm={6}>
+            <Box
+              component="img"
+              src={img}
+              alt="Hadj"
+              sx={{
+                width: '100%',
+                borderRadius: 2,
+                boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+                maxHeight: { xs: '200px', sm: '300px' },
+                objectFit: 'cover',
+              }}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Box
+              component="img"
+              src={img2}
+              alt="Namaz"
+              sx={{
+                width: '100%',
+                borderRadius: 2,
+                boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+                maxHeight: { xs: '200px', sm: '300px' },
+                objectFit: 'cover',
+              }}
+            />
+          </Grid>
+        </Grid>
         <Box
           sx={{
             backgroundColor: '#efe1b2a0',
             padding: 3,
             borderRadius: 2,
+            marginBottom: 3,
           }}
         >
           <Typography
             variant="body1"
             sx={{
-              lineHeight: '1.5',
+              lineHeight: '1.6',
               textAlign: 'left',
               color: '#333',
             }}
@@ -70,6 +104,23 @@ const Islam = () => {
             аалымдары бул илимдерди сахабалардан үйрөнүшкөн. Ал эми, сахабалар
             Пайгамбарыбыздан үйрөнүшкөн. <br /> Ислам дини китебинен.
           </Typography>
+        </Box>
+        <Box sx={{ textAlign: 'center', marginBottom: '20px' }}>
+          <iframe
+            width="100%"
+            height="500px"
+            src="https://www.youtube.com/embed/hl-WqunI66E"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            style={{
+              maxWidth: '100%',
+              height: '500px',
+              borderRadius: '8px',
+              boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+            }}
+          ></iframe>
         </Box>
       </Container>
     </>
