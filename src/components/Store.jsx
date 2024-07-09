@@ -6,14 +6,17 @@ import {
   MenuItem,
   TextField,
   useMediaQuery,
+  Box,
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import Header from './Header';
 import ProductCard from './ProductCard';
 import products from './data/ProductCard/productdetails.js';
+import Welcome from '../components/Welcome';
 
 const Store = () => {
   const theme = useTheme();
+  const isMinWidth280 = useMediaQuery('(min-width:280px)');
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const [category, setCategory] = useState('all');
@@ -53,27 +56,27 @@ const Store = () => {
   return (
     <>
       <Header />
-      <Typography
-        variant="h4"
-        component="h1"
-        gutterBottom
-        style={{ marginTop: '40px', textAlign: 'center' }}
-      >
-        Исламский онлайн магазин
-      </Typography>
-      <Grid
-        container
-        justifyContent="center"
-        spacing={2}
-        style={{ marginBottom: '20px' }}
-      >
-        <Grid item xs={12} sm={6}>
+      <Welcome />
+
+      <Box my={4} textAlign="center">
+        <Typography variant="h4" component="h1" gutterBottom>
+          Исламский онлайн магазин
+        </Typography>
+      </Box>
+      <Grid container spacing={3} justifyContent="center">
+        <Grid item xs={12} sm={6} md={4}>
           <Select
             value={category}
             onChange={handleCategoryChange}
             variant="outlined"
             fullWidth
-            style={{ marginBottom: isMobile ? '10px' : '0px' }}
+            displayEmpty
+            sx={{
+              minWidth: isMinWidth280 ? '100%' : '280px',
+              width: isMobile ? '250px' : '100%',
+              marginLeft: isMobile ? 'auto' : 0,
+              marginRight: isMobile ? 'auto' : 0,
+            }}
           >
             <MenuItem value="all">Все продукты</MenuItem>
             <MenuItem value="books">Книги</MenuItem>
@@ -85,24 +88,42 @@ const Store = () => {
             <MenuItem value="study">Товары для учебы</MenuItem>
           </Select>
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={6} md={5}>
           <TextField
             label="Поиск по названию"
             variant="outlined"
             fullWidth
             value={searchTerm}
             onChange={handleSearchInputChange}
-            style={{ marginBottom: isMobile ? '10px' : '0px' }}
+            sx={{
+              minWidth: isMinWidth280 ? '100%' : '280px',
+              width: isMobile ? '250px' : '100%',
+              marginLeft: isMobile ? 'auto' : 0,
+              marginRight: isMobile ? 'auto' : 0,
+            }}
           />
         </Grid>
       </Grid>
-      <Grid container justifyContent="center" spacing={2}>
-        {filteredProducts.map((product, index) => (
-          <Grid item key={index} xs={12} sm={6} md={4} lg={2.4}>
-            <ProductCard product={product} />
-          </Grid>
-        ))}
-      </Grid>
+      <Box my={4}>
+        <Grid container spacing={3} justifyContent="center">
+          {filteredProducts.map((product, index) => (
+            <Grid
+              item
+              key={index}
+              xs={12}
+              sm={2}
+              md={4}
+              lg={3}
+              sx={{
+                paddingLeft: isMobile ? '5px' : '1px',
+                paddingRight: isMobile ? '5px' : '8px',
+              }}
+            >
+              <ProductCard product={product} />
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
     </>
   );
 };
