@@ -8,22 +8,24 @@ import SadybakasAjy from '../assetts/images/ustazdar/sadybakasajy.jpg';
 import IlyasAjy from '../assetts/images/ustazdar/ilyasajy.png';
 import KalysbekAjy from '../assetts/images/ustazdar/kalysajy.png';
 import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 
 const Section = () => {
   const cardStyle = {
     width: '100%',
+    padding: '3px',
     maxWidth: '400px',
-    padding: '15px',
     backgroundColor: '#f0f0f0',
     borderRadius: '8px',
     boxShadow: '0 0 10px rgba(0,0,0,0.1)',
     textAlign: 'center',
     margin: '10px auto',
+    color: '#000000',
   };
 
   const imgStyle = {
     width: '100%',
-    borderRadius: '8px',
+    borderRadius: '4px',
   };
 
   return (
@@ -49,12 +51,14 @@ const Section = () => {
               style={{ ...imgStyle, height: '230px' }}
             />
             <h1 style={{ fontSize: '1.5rem', marginTop: '10px' }}>
-              Шейх ЧУБАК ажы ЖАЛИЛОВ(р.х)
+              ЧУБАК ажы ЖАЛИЛОВ(р.х)
             </h1>
             <p>Аллах бизден жана сиздерден жакшы амалдардын кабыл кылсын</p>
+            <p>видеолордун сыны</p>
+            <Button color="secondary">Видеолорду көрүү</Button>
           </div>
         </Link>
-        <Link to="/chubakajyjallilov" style={{ textDecoration: 'none' }}>
+        <Link to="/abdushukurajy" style={{ textDecoration: 'none' }}>
           <div style={cardStyle}>
             <img
               src={AbdushukurAjy}
@@ -62,12 +66,14 @@ const Section = () => {
               style={{ ...imgStyle, height: '230px' }}
             />
             <h1 style={{ fontSize: '1.5rem', marginTop: '10px' }}>
-              Шейх Абдушукур Ажы Нарматов
+              Абдушукур Ажы Нарматов
             </h1>
             <p>Аллах бизден жана сиздерден жакшы амалдардын кабыл кылсын</p>
+            <p>видеолордун сыны</p>
+            <Button color="secondary">Видеолорду көрүү</Button>
           </div>
         </Link>
-        <Link to="/chubakajyjallilov" style={{ textDecoration: 'none' }}>
+        <Link to="/maksatajy" style={{ textDecoration: 'none' }}>
           <div style={cardStyle}>
             <img
               src={MaksatAjy}
@@ -75,12 +81,14 @@ const Section = () => {
               style={{ ...imgStyle, height: '230px' }}
             />
             <h1 style={{ fontSize: '1.5rem', marginTop: '10px' }}>
-              Шейх Максатбек ажы Токтомушев
+              Максатбек ажы Токтомушев
             </h1>
             <p>Аллах бизден жана сиздерден жакшы амалдардын кабыл кылсын</p>
+            <p>видеолордун сыны</p>
+            <Button color="secondary">Видеолорду көрүү</Button>
           </div>
         </Link>
-        <Link to="/chubakajyjallilov" style={{ textDecoration: 'none' }}>
+        <Link to="/bakgtyarajy" style={{ textDecoration: 'none' }}>
           <div style={cardStyle}>
             <img
               src={BakgtyarAjy}
@@ -88,12 +96,14 @@ const Section = () => {
               style={{ ...imgStyle, height: '230px' }}
             />
             <h1 style={{ fontSize: '1.5rem', marginTop: '10px' }}>
-              Устаз Бахтияр ажы Шарапов
+              Бахтияр ажы Шарапов
             </h1>
             <p>Аллах бизден жана сиздерден жакшы амалдардын кабыл кылсын</p>
+            <p>видеолордун сыны</p>
+            <Button color="secondary">Видеолорду көрүү</Button>
           </div>
         </Link>
-        <Link to="/chubakajyjallilov" style={{ textDecoration: 'none' }}>
+        <Link to="/ermekajy" style={{ textDecoration: 'none' }}>
           <div style={cardStyle}>
             <img
               src={ErmekAjy}
@@ -101,12 +111,14 @@ const Section = () => {
               style={{ ...imgStyle, height: 'auto' }}
             />
             <h1 style={{ fontSize: '1.5rem', marginTop: '10px' }}>
-              Устаз Эрмек ажы Тынай уулу
+              Эрмек ажы Тынай уулу
             </h1>
             <p>Аллах бизден жана сиздерден жакшы амалдардын кабыл кылсын</p>
+            <p>видеолордун сыны</p>
+            <Button color="secondary">Видеолорду көрүү</Button>
           </div>
         </Link>
-        <Link to="/chubakajyjallilov" style={{ textDecoration: 'none' }}>
+        <Link to="/sadybakasajy" style={{ textDecoration: 'none' }}>
           <div style={cardStyle}>
             <img
               src={SadybakasAjy}
@@ -114,25 +126,29 @@ const Section = () => {
               style={{ ...imgStyle, height: 'auto' }}
             />
             <h1 style={{ fontSize: '1.5rem', marginTop: '10px' }}>
-              Устаз Садыбакас Ажы Доолов
+              Садыбакас Ажы Доолов
             </h1>
             <p>Аллах бизден жана сиздерден жакшы амалдардын кабыл кылсын</p>
+            <p>видеолордун сыны</p>
+            <Button color="secondary">Видеолорду көрүү</Button>
           </div>
         </Link>
-        <Link to="/chubakajyjallilov" style={{ textDecoration: 'none' }}>
+        <Link to="/ilyasajy" style={{ textDecoration: 'none' }}>
           <div style={cardStyle}>
             <img
               src={IlyasAjy}
               alt=""
-              style={{ ...imgStyle, height: 'auto' }}
+              style={{ ...imgStyle, height: '270px' }}
             />
             <h1 style={{ fontSize: '1.5rem', marginTop: '10px' }}>
-              Устаз Илёс Абдувалиев
+              Илёс Абдувалиев
             </h1>
             <p>Аллах бизден жана сиздерден жакшы амалдардын кабыл кылсын</p>
+            <p>видеолордун сыны</p>
+            <Button color="secondary">Видеолорду көрүү</Button>
           </div>
         </Link>
-        <Link to="/chubakajyjallilov" style={{ textDecoration: 'none' }}>
+        <Link to="/kalysbekajy" style={{ textDecoration: 'none' }}>
           <div style={cardStyle}>
             <img
               src={KalysbekAjy}
@@ -140,9 +156,11 @@ const Section = () => {
               style={{ ...imgStyle, height: 'auto' }}
             />
             <h1 style={{ fontSize: '1.5rem', marginTop: '10px' }}>
-              Устаз Калысбек ажы Заманбеков
+              Калысбек ажы Заманбеков
             </h1>
             <p>Аллах бизден жана сиздерден жакшы амалдардын кабыл кылсын</p>
+            <p>видеолордун сыны</p>
+            <Button color="secondary">Видеолорду көрүү</Button>
           </div>
         </Link>
       </div>

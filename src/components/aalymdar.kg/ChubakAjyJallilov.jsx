@@ -22,6 +22,10 @@ import styled, {
 } from 'styled-components';
 import { useInView } from 'react-intersection-observer';
 import videoData from './src-video-data/videosrc';
+import LogoNasyikatMedia from '../../assetts/images/islam/AllahuAkbar.avif';
+import { Verified } from '@mui/icons-material';
+import Welcome from '../../components/Welcome';
+import Header from '../../components/Header';
 
 // Создаем тему для styled-components
 const theme = createTheme();
@@ -132,92 +136,110 @@ const ChubakAjyJallilov = () => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <StyledThemeProvider theme={theme}>
-        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8, px: 2 }}>
-          <Grid container spacing={2} maxWidth="lg">
-            {videoData.map((video, index) => (
-              <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-                <StyledCard>
-                  <VideoContainer>
-                    {video.src ? (
-                      <VideoMedia src={video.src} controls />
-                    ) : (
-                      <iframe
-                        src={video.url}
-                        title={video.title}
-                        frameBorder="0"
-                        allowFullScreen
-                      />
-                    )}
-                  </VideoContainer>
-                  <StyledCardContent>
-                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                      <StyledBadge
-                        overlap="circular"
-                        anchorOrigin={{
-                          vertical: 'bottom',
-                          horizontal: 'right',
-                        }}
-                        variant="dot"
-                      >
-                        <Avatar
-                          alt={video.speaker}
-                          src="/static/images/avatar/1.jpg"
+    <>
+      <Welcome />
+      <Header />
+      <ThemeProvider theme={theme}>
+        <StyledThemeProvider theme={theme}>
+          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8, px: 2 }}>
+            <Grid container spacing={2} maxWidth="lg">
+              {videoData.map((video, index) => (
+                <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+                  <StyledCard>
+                    <VideoContainer>
+                      {video.src ? (
+                        <VideoMedia src={video.src} controls />
+                      ) : (
+                        <iframe
+                          src={video.url}
+                          title={video.title}
+                          frameBorder="0"
+                          allowFullScreen
                         />
-                      </StyledBadge>
-                      <Typography
-                        variant="subtitle1"
-                        color="textSecondary"
-                        sx={{ ml: 2 }}
+                      )}
+                    </VideoContainer>
+                    <StyledCardContent>
+                      <Box
+                        sx={{ display: 'flex', alignItems: 'center', mb: 2 }}
                       >
+                        <StyledBadge
+                          overlap="circular"
+                          anchorOrigin={{
+                            vertical: 'bottom',
+                            horizontal: 'right',
+                          }}
+                          variant="dot"
+                        >
+                          <Avatar alt={video.author} src={LogoNasyikatMedia} />
+                        </StyledBadge>
+                        <Typography
+                          variant="subtitle1"
+                          color="textSecondary"
+                          sx={{
+                            ml: 2,
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '5px',
+                          }}
+                        >
+                          {video.author}
+                          <Verified
+                            color="primary"
+                            fontSize="15px"
+                            style={{ marginBottom: '1px' }}
+                          />
+                        </Typography>
+                      </Box>
+                      <Typography gutterBottom variant="h6">
+                        {video.title}
+                      </Typography>
+                      <Typography variant="body2">
+                        {video.description}
+                      </Typography>
+                      <Typography variant="body2" style={{ marginTop: '10px' }}>
                         {video.speaker}
                       </Typography>
-                    </Box>
-                    <Typography gutterBottom variant="h6">
-                      {video.title}
-                    </Typography>
-                    <Typography variant="body2">{video.description}</Typography>
-                  </StyledCardContent>
-                  <StyledCardActions>
-                    <IconButton
-                      onClick={() =>
-                        handleShare('whatsapp', video.url || video.src)
-                      }
-                      aria-label="share on WhatsApp"
-                    >
-                      <WhatsAppIcon />
-                    </IconButton>
-                    <IconButton
-                      onClick={() =>
-                        handleShare('instagram', video.url || video.src)
-                      }
-                      aria-label="share on Instagram"
-                    >
-                      <InstagramIcon />
-                    </IconButton>
-                    <IconButton
-                      onClick={() =>
-                        handleShare('telegram', video.url || video.src)
-                      }
-                      aria-label="share on Telegram"
-                    >
-                      <TelegramIcon />
-                    </IconButton>
-                    <Button
-                      onClick={() => handleDownload(video.url || video.src)}
-                      startIcon={<DownloadIcon />}
-                    >
-                      Download
-                    </Button>
-                  </StyledCardActions>
-                </StyledCard>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-      </StyledThemeProvider>
-    </ThemeProvider>
+                    </StyledCardContent>
+                    <StyledCardActions>
+                      <IconButton
+                        onClick={() =>
+                          handleShare('whatsapp', video.url || video.src)
+                        }
+                        aria-label="share on WhatsApp"
+                      >
+                        <WhatsAppIcon />
+                      </IconButton>
+                      <IconButton
+                        onClick={() =>
+                          handleShare('instagram', video.url || video.src)
+                        }
+                        aria-label="share on Instagram"
+                      >
+                        <InstagramIcon />
+                      </IconButton>
+                      <IconButton
+                        onClick={() =>
+                          handleShare('telegram', video.url || video.src)
+                        }
+                        aria-label="share on Telegram"
+                      >
+                        <TelegramIcon />
+                      </IconButton>
+                      <Button
+                        onClick={() => handleDownload(video.url || video.src)}
+                        startIcon={<DownloadIcon />}
+                      >
+                        Download
+                      </Button>
+                    </StyledCardActions>
+                  </StyledCard>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
+        </StyledThemeProvider>
+      </ThemeProvider>
+    </>
   );
 };
 
