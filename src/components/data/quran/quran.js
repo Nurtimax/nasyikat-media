@@ -1,5 +1,7 @@
+import alFatiha from '../quran/quran-audio/al-fatiha.mp3';
+
 const surahs = [
-  { title: 'Al-Fatiha', audio: 'path/to/al-fatiha.mp3' },
+  { title: 'Al-Fatiha', audio: { alFatiha } },
   { title: 'Al-Baqarah', audio: 'path/to/al-baqarah.mp3' },
   { title: 'Al-Imran', audio: 'path/to/al-imran.mp3' },
   { title: 'An-Nisa', audio: 'path/to/an-nisa.mp3' },

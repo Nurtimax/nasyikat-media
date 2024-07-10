@@ -6,6 +6,7 @@ import Quran from './Quran';
 import Hadis from './Hadis';
 import Duba from './Duba';
 import Store from './Store';
+import ChubakAjyJallilov from './aalymdar.kg/ChubakAjyJallilov';
 
 const MainRouter = () => {
   return (
@@ -17,6 +18,7 @@ const MainRouter = () => {
         <Route path="/hadis" element={<Hadis />} />
         <Route path="/duba" element={<Duba />} />
         <Route path="/store" element={<Store />} />
+        <Route path="/chubakajyjallilov" element={<ChubakAjyJallilov />} />
       </Routes>
     </Router>
   );

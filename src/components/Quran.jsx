@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   Container,
   Typography,
@@ -15,7 +15,7 @@ import PauseCircleFilledIcon from '@mui/icons-material/PauseCircleFilled';
 import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 import Header from './Header';
-import surahs from './data/quran/quran';
+import surahs from './data/quran/quran'; // Ensure this file has correct paths
 
 const Background = styled('div')(({ theme }) => ({
   backgroundSize: '400% 400%',
@@ -43,24 +43,42 @@ const StyledContainer = styled(Container)(({ theme }) => ({
 const Quran = () => {
   const [currentSurah, setCurrentSurah] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
 
   const handlePlayPause = (surah) => {
     if (currentSurah === surah && isPlaying) {
       setIsPlaying(false);
-      // Pause logic
+      audioRef.current.pause();
     } else {
       setCurrentSurah(surah);
       setIsPlaying(true);
-      // Play logic
+      audioRef.current.src = surah.audio;
+      audioRef.current.play();
     }
   };
 
   const handleSkipPrevious = () => {
-    // Previous surah logic
+    if (currentSurah) {
+      const currentIndex = surahs.findIndex((s) => s === currentSurah);
+      const previousIndex = (currentIndex - 1 + surahs.length) % surahs.length;
+      const previousSurah = surahs[previousIndex];
+      setCurrentSurah(previousSurah);
+      setIsPlaying(true);
+      audioRef.current.src = previousSurah.audio;
+      audioRef.current.play();
+    }
   };
 
   const handleSkipNext = () => {
-    // Next surah logic
+    if (currentSurah) {
+      const currentIndex = surahs.findIndex((s) => s === currentSurah);
+      const nextIndex = (currentIndex + 1) % surahs.length;
+      const nextSurah = surahs[nextIndex];
+      setCurrentSurah(nextSurah);
+      setIsPlaying(true);
+      audioRef.current.src = nextSurah.audio;
+      audioRef.current.play();
+    }
   };
 
   return (
@@ -114,6 +132,7 @@ const Quran = () => {
           ))}
         </List>
       </StyledContainer>
+      <audio ref={audioRef} controls />
     </Background>
   );
 };
