@@ -27,10 +27,8 @@ import { Verified } from '@mui/icons-material';
 import Welcome from '../../components/Welcome';
 import Header from '../../components/Header';
 
-// Создаем тему для styled-components
 const theme = createTheme();
 
-// Styled components
 const StyledCard = styled(Card)`
   display: flex;
   flex-direction: column;
@@ -45,7 +43,7 @@ const VideoContainer = styled.div`
   position: relative;
   padding-top: 100%; /* 16:9 aspect ratio */
   background-color: ${(props) =>
-    props.theme.palette.grey[300]}; /* Используем тему для стилей */
+    props.theme.palette.grey[400]}; /* Используем тему для стилей */
   overflow: hidden;
 `;
 
@@ -59,11 +57,11 @@ const AutoPlayVideo = styled.video`
 `;
 
 const VideoMedia = ({ src, controls }) => {
-  const videoRef = useRef(null); // Используем useRef для доступа к элементу video
+  const videoRef = useRef(null);
 
   const [, inView] = useInView({
     triggerOnce: true,
-    rootMargin: '0px 0px -200px 0px', // Немного предзагрузки для более плавного воспроизведения
+    rootMargin: '0px 0px -200px 0px',
   });
 
   const isMobile = window.matchMedia('(max-width: 768px)').matches;
@@ -112,13 +110,13 @@ const ChubakAjyJallilov = () => {
     let shareUrl = '';
     switch (platform) {
       case 'whatsapp':
-        shareUrl = `https://wa.me/?text=${url}`;
+        shareUrl = `https://wa.me/+996556401369?text=${url}`;
         break;
       case 'instagram':
-        shareUrl = `https://www.instagram.com/?url=${url}`;
+        shareUrl = `https://www.instagram.com/nasyikat.media/?url=${url}`;
         break;
       case 'telegram':
-        shareUrl = `https://t.me/share/url?url=${url}`;
+        shareUrl = `https://t.me/MuhammedIbraghim?url=${url}`;
         break;
       default:
         break;
@@ -229,7 +227,7 @@ const ChubakAjyJallilov = () => {
                         onClick={() => handleDownload(video.url || video.src)}
                         startIcon={<DownloadIcon />}
                       >
-                        Download
+                        Көчүрүү
                       </Button>
                     </StyledCardActions>
                   </StyledCard>
