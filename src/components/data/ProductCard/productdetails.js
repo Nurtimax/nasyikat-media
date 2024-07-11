@@ -1,5 +1,4 @@
-import img1 from '../../../assetts/images/alaksa.jpg';
-import img2 from '../../../assetts/images/alaksa.jpg';
+import ex from '../../../assetts/icons/ex.png';
 
 const products = [
   {
@@ -7,7 +6,7 @@ const products = [
     price: '500 с',
     rating: 4.8,
     reviews: 34,
-    images: [img1, img2],
+    images: [ex, ex],
     category: 'books',
     sale: null,
     delivery: 'Бесплатная доставка',
@@ -18,7 +17,7 @@ const products = [
     price: '1000 с',
     rating: 4.9,
     reviews: 50,
-    images: [img1, img2],
+    images: [ex, ex],
     category: 'mens-accessories',
     sale: '10% скидка',
     delivery: 'Платная доставка',
@@ -29,7 +28,7 @@ const products = [
     price: '1200 с',
     rating: 4.7,
     reviews: 45,
-    images: [img1, img2],
+    images: [ex, ex],
     category: 'womens-accessories',
     sale: null,
     delivery: 'Бесплатная доставка',
@@ -40,7 +39,7 @@ const products = [
     price: '800 с',
     rating: 4.6,
     reviews: 30,
-    images: [img1, img2],
+    images: [ex, ex],
     category: 'home',
     sale: '5% скидка',
     delivery: 'Бесплатная доставка',
@@ -51,7 +50,7 @@ const products = [
     price: '1500 с',
     rating: 4.9,
     reviews: 20,
-    images: [img1, img2],
+    images: [ex, ex],
     category: 'car',
     sale: '15% скидка',
     delivery: 'Платная доставка',
@@ -62,7 +61,7 @@ const products = [
     price: '700 с',
     rating: 4.5,
     reviews: 25,
-    images: [img1, img2],
+    images: [ex, ex],
     category: 'study',
     sale: null,
     delivery: 'Бесплатная доставка',
@@ -73,7 +72,7 @@ const products = [
     price: '275,82 с',
     rating: 4.9,
     reviews: 68,
-    images: [img1, img2],
+    images: [ex, ex],
     category: 'namaz',
     sale: '5% скидка',
     delivery: 'Платная доставка',
@@ -84,7 +83,7 @@ const products = [
     price: '275,82 с',
     rating: 4.9,
     reviews: 9,
-    images: [img1, img2],
+    images: [ex, ex],
     category: 'islamic',
     sale: null,
     delivery: 'Бесплатная доставка',
