@@ -6,16 +6,22 @@ import {
   Typography,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { styled } from '@mui/material/styles';
+import { styled, keyframes } from '@mui/material/styles';
+
+const backgroundAnimation = keyframes`
+  0% { background-color: #f3f2d6; }
+  50% { background-color: #e5e4cf; }
+  100% { background-color: #eeecc9; }
+`;
 
 const StyledAccordion = styled(Accordion)(({ theme }) => ({
   marginBottom: theme.spacing(2),
   boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
   borderRadius: '8px',
-  backgroundColor: '#eeecc9', // Light background color
+  animation: `${backgroundAnimation} 9s infinite ease-in-out`,
 
   '& .MuiAccordionSummary-root': {
-    backgroundColor: '#dedac9',
+    backgroundColor: '#e7e4d6',
     borderBottom: '1px solid #ddd',
     marginBottom: -1,
     minHeight: 56,
@@ -42,15 +48,31 @@ const StyledAccordion = styled(Accordion)(({ theme }) => ({
   },
 }));
 
-const Header = styled('h2')({
+const Header = styled('h2')(({ theme }) => ({
   textAlign: 'center',
-  color: '#333', // Dark color for good contrast
+  color: '#333',
   marginBottom: '20px',
-});
+  fontFamily: 'serif',
+  fontSize: '2rem',
+  fontWeight: 'bold',
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '1.5rem',
+  },
+}));
 
-const Paragraph = styled('p')({
-  color: '#666', // Comfortable reading color
-  lineHeight: '1.6', // Increased line height for better readability
+const Paragraph = styled('p')(({ theme }) => ({
+  color: '#666',
+  lineHeight: '1.8',
+  margin: '10px 0',
+  fontFamily: 'Georgia, serif',
+  fontSize: '1rem',
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '0.9rem',
+  },
+}));
+
+const BoldParagraph = styled(Paragraph)({
+  fontWeight: 'bold',
 });
 
 const Section5 = () => {
@@ -66,17 +88,17 @@ const Section5 = () => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography component="div">
-              <Paragraph>Арабча</Paragraph>
+              <BoldParagraph>Арабча</BoldParagraph>
               <Paragraph>
                 اللَّهُمَّ رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي
                 الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ
               </Paragraph>
-              <Paragraph>Tранскрипция</Paragraph>
+              <BoldParagraph>Tранскрипция</BoldParagraph>
               <Paragraph>
                 Раббана атина фид-дунья хасанатау ва филь-ахирати хасанатау ва
                 кыйна газабаннар
               </Paragraph>
-              <Paragraph>Кыргызча мааниси:</Paragraph>
+              <BoldParagraph>Кыргызча мааниси:</BoldParagraph>
               <Paragraph>
                 «Оо, Жараткан Раббим бизге бул дүйнөнүн жана акыреттин
                 жакшылыгын бер. Бизди тозок отунан сактагын.»
@@ -90,15 +112,15 @@ const Section5 = () => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography component="div">
-              <Paragraph>Арабча</Paragraph>
+              <BoldParagraph>Арабча</BoldParagraph>
               <Paragraph>
                 اللَّهُمَّ قِنِى عَذَابَكَ يَوْمَ تَبْعَثُ عِبَادَكَ
               </Paragraph>
-              <Paragraph>Tранскрипция</Paragraph>
+              <BoldParagraph>Tранскрипция</BoldParagraph>
               <Paragraph>
                 Аллаhумма ḱини ‘аҙабака явма таб’аҫу ‘ибадака
               </Paragraph>
-              <Paragraph>Кыргызча мааниси:</Paragraph>
+              <BoldParagraph>Кыргызча мааниси:</BoldParagraph>
               <Paragraph>
                 Эй Алла! Өзүңдүн пенделериңди Кыямат Күнү кабырдан тургузган
                 убакта мени өзүңдүн азабындан куткар!
@@ -112,17 +134,17 @@ const Section5 = () => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography component="div">
-              <Paragraph>Арабча</Paragraph>
+              <BoldParagraph>Арабча</BoldParagraph>
               <Paragraph>
                 بِاسْمِ اللهِ الَّذِي لاَ يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي
                 الأَرْضِ وَلاَ فِي السَّمَاء وَهُوَ السَّمِيعُ العَلِيمُ
               </Paragraph>
-              <Paragraph>Tранскрипция</Paragraph>
+              <BoldParagraph>Tранскрипция</BoldParagraph>
               <Paragraph>
                 "БИСМИЛЛААХИЛЛАЗИИ ЛАА ЯЗУРРУ МАЬА СМИХИИ ШАЙ-УН ФИЛ-АРЗИ ВА ЛАА
                 ФИС-САМАА-И ВА ХУВА-ССАМИИЬУЛ ЬАЛИИМ"
               </Paragraph>
-              <Paragraph>Кыргызча мааниси:</Paragraph>
+              <BoldParagraph>Кыргызча мааниси:</BoldParagraph>
               <Paragraph>
                 Алла Тааланын аты менен баштаймын, Анын аты менен эч бир нерсе
                 жерде да, асманда да зыян жеткире албайт. Ал Зат ар бир нерсени
@@ -142,15 +164,12 @@ const Section5 = () => {
                 карыздарыңды төлөөдө сага жардам бериши үчүн окула турган
                 келмелерди үйрөтөйүнбү?
               </Paragraph>
-              <Paragraph>
-                Эртели-кеч төмөнкү дубаны оку
-                <b>
-                  “Оо, Жараткан Аллах, кыйынчылыктардан, кайгы-капалардан сакта.
-                  Алсыздыктан жана жалкоолуктан сакта. Сараңдыктан жана
-                  коркоктуктан сакта. Карызга батуудан жана аласасы барлардын
-                  каалгамды кагышынан сакта!
-                </b>
-              </Paragraph>
+              <BoldParagraph>
+                Эртели-кеч төмөнкү дубаны оку: “Оо, Жараткан Аллах,
+                кыйынчылыктардан, кайгы-капалардан сакта. Алсыздыктан жана
+                жалкоолуктан сакта. Сараңдыктан жана коркоктуктан сакта. Карызга
+                батуудан жана аласасы барлардын каалгамды кагышынан сакта!
+              </BoldParagraph>
             </Typography>
           </AccordionDetails>
         </StyledAccordion>
@@ -160,12 +179,15 @@ const Section5 = () => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography component="div">
+              <BoldParagraph>Арабча</BoldParagraph>
               <Paragraph>
                 اللَّهُمَّ كَمَا حَسَّنْت خَلْقِي فَحَسِّنْ خُلُقِي
               </Paragraph>
+              <BoldParagraph>Tранскрипция</BoldParagraph>
               <Paragraph>
                 Аллоо-хумма анта хассанта холкии фахассин хулкии.
               </Paragraph>
+              <BoldParagraph>Кыргызча мааниси:</BoldParagraph>
               <Paragraph>
                 Эй Алла Сен мени чырайлуу кылып жараттың. Эми Сен менин
                 мүнөзүмдү да жакшы кыл.

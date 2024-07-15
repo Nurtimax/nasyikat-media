@@ -1,22 +1,46 @@
 import React from 'react';
 import { styled } from '@mui/system';
-import Allah from '../assetts/images/islam/AllahuAkbar.avif';
-import Namaz from '../assetts/images/islam/namaz.avif';
-import Zeket from '../assetts/images/islam/zeket.avif';
-import Ramazan from '../assetts/images/islam/ramazan.webp';
-import Hadj from '../assetts/images/islam/hadj.avif';
+import islamdyn5Parzy from './data/islamdynparzy/islamdyn5parzy';
+
+const Section2 = () => {
+  return (
+    <SectionContainer>
+      <h2>ИСЛАМДАГЫ БЕШ ПАРЗ</h2>
+      <CardsContainer>
+        {islamdyn5Parzy.map((card, index) => (
+          <Card key={index}>
+            <CardImage src={card.image} alt={card.alt} />
+            <h2 style={{ fontSize: '1.2rem', marginTop: '10px' }}>
+              {card.title}
+            </h2>
+            <p dangerouslySetInnerHTML={{ __html: card.text }} />
+          </Card>
+        ))}
+      </CardsContainer>
+    </SectionContainer>
+  );
+};
+
+export default Section2;
 
 const SectionContainer = styled('div')({
   textAlign: 'center',
   padding: '20px',
+  cursor: 'pointer',
 });
 
-const CardsContainer = styled('div')({
-  display: 'flex',
-  justifyContent: 'space-around',
+const CardsContainer = styled('div')(({ theme }) => ({
+  display: 'grid',
+  gridTemplateColumns: 'repeat(5, 1fr)',
   gap: '20px',
-  flexWrap: 'wrap',
-});
+  justifyItems: 'center',
+  [theme.breakpoints.down('md')]: {
+    gridTemplateColumns: 'repeat(3, 1fr)',
+  },
+  [theme.breakpoints.down('sm')]: {
+    gridTemplateColumns: 'repeat(1, 1fr)',
+  },
+}));
 
 const Card = styled('div')(({ theme }) => ({
   width: '100%',
@@ -25,68 +49,15 @@ const Card = styled('div')(({ theme }) => ({
   borderRadius: '8px',
   boxShadow: '0 0 10px rgba(0,0,0,0.1)',
   textAlign: 'center',
-  margin: '10px auto',
   padding: '10px',
   [theme.breakpoints.down('sm')]: {
-    maxWidth: '90%',
+    maxWidth: '100%',
   },
 }));
 
 const CardImage = styled('img')({
   width: '100%',
   borderRadius: '8px',
-  height: '230px', // Ensuring consistent height for all images
-  objectFit: 'cover', // Ensures images cover the area without stretching
+  height: '17.375rem',
+  objectFit: 'cover',
 });
-
-const Section2 = () => {
-  return (
-    <SectionContainer>
-      <h2>ИСЛАМДАГЫ БЕШ ПАРЗ</h2>
-      <CardsContainer>
-        <Card>
-          <CardImage src={Allah} alt="Allah" />
-          <h2 style={{ fontSize: '1.2rem', marginTop: '10px' }}>
-            Лаa илaаха иллаллaх Мухаммадур расуллалaх
-          </h2>
-          <p>
-            Бир Алладан башка Кудай жок жана Мухаммад анын элчиси деп күбөлүк
-            берүү
-          </p>
-        </Card>
-        <Card>
-          <CardImage src={Namaz} alt="Namaz" />
-          <h2 style={{ fontSize: '1.2rem', marginTop: '10px' }}>Намаз окуу;</h2>
-          <p>
-            «Бейиштин ачкычы – намаз, намаздын ачкычы – даарат» <br /> (Ахмаддын
-            Муснады).
-          </p>
-        </Card>
-        <Card>
-          <CardImage src={Zeket} alt="Zeket" />
-          <h2 style={{ fontSize: '1.2rem', marginTop: '10px' }}>
-            Зекет берүү;
-          </h2>
-          <p>
-            «Алардын мал-мүлктөрүндө кайырчынын жана муктаждын акысы бар».{' '}
-            <br /> (Зарият сүрөөсү, 19-аят)
-          </p>
-        </Card>
-        <Card>
-          <CardImage src={Ramazan} alt="Ramazan" />
-          <h2 style={{ fontSize: '1.2rem', marginTop: '10px' }}>
-            Орозо кармоо;
-          </h2>
-          <p>Рамазан айында орозо кармоо —мусулмандардын парзы</p>
-        </Card>
-        <Card>
-          <CardImage src={Hadj} alt="Hadj" />
-          <h2 style={{ fontSize: '1.2rem', marginTop: '10px' }}>Ажыга баруу</h2>
-          <p>(кимдин мүмкүнчүлүгү болсо).</p>
-        </Card>
-      </CardsContainer>
-    </SectionContainer>
-  );
-};
-
-export default Section2;
