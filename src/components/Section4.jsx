@@ -1,41 +1,32 @@
 import React, { useState, useEffect } from 'react';
+import zaryiat55 from './data/quran-khadis/zariyat';
 
 const Section4 = () => {
   const [textIndex, setTextIndex] = useState(0);
-  const texts = [
-    'Аллах Таала Куранда: «Чындыгында, намаз бузукулуктан жана күнөөдөн тосот» - деп айткан. (Анкабут. 45-аят).',
-    'Аллах Таала айткан: "Албетте намаз ыймандуу адамдар үчүн өз убактысында окулуучу парз болду". (Ниса, 103-аят).',
-    'Аллах Таала Куранда: “Алар чыныгы динди таза, бекем кармап, бир гана Аллахка сыйынууга жана намаз окуп зекет берүүгө буюрулду” - деген. (Баййина. 5-аят).',
-    'Аллах Таала: “Намаз окугула, зекет бергиле...” - деп айткан. (Бакара. 43-аят).',
-    'Аллах Таала Куранда: «Оо, ыймандуулар, Жума күнү намазга азан айтылганда Аллахты эскерүүгө (намаз окууга) шашылгыла…» - деген. (Жума. 9-аят).',
-    'Аллах Таала айткан: «Бирок алардын артынан намаздарын таштаган жана кумарларына ээрчиген урпактар келди. Ошондуктан алар жамандыкка кабылышат». (Марьям, 59-аят).',
-    'Аллах Таала айткан: «Силерди (бул) сакарга (тозокко) эмне алып келди (дешет). Алар жооп беришет: Биз намаз окугандардан эмес элек». (Муддасир,42-аят).',
-    'Аллах Таала айткан: «Вайл (тозок) болсун намазды (начар) окуучуларга. Анткени алар намаздарын унутуп коюшкан. Алар (намаздарын) эл көрсүн үчүн окушат». (Маауун, 4-5-аяттар).',
-    '“Ислам беш нерсе менен негизделген: Аллахтан башка сыйынууга татыктуу зат (илах) жок, Мухаммад Анын элчиси деп күбөлүк берүү, намаз окуу, зекет берүү, ажылык кылуу жана орозо кармоо”– деп айткан.',
-  ];
-  const colors = ['#f0f0f0', '#c0c0c0', '#a0a0a0'];
+
+  const colors = ['#eff3b882', '#eff3b882', '#eff3b882'];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
+      setTextIndex((prevIndex) => (prevIndex + 1) % zaryiat55.length);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [texts.length]);
+  }, []);
 
   return (
     <div
       style={{
         backgroundColor: colors[textIndex % colors.length],
-        marginTop: '20px',
+        marginTop: '50px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        minHeight: '200px',
+        minHeight: '250px',
         transition: 'background-color 0.5s ease',
         padding: '20px',
-        borderRadius: '8px',
+        borderRadius: '20px',
         boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
         textAlign: 'center',
       }}
@@ -45,7 +36,7 @@ const Section4 = () => {
       </h2>
 
       <div style={{ textAlign: 'center', fontSize: '1.5rem', color: '#555' }}>
-        {texts[textIndex]}
+        {zaryiat55[textIndex]}
       </div>
       <h3 style={{ textAlign: 'center' }}>
         "ЭСКЕРТКИН,- ЭСКЕРТҮҮ МОМУНДАРГА ПАЙДА БЕРЕТ" (ЗАРИЯТ СҮРӨСҮ 55 АЯТ).

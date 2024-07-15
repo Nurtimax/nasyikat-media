@@ -15,7 +15,7 @@ import { Verified } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 
 const StyledAppBar = styled(AppBar)({
-  backgroundColor: '#84baf0',
+  backgroundColor: '#18d5a2',
 });
 
 const Logo = styled(Typography)({

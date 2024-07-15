@@ -8,6 +8,6 @@ const Welcome = () => {
 export default Welcome;
 
 const StyleContainer = styled('div')({
-  background: 'green',
+  background: '#18d5a2',
   height: '60px',
 });
