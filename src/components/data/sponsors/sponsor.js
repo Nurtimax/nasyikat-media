@@ -6,7 +6,7 @@ const sponsors = [
   {
     name: 'Arzanpods.ru',
     description:
-      'ArzanPods.ru – онлайн-магазин, предлагающий самые низкие цены на аксессуары, наушники и телефоны.',
+      'ArzanPods.ru – онлайн-магазин, наушник телефондордун эн арзан баада таба алсыз.',
     image: arzanpods,
     link: 'https://kurzhun-store.vercel.app/',
     address: 'Россия, Москва онлайн',
@@ -16,7 +16,7 @@ const sponsors = [
   },
   {
     name: 'ITeasy.KG',
-    description: 'ITeasy.kg – онлайн-курсы по программированию для детей.',
+    description: 'ITeasy.kg – Балдар үчүн программалоо курсу онлайн',
     image: iteaasy,
     link: 'https://iteasy-kg.netlify.app/',
     address: 'Кыргызыстан онлайн',
@@ -26,7 +26,8 @@ const sponsors = [
   },
   {
     name: 'Kurzhun.shop',
-    description: 'Kurzhun Shop – онлайн-магазин сумок и рюкзаков из эко-кожи.',
+    description:
+      'Kurzhun Shop – онлайн-магазин сумка рюкзак эко кожадан жасалган.',
     image: kurzhun,
     link: 'https://kurzhun-store.vercel.app/',
     address: 'Бишкек онлайн',
