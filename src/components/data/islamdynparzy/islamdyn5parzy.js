@@ -1,8 +1,8 @@
-import Allah from '../../../assetts/images/islam/AllahuAkbar.avif';
-import Namaz from '../../../assetts/images/islam/namaz.avif';
-import Zeket from '../../../assetts/images/islam/zeket.avif';
-import Ramazan from '../../../assetts/images/islam/ramazan.webp';
-import Hadj from '../../../assetts/images/islam/hadj.avif';
+import Allah from '../../../assetts/images/islam/ajy.png';
+import Namaz from '../../../assetts/images/islam/namaz.png';
+import Zeket from '../../../assetts/images/islam/zeket.png';
+import Ramazan from '../../../assetts/images/islam/orozo.png';
+import Hadj from '../../../assetts/images/islam/ajy.png';
 
 const islamdyn5Parzy = [
   {

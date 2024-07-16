@@ -17,22 +17,26 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import sponsors from './data/sponsors/sponsor';
 
 const StyledCard = styled(Card)(({ theme }) => ({
-  width: 450,
+  width: 400,
   margin: '15px',
   boxShadow: '0 6px 20px rgba(0, 0, 0, 0.15)',
   borderRadius: 20,
   overflow: 'hidden',
   background: 'linear-gradient(135deg, #f5f7fa, #c3cfe2)',
+  [theme.breakpoints.down('sm')]: {
+    width: '100%',
+    margin: '10px 0',
+  },
 }));
 
 const StyledCardMedia = styled(CardMedia)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  height: 300,
-  backgroundSize: 'contain', // Ensures the image is fully visible and centered
+  height: 250,
+  backgroundSize: 'cover',
   [theme.breakpoints.down('sm')]: {
-    height: 450,
+    height: 200,
     width: '100%',
   },
 }));
@@ -67,26 +71,35 @@ const CustomIconButtonInstagram = styled(IconButton)({
   },
 });
 
-const StyledTypographyTitle = styled(Typography)({
+const StyledTypographyTitle = styled(Typography)(({ theme }) => ({
   fontSize: '1.75rem',
   fontWeight: 'bold',
   background: 'linear-gradient(to right, #30CFD0, #330867)',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   marginBottom: '10px',
-});
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '1.5rem',
+  },
+}));
 
-const StyledTypographyBody = styled(Typography)({
+const StyledTypographyBody = styled(Typography)(({ theme }) => ({
   color: '#555',
   lineHeight: 1.6,
   padding: '10px 0',
-});
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '0.9rem',
+  },
+}));
 
-const StyledTypographyAddress = styled(Typography)({
+const StyledTypographyAddress = styled(Typography)(({ theme }) => ({
   color: '#333',
   fontWeight: 'normal',
   fontStyle: 'unset',
-});
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '0.9rem',
+  },
+}));
 
 const SponsorCard = ({ sponsor }) => {
   const handleShare = (platform) => {
@@ -123,12 +136,12 @@ const SponsorCard = ({ sponsor }) => {
           {sponsor.description}
         </StyledTypographyBody>
         <StyledTypographyAddress variant="body2" paragraph>
-          <strong>Адрес:</strong> {sponsor.address}
+          <strong>Дареги:</strong> {sponsor.address}
         </StyledTypographyAddress>
         <Box display="flex" justifyContent="space-between" alignItems="center">
           <Link href={sponsor.link} target="_blank" rel="noopener">
             <Typography variant="caption" color="primary">
-              Перейти
+              Өтүү
             </Typography>
           </Link>
           <Box display="flex" alignItems="center" justifyContent="center">

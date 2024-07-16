@@ -5,15 +5,13 @@ import islamdyn5Parzy from './data/islamdynparzy/islamdyn5parzy';
 const Section2 = () => {
   return (
     <SectionContainer>
-      <h2>ИСЛАМДАГЫ БЕШ ПАРЗ</h2>
+      <SectionTitle>ИСЛАМДАГЫ БЕШ ПАРЗ</SectionTitle>
       <CardsContainer>
         {islamdyn5Parzy.map((card, index) => (
           <Card key={index}>
             <CardImage src={card.image} alt={card.alt} />
-            <h2 style={{ fontSize: '1.2rem', marginTop: '10px' }}>
-              {card.title}
-            </h2>
-            <p dangerouslySetInnerHTML={{ __html: card.text }} />
+            <CardTitle>{card.title}</CardTitle>
+            <CardText dangerouslySetInnerHTML={{ __html: card.text }} />
           </Card>
         ))}
       </CardsContainer>
@@ -27,6 +25,14 @@ const SectionContainer = styled('div')({
   textAlign: 'center',
   padding: '20px',
   cursor: 'pointer',
+});
+
+const SectionTitle = styled('h2')({
+  fontSize: '2rem',
+  marginBottom: '20px',
+  '@media (max-width: 600px)': {
+    fontSize: '1.5rem',
+  },
 });
 
 const CardsContainer = styled('div')(({ theme }) => ({
@@ -58,6 +64,22 @@ const Card = styled('div')(({ theme }) => ({
 const CardImage = styled('img')({
   width: '100%',
   borderRadius: '8px',
-  height: '17.375rem',
+  height: 'auto',
+  maxHeight: '17.375rem',
   objectFit: 'cover',
+});
+
+const CardTitle = styled('h2')({
+  fontSize: '1.2rem',
+  marginTop: '10px',
+  '@media (max-width: 600px)': {
+    fontSize: '1rem',
+  },
+});
+
+const CardText = styled('p')({
+  fontSize: '1rem',
+  '@media (max-width: 600px)': {
+    fontSize: '0.9rem',
+  },
 });

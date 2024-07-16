@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Grid, Typography, Link, IconButton } from '@mui/material';
-import { Instagram, YouTube } from '@mui/icons-material';
-import { styled } from '@mui/system';
+import { Instagram, Verified, YouTube } from '@mui/icons-material';
+import { Box, styled } from '@mui/system';
 
 const FooterWrapper = styled('div')(({ theme }) => ({
   background: 'linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)',
@@ -34,14 +34,6 @@ const FooterText = styled(Typography)(({ theme }) => ({
   },
 }));
 
-const FooterLogo = styled(Typography)(({ theme }) => ({
-  color: 'white',
-  textAlign: 'left',
-  [theme.breakpoints.down('sm')]: {
-    textAlign: 'center',
-  },
-}));
-
 const FooterRight = styled(Grid)(({ theme }) => ({
   textAlign: 'right',
   [theme.breakpoints.down('sm')]: {
@@ -61,10 +53,21 @@ const Footer = () => {
           alignItems="center"
         >
           <Grid item xs={12} sm={4}>
-            <FooterLogo variant="h6">Nasyikat.media</FooterLogo>
+            <Box display="flex" justifyContent="center" alignItems="center">
+              <Typography
+                variant="h6"
+                component="span"
+                style={{ marginRight: '8px' }}
+              >
+                Nasyikat.media
+              </Typography>
+              <Verified color="primary" />
+            </Box>
           </Grid>
           <Grid item xs={12} sm={4}>
-            <FooterText variant="body2">© 2024 Все права защищены</FooterText>
+            <FooterText variant="body2">
+              © 2024 Бардык укук корголгон
+            </FooterText>
           </Grid>
           <FooterRight item xs={12} sm={4}>
             <IconButton

@@ -48,7 +48,7 @@ const Section6 = () => {
                   </Typography>
                   <Box mt={2}>
                     <Button color="secondary" variant="contained">
-                      Видеолорду көрүү
+                      Толугураак
                     </Button>
                   </Box>
                   <Box

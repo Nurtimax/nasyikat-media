@@ -35,7 +35,7 @@ const Contact = () => {
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <TextField
-            label="От"
+            label="Кимден"
             fullWidth
             value={from}
             onChange={(e) => setFrom(e.target.value)}
@@ -43,7 +43,7 @@ const Contact = () => {
         </Grid>
         <Grid item xs={12}>
           <TextField
-            label="Кому"
+            label="Кимге"
             fullWidth
             value={to}
             onChange={(e) => setTo(e.target.value)}
@@ -51,7 +51,7 @@ const Contact = () => {
         </Grid>
         <Grid item xs={12}>
           <TextField
-            label="Сообщение"
+            label="Кат"
             fullWidth
             multiline
             rows={4}
@@ -65,7 +65,7 @@ const Contact = () => {
             color="success"
             onClick={handleWhatsAppMessage}
           >
-            Отправить сообщение
+            Жөнөтүү
           </Button>
         </Grid>
       </Grid>
