@@ -10,6 +10,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { Outlet } from 'react-router-dom';
 import Welcome from './components/Welcome';
+import SponsorsList from './components/SponsorsList';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
       <Section4 />
       <Section5 />
       <Section6 />
+      <SponsorsList />
       <Contact />
       <Footer />
       <Outlet />

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import {
   Grid,
   Card,
@@ -20,7 +20,6 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 import styled, {
   ThemeProvider as StyledThemeProvider,
 } from 'styled-components';
-import { useInView } from 'react-intersection-observer';
 import videoData from './src-video-data/videosrc';
 import LogoNasyikatMedia from '../../assetts/images/islam/AllahuAkbar.avif';
 import { Verified } from '@mui/icons-material';
@@ -58,13 +57,22 @@ const AutoPlayVideo = styled.video`
 
 const VideoMedia = ({ src, controls }) => {
   const videoRef = useRef(null);
+  const [inView] = useState(false);
+  const [isMobile, setIsMobile] = useState(
+    window.matchMedia('(max-width: 768px)').matches
+  );
 
-  const [, inView] = useInView({
-    triggerOnce: true,
-    rootMargin: '0px 0px -200px 0px',
-  });
+  useEffect(() => {
+    const mobileCheck = () => {
+      setIsMobile(window.matchMedia('(max-width: 768px)').matches);
+    };
+    mobileCheck();
+    window.addEventListener('resize', mobileCheck);
 
-  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    return () => {
+      window.removeEventListener('resize', mobileCheck);
+    };
+  }, []);
 
   useEffect(() => {
     if (inView && videoRef.current) {
@@ -81,6 +89,7 @@ const VideoMedia = ({ src, controls }) => {
       ref={videoRef}
       src={src}
       controls={controls}
+      autoPlay={!isMobile} // Автоматическое воспроизведение на десктопах
       muted={isMobile} // Автоматическое воспроизведение без звука на мобильных устройствах
       loop // Повторять воспроизведение
       playsInline // Важно для iOS
