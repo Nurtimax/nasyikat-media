@@ -1,4 +1,4 @@
-import Allah from '../../../assetts/images/islam/ajy.png';
+import Allah from '../../../assetts/images/islam/kelme.png';
 import Namaz from '../../../assetts/images/islam/namaz.png';
 import Zeket from '../../../assetts/images/islam/zeket.png';
 import Ramazan from '../../../assetts/images/islam/orozo.png';
