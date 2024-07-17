@@ -85,15 +85,7 @@ const VideoMedia = ({ src, controls }) => {
   }, [inView, isMobile]);
 
   return (
-    <AutoPlayVideo
-      ref={videoRef}
-      src={src}
-      controls={controls}
-      autoPlay={!isMobile} // Автоматическое воспроизведение на десктопах
-      muted={isMobile} // Автоматическое воспроизведение без звука на мобильных устройствах
-      loop // Повторять воспроизведение
-      playsInline // Важно для iOS
-    >
+    <AutoPlayVideo ref={videoRef} src={src} controls={controls}>
       Your browser does not support the video tag.
     </AutoPlayVideo>
   );

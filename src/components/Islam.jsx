@@ -1,21 +1,15 @@
 import React from 'react';
 import { Container, Typography, Box, Grid } from '@mui/material';
 import Header from './Header';
-import img from '../assetts/images/islam/namaz.avif';
-import img2 from '../assetts/images/islam/namaz.avif';
+import img from '../assetts/images/islam/islam.png';
 
 const Islam = () => {
   return (
     <>
       <Header />
       <Container maxWidth="md" style={{ marginTop: '80px' }}>
-        <Box textAlign="center" mb={3}>
-          <Typography variant="h5" component="h1" gutterBottom>
-            Ислам деген эмне ?
-          </Typography>
-        </Box>
         <Grid container spacing={3} mb={3} justifyContent="center">
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={10} md={8}>
             <Box
               component="img"
               src={img}
@@ -24,21 +18,7 @@ const Islam = () => {
                 width: '100%',
                 borderRadius: 2,
                 boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
-                maxHeight: { xs: '200px', sm: '300px' },
-                objectFit: 'cover',
-              }}
-            />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <Box
-              component="img"
-              src={img2}
-              alt="Namaz"
-              sx={{
-                width: '100%',
-                borderRadius: 2,
-                boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
-                maxHeight: { xs: '200px', sm: '300px' },
+                maxHeight: { xs: '200px', sm: '300px', md: '400px' },
                 objectFit: 'cover',
               }}
             />
@@ -56,7 +36,7 @@ const Islam = () => {
             variant="body1"
             sx={{
               lineHeight: '1.6',
-              textAlign: 'left',
+              textAlign: 'center',
               color: '#333',
             }}
           >
@@ -108,19 +88,21 @@ const Islam = () => {
         <Box sx={{ textAlign: 'center', marginBottom: '20px' }}>
           <iframe
             width="100%"
-            height="500px"
-            src="https://www.youtube.com/embed/hl-WqunI66E"
+            height="400px"
+            src="https://www.youtube.com/embed/gjSzd5aggLg?si=ZRP0o4MurSV954pP"
             title="YouTube video player"
-            frameBorder="0"
+            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
             style={{
               maxWidth: '100%',
-              height: '500px',
+              height: '400px',
               borderRadius: '8px',
               boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
             }}
           ></iframe>
+          ;
         </Box>
       </Container>
     </>

@@ -15,7 +15,7 @@ import PauseCircleFilledIcon from '@mui/icons-material/PauseCircleFilled';
 import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 import Header from './Header';
-import surahs from './data/quran/quran'; // Ensure this file has correct paths
+import surahs from './data/quran/quran';
 
 const Background = styled('div')(({ theme }) => ({
   backgroundSize: '400% 400%',
@@ -52,7 +52,9 @@ const Quran = () => {
     } else {
       setCurrentSurah(surah);
       setIsPlaying(true);
-      audioRef.current.src = surah.audio;
+      audioRef.current.src = audioRef.current.src =
+        surah.title === 'alfatiha' ? surah.audio.alfatiha : surah.audio;
+
       audioRef.current.play();
     }
   };
@@ -64,7 +66,11 @@ const Quran = () => {
       const previousSurah = surahs[previousIndex];
       setCurrentSurah(previousSurah);
       setIsPlaying(true);
-      audioRef.current.src = previousSurah.audio;
+      // Используем правильный путь к аудио в зависимости от выбранной суры
+      audioRef.current.src =
+        previousSurah.title === 'Al-Fatiha'
+          ? previousSurah.audio.alFatiha
+          : previousSurah.audio;
       audioRef.current.play();
     }
   };
@@ -76,7 +82,11 @@ const Quran = () => {
       const nextSurah = surahs[nextIndex];
       setCurrentSurah(nextSurah);
       setIsPlaying(true);
-      audioRef.current.src = nextSurah.audio;
+      // Используем правильный путь к аудио в зависимости от выбранной суры
+      audioRef.current.src =
+        nextSurah.title === 'Al-Fatiha'
+          ? nextSurah.audio.alFatiha
+          : nextSurah.audio;
       audioRef.current.play();
     }
   };

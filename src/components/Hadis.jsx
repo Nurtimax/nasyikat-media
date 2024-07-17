@@ -18,6 +18,7 @@ const AccordionBackground = styled(Box)(({ theme }) => ({
   backgroundImage: 'linear-gradient(to bottom, #ffffff, #f2f2f2)',
   [theme.breakpoints.down('sm')]: {
     paddingBottom: '20px',
+    marginTop: '60px', // Adjust margin for smaller screens
   },
 }));
 
@@ -37,12 +38,15 @@ const Hadis = () => {
             aria-controls={`panel${index}-content`}
             id={`panel${index}-header`}
           >
-            <Typography variant="h6">{item.title}</Typography>
+            <Typography variant="h6" style={{ fontWeight: 'bold' }}>
+              {item.title}
+            </Typography>
           </AccordionSummary>
           <AccordionDetails
             sx={{
               display: 'flex',
               alignItems: 'center',
+              textAlign: 'center',
               [theme.breakpoints.down('sm')]: {
                 flexDirection: 'column',
                 textAlign: 'center',
@@ -53,13 +57,38 @@ const Hadis = () => {
               src={item.image}
               alt="Content"
               style={{
-                marginRight: theme.breakpoints.up('sm') ? '20px' : '0',
+                marginRight: theme.breakpoints.up('sm') ? '5px' : '0',
                 marginBottom: theme.breakpoints.down('sm') ? '20px' : '0',
-                maxWidth: theme.breakpoints.down('sm') ? '100%' : 'auto',
-                display: theme.breakpoints.down('sm') ? 'block' : 'flex',
+                maxWidth: '100%',
+                height: 'auto',
+                borderRadius: '8px',
               }}
             />
-            <Typography>{item.content}</Typography>
+            <Box
+              sx={{
+                marginLeft: theme.breakpoints.down('sm') ? '0' : '20px',
+                maxWidth: '100%',
+                textAlign: 'left',
+              }}
+            >
+              <Typography
+                variant="body1"
+                sx={{
+                  mb: 1,
+                  textAlign: 'center',
+                  fontFamily: 'inherit',
+                  fontWeight: 'bold',
+                }}
+              >
+                {item.content}
+              </Typography>
+              <Typography
+                variant="subtitle2"
+                style={{ textAlign: 'center', fontFamily: 'fantasy' }}
+              >
+                {item.src}
+              </Typography>
+            </Box>
           </AccordionDetails>
         </Accordion>
       ))}
