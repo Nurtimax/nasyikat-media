@@ -13,6 +13,9 @@ const Duba = () => {
   return (
     <div style={{ textAlign: 'center', marginTop: '90px' }}>
       <Header />
+      <Typography variant="h4" align="center" gutterBottom>
+        Дуба момундун куралы
+      </Typography>
       {duaData.map((dua, index) => (
         <Accordion key={index} sx={{ marginBottom: 2 }}>
           <AccordionSummary

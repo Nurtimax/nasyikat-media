@@ -13,6 +13,28 @@ import Header from './Header';
 import ProductCard from './ProductCard';
 import products from './data/ProductCard/productdetails.js';
 import Welcome from '../components/Welcome';
+import styled from '@mui/material/styles/styled';
+
+const StyledSelect = styled(Select)(({ theme, isMinWidth280, isMobile }) => ({
+  minWidth: isMinWidth280 ? '100%' : '280px',
+  width: isMobile ? '250px' : '100%',
+  marginLeft: isMobile ? 'auto' : 0,
+  marginRight: isMobile ? 'auto' : 0,
+}));
+
+const StyledTextField = styled(TextField)(
+  ({ theme, isMinWidth280, isMobile }) => ({
+    minWidth: isMinWidth280 ? '100%' : '280px',
+    width: isMobile ? '250px' : '100%',
+    marginLeft: isMobile ? 'auto' : 0,
+    marginRight: isMobile ? 'auto' : 0,
+  })
+);
+
+const StyledGrid = styled(Grid)(({ theme }) => ({
+  textAlign: 'center',
+  marginTop: theme.spacing(4),
+}));
 
 const Store = () => {
   const theme = useTheme();
@@ -57,61 +79,52 @@ const Store = () => {
     <>
       <Header />
       <Welcome />
-
       <Box my={4} textAlign="center">
         <Typography variant="h4" component="h1" gutterBottom>
-          Исламский онлайн магазин
+          NASYIKAT.STORE
         </Typography>
       </Box>
-      <Grid container spacing={3} justifyContent="center">
+      <StyledGrid container spacing={3} justifyContent="center">
         <Grid item xs={12} sm={6} md={4}>
-          <Select
+          <StyledSelect
             value={category}
             onChange={handleCategoryChange}
             variant="outlined"
             fullWidth
             displayEmpty
-            sx={{
-              minWidth: isMinWidth280 ? '100%' : '280px',
-              width: isMobile ? '250px' : '100%',
-              marginLeft: isMobile ? 'auto' : 0,
-              marginRight: isMobile ? 'auto' : 0,
-            }}
+            isMinWidth280={isMinWidth280}
+            isMobile={isMobile}
           >
-            <MenuItem value="all">Все продукты</MenuItem>
-            <MenuItem value="books">Книги</MenuItem>
-            <MenuItem value="namaz">Для намаза</MenuItem>
-            <MenuItem value="mens-accessories">Мужские аксессуары</MenuItem>
-            <MenuItem value="womens-accessories">Женские аксессуары</MenuItem>
-            <MenuItem value="home">Товары для дома</MenuItem>
-            <MenuItem value="car">Товары для машины</MenuItem>
-            <MenuItem value="study">Товары для учебы</MenuItem>
-          </Select>
+            <MenuItem value="all">Бардык товарлар</MenuItem>
+            <MenuItem value="books">Кыргызча китептер</MenuItem>
+            <MenuItem value="namaz">Ибадат</MenuItem>
+            <MenuItem value="mens-accessories">Эркектерге</MenuItem>
+            <MenuItem value="womens-accessories">Аялдарга</MenuItem>
+            <MenuItem value="home">Үй буюмдары</MenuItem>
+            <MenuItem value="car">Машинага керектүү буюмдар</MenuItem>
+            <MenuItem value="study">Окуучулар </MenuItem>
+          </StyledSelect>
         </Grid>
         <Grid item xs={12} sm={6} md={5}>
-          <TextField
-            label="Поиск по названию"
+          <StyledTextField
+            label="Издөө"
             variant="outlined"
             fullWidth
             value={searchTerm}
             onChange={handleSearchInputChange}
-            sx={{
-              minWidth: isMinWidth280 ? '100%' : '280px',
-              width: isMobile ? '250px' : '100%',
-              marginLeft: isMobile ? 'auto' : 0,
-              marginRight: isMobile ? 'auto' : 0,
-            }}
+            isMinWidth280={isMinWidth280}
+            isMobile={isMobile}
           />
         </Grid>
-      </Grid>
+      </StyledGrid>
       <Box my={4}>
-        <Grid container spacing={3} justifyContent="center">
+        <Grid container spacing={2} justifyContent="center">
           {filteredProducts.map((product, index) => (
             <Grid
               item
               key={index}
               xs={12}
-              sm={2}
+              sm={6}
               md={4}
               lg={3}
               sx={{
