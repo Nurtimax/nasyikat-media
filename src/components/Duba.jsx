@@ -34,21 +34,21 @@ const Duba = () => {
               color="textSecondary"
               sx={{ marginBottom: 1 }}
             >
-              Арабча: {dua.arabic}
+              Арабча: <br /> {dua.arabic}
             </Typography>
             <Typography
               variant="body2"
               color="textSecondary"
               sx={{ marginBottom: 1 }}
             >
-              Транскрипция: {dua.transcription}
+              Транскрипция: <br /> {dua.transcription}
             </Typography>
             <Typography
               variant="body2"
               color="textSecondary"
               sx={{ marginBottom: 1 }}
             >
-              Кыргызча мааниси: {dua.kyrgyz}
+              Кыргызча мааниси: <br /> {dua.kyrgyz}
             </Typography>
             {dua.images && (
               <div style={{ marginTop: '10px' }}>
