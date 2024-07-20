@@ -1,4 +1,4 @@
-import img from '../../../assetts/icons/iteeasy.png';
+import img from '../../../assetts/icons/storr.jpg';
 
 const products = [
   {
