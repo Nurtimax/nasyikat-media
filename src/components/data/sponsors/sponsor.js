@@ -6,7 +6,7 @@ const sponsors = [
   {
     name: 'Arzanpods.ru',
     description:
-      'ArzanPods.ru – онлайн-магазин, наушник телефондордун эн арзан баада таба алсыз.',
+      'ArzanPods.ru – онлайн-магазин, наушник телефондорду эн арзан баада таба алсыз.',
     image: arzanpods,
     link: 'https://kurzhun-store.vercel.app/',
     address: 'Россия, Москва онлайн',

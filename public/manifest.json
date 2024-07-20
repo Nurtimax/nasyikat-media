@@ -1,11 +1,11 @@
 {
-  "short_name": "Nasyikat",
+  "short_name": "Nasyikat.Media",
   "name": "Nasyikat.media",
   "icons": [
     {
       "src": "/public/static/logo.jpg",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/jpg"
     }
   ],
   "start_url": "./index.html",
