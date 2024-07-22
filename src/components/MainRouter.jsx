@@ -39,7 +39,7 @@ const MainRouter = () => {
         <Route path="/ilyasajy" element={<IlyasAjy />} />
         <Route path="/kalysbekajy" element={<KalysbekAjy />} />
         <Route path="/shahada" element={<Shahada />} />
-        <Route path="/ajyllyk" element={<Ajylyk />} />
+        <Route path="/ajylyk" element={<Ajylyk />} />
         <Route path="/namaz" element={<Namaz />} />
         <Route path="/orozo" element={<Orozo />} />
         <Route path="/zeket" element={<Zeket />} />

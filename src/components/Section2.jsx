@@ -1,6 +1,7 @@
 import React from 'react';
 import { styled } from '@mui/system';
 import islamdyn5Parzy from './data/islamdynparzy/islamdyn5parzy';
+import { Link } from 'react-router-dom';
 
 const Section2 = () => {
   return (
@@ -9,9 +10,11 @@ const Section2 = () => {
       <CardsContainer>
         {islamdyn5Parzy.map((card, index) => (
           <Card key={index}>
-            <CardImage src={card.image} alt={card.alt} />
-            <CardTitle>{card.title}</CardTitle>
-            <CardText dangerouslySetInnerHTML={{ __html: card.text }} />
+            <Link to={card.route}>
+              <CardImage src={card.image} alt={card.alt} />
+              <CardTitle>{card.title}</CardTitle>
+              <CardText dangerouslySetInnerHTML={{ __html: card.text }} />
+            </Link>
           </Card>
         ))}
       </CardsContainer>
@@ -20,7 +23,6 @@ const Section2 = () => {
 };
 
 export default Section2;
-
 const SectionContainer = styled('div')({
   textAlign: 'center',
   padding: '20px',
@@ -58,6 +60,10 @@ const Card = styled('div')(({ theme }) => ({
   padding: '10px',
   [theme.breakpoints.down('sm')]: {
     maxWidth: '100%',
+  },
+  '& a': {
+    textDecoration: 'none',
+    color: 'inherit',
   },
 }));
 
