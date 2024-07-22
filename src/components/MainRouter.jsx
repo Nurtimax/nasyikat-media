@@ -14,6 +14,11 @@ import ErmekAjy from './aalymdar.kg/ErmekAjy';
 import SadybakasAjy from './aalymdar.kg/SadybakasAjy';
 import IlyasAjy from './aalymdar.kg/IlyasAjy';
 import KalysbekAjy from './aalymdar.kg/KalysbekAjy';
+import Shahada from './data/islamdynparzy/Shahada';
+import Ajylyk from './data/islamdynparzy/Ajylyk';
+import Namaz from './data/islamdynparzy/Namaz';
+import Orozo from './data/islamdynparzy/Orozo';
+import Zeket from './data/islamdynparzy/Zeket';
 
 const MainRouter = () => {
   return (
@@ -33,6 +38,11 @@ const MainRouter = () => {
         <Route path="/sadybakasajy" element={<SadybakasAjy />} />
         <Route path="/ilyasajy" element={<IlyasAjy />} />
         <Route path="/kalysbekajy" element={<KalysbekAjy />} />
+        <Route path="/shahada" element={<Shahada />} />
+        <Route path="/ajyllyk" element={<Ajylyk />} />
+        <Route path="/namaz" element={<Namaz />} />
+        <Route path="/orozo" element={<Orozo />} />
+        <Route path="/zeket" element={<Zeket />} />
       </Routes>
     </Router>
   );

@@ -18,7 +18,7 @@ const AccordionBackground = styled(Box)(({ theme }) => ({
   backgroundImage: 'linear-gradient(to bottom, #ffffff, #f2f2f2)',
   [theme.breakpoints.down('sm')]: {
     paddingBottom: '20px',
-    marginTop: '60px', // Adjust margin for smaller screens
+    marginTop: '60px',
   },
 }));
 
