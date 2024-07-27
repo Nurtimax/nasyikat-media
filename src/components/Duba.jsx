@@ -14,7 +14,9 @@ const Duba = () => {
     <div style={{ textAlign: 'center', marginTop: '90px' }}>
       <Header />
       <Typography variant="h4" align="center" gutterBottom>
-        Дуба момундун куралы
+        Сүйүктүү пайгамбарыбыз дубаны; жакшылыктардын ачкычы, момундун куралы,
+        диндин тиреги, ибадаттын туу чокусу катары мүнөздөгөн. <br /> (Тирмизи,
+        3368-69)
       </Typography>
       {duaData.map((dua, index) => (
         <Accordion key={index} sx={{ marginBottom: 2 }}>
