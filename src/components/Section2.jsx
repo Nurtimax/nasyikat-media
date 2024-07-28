@@ -2,6 +2,7 @@ import React from 'react';
 import { styled } from '@mui/system';
 import islamdyn5Parzy from './data/islamdynparzy/islamdyn5parzy';
 import { Link } from 'react-router-dom';
+import { FaMoon } from 'react-icons/fa';
 
 const Section2 = () => {
   return (
@@ -12,6 +13,9 @@ const Section2 = () => {
           <Card key={index}>
             <Link to={card.route}>
               <CardImage src={card.image} alt={card.alt} />
+              <IconWrapper>
+                <FaMoon size={20} />
+              </IconWrapper>
               <CardTitle>{card.title}</CardTitle>
               <CardText dangerouslySetInnerHTML={{ __html: card.text }} />
             </Link>
@@ -23,6 +27,7 @@ const Section2 = () => {
 };
 
 export default Section2;
+
 const SectionContainer = styled('div')({
   textAlign: 'center',
   padding: '20px',
@@ -51,6 +56,7 @@ const CardsContainer = styled('div')(({ theme }) => ({
 }));
 
 const Card = styled('div')(({ theme }) => ({
+  position: 'relative', // Needed for positioning the icon
   width: '100%',
   maxWidth: '300px',
   backgroundColor: '#f0f0f0',
@@ -73,6 +79,14 @@ const CardImage = styled('img')({
   height: 'auto',
   maxHeight: '17.375rem',
   objectFit: 'cover',
+});
+
+const IconWrapper = styled('div')({
+  position: 'absolute',
+  top: '10px',
+  left: '10px',
+  borderRadius: '50%',
+  padding: '5px',
 });
 
 const CardTitle = styled('h2')({

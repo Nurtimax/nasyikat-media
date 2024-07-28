@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import {
   Grid,
   Card,
@@ -20,8 +20,9 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 import styled, {
   ThemeProvider as StyledThemeProvider,
 } from 'styled-components';
+import { useInView } from 'react-intersection-observer';
 import videoData from './src-video-data/videosrc';
-import LogoNasyikatMedia from '../../assetts/images/islam/AllahuAkbar.avif';
+import LogoNasyikatMedia from '../../assetts/images/islam/nmlogo.png';
 import { Verified } from '@mui/icons-material';
 import Welcome from '../../components/Welcome';
 import Header from '../../components/Header';
@@ -40,9 +41,8 @@ const StyledCard = styled(Card)`
 
 const VideoContainer = styled.div`
   position: relative;
-  padding-top: 100%; /* 16:9 aspect ratio */
-  background-color: ${(props) =>
-    props.theme.palette.grey[400]}; /* Используем тему для стилей */
+  padding-top: 100%;
+  background-color: ${(props) => props.theme.palette.grey[400]};
   overflow: hidden;
 `;
 
@@ -57,37 +57,28 @@ const AutoPlayVideo = styled.video`
 
 const VideoMedia = ({ src, controls }) => {
   const videoRef = useRef(null);
-  const [inView] = useState(false);
-  const [isMobile, setIsMobile] = useState(
-    window.matchMedia('(max-width: 768px)').matches
-  );
+  const { ref, inView } = useInView({
+    threshold: 0.9,
+  });
 
   useEffect(() => {
-    const mobileCheck = () => {
-      setIsMobile(window.matchMedia('(max-width: 768px)').matches);
-    };
-    mobileCheck();
-    window.addEventListener('resize', mobileCheck);
+    const isMobile = window.innerWidth <= 768;
 
-    return () => {
-      window.removeEventListener('resize', mobileCheck);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (inView && videoRef.current) {
-      if (isMobile) {
+    if (videoRef.current && isMobile) {
+      if (inView) {
         videoRef.current.play();
       } else {
         videoRef.current.pause();
       }
     }
-  }, [inView, isMobile]);
+  }, [inView]);
 
   return (
-    <AutoPlayVideo ref={videoRef} src={src} controls={controls}>
-      Your browser does not support the video tag.
-    </AutoPlayVideo>
+    <div ref={ref}>
+      <AutoPlayVideo ref={videoRef} src={src} controls={controls}>
+        Ваш браузер не поддерживает видео.
+      </AutoPlayVideo>
+    </div>
   );
 };
 
@@ -102,7 +93,7 @@ const StyledCardActions = styled(CardActions)`
 
 const StyledBadge = styled(Badge)`
   .MuiBadge-dot {
-    background-color: green; // Цвет точки
+    background-color: green;
   }
 `;
 
@@ -111,13 +102,13 @@ const ChubakAjyJallilov = () => {
     let shareUrl = '';
     switch (platform) {
       case 'whatsapp':
-        shareUrl = `https://wa.me/+996556401369?text=${url}`;
+        shareUrl = `https://wa.me/+996?text=${url}`;
         break;
       case 'instagram':
         shareUrl = `https://www.instagram.com/nasyikat.media/?url=${url}`;
         break;
       case 'telegram':
-        shareUrl = `https://t.me/MuhammedIbraghim?url=${url}`;
+        shareUrl = `https://t.me/+SEJbmn8AwNViNmNi?url=${url}`;
         break;
       default:
         break;
@@ -146,16 +137,7 @@ const ChubakAjyJallilov = () => {
                 <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
                   <StyledCard>
                     <VideoContainer>
-                      {video.src ? (
-                        <VideoMedia src={video.src} controls />
-                      ) : (
-                        <iframe
-                          src={video.url}
-                          title={video.title}
-                          frameBorder="0"
-                          allowFullScreen
-                        />
-                      )}
+                      <VideoMedia src={video.src} controls />
                     </VideoContainer>
                     <StyledCardContent>
                       <Box

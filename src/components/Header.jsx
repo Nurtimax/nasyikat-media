@@ -14,6 +14,36 @@ import { Box, styled } from '@mui/system';
 import { Verified } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 
+const ResponsiveDrawer = styled(Drawer)(({ theme }) => ({
+  '& .MuiDrawer-paper': {
+    width: '75%',
+    [theme.breakpoints.up('sm')]: {
+      width: '40%',
+    },
+    [theme.breakpoints.up('md')]: {
+      width: '30%',
+    },
+    [theme.breakpoints.up('lg')]: {
+      width: '20%',
+    },
+  },
+}));
+
+const ResponsiveListItemText = styled(ListItemText)(({ theme }) => ({
+  '& .MuiTypography-root': {
+    fontSize: '1rem', // Default font size for smaller screens
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '1.1rem', // Font size for medium screens
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.2rem', // Font size for larger screens
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1.3rem', // Font size for extra large screens
+    },
+  },
+}));
+
 const StyledAppBar = styled(AppBar)({
   backgroundColor: '#18d5a2',
 });
@@ -69,26 +99,31 @@ const Header = () => {
           </BurgerMenu>
         </Toolbar>
       </StyledAppBar>
-      <Drawer anchor="right" open={menuOpen} onClose={toggleDrawer(false)}>
+      <ResponsiveDrawer
+        anchor="right"
+        open={menuOpen}
+        onClose={toggleDrawer(false)}
+      >
         <List>
           {[
             { text: 'Башкы бет', path: '/app' },
+            { text: 'Исламда 40 парз', path: '/islamdynparzdary' },
             { text: 'Ислам деген эмне?', path: '/islam' },
-            { text: 'Куран', path: '/quran' },
-            { text: 'Хадис', path: '/hadis' },
-            { text: 'Дуба', path: '/duba' },
-            { text: 'Дүкөн', path: '/store' },
+            { text: 'Китебим Куран', path: '/quran' },
+            { text: 'Кутту Хадистер', path: '/hadis' },
+            { text: 'Пайдалуу дубалар', path: '/duba' },
+            { text: 'Онлайн Дүкөн', path: '/store' },
           ].map((item, index) => (
             <ListItem
               button
               key={index}
               onClick={() => handleNavigation(item.path)}
             >
-              <ListItemText primary={item.text} />
+              <ResponsiveListItemText primary={item.text} />
             </ListItem>
           ))}
         </List>
-      </Drawer>
+      </ResponsiveDrawer>
     </div>
   );
 };
