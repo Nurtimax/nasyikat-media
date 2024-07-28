@@ -19,12 +19,14 @@ import Ajylyk from './data/islamdynparzy/Ajylyk';
 import Namaz from './data/islamdynparzy/Namaz';
 import Orozo from './data/islamdynparzy/Orozo';
 import Zeket from './data/islamdynparzy/Zeket';
+import IslamdynParzdary from './IslamdynParzdary';
 
 const MainRouter = () => {
   return (
     <Router>
       <Routes>
         <Route path="*" element={<App />} />
+        <Route path="/islamdynparzdary" element={<IslamdynParzdary />} />
         <Route path="/islam" element={<Islam />} />
         <Route path="/quran" element={<Quran />} />
         <Route path="/hadis" element={<Hadis />} />

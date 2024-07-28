@@ -13,7 +13,7 @@ const Duba = () => {
   return (
     <div style={{ textAlign: 'center', marginTop: '90px' }}>
       <Header />
-      <Typography variant="h4" align="center" gutterBottom>
+      <Typography variant="h5" align="center" gutterBottom>
         Сүйүктүү пайгамбарыбыз дубаны; жакшылыктардын ачкычы, момундун куралы,
         диндин тиреги, ибадаттын туу чокусу катары мүнөздөгөн. <br /> (Тирмизи,
         3368-69)
