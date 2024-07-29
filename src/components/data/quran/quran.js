@@ -1,7 +1,5 @@
-import alfatiha from '../quran/quran-audio/al-fatiha.mp3';
-
 const surahs = [
-  { title: 'Al-Fatiha', audio: { alfatiha } },
+  { title: 'Al-Fatiha', audio: './quran-audio/al-fatiha.mp3' },
   { title: 'Al-Baqarah', audio: 'path/to/al-baqarah.mp3' },
   { title: 'Al-Imran', audio: 'path/to/al-imran.mp3' },
   { title: 'An-Nisa', audio: 'path/to/an-nisa.mp3' },
@@ -117,4 +115,5 @@ const surahs = [
   { title: 'An-Nas', audio: 'path/to/an-nas.mp3' },
 ];
 
-export default surahs;
+
+export default  surahs 

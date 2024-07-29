@@ -37,6 +37,9 @@ const StyledCard = styled(Card)`
   &:hover {
     transform: scale(1.02);
   }
+  @media (max-width: 768px) {
+    height: auto;
+  }
 `;
 
 const VideoContainer = styled.div`
@@ -44,6 +47,9 @@ const VideoContainer = styled.div`
   padding-top: 100%;
   background-color: ${(props) => props.theme.palette.grey[400]};
   overflow: hidden;
+  @media (max-width: 768px) {
+    padding-top: 100%;
+  }
 `;
 
 const AutoPlayVideo = styled.video`
@@ -75,7 +81,7 @@ const VideoMedia = ({ src, controls }) => {
 
   return (
     <div ref={ref}>
-      <AutoPlayVideo ref={videoRef} src={src} controls={controls}>
+      <AutoPlayVideo ref={videoRef} src={src} controls>
         Ваш браузер не поддерживает видео.
       </AutoPlayVideo>
     </div>

@@ -15,7 +15,7 @@ import PauseCircleFilledIcon from '@mui/icons-material/PauseCircleFilled';
 import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 import Header from './Header';
-import surahs from './data/quran/quran';
+import surahs from './data/quran/quran'; // Проверьте правильность пути
 
 const Background = styled('div')(({ theme }) => ({
   backgroundSize: '400% 400%',
@@ -47,14 +47,14 @@ const Quran = () => {
 
   const handlePlayPause = (surah) => {
     if (currentSurah === surah && isPlaying) {
+      // Приостановить воспроизведение, если та же сура
       setIsPlaying(false);
       audioRef.current.pause();
     } else {
+      // Воспроизвести новую суру
       setCurrentSurah(surah);
       setIsPlaying(true);
-      audioRef.current.src = audioRef.current.src =
-        surah.title === 'alfatiha' ? surah.audio.alfatiha : surah.audio;
-
+      audioRef.current.src = surah.audio;
       audioRef.current.play();
     }
   };
@@ -66,11 +66,7 @@ const Quran = () => {
       const previousSurah = surahs[previousIndex];
       setCurrentSurah(previousSurah);
       setIsPlaying(true);
-      // Используем правильный путь к аудио в зависимости от выбранной суры
-      audioRef.current.src =
-        previousSurah.title === 'Al-Fatiha'
-          ? previousSurah.audio.alFatiha
-          : previousSurah.audio;
+      audioRef.current.src = previousSurah.audio;
       audioRef.current.play();
     }
   };
@@ -82,11 +78,7 @@ const Quran = () => {
       const nextSurah = surahs[nextIndex];
       setCurrentSurah(nextSurah);
       setIsPlaying(true);
-      // Используем правильный путь к аудио в зависимости от выбранной суры
-      audioRef.current.src =
-        nextSurah.title === 'Al-Fatiha'
-          ? nextSurah.audio.alFatiha
-          : nextSurah.audio;
+      audioRef.current.src = nextSurah.audio;
       audioRef.current.play();
     }
   };
@@ -141,8 +133,8 @@ const Quran = () => {
             </ListItem>
           ))}
         </List>
+        <audio ref={audioRef} controls />
       </StyledContainer>
-      <audio ref={audioRef} controls />
     </Background>
   );
 };

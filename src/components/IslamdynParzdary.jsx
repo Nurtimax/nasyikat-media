@@ -14,7 +14,6 @@ const Container = styled('div')(({ theme }) => ({
   margin: 'auto',
   padding: '20px',
   marginTop: '20px',
-  backgroundColor: '#f7f7f7', // Soft background color
   borderRadius: '10px',
   boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
 }));
@@ -73,7 +72,7 @@ const IslamdynParzdary = () => {
       <Header />
       <Welcome />
       <Container>
-        <Typography variant="h4" align="center" gutterBottom>
+        <Typography variant="h5" align="center" gutterBottom>
           Бактылуулук Исламда 40 Парз
         </Typography>
 
