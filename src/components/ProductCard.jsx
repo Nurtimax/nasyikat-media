@@ -22,7 +22,6 @@ import StarIcon from '@mui/icons-material/Star'; // иконка для сине
 
 // Стиль для карточки продукта
 const StyledCard = styled(Card)(({ theme }) => ({
-  margin: theme.spacing(2),
   width: '100%',
   boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
   borderRadius: '10px',
@@ -31,14 +30,14 @@ const StyledCard = styled(Card)(({ theme }) => ({
 
 // Стиль для блока цены
 const PriceBox = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(1),
+  padding: theme.spacing(),
   borderRadius: theme.shape.borderRadius,
   display: 'inline-block',
 }));
 
 // Стиль для кнопки
 const StyledButton = styled(Button)(({ theme }) => ({
-  marginTop: theme.spacing(1),
+  marginTop: theme.spacing(),
   borderRadius: '20px',
   width: '100%', // Кнопка на всю ширину
 }));
