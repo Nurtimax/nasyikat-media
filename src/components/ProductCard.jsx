@@ -26,10 +26,10 @@ import CloseIcon from '@mui/icons-material/Close';
 // Стиль для карточки продукта
 const StyledCard = styled(Card)(({ theme }) => ({
   width: '100%',
-  padding: theme.spacing(),
   boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
   borderRadius: '10px',
   overflow: 'hidden',
+  [theme.breakpoints.down('sm')]: {},
 }));
 
 // Стиль для блока цены
@@ -43,8 +43,8 @@ const PriceBox = styled(Box)(({ theme }) => ({
 const StyledButton = styled(Button)(({ theme }) => ({
   marginTop: theme.spacing(),
   borderRadius: '20px',
-  width: '100%', // Кнопка на всю ширину
-  backgroundColor: '#2196F3', // Сделать кнопку более заметной
+  width: '100%',
+  backgroundColor: '#2196F3',
   color: '#fff',
   '&:hover': {
     backgroundColor: '#1976D2',
@@ -62,8 +62,8 @@ const RatingBox = styled(Box)(({ theme }) => ({
 const InfoBox = styled(Box)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'space-between', // Выравнивание по бокам
-  gap: theme.spacing(2), // Отступы между элементами
+  justifyContent: 'space-between',
+  gap: theme.spacing(2),
   mb: theme.spacing(2),
 }));
 
@@ -71,7 +71,7 @@ const InfoBox = styled(Box)(({ theme }) => ({
 const SocialLinksBox = styled(Box)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
-  gap: theme.spacing(1.5), // Отступы между иконками
+  gap: theme.spacing(1.5),
 }));
 
 // Стиль для значка
@@ -90,17 +90,36 @@ const FeaturedBadge = styled(Box)(({ theme }) => ({
 const ModalImageSlider = styled(Slider)(({ theme }) => ({
   '& .slick-slide img': {
     width: '100%',
-    height: 'auto',
+    height: '100%',
+    objectFit: 'contain',
   },
 }));
 
 // Стиль для кнопки закрытия модального окна
 const CloseButton = styled(IconButton)(({ theme }) => ({
   position: 'absolute',
-  top: theme.spacing(1),
-  right: theme.spacing(1),
+  top: theme.spacing(2),
+  right: theme.spacing(2),
   zIndex: 1,
   color: 'white',
+  backgroundColor: '#00000099',
+  '&:hover': {
+    backgroundColor: '#000000cc',
+  },
+}));
+
+// Стиль для модального окна
+const ModalContent = styled(Box)(({ theme }) => ({
+  height: '49vh',
+  display: 'flex',
+  flexDirection: 'column',
+  overflow: 'hidden',
+}));
+
+// Стиль для описания товара
+const DescriptionBox = styled(Box)(({ theme }) => ({
+  textAlign: 'center',
+  backgroundColor: '#f5f5f5',
 }));
 
 // Компонент слайдера изображений
@@ -111,6 +130,7 @@ const ImageSlider = ({ images, onImageClick }) => {
     speed: 600,
     slidesToShow: 1,
     slidesToScroll: 1,
+    arrows: false,
   };
 
   return (
@@ -122,7 +142,7 @@ const ImageSlider = ({ images, onImageClick }) => {
           alt={`product image ${index}`}
           height="270"
           image={image}
-          onClick={() => onImageClick(image)} // Устанавливаем обработчик клика
+          onClick={() => onImageClick(image)}
           style={{ cursor: 'pointer' }}
         />
       ))}
@@ -132,16 +152,13 @@ const ImageSlider = ({ images, onImageClick }) => {
 
 const ProductCard = ({ product }) => {
   const [open, setOpen] = useState(false);
-  const [, setSelectedImage] = useState('');
 
-  const handleImageClick = (image) => {
-    setSelectedImage(image);
+  const handleImageClick = () => {
     setOpen(true);
   };
 
   const handleClose = () => {
     setOpen(false);
-    setSelectedImage('');
   };
 
   return (
@@ -230,39 +247,35 @@ const ProductCard = ({ product }) => {
       </StyledCard>
 
       {/* Модальное окно для увеличенного изображения */}
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        fullWidth
-        maxWidth="md"
-        PaperProps={{
-          style: {
-            padding: 0,
-            backgroundColor: 'transparent',
-          },
-        }}
-      >
-        <Box sx={{ position: 'relative' }}>
-          <CloseButton onClick={handleClose}>
-            <CloseIcon />
-          </CloseButton>
-          <ModalImageSlider
-            dots={true}
-            infinite={true}
-            speed={600}
-            slidesToShow={1}
-            slidesToScroll={1}
-          >
-            {product.images.map((image, index) => (
-              <CardMedia
-                key={index}
-                component="img"
-                alt={`zoomed product image ${index}`}
-                image={image}
-              />
-            ))}
-          </ModalImageSlider>
-        </Box>
+      <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
+        <ModalContent>
+          <Box sx={{ position: 'relative', width: '100%', height: '90%' }}>
+            <CloseButton onClick={handleClose}>
+              <CloseIcon fontSize="small" />
+            </CloseButton>
+            <ModalImageSlider
+              dots={true}
+              infinite={true}
+              speed={600}
+              slidesToShow={1}
+              slidesToScroll={1}
+            >
+              {product.images.map((image, index) => (
+                <CardMedia
+                  key={index}
+                  component="img"
+                  alt={`zoomed product image ${index}`}
+                  image={image}
+                />
+              ))}
+            </ModalImageSlider>
+          </Box>
+          <DescriptionBox>
+            <Typography variant="h6" component="div" gutterBottom>
+              {product.description}
+            </Typography>
+          </DescriptionBox>
+        </ModalContent>
       </Dialog>
     </>
   );

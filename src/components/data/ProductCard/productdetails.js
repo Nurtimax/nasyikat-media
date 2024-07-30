@@ -1,5 +1,6 @@
 import img from '../../../assetts/icons/storr.jpg';
 import img2 from '../../../assetts/images/islam/nmlogo.png';
+import log from '../../../assetts/icons/arzanpods.png';
 
 const products = [
   {
@@ -10,10 +11,12 @@ const products = [
     images: [img, img, img, img],
     category: 'китеп',
     storeName: 'Arzanpods.ru',
-    storeAvatar: img2,
+    storeAvatar: log,
     storeWhatsapp: 'phone_number',
     storeInstagram: 'arzanpods',
     storePhone: 'Тел',
+    description:
+      'Бул жерде товар жонундо маалыматтар камтылат пользователь товардын размерин тусун материалын',
   },
   {
     name: 'Книга для намаза Товары для ',
@@ -28,6 +31,7 @@ const products = [
     storeInstagram: 'arzanpods',
     storePhone: 'Тел',
     isFeatured: true,
+    description: 'description5. description6  description description',
   },
   {
     name: 'Книга для намаза Товары для ',
@@ -37,11 +41,12 @@ const products = [
     images: [img, img, img, img],
     category: 'books',
     storeName: 'Arzanpods.ru',
-    storeAvatar: img2,
+    storeAvatar: log,
     storeWhatsapp: 'phone_number',
     storeInstagram: 'arzanpods',
     storePhone: 'Тел',
     isFeatured: false,
+    description: 'description7. description8  description description',
   },
   {
     name: 'Товары для дома products',
@@ -58,6 +63,7 @@ const products = [
     storeInstagram: 'arzanpods',
     storePhone: 'Тел',
     isFeatured: true,
+    description: 'description9. description10  description description',
   },
   {
     name: 'Товары для машины products',
@@ -69,7 +75,7 @@ const products = [
     sale: '15% скидка',
     delivery: 'Платная доставка',
     storeName: 'Arzanpods.ru',
-    storeAvatar: img2,
+    storeAvatar: log,
     storeWhatsapp: 'phone_number',
     storeInstagram: 'arzanpods',
     storePhone: 'Тел',
@@ -99,7 +105,7 @@ const products = [
     sale: '5% скидка',
     delivery: 'Платная доставка',
     storeName: 'Исламский магазин',
-    storeAvatar: img2,
+    storeAvatar: log,
     storeWhatsapp: 'phone_number',
     storeInstagram: 'arzanpods',
     storePhone: 'Тел',
