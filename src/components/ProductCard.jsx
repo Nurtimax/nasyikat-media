@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Card,
   CardContent,
@@ -9,6 +9,8 @@ import {
   Avatar,
   Link,
   Box,
+  Dialog,
+  IconButton,
 } from '@mui/material';
 import { styled } from '@mui/system';
 import Slider from 'react-slick';
@@ -18,11 +20,13 @@ import Rating from '@mui/material/Rating';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import PhoneIcon from '@mui/icons-material/Phone';
-import StarIcon from '@mui/icons-material/Star'; // иконка для синего значка
+import VerifiedIcon from '@mui/icons-material/Verified';
+import CloseIcon from '@mui/icons-material/Close';
 
 // Стиль для карточки продукта
 const StyledCard = styled(Card)(({ theme }) => ({
   width: '100%',
+  padding: theme.spacing(),
   boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
   borderRadius: '10px',
   overflow: 'hidden',
@@ -40,6 +44,11 @@ const StyledButton = styled(Button)(({ theme }) => ({
   marginTop: theme.spacing(),
   borderRadius: '20px',
   width: '100%', // Кнопка на всю ширину
+  backgroundColor: '#2196F3', // Сделать кнопку более заметной
+  color: '#fff',
+  '&:hover': {
+    backgroundColor: '#1976D2',
+  },
 }));
 
 // Стиль для блока рейтинга и отзывов
@@ -70,17 +79,32 @@ const FeaturedBadge = styled(Box)(({ theme }) => ({
   width: '24px',
   height: '24px',
   borderRadius: '50%',
-  backgroundColor: '#2196F3', // Синий цвет
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  color: '#fff',
   fontSize: '14px',
   marginLeft: theme.spacing(1),
 }));
 
+// Стиль для модального окна изображения
+const ModalImageSlider = styled(Slider)(({ theme }) => ({
+  '& .slick-slide img': {
+    width: '100%',
+    height: 'auto',
+  },
+}));
+
+// Стиль для кнопки закрытия модального окна
+const CloseButton = styled(IconButton)(({ theme }) => ({
+  position: 'absolute',
+  top: theme.spacing(1),
+  right: theme.spacing(1),
+  zIndex: 1,
+  color: 'white',
+}));
+
 // Компонент слайдера изображений
-const ImageSlider = ({ images }) => {
+const ImageSlider = ({ images, onImageClick }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -98,6 +122,8 @@ const ImageSlider = ({ images }) => {
           alt={`product image ${index}`}
           height="270"
           image={image}
+          onClick={() => onImageClick(image)} // Устанавливаем обработчик клика
+          style={{ cursor: 'pointer' }}
         />
       ))}
     </Slider>
@@ -105,89 +131,140 @@ const ImageSlider = ({ images }) => {
 };
 
 const ProductCard = ({ product }) => {
+  const [open, setOpen] = useState(false);
+  const [, setSelectedImage] = useState('');
+
+  const handleImageClick = (image) => {
+    setSelectedImage(image);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    setSelectedImage('');
+  };
+
   return (
-    <StyledCard>
-      <ImageSlider images={product.images} />
-      <CardContent>
-        <Typography variant="h4" component="div" gutterBottom align="center">
-          {product.name}
-        </Typography>
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            mb: 2,
-          }}
-        >
-          <PriceBox>
-            <Typography variant="h6" align="center">
-              {product.price} som
-            </Typography>
-          </PriceBox>
-          <RatingBox>
-            <Rating
-              name="product-rating"
-              value={product.rating}
-              precision={0.5}
-              readOnly
-            />
-            <Typography variant="body2" sx={{ ml: 1 }}>
-              ({product.reviews} reviews)
-            </Typography>
-          </RatingBox>
-        </Box>
-        <InfoBox>
-          <Grid container alignItems="center" spacing={2}>
-            <Grid item>
-              <Avatar alt="Store Avatar" src={product.storeAvatar} />
-            </Grid>
-            <Grid item>
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                style={{ display: 'flex' }}
-              >
-                Store: {product.storeName}
-                {product.isFeatured && (
-                  <FeaturedBadge>
-                    <StarIcon fontSize="small" />
-                  </FeaturedBadge>
-                )}
+    <>
+      <StyledCard>
+        <ImageSlider images={product.images} onImageClick={handleImageClick} />
+        <CardContent>
+          <Typography variant="h4" component="div" gutterBottom align="center">
+            {product.name}
+          </Typography>
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              mb: 2,
+            }}
+          >
+            <PriceBox>
+              <Typography variant="h6" align="center">
+                Баасы {product.price} som
               </Typography>
+            </PriceBox>
+            <RatingBox>
+              <Rating
+                name="product-rating"
+                value={product.rating}
+                precision={0.5}
+                readOnly
+              />
+              <Typography variant="body2" sx={{ ml: 1 }}>
+                ({product.reviews} reviews)
+              </Typography>
+            </RatingBox>
+          </Box>
+          <InfoBox>
+            <Grid container alignItems="center" spacing={2}>
+              <Grid item>
+                <Avatar alt="Store Avatar" src={product.storeAvatar} />
+              </Grid>
+              <Grid item>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  style={{ display: 'flex', alignItems: 'center' }}
+                >
+                  {product.storeName}
+                  {product.isFeatured && (
+                    <FeaturedBadge>
+                      <VerifiedIcon fontSize="small" color="primary" />
+                    </FeaturedBadge>
+                  )}
+                </Typography>
+              </Grid>
             </Grid>
-          </Grid>
-          <SocialLinksBox>
-            {product.storeWhatsapp && (
-              <Link
-                href={`https://wa.me/${product.storeWhatsapp}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <WhatsAppIcon />
-              </Link>
-            )}
-            {product.storeInstagram && (
-              <Link
-                href={`https://instagram.com/${product.storeInstagram}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <InstagramIcon />
-              </Link>
-            )}
-            {product.storePhone && (
-              <Link href={`tel:${product.storePhone}`}>
-                <PhoneIcon />
-              </Link>
-            )}
-          </SocialLinksBox>
-        </InfoBox>
-        <Box sx={{ mt: 2 }}>
-          <StyledButton>Order</StyledButton>
+            <SocialLinksBox>
+              {product.storeWhatsapp && (
+                <Link
+                  href={`https://wa.me/${product.storeWhatsapp}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <WhatsAppIcon />
+                </Link>
+              )}
+              {product.storeInstagram && (
+                <Link
+                  href={`https://instagram.com/${product.storeInstagram}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <InstagramIcon />
+                </Link>
+              )}
+              {product.storePhone && (
+                <Link href={`tel:${product.storePhone}`}>
+                  <PhoneIcon />
+                </Link>
+              )}
+            </SocialLinksBox>
+          </InfoBox>
+          <Box sx={{ mt: 2 }}>
+            <StyledButton>Order</StyledButton>
+          </Box>
+        </CardContent>
+      </StyledCard>
+
+      {/* Модальное окно для увеличенного изображения */}
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        fullWidth
+        maxWidth="md"
+        PaperProps={{
+          style: {
+            padding: 0,
+            backgroundColor: 'transparent',
+          },
+        }}
+      >
+        <Box sx={{ position: 'relative' }}>
+          <CloseButton onClick={handleClose}>
+            <CloseIcon />
+          </CloseButton>
+          <ModalImageSlider
+            dots={true}
+            infinite={true}
+            speed={600}
+            slidesToShow={1}
+            slidesToScroll={1}
+          >
+            {product.images.map((image, index) => (
+              <CardMedia
+                key={index}
+                component="img"
+                alt={`zoomed product image ${index}`}
+                image={image}
+              />
+            ))}
+          </ModalImageSlider>
         </Box>
-      </CardContent>
-    </StyledCard>
+      </Dialog>
+    </>
   );
 };
 
