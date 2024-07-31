@@ -4,9 +4,9 @@ import kurzhun from '../../../assetts/icons/kurzhun.png';
 
 const sponsors = [
   {
-    name: 'Arzanpods.ru',
+    name: 'Arzanstore.ru',
     description:
-      'ArzanPods.ru – онлайн-магазин, наушник телефондорду эн арзан баада таба алсыз.',
+      'Arzanstore.ru – онлайн-магазин, наушник телефондорду эн арзан баада таба алсыз.',
     image: arzanpods,
     link: 'https://kurzhun-store.vercel.app/',
     address: 'Россия, Москва онлайн',

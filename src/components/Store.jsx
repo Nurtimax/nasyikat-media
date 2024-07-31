@@ -22,18 +22,46 @@ const StyledSelect = styled(Select)(({ theme, isMinWidth280, isMobile }) => ({
   marginRight: isMobile ? 'auto' : 0,
 }));
 
-const StyledTextField = styled(TextField)(
-  ({ theme, isMinWidth280, isMobile }) => ({
-    minWidth: isMinWidth280 ? '100%' : '280px',
-    width: isMobile ? '250px' : '100%',
-    marginLeft: isMobile ? 'auto' : 0,
-    marginRight: isMobile ? 'auto' : 0,
-  })
-);
+const StyledTextField = styled(TextField)(({ theme }) => ({
+  width: '100%',
+  '& .MuiOutlinedInput-root': {
+    borderRadius: theme.shape.borderRadius,
+    '& fieldset': {
+      borderColor: '#9d9d9d',
+    },
+    '&:hover fieldset': {
+      borderColor: '#2196F3',
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: '#2196F3',
+    },
+  },
+  '& .MuiInputLabel-root': {
+    color: '#666',
+  },
+  '& .MuiInputLabel-root.Mui-focused': {
+    color: '#2196F3',
+  },
+}));
+
+// Styled container for the banner
+const BannerContainer = styled(Box)(({ theme }) => ({
+  textAlign: 'center',
+  background: 'linear-gradient(135deg, #2196F3, #21CBF3)', // Gradient background
+  boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)', // Shadow for depth
+}));
+
+// Styled Typography for the banner text
+const BannerText = styled(Typography)(({ theme }) => ({
+  color: '#fff',
+  fontWeight: 'bold',
+  textTransform: 'uppercase',
+  letterSpacing: '2px',
+  textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)', // Text shadow for better readability
+}));
 
 const StyledGrid = styled(Grid)(({ theme }) => ({
   textAlign: 'center',
-  marginTop: theme.spacing(4),
 }));
 
 const Store = () => {
@@ -79,11 +107,15 @@ const Store = () => {
     <>
       <Header />
       <Welcome />
-      <Box my={4} textAlign="center">
-        <Typography variant="h4" component="h1" gutterBottom>
-          NASYIKAT.STORE
-        </Typography>
-      </Box>
+      <BannerContainer>
+        <BannerText gutterBottom>
+          <Box my={4} textAlign="center">
+            <Typography variant="h4" component="h1" gutterBottom>
+              Nasyikat.store
+            </Typography>
+          </Box>
+        </BannerText>
+      </BannerContainer>
       <StyledGrid container spacing={3} justifyContent="center">
         <Grid item xs={12} sm={6} md={4}>
           <StyledSelect
@@ -98,10 +130,10 @@ const Store = () => {
             <MenuItem value="all">Бардык товарлар</MenuItem>
             <MenuItem value="books">Кыргызча китептер</MenuItem>
             <MenuItem value="namaz">Ибадат</MenuItem>
-            <MenuItem value="mens-accessories">Эркектерге</MenuItem>
-            <MenuItem value="womens-accessories">Аялдарга</MenuItem>
+            <MenuItem value="mens">Эркектерге</MenuItem>
+            <MenuItem value="womens">Аялдарга</MenuItem>
             <MenuItem value="home">Үй буюмдары</MenuItem>
-            <MenuItem value="car">Машинага керектүү буюмдар</MenuItem>
+            <MenuItem value="cars">Машинага керектүү буюмдар</MenuItem>
             <MenuItem value="study">Окуучулар </MenuItem>
           </StyledSelect>
         </Grid>
