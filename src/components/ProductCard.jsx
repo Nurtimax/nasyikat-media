@@ -29,7 +29,6 @@ const StyledCard = styled(Card)(({ theme }) => ({
   boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
   borderRadius: '10px',
   overflow: 'hidden',
-  [theme.breakpoints.down('sm')]: {},
 }));
 
 // Стиль для блока цены
@@ -122,6 +121,9 @@ const DescriptionBox = styled(Box)(({ theme }) => ({
   backgroundColor: '#f5f5f5',
 }));
 
+// Стиль для инпутов
+
+
 // Компонент слайдера изображений
 const ImageSlider = ({ images, onImageClick }) => {
   const settings = {
@@ -178,9 +180,7 @@ const ProductCard = ({ product }) => {
             }}
           >
             <PriceBox>
-              <Typography variant="h6" align="center">
-                Баасы {product.price} som
-              </Typography>
+              <Typography align="center">Баасы {product.price} som</Typography>
             </PriceBox>
             <RatingBox>
               <Rating
@@ -241,12 +241,11 @@ const ProductCard = ({ product }) => {
             </SocialLinksBox>
           </InfoBox>
           <Box sx={{ mt: 2 }}>
-            <StyledButton>Order</StyledButton>
+            <StyledButton>Буюртма берүү</StyledButton>
           </Box>
         </CardContent>
       </StyledCard>
 
-      {/* Модальное окно для увеличенного изображения */}
       <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
         <ModalContent>
           <Box sx={{ position: 'relative', width: '100%', height: '90%' }}>
