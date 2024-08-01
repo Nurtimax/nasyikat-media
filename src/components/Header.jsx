@@ -112,6 +112,7 @@ const Header = () => {
             { text: 'Китебим Куран', path: '/quran' },
             { text: 'Кутту Хадистер', path: '/hadis' },
             { text: 'Пайдалуу дубалар', path: '/duba' },
+            { text: 'Тасбих', path: '/zikr' },
             { text: 'Онлайн Дүкөн', path: '/store' },
           ].map((item, index) => (
             <ListItem

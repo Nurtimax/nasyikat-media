@@ -6,6 +6,7 @@ import Quran from './Quran';
 import Hadis from './Hadis';
 import Duba from './Duba';
 import Store from './Store';
+import Zikr from '../components/zikr';
 import ChubakAjyJallilov from './aalymdar.kg/ChubakAjyJallilov';
 import AbdushukurAjy from './aalymdar.kg/AbdushukurAjy';
 import MaksatAjy from './aalymdar.kg/MaksatAjy';
@@ -32,6 +33,7 @@ const MainRouter = () => {
         <Route path="/hadis" element={<Hadis />} />
         <Route path="/duba" element={<Duba />} />
         <Route path="/store" element={<Store />} />
+        <Route path="/zikr" element={<Zikr />} />
         <Route path="/chubakajyjallilov" element={<ChubakAjyJallilov />} />
         <Route path="/abdushukurajy" element={<AbdushukurAjy />} />
         <Route path="/maksatajy" element={<MaksatAjy />} />
