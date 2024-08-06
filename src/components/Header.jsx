@@ -8,10 +8,11 @@ import {
   List,
   ListItem,
   ListItemText,
+  Button,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Box, styled } from '@mui/system';
-import { Verified } from '@mui/icons-material';
+import { Instagram, Telegram, Verified } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 
 const ResponsiveDrawer = styled(Drawer)(({ theme }) => ({
@@ -123,6 +124,111 @@ const Header = () => {
               <ResponsiveListItemText primary={item.text} />
             </ListItem>
           ))}
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              minHeight: '45vh',
+              justifyContent: 'flex-end', // Располагает содержимое внизу
+              padding: '0 16px', // Optional: add some horizontal padding
+            }}
+          >
+            <ListItem
+              sx={{
+                borderTop: '1px solid #ddd',
+                textAlign: 'center',
+                backgroundColor: '#f9f9f9',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+              }}
+            >
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '1rem',
+                }}
+              >
+                <IconButton
+                  component="a"
+                  href="https://www.instagram.com/nasyikat.media/"
+                  target="_blank"
+                  sx={{
+                    backgroundColor: 'transparent',
+                    padding: 0,
+                    borderRadius: 0,
+                    '&:hover': {
+                      backgroundColor: 'transparent',
+                    },
+                  }}
+                >
+                  <Button
+                    color="secondary"
+                    sx={{
+                      textTransform: 'none',
+                      padding: 0,
+                      fontSize: '1rem',
+                    }}
+                  >
+                    {' '}
+                    Nasyikat.media
+                  </Button>
+                  <Verified color="primary" sx={{ marginLeft: '8px' }} />
+                </IconButton>
+              </Box>
+              <ListItemText
+                secondary="Динге сый менен келбесең,  ый менен келесиң!"
+                secondaryTypographyProps={{
+                  fontStyle: 'initial',
+                }}
+              />
+              <Typography variant="body6">© Чубак ажы Жалилов</Typography>
+            </ListItem>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                gap: '8px',
+                padding: '16px 0', // Optional: add vertical padding
+                backgroundColor: '#f9f9f9', // Same background color for consistency
+              }}
+            >
+              <IconButton
+                component="a"
+                href="https://www.instagram.com/nasyikat.media/"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  color: '#E4405F', // Instagram color
+                  transition: 'color 0.3s, transform 0.3s',
+                  '&:hover': {
+                    color: '#C13584', // Darker Instagram color on hover
+                    transform: 'scale(1.1)', // Scale up on hover
+                  },
+                }}
+              >
+                <Instagram />
+              </IconButton>
+              <IconButton
+                component="a"
+                href="https://t.me/+SEJbmn8AwNViNmNi"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  color: '#0088cc', // Telegram color
+                  transition: 'color 0.3s, transform 0.3s',
+                  '&:hover': {
+                    color: '#007ab8', // Darker Telegram color on hover
+                    transform: 'scale(1.1)', // Scale up on hover
+                  },
+                }}
+              >
+                <Telegram />
+              </IconButton>
+            </Box>
+          </Box>
         </List>
       </ResponsiveDrawer>
     </div>

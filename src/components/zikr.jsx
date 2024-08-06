@@ -10,6 +10,7 @@ import {
 import { styled } from '@mui/system';
 import Header from './Header';
 import Welcome from './Welcome';
+import Footer from './Footer';
 
 const TasbihCard = styled(Card)(({ theme, animate }) => ({
   maxWidth: 400,
@@ -116,7 +117,7 @@ const Zikr = () => {
   const handleTextChange = (event) => setSelectedText(event.target.value);
 
   return (
-    <Container>
+    <div>
       <Header />
       <Welcome />
       <TasbihCard animate={animate}>
@@ -175,7 +176,9 @@ const Zikr = () => {
       </TasbihCard>
 
       <style>{pulseAnimation}</style>
-    </Container>
+
+      <Footer />
+    </div>
   );
 };
 

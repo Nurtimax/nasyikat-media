@@ -1,46 +1,55 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Card,
   CardContent,
-  CardMedia,
   Typography,
-  Grid,
-  Button,
+  Rating,
   Avatar,
-  Link,
   Box,
-  Dialog,
+  styled,
+  CardMedia,
+  Button,
   IconButton,
+  Grid,
 } from '@mui/material';
-import { styled } from '@mui/system';
-import Slider from 'react-slick';
+import Carousel from 'react-material-ui-carousel';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Rating from '@mui/material/Rating';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import DiscountIcon from '@mui/icons-material/LocalOffer';
 import PhoneIcon from '@mui/icons-material/Phone';
 import VerifiedIcon from '@mui/icons-material/Verified';
-import CloseIcon from '@mui/icons-material/Close';
+import { keyframes } from '@mui/system';
 
-// Стиль для карточки продукта
+const pulseAnimation = keyframes`
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+`;
+
 const StyledCard = styled(Card)(({ theme }) => ({
   width: '100%',
+  height: '600px',
   boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
   borderRadius: '10px',
   overflow: 'hidden',
+  display: 'flex',
+  flexDirection: 'column',
+  position: 'relative',
+  cursor: 'pointer',
 }));
 
-// Стиль для блока цены
 const PriceBox = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(),
+  padding: theme.spacing(1),
   borderRadius: theme.shape.borderRadius,
   display: 'inline-block',
+  backgroundColor: '#f0f0f0',
 }));
 
-// Стиль для кнопки
 const StyledButton = styled(Button)(({ theme }) => ({
-  marginTop: theme.spacing(),
+  marginTop: theme.spacing(2),
   borderRadius: '20px',
   width: '100%',
   backgroundColor: '#2196F3',
@@ -50,14 +59,18 @@ const StyledButton = styled(Button)(({ theme }) => ({
   },
 }));
 
-// Стиль для блока рейтинга и отзывов
+const DescriptionTypography = styled(Typography)(({ theme }) => ({
+  marginBottom: theme.spacing(2),
+  color: '#555',
+  textAlign: 'center',
+}));
+
 const RatingBox = styled(Box)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
 }));
 
-// Стиль для блока соцсетей и аватара
 const InfoBox = styled(Box)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
@@ -66,14 +79,12 @@ const InfoBox = styled(Box)(({ theme }) => ({
   mb: theme.spacing(2),
 }));
 
-// Стиль для блока соцсетей
 const SocialLinksBox = styled(Box)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   gap: theme.spacing(1.5),
 }));
 
-// Стиль для значка
 const FeaturedBadge = styled(Box)(({ theme }) => ({
   width: '24px',
   height: '24px',
@@ -85,199 +96,206 @@ const FeaturedBadge = styled(Box)(({ theme }) => ({
   marginLeft: theme.spacing(1),
 }));
 
-// Стиль для модального окна изображения
-const ModalImageSlider = styled(Slider)(({ theme }) => ({
+const ImageSlider = styled(Carousel)(({ theme }) => ({
   '& .slick-slide img': {
     width: '100%',
-    height: '100%',
+    height: '300px',
     objectFit: 'contain',
   },
-}));
-
-// Стиль для кнопки закрытия модального окна
-const CloseButton = styled(IconButton)(({ theme }) => ({
-  position: 'absolute',
-  top: theme.spacing(2),
-  right: theme.spacing(2),
-  zIndex: 1,
-  color: 'white',
-  backgroundColor: '#00000099',
-  '&:hover': {
-    backgroundColor: '#000000cc',
+  '& .slick-dots li button:before': {
+    color: '#FF0000',
+  },
+  '& .slick-dots li.slick-active button:before': {
+    color: '#FF0000',
   },
 }));
 
-// Стиль для модального окна
-const ModalContent = styled(Box)(({ theme }) => ({
-  height: '49vh',
+const DiscountBadge = styled(Box)(({ theme }) => ({
+  position: 'absolute',
+  top: 16,
+  right: 16,
+  backgroundColor: '#FFA500',
+  borderRadius: '50%',
+  padding: '8px',
+  zIndex: 10,
   display: 'flex',
-  flexDirection: 'column',
-  overflow: 'hidden',
+  alignItems: 'center',
+  justifyContent: 'center',
 }));
 
-// Стиль для описания товара
-const DescriptionBox = styled(Box)(({ theme }) => ({
-  textAlign: 'center',
-  backgroundColor: '#f5f5f5',
-}));
-
-// Стиль для инпутов
-
-
-// Компонент слайдера изображений
-const ImageSlider = ({ images, onImageClick }) => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 600,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-  };
-
-  return (
-    <Slider {...settings}>
-      {images.map((image, index) => (
-        <CardMedia
-          key={index}
-          component="img"
-          alt={`product image ${index}`}
-          height="270"
-          image={image}
-          onClick={() => onImageClick(image)}
-          style={{ cursor: 'pointer' }}
-        />
-      ))}
-    </Slider>
-  );
+const createWhatsAppMessage = (product, storeWhatsapp) => {
+  const { name, price } = product;
+  const message = `Ассаламу алейкум! ушул товарга буюртма берейин дедим эле:\n\nТовардын аты: ${name}\nбаасы: ${price} с. Буюртманы тактоо учун мени менен байланышсаңыз.`;
+  const encodedMessage = encodeURIComponent(message);
+  return `https://wa.me/${storeWhatsapp}?text=${encodedMessage}`;
 };
 
-const ProductCard = ({ product }) => {
-  const [open, setOpen] = useState(false);
+// ProductCard Component
+function ProductCard({ product }) {
+  if (!product) {
+    return <div>Product not found</div>;
+  }
 
-  const handleImageClick = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
+  const handleOrderClick = () => {
+    if (product.storeWhatsapp) {
+      window.open(
+        createWhatsAppMessage(product, product.storeWhatsapp),
+        '_blank'
+      );
+    } else {
+      alert('WhatsApp number is not provided for this product.');
+    }
   };
 
   return (
-    <>
-      <StyledCard>
-        <ImageSlider images={product.images} onImageClick={handleImageClick} />
-        <CardContent>
-          <Typography variant="h4" component="div" gutterBottom align="center">
-            {product.name}
-          </Typography>
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              mb: 2,
-            }}
-          >
-            <PriceBox>
-              <Typography align="center">Баасы {product.price} som</Typography>
-            </PriceBox>
-            <RatingBox>
-              <Rating
-                name="product-rating"
-                value={product.rating}
-                precision={0.5}
-                readOnly
-              />
-              <Typography variant="body2" sx={{ ml: 1 }}>
-                ({product.reviews} reviews)
-              </Typography>
-            </RatingBox>
-          </Box>
-          <InfoBox>
-            <Grid container alignItems="center" spacing={2}>
-              <Grid item>
-                <Avatar alt="Store Avatar" src={product.storeAvatar} />
-              </Grid>
-              <Grid item>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  style={{ display: 'flex', alignItems: 'center' }}
-                >
-                  {product.storeName}
-                  {product.isFeatured && (
-                    <FeaturedBadge>
-                      <VerifiedIcon fontSize="small" color="primary" />
-                    </FeaturedBadge>
-                  )}
-                </Typography>
-              </Grid>
-            </Grid>
-            <SocialLinksBox>
-              {product.storeWhatsapp && (
-                <Link
-                  href={`https://wa.me/${product.storeWhatsapp}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <WhatsAppIcon />
-                </Link>
-              )}
-              {product.storeInstagram && (
-                <Link
-                  href={`https://instagram.com/${product.storeInstagram}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <InstagramIcon />
-                </Link>
-              )}
-              {product.storePhone && (
-                <Link href={`tel:${product.storePhone}`}>
-                  <PhoneIcon />
-                </Link>
-              )}
-            </SocialLinksBox>
-          </InfoBox>
-          <Box sx={{ mt: 2 }}>
-            <StyledButton>Буюртма берүү</StyledButton>
-          </Box>
-        </CardContent>
-      </StyledCard>
-
-      <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
-        <ModalContent>
-          <Box sx={{ position: 'relative', width: '100%', height: '90%' }}>
-            <CloseButton onClick={handleClose}>
-              <CloseIcon fontSize="small" />
-            </CloseButton>
-            <ModalImageSlider
-              dots={true}
-              infinite={true}
-              speed={600}
-              slidesToShow={1}
-              slidesToScroll={1}
-            >
-              {product.images.map((image, index) => (
-                <CardMedia
-                  key={index}
-                  component="img"
-                  alt={`zoomed product image ${index}`}
-                  image={image}
-                />
-              ))}
-            </ModalImageSlider>
-          </Box>
-          <DescriptionBox>
-            <Typography variant="h6" component="div" gutterBottom>
-              {product.description}
+    <StyledCard>
+      {product.sale && (
+        <DiscountBadge>
+          <DiscountIcon sx={{ color: '#fff' }} />
+        </DiscountBadge>
+      )}
+      <ImageSlider
+        dots={true}
+        infinite={true}
+        speed={600}
+        slidesToShow={1}
+        slidesToScroll={1}
+      >
+        {product.images.map((image, index) => (
+          <CardMedia
+            key={index}
+            component="img"
+            alt={`product image ${index}`}
+            height="300"
+            image={image}
+            style={{ cursor: 'pointer' }}
+          />
+        ))}
+      </ImageSlider>
+      <CardContent sx={{ flex: '1 0 auto' }}>
+        <Typography
+          variant="h4"
+          component="div"
+          gutterBottom
+          align="center"
+          sx={{ fontWeight: 'bold', color: '#333' }}
+        >
+          {product.name}
+        </Typography>
+        <DescriptionTypography variant="body2">
+          {product.description}
+        </DescriptionTypography>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            mb: 2,
+          }}
+        >
+          <PriceBox>
+            <Typography align="center" variant="h6" sx={{ fontWeight: 'bold' }}>
+              Баасы {product.price} сом
             </Typography>
-          </DescriptionBox>
-        </ModalContent>
-      </Dialog>
-    </>
+          </PriceBox>
+          <RatingBox>
+            <Rating
+              name="product-rating"
+              value={product.rating}
+              precision={0.5}
+              readOnly
+              size="small"
+              sx={{ color: '#FFB400' }}
+            />
+            <Typography variant="body2" sx={{ ml: 1 }}>
+              ({product.reviews} reviews)
+            </Typography>
+          </RatingBox>
+        </Box>
+        <InfoBox>
+          <Grid container alignItems="center" spacing={2}>
+            <Grid item>
+              <Avatar
+                alt="Store Avatar"
+                src={product.storeAvatar}
+                sx={{ width: 40, height: 40, border: '2px solid #2196F3' }}
+              />
+            </Grid>
+            <Grid item>
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                style={{ display: 'flex', alignItems: 'center' }}
+              >
+                {product.storeName}
+                {product.isFeatured && (
+                  <FeaturedBadge>
+                    <VerifiedIcon fontSize="small" color="primary" />
+                  </FeaturedBadge>
+                )}
+              </Typography>
+            </Grid>
+          </Grid>
+          <SocialLinksBox>
+            {product.storeWhatsapp && (
+              <IconButton
+                aria-label="whatsapp"
+                href={`https://wa.me/${product.storeWhatsapp}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  color: '#25D366',
+                  animation: `${pulseAnimation} 1.5s infinite`,
+                }}
+              >
+                <WhatsAppIcon />
+              </IconButton>
+            )}
+            {product.storeInstagram && (
+              <IconButton
+                aria-label="instagram"
+                href={`https://instagram.com/${product.storeInstagram}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  color: '#C13584',
+                  animation: `${pulseAnimation} 1.5s infinite`,
+                }}
+              >
+                <InstagramIcon />
+              </IconButton>
+            )}
+            {product.storePhone && (
+              <IconButton aria-label="phone" href={`tel:${product.storePhone}`}>
+                <PhoneIcon />
+              </IconButton>
+            )}
+          </SocialLinksBox>
+        </InfoBox>
+        <Box sx={{ mt: 2 }}>
+          <StyledButton onClick={handleOrderClick}>Заказать</StyledButton>
+        </Box>
+      </CardContent>
+    </StyledCard>
   );
+}
+
+ProductCard.propTypes = {
+  product: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired,
+    reviews: PropTypes.number.isRequired,
+    images: PropTypes.arrayOf(PropTypes.string).isRequired,
+    description: PropTypes.string,
+    storeAvatar: PropTypes.string,
+    storeName: PropTypes.string.isRequired,
+    storeWhatsapp: PropTypes.string,
+    storeInstagram: PropTypes.string,
+    storePhone: PropTypes.string,
+    sale: PropTypes.bool,
+    isFeatured: PropTypes.bool,
+  }).isRequired,
 };
 
 export default ProductCard;

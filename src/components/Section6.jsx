@@ -12,12 +12,24 @@ import {
 import { LocationOn, AccessTime } from '@mui/icons-material';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import muslim from './data/islam-3-yiyk-jer/muslimplace';
+import img from '../assetts/icons/section-img.png';
 
 const Section6 = () => {
   return (
     <div
       style={{ marginTop: '20px', backgroundColor: '#f0f0f0', padding: '20px' }}
     >
+      <Box
+        sx={{
+          img: {
+            width: '100%',
+            maxWidth: '100%',
+            height: 'auto',
+          },
+        }}
+      >
+        <img src={img} alt="Section Illustration" />
+      </Box>
       <div style={{ textAlign: 'center', marginBottom: '30px' }}>
         <h1>Мусулмандардын 3 ыйык жери</h1>
       </div>
@@ -59,15 +71,15 @@ const Section6 = () => {
                     gap={1}
                   >
                     <LocationOn fontSize="small" />
-                    <Typography variant="body2" color="textSecondary">
+                    <Typography variant="body6" color="textSecondary">
                       {card.location}
                     </Typography>
                     <CalendarMonthIcon fontSize="small" />
-                    <Typography variant="body2" color="textSecondary">
+                    <Typography variant="body6" color="textSecondary">
                       {card.date}
                     </Typography>
                     <AccessTime fontSize="small" />
-                    <Typography variant="body2" color="textSecondary">
+                    <Typography variant="body6" color="textSecondary">
                       {card.time}
                     </Typography>
                   </Box>
@@ -77,6 +89,18 @@ const Section6 = () => {
           </Grid>
         ))}
       </Grid>
+      <Box
+        sx={{
+          marginTop: '20px',
+          img: {
+            width: '100%',
+            maxWidth: '100%',
+            height: 'auto',
+          },
+        }}
+      >
+        <img src={img} alt="Section Illustration" />
+      </Box>
     </div>
   );
 };

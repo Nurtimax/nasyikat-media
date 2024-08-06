@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Typography, Box, Grid } from '@mui/material';
 import Header from './Header';
 import img from '../assetts/images/islam/islam.png';
+import Footer from '../components/Footer';
 
 const Islam = () => {
   return (
@@ -102,9 +103,9 @@ const Islam = () => {
               boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
             }}
           ></iframe>
-          ;
         </Box>
       </Container>
+      <Footer />
     </>
   );
 };

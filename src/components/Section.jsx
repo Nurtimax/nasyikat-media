@@ -14,7 +14,7 @@ const Section = () => {
   return (
     <>
       <Typography
-        variant="h4"
+        variant="h5"
         align="center"
         gutterBottom
         style={{
@@ -43,9 +43,6 @@ const Section = () => {
                   </Typography>
                   <Typography variant="body2" color="text.secondary" paragraph>
                     Аллах бизден жана сиздерден жакшы амалдардын кабыл кылсын
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary" paragraph>
-                    Видеолордун сыны
                   </Typography>
                   <Button color="secondary" variant="contained">
                     Видеолорду көрүү

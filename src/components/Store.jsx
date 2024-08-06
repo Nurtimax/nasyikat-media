@@ -14,6 +14,7 @@ import ProductCard from './ProductCard';
 import products from './data/ProductCard/productdetails.js';
 import Welcome from '../components/Welcome';
 import styled from '@mui/material/styles/styled';
+import Footer from './Footer.jsx';
 
 const StyledSelect = styled(Select)(({ theme, isMinWidth280, isMobile }) => ({
   minWidth: isMinWidth280 ? '100%' : '280px',
@@ -169,6 +170,7 @@ const Store = () => {
           ))}
         </Grid>
       </Box>
+      <Footer />
     </>
   );
 };
