@@ -7,16 +7,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Header from '../components/Header';
 import Welcome from '../components/Welcome';
 import { styled } from '@mui/system';
-import { FaInstagram, FaTiktok } from 'react-icons/fa6';
-
-const Container = styled('div')(({ theme }) => ({
-  maxWidth: '900px',
-  margin: 'auto',
-  padding: '20px',
-  marginTop: '20px',
-  borderRadius: '10px',
-  boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
-}));
+import Footer from '../components/Footer';
 
 const StyledAccordion = styled(Accordion)(({ theme }) => ({
   margin: '10px 0',
@@ -44,26 +35,7 @@ const AccordionDetailsStyled = styled(AccordionDetails)(({ theme }) => ({
 const Heading = styled(Typography)(({ theme }) => ({
   fontSize: '1.2rem',
   fontWeight: 'bold',
-  color: '#37474f', // Darker text color for contrast
-}));
-
-const Footer = styled('div')(({ theme }) => ({
-  marginTop: '20px',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  padding: '10px 0',
-  backgroundColor: '#e0e0e0',
-  borderRadius: '0 0 10px 10px',
-}));
-
-const Icon = styled('a')(({ theme }) => ({
-  margin: '0 10px',
   color: '#37474f',
-  fontSize: '24px',
-  '&:hover': {
-    color: '#81c784d0',
-  },
 }));
 
 const IslamdynParzdary = () => {
@@ -71,8 +43,13 @@ const IslamdynParzdary = () => {
     <div>
       <Header />
       <Welcome />
-      <Container>
-        <Typography variant="h5" align="center" gutterBottom>
+      <div>
+        <Typography
+          variant="h4"
+          align="center"
+          gutterBottom
+          style={{ marginTop: '1rem', marginBottom: '1rem' }}
+        >
           Бактылуулук Исламда 40 Парз
         </Typography>
 
@@ -242,24 +219,8 @@ const IslamdynParzdary = () => {
             <Typography component="div">1. Илим алуу</Typography>
           </AccordionDetailsStyled>
         </StyledAccordion>
-
-        <Footer>
-          <Icon
-            href="https://www.tiktok.com/@nasyikat.media?_t=8oOtPBLSRKA&_r=1"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaTiktok />
-          </Icon>
-          <Icon
-            href="https://www.instagram.com/nasyikat.media/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaInstagram />
-          </Icon>
-        </Footer>
-      </Container>
+      </div>
+      <Footer />
     </div>
   );
 };

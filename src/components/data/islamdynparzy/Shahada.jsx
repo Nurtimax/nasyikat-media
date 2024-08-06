@@ -15,18 +15,24 @@ const Shahada = () => {
         <StyledImageContainer></StyledImageContainer>
         <StyledTextContainer>
           <StyledTypography variant="h4" component="h1" gutterBottom>
-            Урматтуу мусулман бир тууганым!
+            Урматтуу мусулман бир тууганым! Бир Алладан башка Кудай жок жана
+            Мухаммад анын элчиси деп күбөлүк берүү
           </StyledTypography>
+          <StyledTypography variant="h4" component="h1" gutterBottom>
+            («Ла илаха илла-ллоху Мухаммадур расуллалох»)
+          </StyledTypography>
+          <StyledText variant="body1" component="div">
+            ШАХАДАТ айтуу менен пенде Аллах Таалага ыйман келтирип, Мухаммад
+            (салаллоху алейхи уа саллам) Аллах Таала жиберген акыркы пайгамбар
+            экенин кабылдоо. Муну айтуу менен пенде эң туура, эң жакшы, эң
+            бактылуу, тынчтыктын дини болгон- ислам динин кабыл алат.
+          </StyledText>
           <StyledText variant="body1" component="div">
             Ыйман бул – тил менен айтуу, жүрөк менен ишенүү жана амал менен
             тастыктоо...
           </StyledText>
           <StyledText variant="body1" component="div">
-            Шахадат (кyбөлyк) келмеси – адамдын исламга киришиндеги эң алгачкы
-            баскыч...
-          </StyledText>
-          <StyledText variant="body1" component="div">
-            Шахадат келмеси – бул, أَشْهَدُ أَنْ لَا إِلٰهَ إِلاَّ اللّٰهُ
+            Шахадат келмеси <br /> أَشْهَدُ أَنْ لَا إِلٰهَ إِلاَّ اللّٰهُ
             وَأَشْهَدُ أَنَّ محَّدًا...
           </StyledText>
         </StyledTextContainer>
@@ -47,6 +53,7 @@ const StyledContainer = styled(Box)(({ theme }) => ({
   backgroundRepeat: 'no-repeat',
   boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
   textAlign: 'center',
+  height: '100%',
 }));
 
 const StyledImageContainer = styled(Box)(({ theme }) => ({

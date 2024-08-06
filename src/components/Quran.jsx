@@ -15,12 +15,14 @@ import PauseCircleFilledIcon from '@mui/icons-material/PauseCircleFilled';
 import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 import Header from './Header';
-import surahs from './data/quran/quran'; // Проверьте правильность пути
+import surahs from './data/quran/quran';
+import Footer from '../components/Footer';
 
 const Background = styled('div')(({ theme }) => ({
   backgroundSize: '400% 400%',
   animation: 'gradientBG 15s ease infinite',
   minHeight: '100vh',
+  overflow: 'hidden',
   paddingBottom: '40px',
   [theme.breakpoints.down('sm')]: {
     paddingBottom: '20px',
@@ -84,58 +86,60 @@ const Quran = () => {
   };
 
   return (
-    <Background>
-      <Header />
-      <StyledContainer maxWidth="md">
-        <Box textAlign="center" mb={3}>
-          <Typography variant="h5" component="h1" gutterBottom>
-            Китебим Куран
-          </Typography>
-        </Box>
-        <List>
-          {surahs.map((surah, index) => (
-            <ListItem key={index} divider>
-              <Grid container alignItems="center" spacing={3}>
-                <Grid item xs={6}>
-                  <ListItemText primary={surah.title} />
-                </Grid>
-                <Grid item xs={2}>
-                  <IconButton
-                    aria-label="previous"
-                    onClick={handleSkipPrevious}
-                  >
-                    <SkipPreviousIcon />
-                  </IconButton>
-                </Grid>
-                <Grid item xs={2}>
-                  {currentSurah === surah && isPlaying ? (
+    <div>
+      <Background>
+        <Header />
+        <StyledContainer maxWidth="md">
+          <Box textAlign="center" mb={3}>
+            <Typography variant="h5" component="h1" gutterBottom>
+              Китебим Куран
+            </Typography>
+          </Box>
+          <List>
+            {surahs.map((surah, index) => (
+              <ListItem key={index} divider>
+                <Grid container alignItems="center" spacing={3}>
+                  <Grid item xs={6}>
+                    <ListItemText primary={surah.title} />
+                  </Grid>
+                  <Grid item xs={2}>
                     <IconButton
-                      aria-label="pause"
-                      onClick={() => handlePlayPause(surah)}
+                      aria-label="previous"
+                      onClick={handleSkipPrevious}
                     >
-                      <PauseCircleFilledIcon />
+                      <SkipPreviousIcon />
                     </IconButton>
-                  ) : (
-                    <IconButton
-                      aria-label="play"
-                      onClick={() => handlePlayPause(surah)}
-                    >
-                      <PlayArrowIcon />
+                  </Grid>
+                  <Grid item xs={2}>
+                    {currentSurah === surah && isPlaying ? (
+                      <IconButton
+                        aria-label="pause"
+                        onClick={() => handlePlayPause(surah)}
+                      >
+                        <PauseCircleFilledIcon />
+                      </IconButton>
+                    ) : (
+                      <IconButton
+                        aria-label="play"
+                        onClick={() => handlePlayPause(surah)}
+                      >
+                        <PlayArrowIcon />
+                      </IconButton>
+                    )}
+                  </Grid>
+                  <Grid item xs={2}>
+                    <IconButton aria-label="next" onClick={handleSkipNext}>
+                      <SkipNextIcon />
                     </IconButton>
-                  )}
+                  </Grid>
                 </Grid>
-                <Grid item xs={2}>
-                  <IconButton aria-label="next" onClick={handleSkipNext}>
-                    <SkipNextIcon />
-                  </IconButton>
-                </Grid>
-              </Grid>
-            </ListItem>
-          ))}
-        </List>
-        <audio ref={audioRef} controls />
-      </StyledContainer>
-    </Background>
+              </ListItem>
+            ))}
+          </List>
+        </StyledContainer>
+      </Background>
+      <Footer />
+    </div>
   );
 };
 

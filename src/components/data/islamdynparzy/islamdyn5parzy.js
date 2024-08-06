@@ -20,13 +20,6 @@ const islamdyn5Parzy = [
     route: '/namaz',
   },
   {
-    image: Zeket,
-    alt: 'Zeket',
-    title: 'Зекет берүү;',
-    text: '«Алардын мал-мүлктөрүндө кайырчынын жана муктаждын акысы бар». <br /> (Зарият сүрөөсү, 19-аят)',
-    route: '/zeket',
-  },
-  {
     image: Ramazan,
     alt: 'Ramazan',
     title: 'Орозо кармоо;',
@@ -34,10 +27,18 @@ const islamdyn5Parzy = [
     route: '/orozo',
   },
   {
+    image: Zeket,
+    alt: 'Zeket',
+    title: 'Зекет берүү;',
+    text: '«Алардын мал-мүлктөрүндө кайырчынын жана муктаждын акысы бар». <br /> (Зарият сүрөөсү, 19-аят)',
+    route: '/zeket',
+  },
+
+  {
     image: Hadj,
     alt: 'Hadj',
     title: 'Ажыга баруу',
-    text: '(кимдин мүмкүнчүлүгү болсо).',
+    text: 'Аллах Таала өз пенделерине эгер мүмкүнчүлүгү болсо, өмүрүндө бир жолу хаж ибаадатын парз кылды.',
     route: '/ajylyk',
   },
 ];
