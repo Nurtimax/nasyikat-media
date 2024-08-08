@@ -25,7 +25,14 @@ const Section = () => {
       >
         ААЛЫМДАР ПАЙГАМБАРЛАРДЫН МУРАСКОРЛОРУ.
       </Typography>
-      <Grid container spacing={2} justifyContent="center">
+      <Grid
+        container
+        spacing={2}
+        justifyContent="center"
+        style={{
+          background: '#f6edde',
+        }}
+      >
         {kyrgyzaAlymdary.map((scholar, index) => (
           <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
             <Link to={scholar.link} style={{ textDecoration: 'none' }}>
@@ -37,7 +44,12 @@ const Section = () => {
                   alt={scholar.name}
                   sx={{ borderRadius: 1 }}
                 />
-                <CardContent sx={{ textAlign: 'center' }}>
+                <CardContent
+                  sx={{ textAlign: 'center' }}
+                  style={{
+                    background: '#d9d9d9',
+                  }}
+                >
                   <Typography variant="h5" component="div" gutterBottom>
                     {scholar.name}
                   </Typography>

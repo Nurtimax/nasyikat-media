@@ -1,4 +1,4 @@
-import imgexam from '../../../assetts/images/islam/AllahuAkbar.avif';
+import imgexam from '../../../assetts/icons/logo-nasykat.png';
 
 const duaData = [
   {

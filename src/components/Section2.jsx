@@ -3,6 +3,7 @@ import { styled } from '@mui/system';
 import islamdyn5Parzy from './data/islamdynparzy/islamdyn5parzy';
 import { Link } from 'react-router-dom';
 import { FaMoon } from 'react-icons/fa';
+import bgimg from '../assetts/icons/bgislam.png';
 
 const Section2 = () => {
   return (
@@ -56,10 +57,12 @@ const CardsContainer = styled('div')(({ theme }) => ({
 }));
 
 const Card = styled('div')(({ theme }) => ({
-  position: 'relative', // Needed for positioning the icon
+  position: 'relative',
   width: '100%',
   maxWidth: '300px',
-  backgroundColor: '#f0f0f0',
+  backgroundImage: `url(${bgimg})`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'flex-end',
   borderRadius: '8px',
   boxShadow: '0 0 10px rgba(0,0,0,0.1)',
   textAlign: 'center',
@@ -79,6 +82,8 @@ const CardImage = styled('img')({
   height: 'auto',
   maxHeight: '17.375rem',
   objectFit: 'cover',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
 });
 
 const IconWrapper = styled('div')({
