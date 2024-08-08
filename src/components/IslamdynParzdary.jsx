@@ -19,7 +19,7 @@ const StyledAccordion = styled(Accordion)(({ theme }) => ({
 }));
 
 const AccordionSummaryStyled = styled(AccordionSummary)(({ theme }) => ({
-  backgroundColor: '#a5d6a7c6', // Soft green color
+  backgroundColor: '#4f8f5cc5', // Soft green color
   borderRadius: '10px',
   '&:hover': {
     backgroundColor: '#81c784d0',
@@ -35,7 +35,7 @@ const AccordionDetailsStyled = styled(AccordionDetails)(({ theme }) => ({
 const Heading = styled(Typography)(({ theme }) => ({
   fontSize: '1.2rem',
   fontWeight: 'bold',
-  color: '#37474f',
+  color: '#32383b',
 }));
 
 const IslamdynParzdary = () => {
@@ -48,7 +48,7 @@ const IslamdynParzdary = () => {
           variant="h4"
           align="center"
           gutterBottom
-          style={{ marginTop: '1rem', marginBottom: '1rem' }}
+          style={{ marginTop: '2rem', marginBottom: '1rem' }}
         >
           Бактылуулук Исламда 40 Парз
         </Typography>
@@ -215,7 +215,8 @@ const IslamdynParzdary = () => {
           <AccordionSummaryStyled expandIcon={<ExpandMoreIcon />}>
             <Heading variant="h6">Илимде 1 парз бар</Heading>
           </AccordionSummaryStyled>
-          <AccordionDetailsStyled>
+
+          <AccordionDetailsStyled style={{ marginBottom: '10px' }}>
             <Typography component="div">1. Илим алуу</Typography>
           </AccordionDetailsStyled>
         </StyledAccordion>

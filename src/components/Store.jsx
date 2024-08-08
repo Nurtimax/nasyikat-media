@@ -48,16 +48,21 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
 // Styled container for the banner
 const BannerContainer = styled(Box)(({ theme }) => ({
   textAlign: 'center',
-  background: 'linear-gradient(135deg, #2196F3, #21CBF3)', // Gradient background
-  boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)', // Shadow for depth
+  background: '#071c6b',
+  boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
+  padding: '0.2rem',
+  marginTop: '2rem',
+  marginBottom: '1rem',
+  borderRadius: '5px',
 }));
 
 // Styled Typography for the banner text
 const BannerText = styled(Typography)(({ theme }) => ({
-  color: '#fff',
+  color: '#ffc876',
   fontWeight: 'bold',
   textTransform: 'uppercase',
   letterSpacing: '2px',
+  fontFamily: 'sans-serif',
   textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)', // Text shadow for better readability
 }));
 
@@ -130,12 +135,10 @@ const Store = () => {
           >
             <MenuItem value="all">Бардык товарлар</MenuItem>
             <MenuItem value="books">Кыргызча китептер</MenuItem>
-            <MenuItem value="namaz">Ибадат</MenuItem>
-            <MenuItem value="mens">Эркектерге</MenuItem>
-            <MenuItem value="womens">Аялдарга</MenuItem>
+            <MenuItem value="namaz">Ибадат буюмдары</MenuItem>
+            <MenuItem value="mens">Эркектердин буюмдары</MenuItem>
+            <MenuItem value="womens">Аялдардын буюмдары</MenuItem>
             <MenuItem value="home">Үй буюмдары</MenuItem>
-            <MenuItem value="cars">Машинага керектүү буюмдар</MenuItem>
-            <MenuItem value="study">Окуучулар </MenuItem>
           </StyledSelect>
         </Grid>
         <Grid item xs={12} sm={6} md={5}>

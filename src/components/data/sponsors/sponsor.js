@@ -1,5 +1,5 @@
 import iteaasy from '../../../assetts/icons/iteeasy.png';
-import arzanpods from '../../../assetts/icons/arzanpods.png';
+import arzanpods from '../../../assetts/icons/arzan.png';
 import kurzhun from '../../../assetts/icons/kurzhun.png';
 
 const sponsors = [
@@ -8,10 +8,10 @@ const sponsors = [
     description:
       'Arzanstore.ru – онлайн-магазин, наушник телефондорду эн арзан баада таба алсыз.',
     image: arzanpods,
-    link: 'https://kurzhun-store.vercel.app/',
+    link: 'https://arzanstore-ru.vercel.app/',
     address: 'Россия, Москва онлайн',
     whatsapp: '+79998152638',
-    telegram: 'https://t.me/+DDjZ79SzePk0YTVi',
+    telegram: 'https://t.me/+cB86aKVNKShkMmYy',
     instagram: 'arzanpods.ru',
   },
   {
@@ -27,7 +27,7 @@ const sponsors = [
   {
     name: 'Kurzhun.shop',
     description:
-      'Kurzhun Shop – онлайн-магазин сумка рюкзак эко кожадан жасалган.',
+      'Kurzhun Shop – онлайн-магазин булгаарыдан жасалган сапаттуу баштыктар.',
     image: kurzhun,
     link: 'https://kurzhun-store.vercel.app/',
     address: 'Бишкек онлайн',

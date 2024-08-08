@@ -9,11 +9,18 @@ import {
   ListItem,
   ListItemText,
   Button,
+  Box,
+  ListItemIcon,
+  Snackbar,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Box, styled } from '@mui/system';
 import { Instagram, Telegram, Verified } from '@mui/icons-material';
+import { styled } from '@mui/system';
 import { useNavigate } from 'react-router-dom';
+import bgimg from '../assetts/icons/bacimg.png';
+import 'react-toastify/dist/ReactToastify.css';
+import CloseIcon from '@mui/icons-material/Close';
+import bgdialogimg from '../assetts/icons/bgsmall.png';
 
 const ResponsiveDrawer = styled(Drawer)(({ theme }) => ({
   '& .MuiDrawer-paper': {
@@ -27,6 +34,9 @@ const ResponsiveDrawer = styled(Drawer)(({ theme }) => ({
     [theme.breakpoints.up('lg')]: {
       width: '20%',
     },
+    backgroundImage: `url(${bgimg})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
   },
 }));
 
@@ -46,17 +56,18 @@ const ResponsiveListItemText = styled(ListItemText)(({ theme }) => ({
 }));
 
 const StyledAppBar = styled(AppBar)({
-  backgroundColor: '#18d5a2',
+  backgroundColor: '#071c6b', // Updated header background color
 });
 
 const Logo = styled(Typography)({
   flexGrow: 1,
   fontSize: '1.5em',
   fontWeight: 'bold',
+  color: '#e8b775',
 });
 
 const BurgerMenu = styled(IconButton)({
-  color: '#000',
+  color: '#e8b775',
 });
 
 const Header = () => {
@@ -70,7 +81,6 @@ const Header = () => {
     ) {
       return;
     }
-
     setMenuOpen(open);
   };
 
@@ -79,19 +89,102 @@ const Header = () => {
     setMenuOpen(false);
   };
 
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
   return (
     <div>
       <StyledAppBar position="fixed">
         <Toolbar>
-          <Logo variant="h4">
+          <Logo>
             <Box display="flex" justifyContent="start" alignItems="center">
-              <Typography
-                variant="h6"
-                component="span"
-                style={{ marginRight: '8px' }}
-              >
-                Nasyikat.media
-              </Typography>
+              <div>
+                <Button
+                  onClick={handleClick}
+                  style={{
+                    color: '#e8b775',
+                    marginRight: '8px',
+                    fontFamily: "'Lora', serif",
+                    fontWeight: 'bold',
+                  }}
+                >
+                  NASYIKAT.MEDIA
+                </Button>
+                <Snackbar
+                  open={open}
+                  autoHideDuration={8000}
+                  onClose={handleClose}
+                  action={
+                    <IconButton
+                      size="large"
+                      color="inherit"
+                      onClick={handleClose}
+                      sx={{
+                        position: 'absolute',
+                        top: '1px',
+                        right: '1px',
+                      }}
+                    >
+                      <CloseIcon fontSize="small" />
+                    </IconButton>
+                  }
+                  ContentProps={{
+                    sx: {
+                      backgroundImage: `url(${bgdialogimg})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                      color: '#fbe4c5',
+                      borderRadius: '8px',
+                      padding: '16px',
+                      position: 'relative',
+                    },
+                  }}
+                  message={
+                    <Box>
+                      <Typography
+                        style={{ textAlign: 'center', fontSize: '1.2rem' }}
+                      >
+                        Алланын элчисине салам - <br /> салаваттар болсун
+                      </Typography>
+                      <Typography
+                        textAlign="center"
+                        style={{ marginTop: '10px' }}
+                      >
+                        Аллохумма солли ьалаа Мухаммадин, ва аьлаа аали
+                        Мухаммад, камаа соллайта ьалаа Иброхиима ва ьалаа аали
+                        Иброхима, иннака хамиидум- мажиид. Аллохумма баарик
+                        ьалаа Мухаммадин, ва аьлаа аали Мухаммад, камаа баарокта
+                        ьалаа Иброхиима ва ьалаа аали Иброхима, иннака
+                        хамиидум-мажиид
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        align="center"
+                        sx={{ marginTop: '15px' }}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          gap: '5px',
+                        }}
+                      >
+                        Nasyikat.media
+                        <Verified color="inherit" fontSize="small" />
+                      </Typography>
+                    </Box>
+                  }
+                />
+              </div>
               <Verified color="primary" />
             </Box>
           </Logo>
@@ -111,7 +204,7 @@ const Header = () => {
             { text: 'Исламда 40 парз', path: '/islamdynparzdary' },
             { text: 'Ислам деген эмне?', path: '/islam' },
             { text: 'Китебим Куран', path: '/quran' },
-            { text: 'Кутту Хадистер', path: '/hadis' },
+            { text: 'Куттуy Хадистер', path: '/hadis' },
             { text: 'Пайдалуу дубалар', path: '/duba' },
             { text: 'Тасбих', path: '/zikr' },
             { text: 'Онлайн Дүкөн', path: '/store' },
@@ -121,6 +214,7 @@ const Header = () => {
               key={index}
               onClick={() => handleNavigation(item.path)}
             >
+              {item.icon && <ListItemIcon>{item.icon}</ListItemIcon>}
               <ResponsiveListItemText primary={item.text} />
             </ListItem>
           ))}
@@ -129,15 +223,13 @@ const Header = () => {
               display: 'flex',
               flexDirection: 'column',
               minHeight: '45vh',
-              justifyContent: 'flex-end', // Располагает содержимое внизу
-              padding: '0 16px', // Optional: add some horizontal padding
+              justifyContent: 'flex-end',
+              padding: '0 16px',
             }}
           >
             <ListItem
               sx={{
-                borderTop: '1px solid #ddd',
                 textAlign: 'center',
-                backgroundColor: '#f9f9f9',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
@@ -191,8 +283,7 @@ const Header = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 gap: '8px',
-                padding: '16px 0', // Optional: add vertical padding
-                backgroundColor: '#f9f9f9', // Same background color for consistency
+                padding: '16px 0',
               }}
             >
               <IconButton
@@ -201,11 +292,11 @@ const Header = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{
-                  color: '#E4405F', // Instagram color
+                  color: '#E4405F',
                   transition: 'color 0.3s, transform 0.3s',
                   '&:hover': {
-                    color: '#C13584', // Darker Instagram color on hover
-                    transform: 'scale(1.1)', // Scale up on hover
+                    color: '#C13584',
+                    transform: 'scale(1.1)',
                   },
                 }}
               >
@@ -217,11 +308,11 @@ const Header = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{
-                  color: '#0088cc', // Telegram color
+                  color: '#0088cc',
                   transition: 'color 0.3s, transform 0.3s',
                   '&:hover': {
-                    color: '#007ab8', // Darker Telegram color on hover
-                    transform: 'scale(1.1)', // Scale up on hover
+                    color: '#007ab8',
+                    transform: 'scale(1.1)',
                   },
                 }}
               >

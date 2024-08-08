@@ -102,11 +102,11 @@ const ImageSlider = styled(Carousel)(({ theme }) => ({
     height: '300px',
     objectFit: 'contain',
   },
-  '& .slick-dots li button:before': {
-    color: '#FF0000',
+  '& .slick-dots': {
+    bottom: '10px',
   },
-  '& .slick-dots li.slick-active button:before': {
-    color: '#FF0000',
+  '& .slick-dots li': {
+    margin: '0 5px',
   },
 }));
 
@@ -130,10 +130,9 @@ const createWhatsAppMessage = (product, storeWhatsapp) => {
   return `https://wa.me/${storeWhatsapp}?text=${encodedMessage}`;
 };
 
-// ProductCard Component
 function ProductCard({ product }) {
   if (!product) {
-    return <div>Product not found</div>;
+    return <div>Кечиресиз мындай товар табылган жок</div>;
   }
 
   const handleOrderClick = () => {
@@ -155,11 +154,15 @@ function ProductCard({ product }) {
         </DiscountBadge>
       )}
       <ImageSlider
-        dots={true}
+        dots={true} // Show dots for manual navigation
         infinite={true}
         speed={600}
         slidesToShow={1}
         slidesToScroll={1}
+        autoplay={false} // Disable auto-sliding
+        autoplaySpeed={0} // Disable auto-sliding by setting speed to 0
+        pauseOnHover={true} // Pause sliding on hover
+        arrows={true} // Show navigation arrows
       >
         {product.images.map((image, index) => (
           <CardMedia
@@ -293,8 +296,8 @@ ProductCard.propTypes = {
     storeWhatsapp: PropTypes.string,
     storeInstagram: PropTypes.string,
     storePhone: PropTypes.string,
-    sale: PropTypes.bool,
     isFeatured: PropTypes.bool,
+    sale: PropTypes.bool,
   }).isRequired,
 };
 

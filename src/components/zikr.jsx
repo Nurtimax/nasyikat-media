@@ -42,18 +42,6 @@ const LargeButton = styled(Button)(({ theme }) => ({
   },
 }));
 
-const Container = styled(Box)(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'center',
-  height: '100vh',
-  textAlign: 'center',
-  background: 'linear-gradient(180deg, #e3f2fd, #bbdefb)',
-  padding: theme.spacing(4),
-  overflow: 'hidden',
-}));
-
 const pulseAnimation = `
   @keyframes pulse {
     0% {

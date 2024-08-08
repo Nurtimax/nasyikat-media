@@ -30,7 +30,7 @@ const Hadis = () => {
     <div>
       <AccordionBackground>
         <Header />
-        <Typography variant="h4" align="center" gutterBottom>
+        <Typography variant="h3" align="center" gutterBottom>
           Куттуу хадистер
         </Typography>
         {hadisContent.map((item, index) => (

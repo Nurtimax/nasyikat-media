@@ -1,30 +1,16 @@
 import React from 'react';
-import { Container, Typography, Box, Grid } from '@mui/material';
+import { Typography, Box } from '@mui/material';
 import Header from './Header';
-import img from '../assetts/images/islam/islam.png';
 import Footer from '../components/Footer';
 
 const Islam = () => {
   return (
     <>
       <Header />
-      <Container maxWidth="md" style={{ marginTop: '80px' }}>
-        <Grid container spacing={3} mb={3} justifyContent="center">
-          <Grid item xs={12} sm={10} md={8}>
-            <Box
-              component="img"
-              src={img}
-              alt="Hadj"
-              sx={{
-                width: '100%',
-                borderRadius: 2,
-                boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
-                maxHeight: { xs: '200px', sm: '300px', md: '400px' },
-                objectFit: 'cover',
-              }}
-            />
-          </Grid>
-        </Grid>
+      <div maxWidth="md" style={{ marginTop: '80px' }}>
+        <Typography mt={2} textAlign="center">
+          <h1>Ислам деген эмне?</h1>
+        </Typography>
         <Box
           sx={{
             backgroundColor: '#efe1b2a0',
@@ -88,8 +74,8 @@ const Islam = () => {
         </Box>
         <Box sx={{ textAlign: 'center', marginBottom: '20px' }}>
           <iframe
-            width="100%"
-            height="400px"
+            width="1000px"
+            height="800px"
             src="https://www.youtube.com/embed/gjSzd5aggLg?si=ZRP0o4MurSV954pP"
             title="YouTube video player"
             frameborder="0"
@@ -98,13 +84,13 @@ const Islam = () => {
             allowfullscreen
             style={{
               maxWidth: '100%',
-              height: '400px',
+              height: '800px',
               borderRadius: '8px',
               boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
             }}
           ></iframe>
         </Box>
-      </Container>
+      </div>
       <Footer />
     </>
   );
