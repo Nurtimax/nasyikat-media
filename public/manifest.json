@@ -1,15 +1,25 @@
 {
-  "short_name": "Nasyikat.media",
-  "name": "Nasyikat.media",
-  "icons": [
-    {
-      "src": "/public/static/nmlogo.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    }
-  ],
-  "start_url": "./index.html",
-  "display": "standalone",
-  "theme_color": "#565656",
-  "background_color": "#1a1a1a"
+   "short_name": "Nasyikat",
+   "name": "Nasyikat.media",
+   "icons": [
+      {
+         "src": "static/nmlogo.png",
+         "sizes": "64x64 32x32 24x24 16x16",
+         "type": "image/x-icon"
+      },
+      {
+         "src": "static/nmlogo.png",
+         "sizes": "192x192",
+         "type": "image/png"
+      },
+      {
+         "src": "static/nmlogo.png",
+         "type": "image/png",
+         "sizes": "512x512"
+      }
+   ],
+   "start_url": "./index.html",
+   "display": "standalone",
+   "theme_color": "#565656",
+   "background_color": "#1a1a1a"
 }
