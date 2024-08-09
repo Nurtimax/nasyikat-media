@@ -11,9 +11,9 @@ import { Outlet } from 'react-router-dom';
 import Welcome from './components/Welcome';
 import SponsorsList from './components/SponsorsList';
 import banner from './assetts/images/banner.png';
+import banner2 from './assetts/icons/bgsmall.png';
 import { Box } from '@mui/system';
-import banner2 from './assetts/images/banner1.png';
-import img from './assetts/icons/section-img.png';
+import { Typography } from '@mui/material';
 
 const App = () => {
   return (
@@ -29,41 +29,41 @@ const App = () => {
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           marginTop: '25px',
+          marginBottom: '20px',
           borderRadius: '5px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
         }}
       ></Box>
-
-      <Box
-        sx={{
-          marginTop: '25px',
-          img: {
-            width: '100%',
-            maxWidth: '100%',
-            height: 'auto',
-          },
-        }}
-      >
-        <img src={img} alt="Section Illustration" />
-      </Box>
 
       <Section />
       <Box
         sx={{
-          height: { xs: '45px', sm: '190px' },
+          textAlign: 'center',
+          marginTop: '1.5rem',
+          padding: '1rem',
           backgroundImage: `url(${banner2})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          marginTop: '35px',
-          borderRadius: '5px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+          boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
         }}
-      ></Box>
+      >
+        <Typography
+          variant="h6"
+          sx={{
+            fontWeight: 'bold',
+            color: '#f6edde',
+            lineHeight: 1.4,
+            fontFamily: 'fantasy',
+            letterSpacing: '1.5px',
+          }}
+        >
+          Эгер билбесеңер илимдүүлөрдөн сурагыла <br />
+          Нахл сүрөсү, 43 аят
+        </Typography>
+      </Box>
 
       <Section4 />
       <Section5 />
