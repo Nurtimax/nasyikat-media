@@ -1,7 +1,20 @@
+import AlFatihahAudio from '../../../assetts/quran-audio/fatiha.mp3';
+import Arrahmaan from '../../../assetts/quran-audio/arrahmaan.mp3';
+import Alwaqia from '../../../assetts/quran-audio/alwaqia.mp3';
+import Yasin from '../../../assetts/quran-audio/yasin.mp3';
+
+import img from '../../../assetts/icons/logo-nasykat.png';
+
 const surahs = [
-  { title: 'Al-Fatiha', audio: './quran-audio/al-fatiha.mp3' },
-  { title: 'Al-Baqarah', audio: 'path/to/al-baqarah.mp3' },
-  { title: 'Al-Imran', audio: 'path/to/al-imran.mp3' },
+  {
+    title: 'Аль-Фатиха',
+    audio: AlFatihahAudio,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+  },
+  { title: 'Аль-Бакара', audio: '' },
+  { title: 'Аль-Имран', audio: '' },
   { title: 'An-Nisa', audio: 'path/to/an-nisa.mp3' },
   { title: "Al-Ma'idah", audio: 'path/to/al-maidah.mp3' },
   { title: "Al-An'am", audio: 'path/to/al-anam.mp3' },
@@ -34,7 +47,13 @@ const surahs = [
   { title: 'Al-Ahzab', audio: 'path/to/al-ahzab.mp3' },
   { title: 'Saba', audio: 'path/to/saba.mp3' },
   { title: 'Fatir', audio: 'path/to/fatir.mp3' },
-  { title: 'Ya-Sin', audio: 'path/to/ya-sin.mp3' },
+  {
+    title: 'Ясин сүрөсү',
+    audio: Yasin,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+  },
   { title: 'As-Saffat', audio: 'path/to/as-saffat.mp3' },
   { title: 'Sad', audio: 'path/to/sad.mp3' },
   { title: 'Az-Zumar', audio: 'path/to/az-zumar.mp3' },
@@ -53,8 +72,20 @@ const surahs = [
   { title: 'At-Tur', audio: 'path/to/at-tur.mp3' },
   { title: 'An-Najm', audio: 'path/to/an-najm.mp3' },
   { title: 'Al-Qamar', audio: 'path/to/al-qamar.mp3' },
-  { title: 'Ar-Rahman', audio: 'path/to/ar-rahman.mp3' },
-  { title: "Al-Waqi'a", audio: 'path/to/al-waqia.mp3' },
+  {
+    title: 'Ар Рахман',
+    audio: Arrahmaan,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+  },
+  {
+    title: 'Аль Вакиа',
+    audio: Alwaqia,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+  },
   { title: 'Al-Hadid', audio: 'path/to/al-hadid.mp3' },
   { title: 'Al-Mujadila', audio: 'path/to/al-mujadila.mp3' },
   { title: 'Al-Hashr', audio: 'path/to/al-hashr.mp3' },
@@ -115,5 +146,4 @@ const surahs = [
   { title: 'An-Nas', audio: 'path/to/an-nas.mp3' },
 ];
 
-
-export default  surahs 
+export default surahs;

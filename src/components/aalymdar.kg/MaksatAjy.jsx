@@ -21,7 +21,7 @@ import styled, {
   ThemeProvider as StyledThemeProvider,
 } from 'styled-components';
 import { useInView } from 'react-intersection-observer';
-import videoData from './src-video-data/videosrc';
+import exa from './src-video-data/exa.js';
 import LogoNasyikatMedia from '../../assetts/images/islam/nmlogo.png';
 import { Verified } from '@mui/icons-material';
 import Welcome from '../../components/Welcome';
@@ -38,7 +38,7 @@ const StyledCard = styled(Card)`
     transform: scale(1.02);
   }
   @media (max-width: 768px) {
-    height: auto;
+    height: 300;
   }
 `;
 
@@ -48,7 +48,7 @@ const VideoContainer = styled.div`
   background-color: ${(props) => props.theme.palette.grey[400]};
   overflow: hidden;
   @media (max-width: 768px) {
-    padding-top: 56.25%; // Adjusted for better aspect ratio
+    padding-top: 100%;
   }
 `;
 
@@ -151,7 +151,7 @@ const MaksatAjy = () => {
         <StyledThemeProvider theme={theme}>
           <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8, px: 2 }}>
             <Grid container spacing={2} maxWidth="lg">
-              {videoData.map((video, index) => (
+              {exa.map((video, index) => (
                 <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
                   <StyledCard>
                     <VideoContainer>

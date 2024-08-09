@@ -21,7 +21,7 @@ import styled, {
   ThemeProvider as StyledThemeProvider,
 } from 'styled-components';
 import { useInView } from 'react-intersection-observer';
-import videoData from './src-video-data/videosrc';
+import videoData from './src-video-data/exampl.js';
 import LogoNasyikatMedia from '../../assetts/images/islam/nmlogo.png';
 import { Verified } from '@mui/icons-material';
 import Welcome from '../../components/Welcome';
@@ -38,7 +38,7 @@ const StyledCard = styled(Card)`
     transform: scale(1.02);
   }
   @media (max-width: 768px) {
-    height: auto;
+    height: 300;
   }
 `;
 
@@ -48,7 +48,7 @@ const VideoContainer = styled.div`
   background-color: ${(props) => props.theme.palette.grey[400]};
   overflow: hidden;
   @media (max-width: 768px) {
-    padding-top: 56.25%; // Adjusted for better aspect ratio
+    padding-top: 100%;
   }
 `;
 
@@ -74,7 +74,7 @@ const VideoMedia = ({ src, controls }) => {
     };
 
     window.addEventListener('resize', handleResize);
-    handleResize(); // Set initial value
+    handleResize();
 
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -83,11 +83,6 @@ const VideoMedia = ({ src, controls }) => {
 
   useEffect(() => {
     if (videoRef.current && isMobile) {
-      if (inView) {
-        videoRef.current.play();
-      } else {
-        videoRef.current.pause();
-      }
     }
   }, [inView, isMobile]);
 

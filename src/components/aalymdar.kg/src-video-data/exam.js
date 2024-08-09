@@ -5,7 +5,7 @@ const videoData4 = [
     title: 'Зикир дубанын жакшысы',
     src: vid,
     description: 'Роббанаа атина фии дуня ... ',
-    speaker: 'Шейх Чубак ажы Жалилов (р.a)',
+    speaker: 'Устаз Бахтыяр ажы Шарапов',
     author: 'nasyikat.media',
   },
 ];

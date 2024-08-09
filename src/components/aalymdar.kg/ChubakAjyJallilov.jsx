@@ -38,7 +38,7 @@ const StyledCard = styled(Card)`
     transform: scale(1.02);
   }
   @media (max-width: 768px) {
-    height: auto;
+    height: 300;
   }
 `;
 
@@ -48,7 +48,7 @@ const VideoContainer = styled.div`
   background-color: ${(props) => props.theme.palette.grey[400]};
   overflow: hidden;
   @media (max-width: 768px) {
-    padding-top: 56.25%; // Adjusted for better aspect ratio
+    padding-top: 100%;
   }
 `;
 
