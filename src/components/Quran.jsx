@@ -7,7 +7,7 @@ import {
   ListItem,
   ListItemText,
   IconButton,
-  Grid,
+  Avatar,
 } from '@mui/material';
 import { styled } from '@mui/system';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
@@ -17,6 +17,7 @@ import SkipNextIcon from '@mui/icons-material/SkipNext';
 import Header from './Header';
 import surahs from './data/quran/quran';
 import Footer from '../components/Footer';
+import SurahModal from '../components/SurahModal';
 
 const Background = styled('div')(({ theme }) => ({
   backgroundSize: '400% 400%',
@@ -42,22 +43,34 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   },
 }));
 
+const SurahListItem = styled(ListItem)(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  padding: theme.spacing(2),
+}));
+
+const SurahAvatar = styled(Avatar)(({ theme }) => ({
+  width: 56,
+  height: 56,
+  marginRight: theme.spacing(2),
+}));
+
 const Quran = () => {
   const [currentSurah, setCurrentSurah] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const audioRef = useRef(new Audio());
 
   const handlePlayPause = (surah) => {
     if (currentSurah === surah && isPlaying) {
-      // Приостановить воспроизведение, если та же сура
       setIsPlaying(false);
       audioRef.current.pause();
     } else {
-      // Воспроизвести новую суру
       setCurrentSurah(surah);
       setIsPlaying(true);
       audioRef.current.src = surah.audio;
       audioRef.current.play();
+      setModalOpen(true);
     }
   };
 
@@ -89,53 +102,64 @@ const Quran = () => {
     <div>
       <Background>
         <Header />
+
         <StyledContainer maxWidth="md">
           <Box textAlign="center" mb={3}>
-            <Typography variant="h5" component="h1" gutterBottom>
+            <Typography variant="h4" component="h1" gutterBottom>
               Китебим Куран
             </Typography>
           </Box>
+
           <List>
             {surahs.map((surah, index) => (
-              <ListItem key={index} divider>
-                <Grid container alignItems="center" spacing={3}>
-                  <Grid item xs={6}>
-                    <ListItemText primary={surah.title} />
-                  </Grid>
-                  <Grid item xs={2}>
-                    <IconButton
-                      aria-label="previous"
-                      onClick={handleSkipPrevious}
-                    >
-                      <SkipPreviousIcon />
-                    </IconButton>
-                  </Grid>
-                  <Grid item xs={2}>
-                    {currentSurah === surah && isPlaying ? (
-                      <IconButton
-                        aria-label="pause"
-                        onClick={() => handlePlayPause(surah)}
-                      >
-                        <PauseCircleFilledIcon />
-                      </IconButton>
-                    ) : (
-                      <IconButton
-                        aria-label="play"
-                        onClick={() => handlePlayPause(surah)}
-                      >
-                        <PlayArrowIcon />
-                      </IconButton>
-                    )}
-                  </Grid>
-                  <Grid item xs={2}>
-                    <IconButton aria-label="next" onClick={handleSkipNext}>
-                      <SkipNextIcon />
-                    </IconButton>
-                  </Grid>
-                </Grid>
-              </ListItem>
+              <SurahListItem key={index} divider>
+                <SurahAvatar src={surah.image} alt={surah.reader} />
+                <ListItemText
+                  primary={surah.title}
+                  secondary={
+                    <>
+                      <Typography variant="body1" color="textSecondary">
+                        Кары: {surah.reader}
+                      </Typography>
+                      <Typography variant="body2" color="textSecondary">
+                        Кыскача: {surah.description}
+                      </Typography>
+                    </>
+                  }
+                />
+                <IconButton aria-label="previous" onClick={handleSkipPrevious}>
+                  <SkipPreviousIcon />
+                </IconButton>
+                {currentSurah === surah && isPlaying ? (
+                  <IconButton
+                    aria-label="pause"
+                    onClick={() => handlePlayPause(surah)}
+                  >
+                    <PauseCircleFilledIcon />
+                  </IconButton>
+                ) : (
+                  <IconButton
+                    aria-label="play"
+                    onClick={() => handlePlayPause(surah)}
+                  >
+                    <PlayArrowIcon />
+                  </IconButton>
+                )}
+                <IconButton aria-label="next" onClick={handleSkipNext}>
+                  <SkipNextIcon />
+                </IconButton>
+              </SurahListItem>
             ))}
           </List>
+
+          <SurahModal
+            open={modalOpen}
+            onClose={() => setModalOpen(false)}
+            surah={currentSurah}
+            audioRef={audioRef}
+            isPlaying={isPlaying}
+            setIsPlaying={setIsPlaying}
+          />
         </StyledContainer>
       </Background>
       <Footer />
