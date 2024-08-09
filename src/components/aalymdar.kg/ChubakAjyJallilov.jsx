@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import {
   Grid,
   Card,
@@ -48,7 +48,7 @@ const VideoContainer = styled.div`
   background-color: ${(props) => props.theme.palette.grey[400]};
   overflow: hidden;
   @media (max-width: 768px) {
-    padding-top: 100%;
+    padding-top: 56.25%; // Adjusted for better aspect ratio
   }
 `;
 
@@ -66,10 +66,22 @@ const VideoMedia = ({ src, controls }) => {
   const { ref, inView } = useInView({
     threshold: 0.9,
   });
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
-    const isMobile = window.innerWidth <= 768;
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
 
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Set initial value
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
     if (videoRef.current && isMobile) {
       if (inView) {
         videoRef.current.play();
@@ -77,11 +89,11 @@ const VideoMedia = ({ src, controls }) => {
         videoRef.current.pause();
       }
     }
-  }, [inView]);
+  }, [inView, isMobile]);
 
   return (
     <div ref={ref}>
-      <AutoPlayVideo ref={videoRef} src={src} controls>
+      <AutoPlayVideo ref={videoRef} src={src} controls={controls}>
         Ваш браузер не поддерживает видео.
       </AutoPlayVideo>
     </div>
