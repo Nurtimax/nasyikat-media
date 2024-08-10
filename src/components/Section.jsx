@@ -36,8 +36,7 @@ const Section = () => {
               align="center"
               gutterBottom
               style={{
-                paddingTop: '10px',
-                paddingBottom: '10px',
+                paddingBottom: '20px',
                 textAlign: 'center',
               }}
             >

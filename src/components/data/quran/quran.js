@@ -2,6 +2,21 @@ import AlFatihahAudio from '../../../assetts/quran-audio/fatiha.mp3';
 import Arrahmaan from '../../../assetts/quran-audio/arrahmaan.mp3';
 import Alwaqia from '../../../assetts/quran-audio/alwaqia.mp3';
 import Yasin from '../../../assetts/quran-audio/yasin.mp3';
+import Kafirun from '../../../assetts/quran-audio/kafirun.mp3';
+import Nasr from '../../../assetts/quran-audio/nasr.mp3';
+import Masad from '../../../assetts/quran-audio/masad.mp3';
+import Naas from '../../../assetts/quran-audio/naas.mp3';
+import Maun from '../../../assetts/quran-audio/maun.mp3';
+import kuraish from '../../../assetts/quran-audio/kuraish.mp3';
+import Kasusar from '../../../assetts/quran-audio/kaysar.mp3';
+import Humazah from '../../../assetts/quran-audio/humazah.mp3';
+import Asr from '../../../assetts/quran-audio/asr.mp3';
+import Qoriah from '../../../assetts/quran-audio/koria.mp3';
+import Adyiat from '../../../assetts/quran-audio/adiat.mp3';
+import Ikhlas from '../../../assetts/quran-audio/ihlas.mp3';
+import Falaq from '../../../assetts/quran-audio/falaq.mp3';
+import Fil from '../../../assetts/quran-audio/fiil.mp3';
+import Takassur from '../../../assetts/quran-audio/takassur.mp3';
 
 import img from '../../../assetts/icons/logo-nasykat.png';
 
@@ -129,21 +144,111 @@ const surahs = [
   { title: 'Al-Qadr', audio: 'path/to/al-qadr.mp3' },
   { title: 'Al-Bayyinah', audio: 'path/to/al-bayyinah.mp3' },
   { title: 'Az-Zalzalah', audio: 'path/to/az-zalzalah.mp3' },
-  { title: 'Al-Adiyat', audio: 'path/to/al-adiyat.mp3' },
-  { title: "Al-Qari'ah", audio: 'path/to/al-qariah.mp3' },
-  { title: 'At-Takathur', audio: 'path/to/at-takathur.mp3' },
-  { title: 'Al-Asr', audio: 'path/to/al-asr.mp3' },
-  { title: 'Al-Humazah', audio: 'path/to/al-humazah.mp3' },
-  { title: 'Al-Fil', audio: 'path/to/al-fil.mp3' },
-  { title: 'Quraish', audio: 'path/to/quraish.mp3' },
-  { title: "Al-Ma'un", audio: 'path/to/al-maun.mp3' },
-  { title: 'Al-Kawthar', audio: 'path/to/al-kawthar.mp3' },
-  { title: 'Al-Kafirun', audio: 'path/to/al-kafirun.mp3' },
-  { title: 'An-Nasr', audio: 'path/to/an-nasr.mp3' },
-  { title: 'Al-Masad', audio: 'path/to/al-masad.mp3' },
-  { title: 'Al-Ikhlas', audio: 'path/to/al-ikhlas.mp3' },
-  { title: 'Al-Falaq', audio: 'path/to/al-falaq.mp3' },
-  { title: 'An-Nas', audio: 'path/to/an-nas.mp3' },
+  {
+    title: 'Адият сүрөсү',
+    audio: Adyiat,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+  },
+  {
+    title: 'Кориа сүрөсү',
+    audio: Qoriah,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+  },
+  {
+    title: 'Такассур сүрөсү',
+    audio: Takassur,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+  },
+  {
+    title: 'Аср сүрөсү',
+    audio: Asr,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+  },
+  {
+    title: 'Хумаза сүрөсү',
+    audio: Humazah,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+  },
+  {
+    title: 'Фил сүрөсү',
+    audio: Fil,
+    reader: 'Мухаммад аль Люхайдан',
+    description: 'Китебим Куран',
+    image: img,
+  },
+  {
+    title: 'Курайш сүрөсү',
+    audio: kuraish,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+  },
+  {
+    title: 'Маун сүрөсү',
+    audio: Maun,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+  },
+  {
+    title: 'Каусар сүрөсү',
+    audio: Kasusar,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+  },
+  {
+    title: 'Кафирун сүрөсү',
+    audio: Kafirun,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+  },
+  {
+    title: 'Наср сүрөсү',
+    audio: Nasr,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+  },
+  {
+    title: 'Масад сүрөсү',
+    audio: Masad,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+  },
+  {
+    title: 'Ихлас сүрөсү',
+    audio: Ikhlas,
+    reader: 'Мухаммад аль Люхайдан',
+    description: 'Китебим Куран',
+    image: img,
+  },
+  {
+    title: 'Фалак сүрөсү',
+    audio: Falaq,
+    reader: 'Мухаммад аль Люхайдан',
+    description: 'Китебим Куран',
+    image: img,
+  },
+  {
+    title: 'Нас сүрөсү',
+    audio: Naas,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+  },
 ];
 
 export default surahs;

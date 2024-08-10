@@ -17,6 +17,7 @@ import SkipNextIcon from '@mui/icons-material/SkipNext';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TelegramIcon from '@mui/icons-material/Telegram';
+import DownloadIcon from '@mui/icons-material/Download';
 import banner from '../assetts/icons/bacimg.png';
 
 const StyledModal = styled(Modal)(({ theme }) => ({
@@ -56,7 +57,7 @@ const ContentContainer = styled(Box)(({ theme }) => ({
   gap: theme.spacing(2),
 }));
 
-const ShareButton = styled(IconButton)(({ theme }) => ({
+const SocialButton = styled(IconButton)(({ theme }) => ({
   marginLeft: theme.spacing(1),
 }));
 
@@ -67,6 +68,10 @@ const TextContainer = styled(Box)(({ theme }) => ({
 }));
 
 const ControlButton = styled(IconButton)(({ theme }) => ({
+  margin: theme.spacing(1),
+}));
+
+const DownloadButton = styled(IconButton)(({ theme }) => ({
   margin: theme.spacing(1),
 }));
 
@@ -120,25 +125,12 @@ const SurahModal = ({
     return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
   };
 
-  const handleShare = (platform) => {
-    const url = encodeURIComponent(window.location.href);
-    let shareUrl = '';
-
-    switch (platform) {
-      case 'whatsapp':
-        shareUrl = `https://wa.me/?text=${url}`;
-        break;
-      case 'instagram':
-        alert('Instagram sharing is not directly supported.');
-        return;
-      case 'telegram':
-        shareUrl = `https://t.me/share/url?url=${url}`;
-        break;
-      default:
-        break;
-    }
-
-    window.open(shareUrl, '_blank');
+  const handleDownload = () => {
+    const url = audioRef.current.src;
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'surah.mp3';
+    link.click();
   };
 
   return (
@@ -163,10 +155,10 @@ const SurahModal = ({
                   {surah.title}
                 </Typography>
                 <Typography variant="body1" color="textSecondary">
-                  Чтец: {surah.reader}
+                  Кары: {surah.reader}
                 </Typography>
                 <Typography variant="body1" color="textSecondary">
-                  Описание: {surah.description}
+                  Кыскача: {surah.description}
                 </Typography>
               </TextContainer>
             </ContentContainer>
@@ -204,20 +196,49 @@ const SurahModal = ({
               </Typography>
             </TimeDisplay>
             <Box display="flex" justifyContent="center" mt={2}>
-              <Tooltip title="Share on WhatsApp">
-                <ShareButton onClick={() => handleShare('whatsapp')}>
+              <Tooltip title="Visit WhatsApp">
+                <SocialButton
+                  onClick={() =>
+                    window.open('https://wa.me/996556401369', '_blank')
+                  }
+                  sx={{
+                    color: '#25D366',
+                  }}
+                >
                   <WhatsAppIcon />
-                </ShareButton>
+                </SocialButton>
               </Tooltip>
-              <Tooltip title="Share on Instagram">
-                <ShareButton onClick={() => handleShare('instagram')}>
+              <Tooltip title="Visit Instagram">
+                <SocialButton
+                  onClick={() =>
+                    window.open(
+                      'https://www.instagram.com/nasyikat.media/',
+                      '_blank'
+                    )
+                  }
+                  sx={{
+                    color: '#C13584',
+                  }}
+                >
                   <InstagramIcon />
-                </ShareButton>
+                </SocialButton>
               </Tooltip>
-              <Tooltip title="Share on Telegram">
-                <ShareButton onClick={() => handleShare('telegram')}>
+              <Tooltip title="Visit Telegram">
+                <SocialButton
+                  onClick={() =>
+                    window.open('https://t.me/+SEJbmn8AwNViNmNi', '_blank')
+                  }
+                  sx={{
+                    color: '#0daae3',
+                  }}
+                >
                   <TelegramIcon />
-                </ShareButton>
+                </SocialButton>
+              </Tooltip>
+              <Tooltip title="Download Surah">
+                <DownloadButton onClick={handleDownload}>
+                  <DownloadIcon />
+                </DownloadButton>
               </Tooltip>
             </Box>
           </>

@@ -19,7 +19,7 @@ const StyledAccordion = styled(Accordion)(({ theme }) => ({
 }));
 
 const AccordionSummaryStyled = styled(AccordionSummary)(({ theme }) => ({
-  backgroundColor: '#4f8f5cc5', // Soft green color
+  backgroundColor: '#4f8f5cc5',
   borderRadius: '10px',
   '&:hover': {
     backgroundColor: '#81c784d0',

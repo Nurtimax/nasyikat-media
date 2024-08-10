@@ -1,6 +1,6 @@
 import { Typography, Box } from '@mui/material';
 import React from 'react';
-import BackgroundImage from '../../../assetts/images/islam/shahadaimg.jpg'; // Путь к фоновому изображению
+import BackgroundImage from '../../../assetts/icons/bacimg.png';
 import Header from '../../../components/Header';
 import Welcome from '../../../components/Welcome';
 
@@ -11,28 +11,46 @@ const Orozo = () => {
       <Welcome />
       <Box
         sx={{
-          padding: 3,
-          backgroundColor: '#f9f9f9',
-          backgroundImage: `url(${BackgroundImage})`, // Фоновое изображение
-          backgroundSize: 'cover', // Масштабирование, чтобы покрыть весь блок
-          backgroundPosition: 'center', // Центрирование изображения
-          backgroundRepeat: 'no-repeat', // Отключение повторения
-          boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
+          padding: 4,
+          backgroundImage: `url(${BackgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+          minHeight: '100vh',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
         <Box
           sx={{
-            backgroundColor: 'rgba(255, 255, 255, 0.8)', // Полупрозрачный фон для текста
-            padding: 3,
-            borderRadius: 2,
-            boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
-            textAlign: 'center', // Выравнивание текста по центру
+            padding: 4,
+            borderRadius: 8,
+            textAlign: 'center',
+            margin: '0 auto',
           }}
         >
           <Typography
+            variant="h3"
+            component="h2"
+            sx={{
+              marginBottom: 4,
+              fontWeight: 'bold',
+              letterSpacing: '1.2px',
+              fontSize: '2.5rem',
+            }}
+          >
+            ОРОЗО ТУУРАСЫНДА
+          </Typography>
+          <Typography
             variant="body1"
             component="p"
-            sx={{ lineHeight: 1.6, color: '#555', marginBottom: 2 }}
+            sx={{
+              lineHeight: 1.8,
+              marginBottom: 4,
+              fontSize: '1.2rem',
+              textAlign: 'center',
+            }}
           >
             Теңдикти сүйгөн Аллах Субхану уа Таала бир жылда бир жолу Рамазан
             айында 30 күн орозо кармоону парз кылды. Муну менен Ал ачкалык эмне
@@ -40,20 +58,26 @@ const Orozo = () => {
             ачка жүргөн мусулман бир туугандарынын акыбалын ар бир инсан өзү
             сезип, билип көрсүн, ачка болгондо тамактын, суусаганда суунун
             кадырын билүүгө үндөдү. Ошондой эле, орозо менен Аллах Таала пендени
-            сабырдуулука үйрөтөт. Инсан орозо кармоо менен жүрөгү жумшарат,
-            барга да, жокко да сабыр кылууну үйрөнөт. Кураанда “Аллах
-            сабырдууларды сүйөт” (Аалу Имран: 146) деген аят келет. Орозодо
-            Аллах Тааламдын пендесине берген убадасы бар. Анткени, “Орозону
-            пендем мен үчүн кармайт, ошондуктан анын сыйлыгын Өзүм берем” деген.
-            Ошондой эле орозо кармагандар үчүн чексиз Берешен Аллах Таала
-            Бейиште атайын “РАЙЙАН” эшигин ачып койду. Ал үчүн чексиз шүгүрлөр
-            болсун!
+            сабырдуулука үйрөтөт. <br /> Инсан орозо кармоо менен жүрөгү
+            жумшарат, барга да, жокко да сабыр кылууну үйрөнөт. <br /> Кураанда
+            “Аллах сабырдууларды сүйөт” (Аалу Имран: 146) деген аят келет.{' '}
+            <br />
+            Орозодо Аллах Тааламдын пендесине берген убадасы бар. Анткени,
+            “Орозону пендем мен үчүн кармайт, ошондуктан анын сыйлыгын Өзүм
+            берем” деген. <br /> Ошондой эле орозо кармагандар үчүн чексиз
+            Берешен Аллах Таала Бейиште атайын “РАЙЙАН” эшигин ачып койду.{' '}
+            <br /> Ал үчүн чексиз шүгүрлөр болсун!
           </Typography>
 
           <Typography
             variant="body1"
             component="p"
-            sx={{ lineHeight: 1.6, color: '#555', marginBottom: 2 }}
+            sx={{
+              lineHeight: 1.8,
+              marginBottom: 4,
+              fontSize: '1.2rem',
+              textAlign: 'center',
+            }}
           >
             Ошондой эле, азирети Пайгамбарыбыз өзүнүн хадистеринде орозонун парз
             экендигин көп кайталаган. Абу Хурайрадан (Алла ыраазы болсун)
@@ -66,13 +90,6 @@ const Orozo = () => {
             Маажа рабаяты.
           </Typography>
         </Box>
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            marginTop: 3,
-          }}
-        ></Box>
       </Box>
     </div>
   );
