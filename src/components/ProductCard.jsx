@@ -22,6 +22,7 @@ import DiscountIcon from '@mui/icons-material/LocalOffer';
 import PhoneIcon from '@mui/icons-material/Phone';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import { keyframes } from '@mui/system';
+import ScrollToTopButton from '../components/ScrollToTopButton';
 
 const pulseAnimation = keyframes`
   0% { transform: scale(1); }
@@ -49,13 +50,20 @@ const PriceBox = styled(Box)(({ theme }) => ({
 }));
 
 const StyledButton = styled(Button)(({ theme }) => ({
-  marginTop: theme.spacing(2),
-  borderRadius: '20px',
-  width: '100%',
-  backgroundColor: '#2196F3',
+  backgroundColor: '#071c6b',
   color: '#fff',
+  borderRadius: 5,
+  boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
+  transition: 'background-color 0.3s, transform 0.3s',
+  textTransform: 'none',
+  fontSize: '1.1rem',
+  width: '100%',
+  cursor: 'pointer',
   '&:hover': {
-    backgroundColor: '#1976D2',
+    backgroundColor: '#0a2278e4',
+  },
+  '&:active': {
+    transform: 'scale(0.98)',
   },
 }));
 
@@ -279,6 +287,7 @@ function ProductCard({ product }) {
           <StyledButton onClick={handleOrderClick}>Заказать</StyledButton>
         </Box>
       </CardContent>
+      <ScrollToTopButton />
     </StyledCard>
   );
 }

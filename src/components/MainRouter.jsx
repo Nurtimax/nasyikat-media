@@ -21,6 +21,7 @@ import Namaz from './data/islamdynparzy/Namaz';
 import Orozo from './data/islamdynparzy/Orozo';
 import Zeket from './data/islamdynparzy/Zeket';
 import IslamdynParzdary from './IslamdynParzdary';
+import Books from './Books';
 
 const MainRouter = () => {
   return (
@@ -47,6 +48,7 @@ const MainRouter = () => {
         <Route path="/namaz" element={<Namaz />} />
         <Route path="/orozo" element={<Orozo />} />
         <Route path="/zeket" element={<Zeket />} />
+        <Route path="/books" element={<Books />} />
       </Routes>
     </Router>
   );

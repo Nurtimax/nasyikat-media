@@ -21,6 +21,7 @@ import bgimg from '../assetts/icons/bacimg.png';
 import 'react-toastify/dist/ReactToastify.css';
 import CloseIcon from '@mui/icons-material/Close';
 import bgdialogimg from '../assetts/icons/bgsmall.png';
+import ScrollToTopButton from './ScrollToTopButton';
 
 const ResponsiveDrawer = styled(Drawer)(({ theme }) => ({
   '& .MuiDrawer-paper': {
@@ -201,13 +202,14 @@ const Header = () => {
         <List>
           {[
             { text: 'Башкы бет', path: '/app' },
+            { text: 'Китебим Куран', path: '/quran' },
             { text: 'Исламда 40 парз', path: '/islamdynparzdary' },
             { text: 'Ислам деген эмне?', path: '/islam' },
-            { text: 'Китебим Куран', path: '/quran' },
-            { text: 'Куттуy Хадистер', path: '/hadis' },
+            { text: 'Электрондук китептер', path: '/books' },
             { text: 'Пайдалуу дубалар', path: '/duba' },
-            { text: 'Тасбих', path: '/zikr' },
+            { text: 'Куттуy Хадистер', path: '/hadis' },
             { text: 'Онлайн Дүкөн', path: '/store' },
+            { text: 'Тасбих', path: '/zikr' },
           ].map((item, index) => (
             <ListItem
               button
@@ -322,6 +324,7 @@ const Header = () => {
           </Box>
         </List>
       </ResponsiveDrawer>
+      <ScrollToTopButton />
     </div>
   );
 };
