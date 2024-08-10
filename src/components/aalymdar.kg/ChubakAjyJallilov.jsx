@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React from 'react';
 import {
   Grid,
   Card,
@@ -20,85 +20,23 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 import styled, {
   ThemeProvider as StyledThemeProvider,
 } from 'styled-components';
-import { useInView } from 'react-intersection-observer';
 import videoData from './src-video-data/videosrc';
 import LogoNasyikatMedia from '../../assetts/images/islam/nmlogo.png';
 import { Verified } from '@mui/icons-material';
 import Welcome from '../../components/Welcome';
 import Header from '../../components/Header';
+import VideoMedia from '../../components/VideoMedia';
 
 const theme = createTheme();
 
 const StyledCard = styled(Card)`
   display: flex;
   flex-direction: column;
-  height: 100%;
   transition: transform 0.3s ease;
-  &:hover {
-    transform: scale(1.02);
-  }
   @media (max-width: 768px) {
-    height: 300;
+    height: 100%;
   }
 `;
-
-const VideoContainer = styled.div`
-  position: relative;
-  padding-top: 100%;
-  background-color: ${(props) => props.theme.palette.grey[400]};
-  overflow: hidden;
-  @media (max-width: 768px) {
-    padding-top: 100%;
-  }
-`;
-
-const AutoPlayVideo = styled.video`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`;
-
-const VideoMedia = ({ src, controls }) => {
-  const videoRef = useRef(null);
-  const { ref, inView } = useInView({
-    threshold: 0.9,
-  });
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    window.addEventListener('resize', handleResize);
-    handleResize(); // Set initial value
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (videoRef.current && isMobile) {
-      if (inView) {
-        videoRef.current.play();
-      } else {
-        videoRef.current.pause();
-      }
-    }
-  }, [inView, isMobile]);
-
-  return (
-    <div ref={ref}>
-      <AutoPlayVideo ref={videoRef} src={src} controls={controls}>
-        Ваш браузер не поддерживает видео.
-      </AutoPlayVideo>
-    </div>
-  );
-};
 
 const StyledCardContent = styled(CardContent)`
   flex-grow: 1;
@@ -154,9 +92,7 @@ const ChubakAjyJallilov = () => {
               {videoData.map((video, index) => (
                 <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
                   <StyledCard>
-                    <VideoContainer>
-                      <VideoMedia src={video.src} controls />
-                    </VideoContainer>
+                    <VideoMedia src={video.src} controls />
                     <StyledCardContent>
                       <Box
                         sx={{ display: 'flex', alignItems: 'center', mb: 2 }}

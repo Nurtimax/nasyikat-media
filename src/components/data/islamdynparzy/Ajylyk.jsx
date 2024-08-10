@@ -1,7 +1,7 @@
 import { Typography, Container, Box } from '@mui/material';
 import Header from '../../Header';
 import Welcome from '../../Welcome';
-import meccabackground from '../../../assetts/images/islam/mecca.jpg'; // Фоновое изображение
+import BackgroundImage from '../../../assetts/icons/bacimg.png';
 
 const Ajylyk = () => {
   return (
@@ -10,29 +10,40 @@ const Ajylyk = () => {
       <Welcome />
       <Box
         sx={{
-          backgroundImage: `url(${meccabackground})`, // Фоновое изображение
-          backgroundSize: 'cover', // Масштабирование, чтобы покрыть весь блок
-          backgroundPosition: 'center', // Центрирование изображения
-          backgroundRepeat: 'no-repeat', // Отключение повторения
-          minHeight: '100vh', // Минимальная высота, чтобы покрыть весь экран
-          py: 4, // Отступы по вертикали
+          backgroundImage: `url(${BackgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'end',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed',
+          py: 4,
         }}
       >
-        <Container>
+        <Container
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            minHeight: '100vh',
+          }}
+        >
           <Box
             sx={{
-              textAlign: 'center', // Выравнивание текста по центру
-              bgcolor: 'rgba(234, 227, 196, 0.917)', // Полупрозрачный фон
-              borderRadius: 2, // Закругленные углы
-              p: 4, // Отступы внутри контейнера
-              mb: 4, // Отступ снизу
+              textAlign: 'center',
+
+              borderRadius: 2,
+              p: 4,
+              mb: 4,
             }}
           >
             <Typography
               variant="h3"
               component="h1"
               gutterBottom
-              sx={{ textAlign: 'center' }}
+              sx={{
+                fontWeight: 'bold',
+                color: '#000000',
+                textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
+              }}
             >
               Ажылык
             </Typography>
@@ -40,7 +51,10 @@ const Ajylyk = () => {
               variant="body1"
               component="div"
               paragraph
-              sx={{ textAlign: 'center' }}
+              sx={{
+                color: '#000000',
+                textShadow: '0.5px 0.5px 1px rgba(0, 0, 0, 0.3)',
+              }}
             >
               Ажылык деген эмне? Ажылыктын сөздүк мааниси – улуу нерсеге карай
               аттануу. Шарият боюнча ажылык бул – Кааба жана анын айланасындагы
@@ -51,7 +65,9 @@ const Ajylyk = () => {
               variant="body1"
               component="div"
               paragraph
-              sx={{ textAlign: 'center' }}
+              sx={{
+                color: '#000000',
+              }}
             >
               Аллах Таала өз пенделерине эгер мүмкүнчүлүгү болсо, өмүрүндө бир
               жолу хаж ибаадатын парз кылды. Хаж- бул Аллах Субхану уа Тааланын

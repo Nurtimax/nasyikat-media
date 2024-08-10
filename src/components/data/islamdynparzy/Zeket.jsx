@@ -1,7 +1,7 @@
 import { Typography, Box } from '@mui/material';
 import Header from '../../../components/Header';
 import Welcome from '../../../components/Welcome';
-// import BackgroundImage from '../../../assetts/images/alaksa.jpg'; // Путь к фоновому изображению
+import BackgroundImage from '../../../assetts/icons/bacimg.png';
 
 const Zeket = () => {
   return (
@@ -12,13 +12,19 @@ const Zeket = () => {
         sx={{
           padding: 3,
           marginTop: '20px',
-          backgroundColor: '#fff2ceac',
-          // backgroundImage: `url(${BackgroundImage})`, // Фоновое изображение
-          backgroundSize: 'cover', // Масштабирование, чтобы покрыть весь блок
-          backgroundPosition: 'center', // Центрирование изображения
-          backgroundRepeat: 'no-repeat', // Отключение повторения
+          backgroundImage: `url(${BackgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'end',
+          backgroundRepeat: 'no-repeat',
           borderRadius: 2,
+          backgroundAttachment: 'fixed',
           boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
+          color: '#000',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          minHeight: '100vh',
         }}
       >
         <Typography
@@ -27,9 +33,10 @@ const Zeket = () => {
           sx={{
             marginBottom: 2,
             fontWeight: 'bold',
-            color: '#000000',
-            textAlign: 'center', // Центрирование заголовка
-            textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)', // Тень для улучшения читаемости
+            textAlign: 'center',
+            textShadow: '1px 1px 2px rgba(0, 0, 0, 0.6)',
+            padding: 1,
+            borderRadius: 1,
           }}
         >
           Зекет
@@ -38,25 +45,31 @@ const Zeket = () => {
           variant="body1"
           component="p"
           sx={{
-            marginBottom: 2,
-            lineHeight: 1.6,
-            color: '#000000',
-            textAlign: 'center', // Выравнивание текста по ширине
-            textShadow: '0.5px 0.5px 1px rgba(0, 0, 0, 0.2)', // Легкая тень для улучшения читаемости
+            lineHeight: 1.8,
+            marginBottom: 4,
+            fontSize: '1.2rem',
+            textAlign: 'center',
+            textShadow: '0.5px 0.5px 1px rgba(0, 0, 0, 0.3)',
+            padding: 2,
+            borderRadius: 1,
           }}
         >
           Ыйман келтирип, жакшы иштерди жасап, намазын окуп, зекет бергендердин
           сооптору Жараткандын алдында. Аларга коркунуч да, кайгыруу да болбойт.{' '}
-          <em>(Бакара; 277)</em>.
+          <br />
+          (Бакара; 277)
         </Typography>
         <Typography
           variant="body1"
           component="p"
           sx={{
-            lineHeight: 1.6,
-            color: '#000000',
-            textAlign: 'center', // Выравнивание текста по ширине
-            textShadow: '0.5px 0.5px 1px rgba(0, 0, 0, 0.2)', // Легкая тень для улучшения читаемости
+            textAlign: 'center',
+            textShadow: '0.5px 0.5px 1px rgba(0, 0, 0, 0.3)',
+            padding: 2,
+            borderRadius: 1,
+            lineHeight: 1.8,
+            marginBottom: 4,
+            fontSize: '1.2rem',
           }}
         >
           Зекет деген- бул пенденин адал эмгек менен тапкан ырыскысынан Аллах

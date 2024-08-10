@@ -92,6 +92,7 @@ const IconWrapper = styled('div')({
   left: '10px',
   borderRadius: '50%',
   padding: '5px',
+  color: '#071c6b',
 });
 
 const CardTitle = styled('h2')({
