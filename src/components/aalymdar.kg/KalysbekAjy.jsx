@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React from 'react';
 import {
   Grid,
   Card,
@@ -6,99 +6,32 @@ import {
   CardActions,
   IconButton,
   Typography,
-  Button,
   Box,
   Avatar,
   Badge,
   ThemeProvider,
   createTheme,
 } from '@mui/material';
-import DownloadIcon from '@mui/icons-material/Download';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TelegramIcon from '@mui/icons-material/Telegram';
-import styled, {
-  ThemeProvider as StyledThemeProvider,
-} from 'styled-components';
-import { useInView } from 'react-intersection-observer';
-import videoData from './src-video-data/example.js';
-import LogoNasyikatMedia from '../../assetts/images/islam/nmlogo.png';
+import styled from 'styled-components';
 import { Verified } from '@mui/icons-material';
 import Welcome from '../../components/Welcome';
 import Header from '../../components/Header';
+import LogoNasyikatMedia from '../../assetts/images/islam/nmlogo.png';
+import example from './src-video-data/example.js';
 
 const theme = createTheme();
 
 const StyledCard = styled(Card)`
   display: flex;
   flex-direction: column;
-  height: 100%;
   transition: transform 0.3s ease;
-  &:hover {
-    transform: scale(1.02);
-  }
   @media (max-width: 768px) {
-    height: 300;
+    height: 100%;
   }
 `;
-
-const VideoContainer = styled.div`
-  position: relative;
-  padding-top: 100%;
-  background-color: ${(props) => props.theme.palette.grey[400]};
-  overflow: hidden;
-  @media (max-width: 768px) {
-    padding-top: 100%;
-  }
-`;
-
-const AutoPlayVideo = styled.video`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`;
-
-const VideoMedia = ({ src, controls }) => {
-  const videoRef = useRef(null);
-  const { ref, inView } = useInView({
-    threshold: 0.9,
-  });
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    window.addEventListener('resize', handleResize);
-    handleResize(); // Set initial value
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (videoRef.current && isMobile) {
-      if (inView) {
-        videoRef.current.play();
-      } else {
-        videoRef.current.pause();
-      }
-    }
-  }, [inView, isMobile]);
-
-  return (
-    <div ref={ref}>
-      <AutoPlayVideo ref={videoRef} src={src} controls={controls}>
-        Ваш браузер не поддерживает видео.
-      </AutoPlayVideo>
-    </div>
-  );
-};
 
 const StyledCardContent = styled(CardContent)`
   flex-grow: 1;
@@ -115,18 +48,43 @@ const StyledBadge = styled(Badge)`
   }
 `;
 
-const KalysbekAjy = () => {
+const VideoContainer = styled.div`
+  position: relative;
+  padding-top: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+`;
+
+const VideoIframe = styled.iframe`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+`;
+
+const extractYouTubeId = (url) => {
+  if (!url) return null;
+
+  const regExp =
+    /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/shorts|youtu\.be)\/([^&\s]{11})|(?:https?:\/\/)?(?:www\.)?youtube\.com\/watch\?v=([^&\s]{11})/;
+  const match = url.match(regExp);
+  return match ? match[1] || match[2] : null;
+};
+
+const ChubakAjyJallilov = () => {
   const handleShare = (platform, url) => {
     let shareUrl = '';
     switch (platform) {
       case 'whatsapp':
-        shareUrl = `https://wa.me/+996?text=${url}`;
+        shareUrl = `https://wa.me/?text=${url}`;
         break;
       case 'instagram':
         shareUrl = `https://www.instagram.com/nasyikat.media/?url=${url}`;
         break;
       case 'telegram':
-        shareUrl = `https://t.me/+SEJbmn8AwNViNmNi?url=${url}`;
+        shareUrl = `https://t.me/share/url?url=${url}`;
         break;
       default:
         break;
@@ -134,32 +92,32 @@ const KalysbekAjy = () => {
     window.open(shareUrl, '_blank');
   };
 
-  const handleDownload = (url) => {
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = true;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-  };
-
   return (
     <>
       <Welcome />
       <Header />
       <ThemeProvider theme={theme}>
-        <StyledThemeProvider theme={theme}>
-          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8, px: 2 }}>
-            <Grid container spacing={2} maxWidth="lg">
-              {videoData.map((video, index) => (
+        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8, px: 2 }}>
+          <Grid container spacing={2} maxWidth="lg">
+            {example.map((video, index) => {
+              const youtubeId = extractYouTubeId(video.url);
+              return (
                 <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
                   <StyledCard>
                     <VideoContainer>
-                      <VideoMedia src={video.src} controls />
+                      <VideoIframe
+                        src={
+                          youtubeId
+                            ? `https://www.youtube.com/embed/${youtubeId}`
+                            : ''
+                        }
+                        title={video.title}
+                        allowFullScreen
+                      />
                     </VideoContainer>
                     <StyledCardContent>
                       <Box
-                        sx={{ display: 'flex', alignItems: 'center', mb: 2 }}
+                        sx={{ display: 'flex', alignItems: 'center', mb: 3 }}
                       >
                         <StyledBadge
                           overlap="circular"
@@ -201,45 +159,33 @@ const KalysbekAjy = () => {
                     </StyledCardContent>
                     <StyledCardActions>
                       <IconButton
-                        onClick={() =>
-                          handleShare('whatsapp', video.url || video.src)
-                        }
+                        onClick={() => handleShare('whatsapp', video.url)}
                         aria-label="share on WhatsApp"
                       >
                         <WhatsAppIcon />
                       </IconButton>
                       <IconButton
-                        onClick={() =>
-                          handleShare('instagram', video.url || video.src)
-                        }
+                        onClick={() => handleShare('instagram', video.url)}
                         aria-label="share on Instagram"
                       >
                         <InstagramIcon />
                       </IconButton>
                       <IconButton
-                        onClick={() =>
-                          handleShare('telegram', video.url || video.src)
-                        }
+                        onClick={() => handleShare('telegram', video.url)}
                         aria-label="share on Telegram"
                       >
                         <TelegramIcon />
                       </IconButton>
-                      <Button
-                        onClick={() => handleDownload(video.url || video.src)}
-                        startIcon={<DownloadIcon />}
-                      >
-                        Көчүрүү
-                      </Button>
                     </StyledCardActions>
                   </StyledCard>
                 </Grid>
-              ))}
-            </Grid>
-          </Box>
-        </StyledThemeProvider>
+              );
+            })}
+          </Grid>
+        </Box>
       </ThemeProvider>
     </>
   );
 };
 
-export default KalysbekAjy;
+export default ChubakAjyJallilov;
