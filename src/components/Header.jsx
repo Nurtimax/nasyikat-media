@@ -43,21 +43,21 @@ const ResponsiveDrawer = styled(Drawer)(({ theme }) => ({
 
 const ResponsiveListItemText = styled(ListItemText)(({ theme }) => ({
   '& .MuiTypography-root': {
-    fontSize: '1rem', // Default font size for smaller screens
+    fontSize: '1rem',
     [theme.breakpoints.up('sm')]: {
-      fontSize: '1.1rem', // Font size for medium screens
+      fontSize: '1.1rem',
     },
     [theme.breakpoints.up('md')]: {
-      fontSize: '1.2rem', // Font size for larger screens
+      fontSize: '1.2rem',
     },
     [theme.breakpoints.up('lg')]: {
-      fontSize: '1.3rem', // Font size for extra large screens
+      fontSize: '1.3rem',
     },
   },
 }));
 
 const StyledAppBar = styled(AppBar)({
-  backgroundColor: '#071c6b', // Updated header background color
+  backgroundColor: '#071c6b',
 });
 
 const Logo = styled(Typography)({
@@ -113,8 +113,8 @@ const Header = () => {
                 <Button
                   onClick={handleClick}
                   style={{
-                    color: '#e8b775',
-                    marginRight: '8px',
+                    color: '#f6edde',
+                    marginRight: '5px',
                     fontFamily: "'Lora', serif",
                     fontWeight: 'bold',
                   }}
@@ -147,6 +147,7 @@ const Header = () => {
                       color: '#fbe4c5',
                       borderRadius: '8px',
                       padding: '16px',
+                      marginRight: 'auto',
                       position: 'relative',
                     },
                   }}
