@@ -19,10 +19,8 @@ import 'slick-carousel/slick/slick-theme.css';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import DiscountIcon from '@mui/icons-material/LocalOffer';
-import PhoneIcon from '@mui/icons-material/Phone';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import { keyframes } from '@mui/system';
-import ScrollToTopButton from '../components/ScrollToTopButton';
 
 const pulseAnimation = keyframes`
   0% { transform: scale(1); }
@@ -32,9 +30,9 @@ const pulseAnimation = keyframes`
 
 const StyledCard = styled(Card)(({ theme }) => ({
   width: '100%',
-  height: '600px',
-  boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
-  borderRadius: '10px',
+  height: 'auto',
+  maxWidth: '400px',
+  borderRadius: '16px',
   overflow: 'hidden',
   display: 'flex',
   flexDirection: 'column',
@@ -43,27 +41,23 @@ const StyledCard = styled(Card)(({ theme }) => ({
 }));
 
 const PriceBox = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(1),
+  padding: theme.spacing(1.1),
   borderRadius: theme.shape.borderRadius,
-  display: 'inline-block',
   backgroundColor: '#f0f0f0',
+  boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
 }));
 
 const StyledButton = styled(Button)(({ theme }) => ({
   backgroundColor: '#071c6b',
   color: '#fff',
-  borderRadius: 5,
-  boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
-  transition: 'background-color 0.3s, transform 0.3s',
+  borderRadius: 8,
   textTransform: 'none',
-  fontSize: '1.1rem',
+  fontSize: '1.2rem',
   width: '100%',
+  marginTop: '1rem',
   cursor: 'pointer',
   '&:hover': {
-    backgroundColor: '#0a2278e4',
-  },
-  '&:active': {
-    transform: 'scale(0.98)',
+    backgroundColor: '#0a2278',
   },
 }));
 
@@ -71,6 +65,7 @@ const DescriptionTypography = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(2),
   color: '#555',
   textAlign: 'center',
+  fontSize: '0.9rem',
 }));
 
 const RatingBox = styled(Box)(({ theme }) => ({
@@ -83,8 +78,8 @@ const InfoBox = styled(Box)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  gap: theme.spacing(2),
-  mb: theme.spacing(2),
+  gap: theme.spacing(1),
+  mb: theme.spacing(1),
 }));
 
 const SocialLinksBox = styled(Box)(({ theme }) => ({
@@ -101,20 +96,22 @@ const FeaturedBadge = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'center',
   fontSize: '14px',
+  color: '#fff',
   marginLeft: theme.spacing(1),
 }));
 
 const ImageSlider = styled(Carousel)(({ theme }) => ({
   '& .slick-slide img': {
     width: '100%',
-    height: '300px',
-    objectFit: 'contain',
+    height: '300px', // Adjusted height for images
+    objectFit: 'cover',
+    borderRadius: '8px',
   },
   '& .slick-dots': {
-    bottom: '10px',
+    bottom: '10px', // Adjusted positioning for dots
   },
   '& .slick-dots li': {
-    margin: '0 5px',
+    margin: '0 4px',
   },
 }));
 
@@ -122,7 +119,7 @@ const DiscountBadge = styled(Box)(({ theme }) => ({
   position: 'absolute',
   top: 16,
   right: 16,
-  backgroundColor: '#FFA500',
+  backgroundColor: '#FF5722',
   borderRadius: '50%',
   padding: '8px',
   zIndex: 10,
@@ -162,30 +159,28 @@ function ProductCard({ product }) {
         </DiscountBadge>
       )}
       <ImageSlider
-        dots={true} // Show dots for manual navigation
+        dots={true}
         infinite={true}
         speed={600}
         slidesToShow={1}
         slidesToScroll={1}
-        autoplay={false} // Disable auto-sliding
-        autoplaySpeed={0} // Disable auto-sliding by setting speed to 0
-        pauseOnHover={true} // Pause sliding on hover
-        arrows={true} // Show navigation arrows
+        autoplay={true}
+        autoplaySpeed={5000}
+        pauseOnHover={true}
+        arrows={true}
       >
         {product.images.map((image, index) => (
           <CardMedia
             key={index}
             component="img"
             alt={`product image ${index}`}
-            height="300"
             image={image}
-            style={{ cursor: 'pointer' }}
           />
         ))}
       </ImageSlider>
-      <CardContent sx={{ flex: '1 0 auto' }}>
+      <CardContent>
         <Typography
-          variant="h4"
+          variant="h5"
           component="div"
           gutterBottom
           align="center"
@@ -218,9 +213,6 @@ function ProductCard({ product }) {
               size="small"
               sx={{ color: '#FFB400' }}
             />
-            <Typography variant="body2" sx={{ ml: 1 }}>
-              ({product.reviews} reviews)
-            </Typography>
           </RatingBox>
         </Box>
         <InfoBox>
@@ -234,7 +226,7 @@ function ProductCard({ product }) {
             </Grid>
             <Grid item>
               <Typography
-                variant="body2"
+                variant="body1"
                 color="text.secondary"
                 style={{ display: 'flex', alignItems: 'center' }}
               >
@@ -276,18 +268,10 @@ function ProductCard({ product }) {
                 <InstagramIcon />
               </IconButton>
             )}
-            {product.storePhone && (
-              <IconButton aria-label="phone" href={`tel:${product.storePhone}`}>
-                <PhoneIcon />
-              </IconButton>
-            )}
           </SocialLinksBox>
         </InfoBox>
-        <Box sx={{ mt: 2 }}>
-          <StyledButton onClick={handleOrderClick}>Заказать</StyledButton>
-        </Box>
+        <StyledButton onClick={handleOrderClick}>Заказать</StyledButton>
       </CardContent>
-      <ScrollToTopButton />
     </StyledCard>
   );
 }
@@ -295,16 +279,15 @@ function ProductCard({ product }) {
 ProductCard.propTypes = {
   product: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
-    rating: PropTypes.number.isRequired,
-    reviews: PropTypes.number.isRequired,
-    images: PropTypes.arrayOf(PropTypes.string).isRequired,
     description: PropTypes.string,
+    price: PropTypes.number.isRequired,
+    rating: PropTypes.number,
+    reviews: PropTypes.number,
+    images: PropTypes.arrayOf(PropTypes.string).isRequired,
     storeAvatar: PropTypes.string,
-    storeName: PropTypes.string.isRequired,
+    storeName: PropTypes.string,
     storeWhatsapp: PropTypes.string,
     storeInstagram: PropTypes.string,
-    storePhone: PropTypes.string,
     isFeatured: PropTypes.bool,
     sale: PropTypes.bool,
   }).isRequired,
