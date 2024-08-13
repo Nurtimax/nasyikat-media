@@ -3,8 +3,6 @@ import {
   Grid,
   Card,
   CardContent,
-  CardActions,
-  IconButton,
   Typography,
   Box,
   Avatar,
@@ -12,9 +10,6 @@ import {
   ThemeProvider,
   createTheme,
 } from '@mui/material';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import TelegramIcon from '@mui/icons-material/Telegram';
 import styled from 'styled-components';
 import { Verified } from '@mui/icons-material';
 import Welcome from '../../components/Welcome';
@@ -35,11 +30,6 @@ const StyledCard = styled(Card)`
 
 const StyledCardContent = styled(CardContent)`
   flex-grow: 1;
-`;
-
-const StyledCardActions = styled(CardActions)`
-  display: flex;
-  justify-content: space-between;
 `;
 
 const StyledBadge = styled(Badge)`
@@ -74,24 +64,6 @@ const extractYouTubeId = (url) => {
 };
 
 const ChubakAjyJallilov = () => {
-  const handleShare = (platform, url) => {
-    let shareUrl = '';
-    switch (platform) {
-      case 'whatsapp':
-        shareUrl = `https://wa.me/?text=${url}`;
-        break;
-      case 'instagram':
-        shareUrl = `https://www.instagram.com/nasyikat.media/?url=${url}`;
-        break;
-      case 'telegram':
-        shareUrl = `https://t.me/share/url?url=${url}`;
-        break;
-      default:
-        break;
-    }
-    window.open(shareUrl, '_blank');
-  };
-
   return (
     <>
       <Welcome />
@@ -157,26 +129,6 @@ const ChubakAjyJallilov = () => {
                         {video.speaker}
                       </Typography>
                     </StyledCardContent>
-                    <StyledCardActions>
-                      <IconButton
-                        onClick={() => handleShare('whatsapp', video.url)}
-                        aria-label="share on WhatsApp"
-                      >
-                        <WhatsAppIcon />
-                      </IconButton>
-                      <IconButton
-                        onClick={() => handleShare('instagram', video.url)}
-                        aria-label="share on Instagram"
-                      >
-                        <InstagramIcon />
-                      </IconButton>
-                      <IconButton
-                        onClick={() => handleShare('telegram', video.url)}
-                        aria-label="share on Telegram"
-                      >
-                        <TelegramIcon />
-                      </IconButton>
-                    </StyledCardActions>
                   </StyledCard>
                 </Grid>
               );
