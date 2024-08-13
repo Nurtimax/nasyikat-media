@@ -30,8 +30,7 @@ const pulseAnimation = keyframes`
 
 const StyledCard = styled(Card)(({ theme }) => ({
   width: '100%',
-  height: 'auto',
-  maxWidth: '400px',
+  height: '800px',
   borderRadius: '16px',
   overflow: 'hidden',
   display: 'flex',
@@ -102,13 +101,13 @@ const FeaturedBadge = styled(Box)(({ theme }) => ({
 
 const ImageSlider = styled(Carousel)(({ theme }) => ({
   '& .slick-slide img': {
-    width: '100%',
-    height: '300px', // Adjusted height for images
+    width: '300px',
+    height: '300px',
     objectFit: 'cover',
     borderRadius: '8px',
   },
   '& .slick-dots': {
-    bottom: '10px', // Adjusted positioning for dots
+    bottom: '10px',
   },
   '& .slick-dots li': {
     margin: '0 4px',
@@ -139,6 +138,9 @@ function ProductCard({ product }) {
   if (!product) {
     return <div>Кечиресиз мындай товар табылган жок</div>;
   }
+
+  const instagramURL =
+    product.category === 'books' ? 'kurzhun.shop' : 'arzanstore.ru';
 
   const handleOrderClick = () => {
     if (product.storeWhatsapp) {
@@ -254,20 +256,18 @@ function ProductCard({ product }) {
                 <WhatsAppIcon />
               </IconButton>
             )}
-            {product.storeInstagram && (
-              <IconButton
-                aria-label="instagram"
-                href={`https://instagram.com/${product.storeInstagram}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{
-                  color: '#C13584',
-                  animation: `${pulseAnimation} 1.5s infinite`,
-                }}
-              >
-                <InstagramIcon />
-              </IconButton>
-            )}
+            <IconButton
+              aria-label="instagram"
+              href={`https://instagram.com/${instagramURL}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: '#C13584',
+                animation: `${pulseAnimation} 1.5s infinite`,
+              }}
+            >
+              <InstagramIcon />
+            </IconButton>
           </SocialLinksBox>
         </InfoBox>
         <StyledButton onClick={handleOrderClick}>Заказать</StyledButton>
@@ -279,17 +279,20 @@ function ProductCard({ product }) {
 ProductCard.propTypes = {
   product: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    description: PropTypes.string,
     price: PropTypes.number.isRequired,
     rating: PropTypes.number,
     reviews: PropTypes.number,
     images: PropTypes.arrayOf(PropTypes.string).isRequired,
-    storeAvatar: PropTypes.string,
+    category: PropTypes.string.isRequired,
     storeName: PropTypes.string,
+    storeAvatar: PropTypes.string,
     storeWhatsapp: PropTypes.string,
     storeInstagram: PropTypes.string,
+    storePhone: PropTypes.string,
+    description: PropTypes.string,
     isFeatured: PropTypes.bool,
-    sale: PropTypes.bool,
+    sale: PropTypes.string,
+    delivery: PropTypes.string,
   }).isRequired,
 };
 
