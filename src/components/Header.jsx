@@ -203,6 +203,7 @@ const Header = () => {
         <List>
           {[
             { text: 'Башкы бет', path: '/app' },
+            { text: 'Биз жөнүндө', path: '/aboutUs' },
             { text: 'Китебим Куран', path: '/quran' },
             { text: 'Исламда 40 парз', path: '/islamdynparzdary' },
             { text: 'Ислам деген эмне?', path: '/islam' },
@@ -210,6 +211,7 @@ const Header = () => {
             { text: 'Пайдалуу дубалар', path: '/duba' },
             { text: 'Куттуy Хадистер', path: '/hadis' },
             { text: 'Онлайн Дүкөн', path: '/store' },
+            { text: 'Кызматтар', path: '/services' },
             { text: 'Тасбих', path: '/zikr' },
           ].map((item, index) => (
             <ListItem

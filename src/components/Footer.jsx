@@ -111,7 +111,7 @@ const FooterText = styled(Typography)(({ theme }) => ({
   color: '#ffc46b',
   textAlign: 'center',
   marginTop: theme.spacing(2),
-  fontSize: '1rem',
+  fontSize: '0.7rem',
 }));
 
 const Footer = () => {
