@@ -9,42 +9,42 @@ import KalysbekAjy from '../../../assetts/images/ustazdar/kalysajy.png';
 
 const kyrgyzaAlymdary = [
   {
-    name: 'ЧУБАК ажы ЖАЛИЛОВ(р.х)',
+    name: 'ЧУБАК ажы Жалиловтун(р.х) сабагы',
     img: ChubakAjy,
     link: '/chubakajyjallilov',
   },
   {
-    name: 'Абдушукур Ажы Нарматов',
+    name: 'Абдушукур Ажы Нарматовтун сабагы',
     img: AbdushukurAjy,
     link: '/abdushukurajy',
   },
   {
-    name: 'Максатбек ажы Токтомушев',
+    name: 'Максатбек ажы Токтомушевдин сабагы',
     img: MaksatAjy,
     link: '/maksatajy',
   },
   {
-    name: 'Бахтияр ажы Шарапов',
+    name: 'Бахтияр ажы Шараповтун сабагы',
     img: BakgtyarAjy,
     link: '/bakgtyarajy',
   },
   {
-    name: 'Эрмек ажы Тынай уулу',
+    name: 'Эрмек ажы Тынай уулунун сабагы',
     img: ErmekAjy,
     link: '/ermekajy',
   },
   {
-    name: 'Садыбакас Ажы Доолов',
+    name: 'Садыбакас Ажы Дооловтун сабагы',
     img: SadybakasAjy,
     link: '/sadybakasajy',
   },
   {
-    name: 'Илёс Абдувалиев',
+    name: 'Илёс Абдувалиевтин сабагы',
     img: IlyasAjy,
     link: '/ilyasajy',
   },
   {
-    name: 'Калысбек ажы Заманбеков',
+    name: 'Калысбек ажы Заманбековтун сабагы',
     img: KalysbekAjy,
     link: '/kalysbekajy',
   },

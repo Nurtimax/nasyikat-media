@@ -227,8 +227,8 @@ const Header = () => {
             sx={{
               display: 'flex',
               flexDirection: 'column',
-              minHeight: '45vh',
-              justifyContent: 'flex-end',
+              minHeight: '39vh',
+              justifyContent: 'center',
               padding: '0 16px',
             }}
           >
