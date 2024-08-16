@@ -19,10 +19,10 @@ const StyledAccordion = styled(Accordion)(({ theme }) => ({
 }));
 
 const AccordionSummaryStyled = styled(AccordionSummary)(({ theme }) => ({
-  backgroundColor: '#4f8f5cc5',
+  backgroundColor: '#e3dcaf',
   borderRadius: '10px',
   '&:hover': {
-    backgroundColor: '#81c784d0',
+    backgroundColor: '#e3dcaf91',
   },
 }));
 

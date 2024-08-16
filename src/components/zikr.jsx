@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   Button,
   Typography,
@@ -11,95 +11,81 @@ import { styled } from '@mui/system';
 import Header from './Header';
 import Welcome from './Welcome';
 import Footer from './Footer';
+import islamicBackground from '../assetts/icons/bacimg.png';
+import ringitoon from '../assetts/quran-audio/ringiton.mp3';
 
-const TasbihCard = styled(Card)(({ theme, animate }) => ({
-  maxWidth: 400,
-  margin: '20px auto',
+const TasbihCard = styled(Card)(({ theme }) => ({
+  maxWidth: 500,
+  margin: '150px auto',
   textAlign: 'center',
-  padding: theme.spacing(2),
-  background: animate
-    ? 'linear-gradient(45deg, #f3ec78, #af4261)' // Gradient background with more vibrant colors
-    : 'white',
-  borderRadius: '16px',
-  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-  transition: 'background 0.5s ease-in-out, transform 0.5s ease-in-out',
-  animation: animate ? 'pulse 1s infinite' : 'none',
-  transform: animate ? 'scale(1.05)' : 'scale(1)', // Slight scale effect on animation
+  padding: theme.spacing(3),
+  background: `url(${islamicBackground})`,
+  backgroundSize: 'cover',
+  borderRadius: '15px',
+  boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.2)',
+  border: '2px solid #f5deb3',
 }));
 
 const LargeButton = styled(Button)(({ theme }) => ({
   fontSize: '2rem',
-  width: '100px',
-  height: '100px',
-  borderRadius: '50%',
+  width: '120px',
+  height: '120px',
   padding: theme.spacing(2),
   margin: theme.spacing(2),
-  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
-  transition: 'background 0.3s ease, box-shadow 0.3s ease',
+  background: 'linear-gradient(135deg, #008080, #20b2aa)',
+  color: '#fff',
+  borderRadius: '50%',
   '&:hover': {
-    background: 'linear-gradient(45deg, #ff6f00, #ffcc80)',
-    boxShadow: '0 6px 12px rgba(0, 0, 0, 0.4)',
+    background: 'linear-gradient(135deg, #006666, #008080)',
+    boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.2)',
   },
 }));
-
-const pulseAnimation = `
-  @keyframes pulse {
-    0% {
-      background-color: rgba(255, 105, 135, 0.3);
-    }
-    50% {
-      background-color: rgba(255, 105, 135, 0.6);
-    }
-    100% {
-      background-color: rgba(255, 105, 135, 0.3);
-    }
-  }
-`;
 
 const Zikr = () => {
   const [count, setCount] = useState(0);
   const [selectedText, setSelectedText] = useState('');
-  const [animate, setAnimate] = useState(false); // State for animation trigger
+  const audioRef = useRef(null);
 
   const tasbihTexts = [
     {
       arabic: 'سبحان الله',
       transliteration: 'СубханАллах',
-      meaning: 'Аллах кемчиликтерден аруу',
+      meaning: 'Аллах свободен от недостатков',
     },
     {
       arabic: 'الحمد لله',
       transliteration: 'Альхамдулиллах',
-      meaning: 'Аллага шугур',
+      meaning: 'Хвала Аллаху',
     },
     {
       arabic: 'الله أكبر',
       transliteration: 'Аллаху Акбар',
-      meaning: 'Аллах улук',
+      meaning: 'Аллах Велик',
     },
     {
       arabic: 'لا إله إلا الله',
-      transliteration: 'Лаа илаха Иллаллах',
-      meaning: 'Аллахтан башка кудай жок',
+      transliteration: 'Ла илаха иллаллах',
+      meaning: 'Нет божества, кроме Аллаха',
     },
     {
       arabic: 'أستغفر الله',
-      transliteration: 'АстагфирАллах',
-      meaning: 'Аллахым куноолорумду кечип',
+      transliteration: 'Астагфируллах',
+      meaning: 'Прошу прощения у Аллаха',
     },
   ];
 
-  useEffect(() => {
-    if (count % 33 === 0 && count !== 0) {
-      setAnimate(true);
-      if (navigator.vibrate) {
-        navigator.vibrate(200); // Vibrate for 200 milliseconds
-      }
-      setTimeout(() => setAnimate(false), 1000); // Turn off animation after 1 second
-    }
-  }, [count]);
+  const handleIncrement = () => {
+    setCount((prevCount) => {
+      const newCount = prevCount + 1;
 
-  const handleIncrement = () => setCount((prevCount) => prevCount + 1);
+      if (newCount % 33 === 0) {
+        audioRef.current.play();
+      }
+
+      return newCount;
+    });
+  };
+
   const handleDecrement = () => setCount(count > 0 ? count - 1 : 0);
   const handleReset = () => setCount(0);
   const handleTextChange = (event) => setSelectedText(event.target.value);
@@ -108,10 +94,10 @@ const Zikr = () => {
     <div>
       <Header />
       <Welcome />
-      <TasbihCard animate={animate}>
+      <TasbihCard>
         <CardContent>
-          <Typography variant="h5" gutterBottom>
-            Аллахты эстоо ибадат
+          <Typography variant="h4" gutterBottom>
+            Зикр (Тасбих)
           </Typography>
           <TextField
             select
@@ -121,24 +107,29 @@ const Zikr = () => {
             fullWidth
             variant="outlined"
             margin="normal"
+            sx={{
+              fontSize: '1.2rem',
+              fontFamily: 'serif',
+              backgroundColor: '#fff',
+              borderRadius: '8px',
+              border: '1px solid #008080',
+            }}
           >
-            <option value="">Зикр тандоо</option>
+            <option value="">Выберите Зикр</option>
             {tasbihTexts.map((text, index) => (
               <option key={index} value={text.transliteration}>
                 {text.arabic} ({text.transliteration}) - {text.meaning}
               </option>
             ))}
           </TextField>
-          <Typography variant="h6" gutterBottom>
-            Тандалган зикр: {selectedText}
+          <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
+            Выбранный Зикр: <br /> {selectedText}
           </Typography>
         </CardContent>
-      </TasbihCard>
-      <TasbihCard animate={animate}>
         <CardContent>
-          <Typography variant="h4">Зикрдин саны</Typography>
+          <Typography variant="h5">Счётчик Зикра</Typography>
           <Typography variant="h6" gutterBottom>
-            эсеп: {count}
+            Счёт: {count}
           </Typography>
           <LargeButton
             variant="contained"
@@ -152,18 +143,38 @@ const Zikr = () => {
               variant="contained"
               color="secondary"
               onClick={handleDecrement}
-              style={{ margin: '0 10px' }}
+              sx={{
+                margin: '0 15px',
+                fontSize: '1rem',
+                backgroundColor: '#008080',
+                color: '#fff',
+                '&:hover': {
+                  backgroundColor: '#006666',
+                },
+              }}
             >
               -
             </Button>
-            <Button variant="contained" color="error" onClick={handleReset}>
-              очуруу
+            <Button
+              variant="contained"
+              color="error"
+              onClick={handleReset}
+              sx={{
+                fontSize: '1rem',
+                backgroundColor: '#d32f2f',
+                color: '#fff',
+                '&:hover': {
+                  backgroundColor: '#c62828',
+                },
+              }}
+            >
+              Сброс
             </Button>
           </Box>
         </CardContent>
       </TasbihCard>
 
-      <style>{pulseAnimation}</style>
+      <audio ref={audioRef} src={ringitoon} />
 
       <Footer />
     </div>
