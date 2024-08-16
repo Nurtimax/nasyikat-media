@@ -21,7 +21,23 @@ import nauishnik5 from '../../../products-img/marshalmajor2.jpg';
 import nauishnik6 from '../../../products-img/ultra49.png';
 import nauishnik7 from '../../../products-img/ultra492.png';
 
+import newimg from '../../../assetts/icons/new.png';
+
 const products = [
+  {
+    name: 'Здесь может быть ваш товар',
+    price: 'Цена',
+    rating: 5,
+    reviews: 34,
+    images: [newimg, newimg, newimg],
+    storeName: 'Магазин.shop',
+    storeAvatar: logo,
+    storeWhatsapp: '',
+    storeInstagram: '.shop',
+    storePhone: '',
+    description: 'описание про товаров коротко',
+    isFeatured: true,
+  },
   {
     name: 'Рюкзак из ЭКО-кожи',
     price: '2900',
