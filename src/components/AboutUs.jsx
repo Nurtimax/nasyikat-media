@@ -11,6 +11,7 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/system';
 import logo from '../assetts/icons/logo-nasykat.png';
+import logo2 from '../assetts/images/islamsabaktary.jpg';
 import logoavatar from '../assetts/images/donate.jpg';
 import { YouTube, Instagram, Telegram, WhatsApp } from '@mui/icons-material';
 import Donate from './Donate';
@@ -46,11 +47,11 @@ const teamMembers = [
     },
   },
   {
-    name: 'Kyrgyz.muslims',
-    role: 'Кыргыз эли исламда',
-    image: logo,
+    name: 'Islam.sabaktary',
+    role: 'Ислам сабактары',
+    image: logo2,
     description:
-      'Бул баракчабыз динге дагы да болсо кызмат кылуу үчүн ачылган каналдын өзгөчөлүгү катталуучулар жалаң мусулмандар жаман коментарийсиз жүрөгү таза инсандар үчүн',
+      'Бул баракчабыздын өзгөчөлүгү Бир Кыска Дуба аттуу каналы бар каналдан дубалар куран аяттары жана башка көптөгөн пайдалуу нереселерди ала аласыздар баарыңыздарды күтөбүз.',
     links: {
       youtube: 'https://www.youtube.com/channel/your-channel-id',
       instagram: 'https://www.instagram.com/your-profile',
