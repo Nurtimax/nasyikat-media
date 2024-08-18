@@ -1,4 +1,3 @@
-import logo from '../../../assetts/icons/logo-nasykat.png';
 import logo2 from '../../../assetts/icons/arzan.png';
 
 import sumka1 from '../../../products-img/рюкзак.png';
@@ -21,22 +20,24 @@ import nauishnik5 from '../../../products-img/marshalmajor2.jpg';
 import nauishnik6 from '../../../products-img/ultra49.png';
 import nauishnik7 from '../../../products-img/ultra492.png';
 
-import newimg from '../../../assetts/icons/new.png';
+import logokurzhun from '../../../assetts/icons/logoku.png';
 
 const products = [
   {
-    name: 'Здесь может быть ваш товар',
-    price: 'Цена',
+    name: 'Качественные сумки и рюкзаки.',
     rating: 5,
-    reviews: 34,
-    images: [newimg, newimg, newimg],
-    storeName: 'Магазин.shop',
-    storeAvatar: logo,
-    storeWhatsapp: '',
-    storeInstagram: '.shop',
-    storePhone: '',
-    description: 'описание про товаров коротко',
+    about:
+      '"Посетите наш Instagram, там вы найдете то, что искали. Подписывайтесь и оставайтесь в курсе!"',
+    price: '1000000',
+    images: [logokurzhun, logokurzhun, logokurzhun],
+    storeName: 'Kurzhun.shop',
+    storeAvatar: logokurzhun,
+    storeWhatsapp: '996556401369',
+    storeInstagram: 'kurzhun.shop',
+    storePhone: '996556401369',
+    description: 'Качественные сумки и рюкзаки.',
     isFeatured: true,
+    storeWebsite: 'https://kurzhun-store.vercel.app/',
   },
   {
     name: 'Рюкзак из ЭКО-кожи',
@@ -45,12 +46,13 @@ const products = [
     reviews: 34,
     images: [sumka1, sumka2, sumka3],
     storeName: 'Kurzhun.shop',
-    storeAvatar: logo,
+    storeAvatar: logokurzhun,
     storeWhatsapp: '996556401369',
     storeInstagram: 'kurzhun.shop',
     storePhone: '996556401369',
     description: 'Вид рюкзака для ноутбука для студентов',
     isFeatured: true,
+    storeWebsite: 'https://kurzhun-store.vercel.app/',
   },
   {
     name: 'Cумка Рюкзак 3 в 1',
@@ -59,12 +61,13 @@ const products = [
     reviews: 34,
     images: [sumka4, sumka5, sumka6],
     storeName: 'Kurzhun.shop',
-    storeAvatar: logo,
+    storeAvatar: logokurzhun,
     storeWhatsapp: '996556401369',
     storeInstagram: 'kurzhun.shop',
     storePhone: '996556401369',
     isFeatured: true,
     description: 'Размер рюкзака маленький (до 20 л.)',
+    storeWebsite: 'https://kurzhun-store.vercel.app/',
   },
   {
     name: 'Сумка-рюкзак мужская кожаная 2 в 1 - трансформер.',
@@ -73,12 +76,13 @@ const products = [
     reviews: 34,
     images: [sumka8],
     storeName: 'Kurzhun.shop',
-    storeAvatar: logo,
+    storeAvatar: logokurzhun,
     storeWhatsapp: '996556401369',
     storeInstagram: 'kurzhun.shop',
     storePhone: '996556401369',
     isFeatured: true,
     description: 'Трансформер; рюкзак-трансформер; сумка',
+    storeWebsite: 'https://kurzhun-store.vercel.app/',
   },
   {
     name: 'Airpods Pro 2 с экраном',
@@ -90,8 +94,11 @@ const products = [
     delivery: 'Бесплатная доставка',
     storeName: 'Arzanstore.ru',
     storeAvatar: logo2,
+    storeWhatsapp: '+79998152638',
+    storePhone: '+79998152638',
     storeInstagram: 'arzanstore.ru',
     isFeatured: true,
+    storeWebsite: 'https://arzanstore.netlify.app/',
     description:
       'Радиус 20м, Защита от воды, Время автономной работы: 7 часов , полный заряд кейса хватает на 35часов',
   },
@@ -102,8 +109,11 @@ const products = [
     reviews: 34,
     images: [nauishnik3, nauishnik4, nauishnik5],
     storeName: 'Arzanstore.ru',
-    storeAvatar: logo2,
+    storeWhatsapp: '+79998152638',
+    storePhone: '+79998152638',
     storeInstagram: 'arzanstore.ru',
+    storeAvatar: logo2,
+    storeWebsite: 'https://arzanstore.netlify.app/',
     isFeatured: true,
     description:
       'Упаковка,Зарядка,Инструкция ,Амбушюры из кожи, Bluetooth, Регулировка громкости',
@@ -116,12 +126,33 @@ const products = [
     images: [nauishnik6, nauishnik7],
     sale: '15% скидка',
     delivery: 'Платная доставка',
+    storeWhatsapp: '+79998152638',
+    storePhone: '+79998152638',
+    storeInstagram: 'arzanstore.ru',
     storeName: 'Arzanstore.ru',
     storeAvatar: logo2,
-    storeInstagram: 'arzanstore.ru',
     isFeatured: true,
+    storeWebsite: 'https://arzanstore.netlify.app/',
     description:
       'Диаметр 45мм, Водонепроницаемость до 50 метров, Сенсорный дисплей, GPS и Bluetooth, Шагомер и пульсометр',
+  },
+  {
+    name: 'AirPods и аксессуары: стиль и качество для вашего устройства.',
+    about:
+      '"Посетите наш Instagram, там вы найдете то, что искали. Подписывайтесь и оставайтесь в курсе!"',
+    price: '10000000',
+    rating: 5,
+    reviews: 34,
+    images: [logo2, logo2, logo2],
+    storeName: 'Arzanstore.shop',
+    storeAvatar: logo2,
+    storeWhatsapp: '+79998152638',
+    storePhone: '+79998152638',
+    storeInstagram: 'arzanstore.ru',
+    description:
+      'AirPods и аксессуары: стиль и качество для вашего устройства.',
+    isFeatured: true,
+    storeWebsite: 'https://arzanstore.netlify.app/',
   },
 ];
 

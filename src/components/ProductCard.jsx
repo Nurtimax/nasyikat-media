@@ -60,6 +60,20 @@ const StyledButton = styled(Button)(({ theme }) => ({
   },
 }));
 
+const WebsiteButton = styled(Button)(({ theme }) => ({
+  backgroundColor: '#4CAF50',
+  color: '#fff',
+  borderRadius: 8,
+  textTransform: 'none',
+  fontSize: '1.2rem',
+  width: '100%',
+  marginTop: '1rem',
+  cursor: 'pointer',
+  '&:hover': {
+    backgroundColor: '#45A049',
+  },
+}));
+
 const DescriptionTypography = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(2),
   color: '#555',
@@ -127,7 +141,7 @@ const DiscountBadge = styled(Box)(({ theme }) => ({
   justifyContent: 'center',
 }));
 
-const createWhatsAppMessage = (product, storeWhatsapp) => {
+const createWhatsAppMessage = (product, storeWhatsapp, about) => {
   const { name, price } = product;
   const message = `Ассаламу алейкум! ушул товарга буюртма берейин дедим эле:\n\nТовардын аты: ${name}\nбаасы: ${price} с. Буюртманы тактоо учун мени менен байланышсаңыз.`;
   const encodedMessage = encodeURIComponent(message);
@@ -150,6 +164,14 @@ function ProductCard({ product }) {
       );
     } else {
       alert('WhatsApp number is not provided for this product.');
+    }
+  };
+
+  const handleWebsiteClick = () => {
+    if (product.storeWebsite) {
+      window.open(product.storeWebsite, '_blank');
+    } else {
+      alert('Website URL is not provided for this product.');
     }
   };
 
@@ -271,6 +293,7 @@ function ProductCard({ product }) {
           </SocialLinksBox>
         </InfoBox>
         <StyledButton onClick={handleOrderClick}>Заказать</StyledButton>
+        <WebsiteButton onClick={handleWebsiteClick}>Наш веб-сайт</WebsiteButton>
       </CardContent>
     </StyledCard>
   );
@@ -279,20 +302,16 @@ function ProductCard({ product }) {
 ProductCard.propTypes = {
   product: PropTypes.shape({
     name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
-    rating: PropTypes.number,
-    reviews: PropTypes.number,
-    images: PropTypes.arrayOf(PropTypes.string).isRequired,
-    category: PropTypes.string.isRequired,
-    storeName: PropTypes.string,
-    storeAvatar: PropTypes.string,
+    rating: PropTypes.number.isRequired,
+    storeName: PropTypes.string.isRequired,
+    storeAvatar: PropTypes.string.isRequired,
     storeWhatsapp: PropTypes.string,
-    storeInstagram: PropTypes.string,
-    storePhone: PropTypes.string,
-    description: PropTypes.string,
+    storeWebsite: PropTypes.string,
     isFeatured: PropTypes.bool,
-    sale: PropTypes.string,
-    delivery: PropTypes.string,
+    sale: PropTypes.bool,
+    images: PropTypes.arrayOf(PropTypes.string).isRequired,
   }).isRequired,
 };
 

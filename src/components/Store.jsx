@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Grid,
   Typography,
@@ -45,7 +45,6 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
   },
 }));
 
-// Styled container for the banner
 const BannerContainer = styled(Box)(({ theme }) => ({
   textAlign: 'center',
   background: '#071c6b',
@@ -53,17 +52,15 @@ const BannerContainer = styled(Box)(({ theme }) => ({
   padding: '0.2rem',
   marginTop: '2rem',
   marginBottom: '1rem',
-  borderRadius: '5px',
 }));
 
-// Styled Typography for the banner text
 const BannerText = styled(Typography)(({ theme }) => ({
   color: '#ffc876',
   fontWeight: 'bold',
   textTransform: 'uppercase',
   letterSpacing: '2px',
   fontFamily: 'sans-serif',
-  textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)', // Text shadow for better readability
+  textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
 }));
 
 const StyledGrid = styled(Grid)(({ theme }) => ({
@@ -78,6 +75,25 @@ const Store = () => {
   const [category, setCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredProducts, setFilteredProducts] = useState(products);
+
+  const bannerTexts = [
+    'Nasyikat.store ге кош келиңиз!',
+    'Сапаттуу товарлар сонун баада',
+    'Бардык товарга кепилдик',
+    'Биздин каналга колдоо көрсөтүңүз',
+    'Өзүңүздүн товарларыңызды сатыңыз!',
+    'Мыкты сапат мыкты баа',
+  ];
+
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentTextIndex((prevIndex) => (prevIndex + 1) % bannerTexts.length);
+    }, 10000);
+
+    return () => clearInterval(intervalId);
+  }, [bannerTexts.length]);
 
   const handleCategoryChange = (event) => {
     const selectedCategory = event.target.value;
@@ -117,7 +133,7 @@ const Store = () => {
         <BannerText gutterBottom>
           <Box my={4} textAlign="center">
             <Typography variant="h4" component="h1" gutterBottom>
-              Nasyikat.store
+              {bannerTexts[currentTextIndex]}
             </Typography>
           </Box>
         </BannerText>
