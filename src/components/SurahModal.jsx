@@ -19,6 +19,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import DownloadIcon from '@mui/icons-material/Download';
 import banner from '../assetts/icons/bacimg.png';
+import VerifiedIcon from '@mui/icons-material/Verified';
 
 const StyledModal = styled(Modal)(({ theme }) => ({
   display: 'flex',
@@ -38,7 +39,7 @@ const ModalContent = styled(Box)(({ theme }) => ({
   zIndex: 1300,
   '@media (max-width:600px)': {
     width: '95%',
-    padding: theme.spacing(2),
+    padding: theme.spacing(3),
   },
 }));
 
@@ -157,8 +158,17 @@ const SurahModal = ({
                 <Typography variant="body1" color="textSecondary">
                   Кары: {surah.reader}
                 </Typography>
-                <Typography variant="body1" color="textSecondary">
-                  Кыскача: {surah.description}
+                <Typography
+                  variant="body1"
+                  color="textSecondary"
+                  style={{ display: 'flex', alignItems: 'center' }}
+                >
+                  {surah.portal}{' '}
+                  <VerifiedIcon
+                    style={{ marginLeft: '5px' }}
+                    fontSize="small"
+                    color="primary"
+                  />
                 </Typography>
               </TextContainer>
             </ContentContainer>

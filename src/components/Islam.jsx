@@ -74,8 +74,8 @@ const Islam = () => {
         </Box>
         <Box sx={{ textAlign: 'center', marginBottom: '20px' }}>
           <iframe
-            width="1000px"
-            height="800px"
+            width="800px"
+            height="500px"
             src="https://www.youtube.com/embed/gjSzd5aggLg?si=ZRP0o4MurSV954pP"
             title="YouTube video player"
             frameborder="0"
@@ -84,7 +84,7 @@ const Islam = () => {
             allowfullscreen
             style={{
               maxWidth: '100%',
-              height: '800px',
+              height: '500px',
               borderRadius: '8px',
               boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
             }}

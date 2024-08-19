@@ -1,3 +1,4 @@
+import img from '../../../assetts/icons/logo-nasykat.png';
 import AlFatihahAudio from '../../../assetts/quran-audio/fatiha.mp3';
 import Arrahmaan from '../../../assetts/quran-audio/arrahmaan.mp3';
 import Alwaqia from '../../../assetts/quran-audio/alwaqia.mp3';
@@ -17,8 +18,46 @@ import Ikhlas from '../../../assetts/quran-audio/ihlas.mp3';
 import Falaq from '../../../assetts/quran-audio/falaq.mp3';
 import Fil from '../../../assetts/quran-audio/fiil.mp3';
 import Takassur from '../../../assetts/quran-audio/takassur.mp3';
-
-import img from '../../../assetts/icons/logo-nasykat.png';
+import zilzala from '../../../assetts/quran-audio/zilzala.mp3';
+import bayina from '../../../assetts/quran-audio/bayina.mp3';
+import qodir from '../../../assetts/quran-audio/qodr.mp3';
+import tin from '../../../assetts/quran-audio/tin.mp3';
+import sharh from '../../../assetts/quran-audio/sharh.mp3';
+import duha from '../../../assetts/quran-audio/duha.mp3';
+import lail from '../../../assetts/quran-audio/allayil.mp3';
+import shams from '../../../assetts/quran-audio/alshams.mp3';
+import balad from '../../../assetts/quran-audio/albalad.mp3';
+import fajr from '../../../assetts/quran-audio/fajr.mp3';
+import ghashiyah from '../../../assetts/quran-audio/gashiya.mp3';
+import alala from '../../../assetts/quran-audio/alala.mp3';
+import tarik from '../../../assetts/quran-audio/tarik.mp3';
+import buruj from '../../../assetts/quran-audio/buruj.mp3';
+import inshikok from '../../../assetts/quran-audio/inshikak.mp3';
+import mutaffifin from '../../../assetts/quran-audio/mutaffifiln.mp3';
+import infitar from '../../../assetts/quran-audio/infitar.mp3';
+import takwir from '../../../assetts/quran-audio/taqwir.mp3';
+import abasa from '../../../assetts/quran-audio/abasa.mp3';
+import naziat from '../../../assetts/quran-audio/naszyat.mp3';
+import naba from '../../../assetts/quran-audio/naba.mp3';
+import mursalat from '../../../assetts/quran-audio/mursalat.mp3';
+import insan from '../../../assetts/quran-audio/insan.mp3';
+import qoima from '../../../assetts/quran-audio/kyam.mp3';
+import muddathir from '../../../assetts/quran-audio/mudassir.mp3';
+import muzzammil from '../../../assetts/quran-audio/muzammil.mp3';
+import jinn from '../../../assetts/quran-audio/djin.mp3';
+import nuh from '../../../assetts/quran-audio/nuh.mp3';
+import marij from '../../../assetts/quran-audio/marj.mp3';
+import qolam from '../../../assetts/quran-audio/kolam.mp3';
+import mulk from '../../../assetts/quran-audio/mulk.mp3';
+import tahrim from '../../../assetts/quran-audio/tahrim.mp3';
+import taghabun from '../../../assetts/quran-audio/tagab.mp3';
+import munafiqun from '../../../assetts/quran-audio/munafikum.mp3';
+import juma from '../../../assetts/quran-audio/juma.mp3';
+import saff from '../../../assetts/quran-audio/saff.mp3';
+import mumtahanah from '../../../assetts/quran-audio/mumtahana.mp3';
+import hashir from '../../../assetts/quran-audio//hashir.mp3';
+import mujadila from '../../../assetts/quran-audio/mujdala.mp3';
+import hadid from '../../../assetts/quran-audio/hadid.mp3';
 
 const surahs = [
   {
@@ -91,65 +130,369 @@ const surahs = [
     title: 'Ар Рахман',
     audio: Arrahmaan,
     reader: 'Ислам Субхи',
-    description: 'Китебим Куран',
+    description: 'Курани Карим',
     image: img,
+    portal: 'Nasyikat.media',
   },
   {
     title: 'Аль Вакиа',
     audio: Alwaqia,
     reader: 'Ислам Субхи',
+    description: 'Курани Карим',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Ал Хадид',
+    audio: hadid,
+    reader: 'Ислам Субхи',
+    description: 'Курани Карим',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Ал-Мужядала',
+    audio: mujadila,
+    reader: 'Ислам Субхи',
     description: 'Китебим Куран',
     image: img,
+    portal: 'Nasyikat.media',
   },
-  { title: 'Al-Hadid', audio: 'path/to/al-hadid.mp3' },
-  { title: 'Al-Mujadila', audio: 'path/to/al-mujadila.mp3' },
-  { title: 'Al-Hashr', audio: 'path/to/al-hashr.mp3' },
-  { title: 'Al-Mumtahanah', audio: 'path/to/al-mumtahanah.mp3' },
-  { title: 'As-Saff', audio: 'path/to/as-saff.mp3' },
-  { title: "Al-Jumu'a", audio: 'path/to/al-jumu.mp3' },
-  { title: 'Al-Munafiqun', audio: 'path/to/al-munafiqun.mp3' },
-  { title: 'At-Taghabun', audio: 'path/to/at-taghabun.mp3' },
-  { title: 'At-Talaq', audio: 'path/to/at-talaq.mp3' },
-  { title: 'At-Tahrim', audio: 'path/to/at-tahrim.mp3' },
-  { title: 'Al-Mulk', audio: 'path/to/al-mulk.mp3' },
-  { title: 'Al-Qalam', audio: 'path/to/al-qalam.mp3' },
-  { title: 'Al-Haaqqa', audio: 'path/to/al-haaqqa.mp3' },
-  { title: "Al-Ma'arij", audio: 'path/to/al-maarrij.mp3' },
-  { title: 'Nuh', audio: 'path/to/nuh.mp3' },
-  { title: 'Al-Jinn', audio: 'path/to/al-jinn.mp3' },
-  { title: 'Al-Muzzammil', audio: 'path/to/al-muzzammil.mp3' },
-  { title: 'Al-Muddathir', audio: 'path/to/al-muddathir.mp3' },
-  { title: 'Al-Qiyamah', audio: 'path/to/al-qiyamah.mp3' },
-  { title: 'Al-Insan', audio: 'path/to/al-insan.mp3' },
-  { title: 'Al-Mursalat', audio: 'path/to/al-mursalat.mp3' },
-  { title: 'An-Naba', audio: 'path/to/an-naba.mp3' },
-  { title: "An-Nazi'at", audio: 'path/to/an-nazi.mp3' },
-  { title: 'Abasa', audio: 'path/to/abasa.mp3' },
-  { title: 'At-Takwir', audio: 'path/to/at-takwir.mp3' },
-  { title: 'Al-Infitar', audio: 'path/to/al-infitar.mp3' },
-  { title: 'Al-Mutaffifin', audio: 'path/to/al-mutaffifin.mp3' },
-  { title: 'Al-Inshiqaq', audio: 'path/to/al-inshiqaq.mp3' },
-  { title: 'Al-Buruj', audio: 'path/to/al-buruj.mp3' },
-  { title: 'At-Tariq', audio: 'path/to/at-tariq.mp3' },
-  { title: "Al-A'la", audio: 'path/to/al-ala.mp3' },
-  { title: 'Al-Ghashiyah', audio: 'path/to/al-ghashiyah.mp3' },
-  { title: 'Al-Fajr', audio: 'path/to/al-fajr.mp3' },
-  { title: 'Al-Balad', audio: 'path/to/al-balad.mp3' },
-  { title: 'Ash-Shams', audio: 'path/to/ash-shams.mp3' },
-  { title: 'Al-Lail', audio: 'path/to/al-lail.mp3' },
-  { title: 'Ad-Duha', audio: 'path/to/ad-duha.mp3' },
-  { title: 'Ash-Sharh', audio: 'path/to/ash-sharh.mp3' },
-  { title: 'At-Tin', audio: 'path/to/at-tin.mp3' },
-  { title: 'Al-Alaq', audio: 'path/to/al-alaq.mp3' },
-  { title: 'Al-Qadr', audio: 'path/to/al-qadr.mp3' },
-  { title: 'Al-Bayyinah', audio: 'path/to/al-bayyinah.mp3' },
-  { title: 'Az-Zalzalah', audio: 'path/to/az-zalzalah.mp3' },
+  {
+    title: 'Aл Хашр',
+    audio: hashir,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Ал Мумтахана',
+    audio: mumtahanah,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Aс Сафф',
+    audio: saff,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Aл Жума',
+    audio: juma,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Aл Мунафикоон',
+    audio: munafiqun,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Ат-Тагаб',
+    audio: taghabun,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'At-Talaq',
+    audio: 'path/to/at-talaq.mp3',
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Aт Тахрим',
+    audio: tahrim,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Мульк',
+    audio: mulk,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Aл Калам',
+    audio: qolam,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Al-Haaqqa',
+    audio: 'path/to/al-haaqqa.mp3',
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: "Ал-Ма'ариж",
+    audio: marij,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Нух',
+    audio: nuh,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Aл-Жин',
+    audio: jinn,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Aл Музаммил',
+    audio: muzzammil,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Aл-Мудассир',
+    audio: muddathir,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Al-Qiyamah',
+    audio: qoima,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Aл-Инсан',
+    audio: insan,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Aл-Мурсалат',
+    audio: mursalat,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Aн-Наба',
+    audio: naba,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Aн-Назият',
+    audio: naziat,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Абаса',
+    audio: abasa,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Aт-Такуир',
+    audio: takwir,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Aл-Инфитар',
+    audio: infitar,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Aл-Мутаффифин',
+    audio: mutaffifin,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Aл-Иншикак',
+    audio: inshikok,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Aл-Буроож',
+    audio: buruj,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Aт-Taрик',
+    audio: tarik,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: "Aль-A'лa",
+    audio: alala,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Aл-Гашия',
+    audio: ghashiyah,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Aль Фажр',
+    audio: fajr,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Aль Балад',
+    audio: balad,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Аш-шамс',
+    audio: shams,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Аль-Ляйль',
+    audio: lail,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Ат-Духа',
+    audio: duha,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Аш-Шарх',
+    audio: sharh,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Ат-Тин',
+    audio: tin,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Al-Alaq',
+    audio: '',
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Аль-Кадр',
+    audio: qodir,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Аль-Баййина',
+    audio: bayina,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
+  {
+    title: 'Зилзала сүрөсү',
+    audio: zilzala,
+    reader: 'Ислам Субхи',
+    description: 'Китебим Куран',
+    image: img,
+    portal: 'Nasyikat.media',
+  },
   {
     title: 'Адият сүрөсү',
     audio: Adyiat,
     reader: 'Ислам Субхи',
     description: 'Китебим Куран',
     image: img,
+    portal: 'Nasyikat.media',
   },
   {
     title: 'Кориа сүрөсү',
@@ -157,6 +500,7 @@ const surahs = [
     reader: 'Ислам Субхи',
     description: 'Китебим Куран',
     image: img,
+    portal: 'Nasyikat.media',
   },
   {
     title: 'Такассур сүрөсү',
@@ -164,6 +508,7 @@ const surahs = [
     reader: 'Ислам Субхи',
     description: 'Китебим Куран',
     image: img,
+    portal: 'Nasyikat.media',
   },
   {
     title: 'Аср сүрөсү',
@@ -171,6 +516,7 @@ const surahs = [
     reader: 'Ислам Субхи',
     description: 'Китебим Куран',
     image: img,
+    portal: 'Nasyikat.media',
   },
   {
     title: 'Хумаза сүрөсү',
@@ -178,6 +524,7 @@ const surahs = [
     reader: 'Ислам Субхи',
     description: 'Китебим Куран',
     image: img,
+    portal: 'Nasyikat.media',
   },
   {
     title: 'Фил сүрөсү',
@@ -185,6 +532,7 @@ const surahs = [
     reader: 'Мухаммад аль Люхайдан',
     description: 'Китебим Куран',
     image: img,
+    portal: 'Nasyikat.media',
   },
   {
     title: 'Курайш сүрөсү',
@@ -192,6 +540,7 @@ const surahs = [
     reader: 'Ислам Субхи',
     description: 'Китебим Куран',
     image: img,
+    portal: 'Nasyikat.media',
   },
   {
     title: 'Маун сүрөсү',
@@ -199,6 +548,7 @@ const surahs = [
     reader: 'Ислам Субхи',
     description: 'Китебим Куран',
     image: img,
+    portal: 'Nasyikat.media',
   },
   {
     title: 'Каусар сүрөсү',
@@ -206,6 +556,7 @@ const surahs = [
     reader: 'Ислам Субхи',
     description: 'Китебим Куран',
     image: img,
+    portal: 'Nasyikat.media',
   },
   {
     title: 'Кафирун сүрөсү',
@@ -213,6 +564,7 @@ const surahs = [
     reader: 'Ислам Субхи',
     description: 'Китебим Куран',
     image: img,
+    portal: 'Nasyikat.media',
   },
   {
     title: 'Наср сүрөсү',
@@ -220,6 +572,7 @@ const surahs = [
     reader: 'Ислам Субхи',
     description: 'Китебим Куран',
     image: img,
+    portal: 'Nasyikat.media',
   },
   {
     title: 'Масад сүрөсү',
@@ -227,6 +580,7 @@ const surahs = [
     reader: 'Ислам Субхи',
     description: 'Китебим Куран',
     image: img,
+    portal: 'Nasyikat.media',
   },
   {
     title: 'Ихлас сүрөсү',
@@ -234,6 +588,7 @@ const surahs = [
     reader: 'Мухаммад аль Люхайдан',
     description: 'Китебим Куран',
     image: img,
+    portal: 'Nasyikat.media',
   },
   {
     title: 'Фалак сүрөсү',
@@ -241,6 +596,7 @@ const surahs = [
     reader: 'Мухаммад аль Люхайдан',
     description: 'Китебим Куран',
     image: img,
+    portal: 'Nasyikat.media',
   },
   {
     title: 'Нас сүрөсү',
@@ -248,6 +604,7 @@ const surahs = [
     reader: 'Ислам Субхи',
     description: 'Китебим Куран',
     image: img,
+    portal: 'Nasyikat.media',
   },
 ];
 

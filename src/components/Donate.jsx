@@ -73,8 +73,7 @@ const ImageContainer = styled(Block)(({ theme }) => ({
   flexShrink: 0,
   backgroundColor: '#ffeacb',
   [theme.breakpoints.down('sm')]: {
-    marginRight: 0,
-    marginBottom: theme.spacing(2),
+    marginBottom: theme.spacing(1),
   },
 }));
 

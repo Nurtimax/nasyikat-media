@@ -122,7 +122,7 @@ const Quran = () => {
                         Кары: {surah.reader}
                       </Typography>
                       <Typography variant="body2" color="textSecondary">
-                        Кыскача: {surah.description}
+                        {surah.description}
                       </Typography>
                     </>
                   }
