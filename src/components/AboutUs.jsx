@@ -86,8 +86,8 @@ const SocialIconContainer = styled(Box)(({ theme }) => ({
 }));
 
 const iconStyles = {
-  color: '#1976d2', // Customize this color as needed
-  fontSize: '2rem', // Adjust icon size as needed
+  color: '#1976d2',
+  fontSize: '2rem',
 };
 
 const AboutUs = () => {
