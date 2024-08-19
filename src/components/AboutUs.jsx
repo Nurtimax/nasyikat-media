@@ -24,26 +24,22 @@ const teamMembers = [
     description:
       '2020-жылы 28-февраль күнү алгачкы постубузду чыгардык эле эми мынтип арадан 4 жыл 6 ай өтүптүр Аллах Таала сизден жана бизден жакшы амалдарыбызды кабыл кылсын Ассаламу алейкум',
     links: {
-      youtube: 'https://www.youtube.com/channel/your-channel-id',
-      instagram: 'https://www.instagram.com/your-profile',
-      telegram: 'https://t.me/your-channel',
-      whatsapp: 'https://wa.me/your-number',
-      tiktok: 'https://www.tiktok.com/@your-profile',
+      youtube: 'https://www.youtube.com/channel/UC2inpp0KqE5s5qtpJRV6j5g',
+      instagram: 'https://www.instagram.com/nasyikat.media/',
+      telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
     },
   },
 
   {
     name: 'Нурматов Матраим Ашимович',
-    role: 'Админ Nasyikat.media',
+    role: 'Админ Nasyikat.media & Islam.sabaktary',
     image: logoavatar,
     description:
       'Аллах таалага чексиз мактоолор жана шүгүрлөр болсун <br/>  <br/> Оо, Роббим! Мени кичинемден багып-өстүргөн ата-энеме ырайым кыл.',
     links: {
-      youtube: 'https://www.youtube.com/channel/your-channel-id',
-      instagram: 'https://www.instagram.com/your-profile',
       telegram: 'https://t.me/your-channel',
-      whatsapp: 'https://wa.me/your-number',
-      tiktok: 'https://www.tiktok.com/@your-profile',
+      instagram: 'https://www.instagram.com/matraim.official/',
+      whatsapp: 'https://wa.me/996556401369',
     },
   },
   {
@@ -53,11 +49,8 @@ const teamMembers = [
     description:
       'Бул баракчабыздын өзгөчөлүгү Бир Кыска Дуба аттуу каналы бар каналдан дубалар куран аяттары жана башка көптөгөн пайдалуу нереселерди ала аласыздар баарыңыздарды күтөбүз.',
     links: {
-      youtube: 'https://www.youtube.com/channel/your-channel-id',
-      instagram: 'https://www.instagram.com/your-profile',
-      telegram: 'https://t.me/your-channel',
-      whatsapp: 'https://wa.me/your-number',
-      tiktok: 'https://www.tiktok.com/@your-profile',
+      instagram: 'https://www.instagram.com/islam.sabaktary/',
+      telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
     },
   },
 ];

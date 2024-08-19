@@ -24,6 +24,11 @@ const videoData = [
     author: 'nasyikat.media',
     url: 'https://youtube.com/shorts/7KPiGhcuwdA?si=FuaCkg982JgAjBjP',
   },
+  {
+    speaker: 'Шейх Чубак ажы Жалилов (р.a)',
+    author: 'nasyikat.media',
+    url: 'https://youtube.com/shorts/9cg1Pab-IZ4?si=ZWBj4-0pic8sOAyo',
+  },
 ];
 
 export default videoData;
