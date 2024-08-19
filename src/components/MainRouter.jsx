@@ -24,6 +24,7 @@ import IslamdynParzdary from './IslamdynParzdary';
 import Books from './Books';
 import AboutUs from './AboutUs';
 import Services from './Services';
+import OnSuro from './OnSuro';
 
 const MainRouter = () => {
   return (
@@ -53,6 +54,7 @@ const MainRouter = () => {
         <Route path="/books" element={<Books />} />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/onsuro" element={<OnSuro />} />
       </Routes>
     </Router>
   );

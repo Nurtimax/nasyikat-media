@@ -17,12 +17,26 @@ import Header from '../../components/Header';
 import LogoNasyikatMedia from '../../assetts/images/islam/nmlogo.png';
 import videoData from './src-video-data/videosrc';
 
-const theme = createTheme();
+const theme = createTheme({
+  typography: {
+    fontFamily: 'Roboto, Arial, sans-serif',
+  },
+  palette: {
+    primary: {
+      main: '#1a73e8',
+    },
+    secondary: {
+      main: '#34a853',
+    },
+  },
+});
 
 const StyledCard = styled(Card)`
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   @media (max-width: 768px) {
     height: 100%;
   }
@@ -30,11 +44,14 @@ const StyledCard = styled(Card)`
 
 const StyledCardContent = styled(CardContent)`
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 const StyledBadge = styled(Badge)`
   .MuiBadge-dot {
-    background-color: green;
+    background-color: #34a853;
   }
 `;
 
@@ -56,7 +73,6 @@ const VideoIframe = styled.iframe`
 
 const extractYouTubeId = (url) => {
   if (!url) return null;
-
   const regExp =
     /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/shorts|youtu\.be)\/([^&\s]{11})|(?:https?:\/\/)?(?:www\.)?youtube\.com\/watch\?v=([^&\s]{11})/;
   const match = url.match(regExp);
@@ -69,12 +85,12 @@ const ChubakAjyJallilov = () => {
       <Welcome />
       <Header />
       <ThemeProvider theme={theme}>
-        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8, px: 2 }}>
-          <Grid container spacing={2} maxWidth="lg">
+        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 3, px: 2 }}>
+          <Grid container spacing={4} maxWidth="lg">
             {videoData.map((video, index) => {
               const youtubeId = extractYouTubeId(video.url);
               return (
-                <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+                <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
                   <StyledCard>
                     <VideoContainer>
                       <VideoIframe
@@ -89,7 +105,7 @@ const ChubakAjyJallilov = () => {
                     </VideoContainer>
                     <StyledCardContent>
                       <Box
-                        sx={{ display: 'flex', alignItems: 'center', mb: 3 }}
+                        sx={{ display: 'flex', alignItems: 'center', mb: 2 }}
                       >
                         <StyledBadge
                           overlap="circular"
@@ -99,7 +115,11 @@ const ChubakAjyJallilov = () => {
                           }}
                           variant="dot"
                         >
-                          <Avatar alt={video.author} src={LogoNasyikatMedia} />
+                          <Avatar
+                            alt={video.author}
+                            src={LogoNasyikatMedia}
+                            sx={{ width: 56, height: 56 }}
+                          />
                         </StyledBadge>
                         <Typography
                           variant="subtitle1"
@@ -109,23 +129,37 @@ const ChubakAjyJallilov = () => {
                             display: 'flex',
                             alignItems: 'center',
                             gap: '5px',
+                            fontWeight: 'bold',
                           }}
                         >
                           {video.author}
                           <Verified
                             color="primary"
-                            fontSize="15px"
-                            style={{ marginBottom: '1px' }}
+                            fontSize="small"
+                            style={{ marginBottom: '2px' }}
                           />
                         </Typography>
                       </Box>
-                      <Typography gutterBottom variant="h6">
+                      <Typography
+                        gutterBottom
+                        variant="h6"
+                        sx={{
+                          fontWeight: 'bold',
+                          color: theme.palette.primary.main,
+                        }}
+                      >
                         {video.title}
                       </Typography>
-                      <Typography variant="body2">
+                      <Typography
+                        variant="body2"
+                        sx={{ color: theme.palette.text.secondary }}
+                      >
                         {video.description}
                       </Typography>
-                      <Typography variant="body2" style={{ marginTop: '10px' }}>
+                      <Typography
+                        variant="body2"
+                        sx={{ mt: 1, color: theme.palette.secondary.main }}
+                      >
                         {video.speaker}
                       </Typography>
                     </StyledCardContent>

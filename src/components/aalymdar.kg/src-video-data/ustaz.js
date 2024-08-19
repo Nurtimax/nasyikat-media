@@ -1,43 +1,33 @@
 const videoData7 = [
   {
-    url: 'https://youtube.com/shorts/BPcOZMD6u5I?si=zLrRxK7U4XyN9yeL',
-    speaker: 'Шейх Чубак ажы Жалилов (р.a)',
+    speaker: 'Устаз Калысбек ажы Заманбеков',
     author: 'nasyikat.media',
+    url: 'https://youtube.com/shorts/4dFu3U5anmM?si=vm6JdRikVg-lbcgm',
   },
   {
-    speaker: 'Шейх Чубак ажы Жалилов (р.a)',
+    speaker: 'Устаз Калысбек ажы Заманбеков',
     author: 'nasyikat.media',
-    url: 'https://youtube.com/shorts/f6NEhk_1i0I?si=CUfQ5EvfWZkTY1zk',
+    url: 'https://youtube.com/shorts/6IgmuNJwMYs?si=D8CVqzEyPMj_uHla',
   },
   {
-    url: 'https://youtube.com/shorts/b5_uH6RfxvM?si=Fh2pKTgv28rbTDEC',
-    speaker: 'Шейх Чубак ажы Жалилов (р.a)',
+    speaker: 'Устаз Калысбек ажы Заманбеков',
     author: 'nasyikat.media',
+    url: 'https://youtube.com/shorts/n00tqG_rTdE?si=WTYk0Hi_C2HsBxf2',
   },
   {
-    speaker: 'Шейх Чубак ажы Жалилов (р.a)',
+    speaker: 'Устаз Калысбек ажы Заманбеков',
     author: 'nasyikat.media',
-    url: 'https://youtube.com/shorts/j7Uly3bU2vU?si=8dUF-mgim7U_O2Zm',
+    url: 'https://youtube.com/shorts/jThH77-yhAE?si=M78VJ6qEiCFlQZAD',
   },
   {
-    speaker: 'Шейх Чубак ажы Жалилов (р.a)',
+    speaker: 'Устаз Калысбек ажы Заманбеков',
     author: 'nasyikat.media',
-    url: 'https://youtube.com/shorts/7KPiGhcuwdA?si=FuaCkg982JgAjBjP',
+    url: 'https://youtube.com/shorts/DOpnAGogkI8?si=SyRcG-PvzM8ajvUn',
   },
   {
-    speaker: 'Шейх Чубак ажы Жалилов (р.a)',
+    speaker: 'Устаз Калысбек ажы Заманбеков',
     author: 'nasyikat.media',
-    url: 'https://youtube.com/shorts/p6-hk-5KCZ8?si=jCj1KqWiEmBVauBa',
-  },
-  {
-    speaker: 'Шейх Чубак ажы Жалилов (р.a)',
-    author: 'nasyikat.media',
-    url: 'https://youtube.com/shorts/DoZEMADe_jU?si=hUZLjoDmDrFZ5QKh',
-  },
-  {
-    speaker: 'Шейх Чубак ажы Жалилов (р.a)',
-    author: 'nasyikat.media',
-    url: 'https://youtube.com/shorts/VIliJ8yzm5o?si=UqNkH1IpfPMQe8uX',
+    url: 'https://youtube.com/shorts/3X2XwYdQHd0?si=Zv_MzqIeMUoO6hzJ',
   },
 ];
 

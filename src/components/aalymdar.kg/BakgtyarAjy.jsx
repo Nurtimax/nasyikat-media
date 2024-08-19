@@ -3,31 +3,42 @@ import {
   Grid,
   Card,
   CardContent,
-  CardActions,
-  IconButton,
   Typography,
   Box,
   Avatar,
   Badge,
   ThemeProvider,
   createTheme,
+  IconButton,
+  Tooltip,
 } from '@mui/material';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import TelegramIcon from '@mui/icons-material/Telegram';
 import styled from 'styled-components';
-import { Verified } from '@mui/icons-material';
+import { Verified, Share } from '@mui/icons-material';
 import Welcome from '../../components/Welcome';
 import Header from '../../components/Header';
 import LogoNasyikatMedia from '../../assetts/images/islam/nmlogo.png';
 import exa from './src-video-data/exa.js';
 
-const theme = createTheme();
+const theme = createTheme({
+  typography: {
+    fontFamily: 'Roboto, Arial, sans-serif',
+  },
+  palette: {
+    primary: {
+      main: '#1a73e8',
+    },
+    secondary: {
+      main: '#34a853',
+    },
+  },
+});
 
 const StyledCard = styled(Card)`
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   @media (max-width: 768px) {
     height: 100%;
   }
@@ -35,16 +46,14 @@ const StyledCard = styled(Card)`
 
 const StyledCardContent = styled(CardContent)`
   flex-grow: 1;
-`;
-
-const StyledCardActions = styled(CardActions)`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 `;
 
 const StyledBadge = styled(Badge)`
   .MuiBadge-dot {
-    background-color: green;
+    background-color: #34a853;
   }
 `;
 
@@ -64,9 +73,14 @@ const VideoIframe = styled.iframe`
   border: none;
 `;
 
+const ActionIcons = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+`;
+
 const extractYouTubeId = (url) => {
   if (!url) return null;
-
   const regExp =
     /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/shorts|youtu\.be)\/([^&\s]{11})|(?:https?:\/\/)?(?:www\.)?youtube\.com\/watch\?v=([^&\s]{11})/;
   const match = url.match(regExp);
@@ -74,35 +88,17 @@ const extractYouTubeId = (url) => {
 };
 
 const ChubakAjyJallilov = () => {
-  const handleShare = (platform, url) => {
-    let shareUrl = '';
-    switch (platform) {
-      case 'whatsapp':
-        shareUrl = `https://wa.me/?text=${url}`;
-        break;
-      case 'instagram':
-        shareUrl = `https://www.instagram.com/nasyikat.media/?url=${url}`;
-        break;
-      case 'telegram':
-        shareUrl = `https://t.me/share/url?url=${url}`;
-        break;
-      default:
-        break;
-    }
-    window.open(shareUrl, '_blank');
-  };
-
   return (
     <>
       <Welcome />
       <Header />
       <ThemeProvider theme={theme}>
-        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8, px: 2 }}>
-          <Grid container spacing={2} maxWidth="lg">
+        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 3, px: 2 }}>
+          <Grid container spacing={4} maxWidth="lg">
             {exa.map((video, index) => {
               const youtubeId = extractYouTubeId(video.url);
               return (
-                <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+                <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
                   <StyledCard>
                     <VideoContainer>
                       <VideoIframe
@@ -117,7 +113,7 @@ const ChubakAjyJallilov = () => {
                     </VideoContainer>
                     <StyledCardContent>
                       <Box
-                        sx={{ display: 'flex', alignItems: 'center', mb: 3 }}
+                        sx={{ display: 'flex', alignItems: 'center', mb: 2 }}
                       >
                         <StyledBadge
                           overlap="circular"
@@ -127,7 +123,11 @@ const ChubakAjyJallilov = () => {
                           }}
                           variant="dot"
                         >
-                          <Avatar alt={video.author} src={LogoNasyikatMedia} />
+                          <Avatar
+                            alt={video.author}
+                            src={LogoNasyikatMedia}
+                            sx={{ width: 56, height: 56 }}
+                          />
                         </StyledBadge>
                         <Typography
                           variant="subtitle1"
@@ -137,46 +137,47 @@ const ChubakAjyJallilov = () => {
                             display: 'flex',
                             alignItems: 'center',
                             gap: '5px',
+                            fontWeight: 'bold',
                           }}
                         >
                           {video.author}
                           <Verified
                             color="primary"
-                            fontSize="15px"
-                            style={{ marginBottom: '1px' }}
+                            fontSize="small"
+                            style={{ marginBottom: '2px' }}
                           />
                         </Typography>
                       </Box>
-                      <Typography gutterBottom variant="h6">
+                      <Typography
+                        gutterBottom
+                        variant="h6"
+                        sx={{
+                          fontWeight: 'bold',
+                          color: theme.palette.primary.main,
+                        }}
+                      >
                         {video.title}
                       </Typography>
-                      <Typography variant="body2">
+                      <Typography
+                        variant="body2"
+                        sx={{ color: theme.palette.text.secondary }}
+                      >
                         {video.description}
                       </Typography>
-                      <Typography variant="body2" style={{ marginTop: '10px' }}>
+                      <Typography
+                        variant="body2"
+                        sx={{ mt: 1, color: theme.palette.secondary.main }}
+                      >
                         {video.speaker}
                       </Typography>
+                      <ActionIcons>
+                        <Tooltip title="Share">
+                          <IconButton color="primary">
+                            <Share />
+                          </IconButton>
+                        </Tooltip>
+                      </ActionIcons>
                     </StyledCardContent>
-                    <StyledCardActions>
-                      <IconButton
-                        onClick={() => handleShare('whatsapp', video.url)}
-                        aria-label="share on WhatsApp"
-                      >
-                        <WhatsAppIcon />
-                      </IconButton>
-                      <IconButton
-                        onClick={() => handleShare('instagram', video.url)}
-                        aria-label="share on Instagram"
-                      >
-                        <InstagramIcon />
-                      </IconButton>
-                      <IconButton
-                        onClick={() => handleShare('telegram', video.url)}
-                        aria-label="share on Telegram"
-                      >
-                        <TelegramIcon />
-                      </IconButton>
-                    </StyledCardActions>
                   </StyledCard>
                 </Grid>
               );
