@@ -46,11 +46,14 @@ const StyledAccordionSummary = styled(AccordionSummary)(({ theme }) => ({
 
 const StyledAccordionDetails = styled(AccordionDetails)(({ theme }) => ({
   display: 'flex',
+  flexDirection: 'column', // Ensure column layout for centering
   alignItems: 'center',
+  justifyContent: 'center',
   padding: theme.spacing(3),
-  [theme.breakpoints.down('sm')]: {
-    flexDirection: 'column',
-    textAlign: 'center',
+  textAlign: 'center', // Center text on all screens
+  [theme.breakpoints.up('md')]: {
+    flexDirection: 'row', // Row layout for larger screens
+    textAlign: 'left', // Align text to the left on larger screens
   },
 }));
 
@@ -68,7 +71,7 @@ const Hadis = () => {
           fontWeight: 'bold',
           color: '#333',
           mb: 2,
-          fontSize: { xs: '1.1rem', sm: '2rem', md: '2rem', mt: '1rem' },
+          fontSize: { xs: '1.5rem', sm: '2rem', md: '2rem' },
         }}
       >
         Куттуу хадистер
@@ -89,18 +92,21 @@ const Hadis = () => {
               src={item.image}
               alt="Content"
               style={{
-                marginRight: theme.breakpoints.up('sm') ? '20px' : '0',
-                marginBottom: theme.breakpoints.down('sm') ? '20px' : '0',
                 maxWidth: '100%',
                 height: 'auto',
                 borderRadius: '8px',
+                marginBottom: theme.breakpoints.down('sm') ? '20px' : '0',
               }}
             />
             <Box
               sx={{
-                marginLeft: theme.breakpoints.down('sm') ? '0' : '20px',
+                marginTop: theme.breakpoints.down('sm') ? '10px' : '0',
                 maxWidth: '100%',
-                textAlign: 'left',
+                textAlign: 'center', // Center text on all screens
+                [theme.breakpoints.up('md')]: {
+                  marginLeft: '20px',
+                  textAlign: 'left', // Left align text on larger screens
+                },
               }}
             >
               <Typography

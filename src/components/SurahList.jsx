@@ -8,6 +8,8 @@ import {
   IconButton,
 } from '@mui/material';
 import surahs from './data/quran/surah/suro';
+import bgimg from '../assetts/icons/bacimg.png';
+import { Verified } from '@mui/icons-material';
 
 const SurahList = () => {
   return (
@@ -29,25 +31,31 @@ const SurahList = () => {
               sx={{
                 display: 'flex',
                 flexDirection: 'column',
+                justifyContent: 'space-between',
                 alignItems: 'center',
                 boxShadow: 3,
                 borderRadius: '8px',
+                height: '100%',
               }}
             >
               <Box
                 sx={{
                   padding: '16px',
                   display: 'flex',
-                  alignItems: 'center',
-                  backgroundColor: '#fff',
                   flexDirection: 'column',
+                  alignItems: 'center',
                   textAlign: 'center',
+                  height: '100%',
+                  backgroundImage: `url(${bgimg})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'flex-end',
+                  backgroundRepeat: 'no-repeat',
                 }}
               >
                 <IconButton color="primary" sx={{ mb: 2 }}>
                   {surah.icon}
                 </IconButton>
-                <CardContent>
+                <CardContent sx={{ flexGrow: 1 }}>
                   <Typography variant="h6" sx={{ mb: 1 }}>
                     {surah.name}
                   </Typography>
@@ -64,6 +72,29 @@ const SurahList = () => {
                     {surah.transcription}
                   </Typography>
                 </CardContent>
+                <Box
+                  sx={{
+                    backgroundColor: '#071c6b',
+                    padding: '8px 16px',
+                    borderRadius: '0 0 8px 8px',
+                    width: '100%',
+                    textAlign: 'center',
+                  }}
+                >
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '0.5rem',
+                      color: '#f6edde',
+                    }}
+                  >
+                    Nasyikat.media <Verified color="primary" fontSize="small" />
+                  </Typography>
+                </Box>
               </Box>
             </Card>
           </Grid>

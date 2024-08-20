@@ -22,7 +22,23 @@ import nauishnik7 from '../../../products-img/ultra492.png';
 
 import logokurzhun from '../../../assetts/icons/logoku.png';
 
+import newLogo from '../../../assetts/icons/new.png';
+
 const products = [
+  {
+    name: 'Ваш товар',
+    rating: 5,
+    about:
+      '"Посетите наш Instagram, там вы найдете то, что искали. Подписывайтесь и оставайтесь в курсе!"',
+    price: '000',
+    images: [newLogo, newLogo, newLogo],
+    storeName: '.shop',
+    storeAvatar: newLogo,
+    storeWhatsapp: '',
+    storeInstagram: '.shop',
+    storePhone: '',
+    description: 'Качествo.',
+  },
   {
     name: 'Качественные сумки и рюкзаки.',
     rating: 5,
