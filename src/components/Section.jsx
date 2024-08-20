@@ -17,27 +17,30 @@ const Section = () => {
       container
       spacing={2}
       justifyContent="center"
-      style={{
-        background: '#f6edde',
+      sx={{
+        background: 'linear-gradient(to bottom, #f6edde, #e3d5bc)',
+        padding: '20px 0',
       }}
     >
       <Grid item xs={12}>
         <Card sx={{ maxWidth: '100%', margin: '0 auto' }}>
           <CardContent
-            sx={{ textAlign: 'center' }}
-            style={{
+            sx={{
+              textAlign: 'center',
               background: '#071c6b',
               color: '#c09b73',
-              paddingBottom: 0,
+              pb: 0,
+              borderTopLeftRadius: 4,
+              borderTopRightRadius: 4,
             }}
           >
             <Typography
               variant="h5"
               align="center"
               gutterBottom
-              style={{
+              sx={{
                 paddingBottom: '20px',
-                textAlign: 'center',
+                fontFamily: 'Georgia, serif',
               }}
             >
               ААЛЫМДАР ПАЙГАМБАРЛАРДЫН МУРАСКОРЛОРУ.
@@ -45,28 +48,34 @@ const Section = () => {
           </CardContent>
           <CardMedia
             component="img"
-            height="300"
+            height="20"
             image={img}
             alt="Large Card"
             sx={{
-              height: '10px',
-              backgroundImage: `url(${img})`,
+              height: '20px',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               borderRadius: 1,
             }}
           />
           <CardContent
-            sx={{ padding: '16px' }}
-            style={{
+            sx={{
+              padding: '16px',
               background: '#f6edde',
             }}
           >
-            <Grid container spacing={2}>
+            <Grid container spacing={3}>
               {kyrgyzaAlymdary.map((scholar, index) => (
                 <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
                   <Link to={scholar.link} style={{ textDecoration: 'none' }}>
-                    <Card sx={{ maxWidth: '100%', margin: '0 auto' }}>
+                    <Card
+                      sx={{
+                        maxWidth: '100%',
+                        margin: '0 auto',
+                        boxShadow: 3,
+                        borderRadius: 2,
+                      }}
+                    >
                       <CardMedia
                         component="img"
                         height="230"
@@ -75,12 +84,21 @@ const Section = () => {
                         sx={{ borderRadius: 1 }}
                       />
                       <CardContent
-                        sx={{ textAlign: 'center' }}
-                        style={{
+                        sx={{
+                          textAlign: 'center',
                           background: '#d9d9d9',
+                          p: 2,
                         }}
                       >
-                        <Typography variant="h5" component="div" gutterBottom>
+                        <Typography
+                          variant="h6"
+                          component="div"
+                          gutterBottom
+                          sx={{
+                            fontFamily: 'Georgia, serif',
+                            color: '#333',
+                          }}
+                        >
                           {scholar.name}
                         </Typography>
                         <Typography
@@ -91,7 +109,16 @@ const Section = () => {
                           Аллах бизден жана сиздерден жакшы амалдардын кабыл
                           кылсын
                         </Typography>
-                        <Button color="secondary" variant="contained">
+                        <Button
+                          color="secondary"
+                          variant="contained"
+                          sx={{
+                            background: '#071c6b',
+                            '&:hover': {
+                              background: '#071d6bd6',
+                            },
+                          }}
+                        >
                           Видеолорду көрүү
                         </Button>
                       </CardContent>
@@ -102,12 +129,11 @@ const Section = () => {
             </Grid>
             <CardMedia
               component="img"
-              height="200"
+              height="10"
               image={img}
               alt="Large Card"
               sx={{
-                height: '10px',
-                backgroundImage: `url(${img})`,
+                height: '20px',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 borderRadius: 1,

@@ -14,7 +14,7 @@ import {
   Snackbar,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Instagram, Telegram, Verified } from '@mui/icons-material';
+import { Verified } from '@mui/icons-material';
 import { styled } from '@mui/system';
 import { useNavigate } from 'react-router-dom';
 import bgimg from '../assetts/icons/bacimg.png';
@@ -284,47 +284,6 @@ const Header = () => {
               />
               <Typography variant="body6">© Чубак ажы Жалилов</Typography>
             </ListItem>
-            <Box
-              sx={{
-                display: 'flex',
-                justifyContent: 'center',
-                gap: '8px',
-                padding: '16px 0',
-              }}
-            >
-              <IconButton
-                component="a"
-                href="https://www.instagram.com/nasyikat.media/"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{
-                  color: '#E4405F',
-                  transition: 'color 0.3s, transform 0.3s',
-                  '&:hover': {
-                    color: '#C13584',
-                    transform: 'scale(1.1)',
-                  },
-                }}
-              >
-                <Instagram />
-              </IconButton>
-              <IconButton
-                component="a"
-                href="https://t.me/+SEJbmn8AwNViNmNi"
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{
-                  color: '#0088cc',
-                  transition: 'color 0.3s, transform 0.3s',
-                  '&:hover': {
-                    color: '#007ab8',
-                    transform: 'scale(1.1)',
-                  },
-                }}
-              >
-                <Telegram />
-              </IconButton>
-            </Box>
           </Box>
         </List>
       </ResponsiveDrawer>

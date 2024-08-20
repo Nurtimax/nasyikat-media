@@ -9,11 +9,9 @@ import {
   Badge,
   ThemeProvider,
   createTheme,
-  IconButton,
-  Tooltip,
 } from '@mui/material';
 import styled from 'styled-components';
-import { Verified, Share } from '@mui/icons-material';
+import { Verified } from '@mui/icons-material';
 import Welcome from '../../components/Welcome';
 import Header from '../../components/Header';
 import LogoNasyikatMedia from '../../assetts/images/islam/nmlogo.png';
@@ -71,12 +69,6 @@ const VideoIframe = styled.iframe`
   width: 100%;
   height: 100%;
   border: none;
-`;
-
-const ActionIcons = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 16px;
 `;
 
 const extractYouTubeId = (url) => {
@@ -170,13 +162,6 @@ const ChubakAjyJallilov = () => {
                       >
                         {video.speaker}
                       </Typography>
-                      <ActionIcons>
-                        <Tooltip title="Share">
-                          <IconButton color="primary">
-                            <Share />
-                          </IconButton>
-                        </Tooltip>
-                      </ActionIcons>
                     </StyledCardContent>
                   </StyledCard>
                 </Grid>
