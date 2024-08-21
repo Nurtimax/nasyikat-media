@@ -4,25 +4,25 @@ import kurzhun from '../../../assetts/icons/kurzhun.png';
 
 const sponsors = [
   {
+    name: 'ITeasy.KG',
+    description: 'ITeasy.kg – Балдар үчүн программалоо курсу онлайн',
+    image: iteaasy,
+    link: 'https://iteasy-kg.netlify.app/',
+    address: 'Кыргызстан онлайн',
+    whatsapp: '+996556401369',
+    telegram: '@iteasykg',
+    instagram: 'iteasy.kg',
+  },
+  {
     name: 'Arzanstore.ru',
     description:
       'Arzanstore.ru – онлайн-магазин, наушник телефондорду эн арзан баада таба алсыз.',
     image: arzanpods,
     link: 'https://arzanstore-ru.vercel.app/',
-    address: 'Россия, Москва онлайн',
+    address: 'Россия, Москва Метро Кузьминки',
     whatsapp: '+79998152638',
     telegram: 'https://t.me/+cB86aKVNKShkMmYy',
     instagram: 'arzanpods.ru',
-  },
-  {
-    name: 'ITeasy.KG',
-    description: 'ITeasy.kg – Балдар үчүн программалоо курсу онлайн',
-    image: iteaasy,
-    link: 'https://iteasy-kg.netlify.app/',
-    address: 'Кыргызыстан онлайн',
-    whatsapp: '+996556401369',
-    telegram: '@iteasykg',
-    instagram: 'iteasy.kg',
   },
   {
     name: 'Kurzhun.shop',

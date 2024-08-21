@@ -1,8 +1,8 @@
-import Allah from '../../../assetts/images/islam/kelme.png';
+import Allah from '../../../assetts/images/islam/shahadaa.png';
 import Namaz from '../../../assetts/images/islam/namaz.png';
 import Zeket from '../../../assetts/images/islam/zeket.png';
-import Ramazan from '../../../assetts/images/islam/orozo.png';
-import Hadj from '../../../assetts/images/islam/ajy.png';
+import Ramazan from '../../../assetts/images/islam/ramadan.png';
+import Hadj from '../../../assetts/images/islam/hadj.png';
 
 const islamdyn5Parzy = [
   {
@@ -38,7 +38,7 @@ const islamdyn5Parzy = [
     image: Hadj,
     alt: 'Hadj',
     title: 'Ажыга баруу',
-    text: 'Аллах Таала өз пенделерине эгер мүмкүнчүлүгү болсо, өмүрүндө бир жолу хаж ибаадатын парз кылды.',
+    text: 'Аллах Таала өз пенделерине эгер мүмкүнчүлүгү болсо, өмүрүндө бир жолу ажылык ибадатын парз кылды.',
     route: '/ajylyk',
   },
 ];

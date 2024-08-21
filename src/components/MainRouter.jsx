@@ -13,7 +13,6 @@ import MaksatAjy from './aalymdar.kg/MaksatAjy';
 import BakgtyarAjy from './aalymdar.kg/BakgtyarAjy';
 import ErmekAjy from './aalymdar.kg/ErmekAjy';
 import SadybakasAjy from './aalymdar.kg/SadybakasAjy';
-import IlyasAjy from './aalymdar.kg/IlyasAjy';
 import KalysbekAjy from './aalymdar.kg/KalysbekAjy';
 import Shahada from './data/islamdynparzy/Shahada';
 import Ajylyk from './data/islamdynparzy/Ajylyk';
@@ -25,6 +24,7 @@ import Books from './Books';
 import AboutUs from './AboutUs';
 import Services from './Services';
 import OnSuro from './OnSuro';
+import Abdulazizkary from './aalymdar.kg/Abdulazizkary';
 
 const MainRouter = () => {
   return (
@@ -44,7 +44,7 @@ const MainRouter = () => {
         <Route path="/bakgtyarajy" element={<BakgtyarAjy />} />
         <Route path="/ermekajy" element={<ErmekAjy />} />
         <Route path="/sadybakasajy" element={<SadybakasAjy />} />
-        <Route path="/ilyasajy" element={<IlyasAjy />} />
+        <Route path="/Abdulazizkary" element={<Abdulazizkary />} />
         <Route path="/kalysbekajy" element={<KalysbekAjy />} />
         <Route path="/shahada" element={<Shahada />} />
         <Route path="/ajylyk" element={<Ajylyk />} />

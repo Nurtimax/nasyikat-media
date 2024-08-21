@@ -1,10 +1,10 @@
-import ChubakAjy from '../../../assetts/images/ustazdar/chubakajy.jpg';
+import ChubakAjy from '../../../assetts/images/ustazdar/ustazym.jpg';
 import AbdushukurAjy from '../../../assetts/images/ustazdar/abdushukurajy.jpg';
 import MaksatAjy from '../../../assetts/images/ustazdar/maksatajy.png';
 import BakgtyarAjy from '../../../assetts/images/ustazdar/bakhtyarajyy.jpg';
 import ErmekAjy from '../../../assetts/images/ustazdar/ermekajy.png';
 import SadybakasAjy from '../../../assetts/images/ustazdar/sadybakasajy.jpg';
-import IlyasAjy from '../../../assetts/images/ustazdar/ilyasajy.png';
+import IlyasAjy from '../../../assetts/images/ustazdar/muftiyat.jpg';
 import KalysbekAjy from '../../../assetts/images/ustazdar/kalysajy.png';
 
 const kyrgyzaAlymdary = [
@@ -39,9 +39,9 @@ const kyrgyzaAlymdary = [
     link: '/sadybakasajy',
   },
   {
-    name: 'Устаз Илёс Абдувалиев',
+    name: 'Муфтий Абдулазиз кары Закиров',
     img: IlyasAjy,
-    link: '/ilyasajy',
+    link: '/abdulazizkary',
   },
   {
     name: 'Устаз Калысбек ажы Заманбеков',

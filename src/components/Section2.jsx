@@ -2,7 +2,7 @@ import React from 'react';
 import { styled } from '@mui/system';
 import islamdyn5Parzy from './data/islamdynparzy/islamdyn5parzy';
 import { Link } from 'react-router-dom';
-import { FaMoon } from 'react-icons/fa';
+import StarsIcon from '@mui/icons-material/Stars';
 import bgimg from '../assetts/icons/bgislam.png';
 
 const Section2 = () => {
@@ -14,8 +14,8 @@ const Section2 = () => {
           <Card key={index}>
             <Link to={card.route}>
               <CardImage src={card.image} alt={card.alt} />
-              <IconWrapper>
-                <FaMoon size={20} />
+              <IconWrapper style={{ color: '#e40001' }}>
+                <StarsIcon fontSize="small" />
               </IconWrapper>
               <CardTitle>{card.title}</CardTitle>
               <CardText dangerouslySetInnerHTML={{ __html: card.text }} />
@@ -59,7 +59,7 @@ const CardsContainer = styled('div')(({ theme }) => ({
 const Card = styled('div')(({ theme }) => ({
   position: 'relative',
   width: '100%',
-  maxWidth: '300px',
+  maxWidth: '330px',
   backgroundImage: `url(${bgimg})`,
   backgroundSize: 'cover',
   backgroundPosition: 'flex-end',
@@ -78,12 +78,13 @@ const Card = styled('div')(({ theme }) => ({
 
 const CardImage = styled('img')({
   width: '100%',
-  borderRadius: '8px',
   height: 'auto',
-  maxHeight: '17.375rem',
+  aspectRatio: '3/3',
   objectFit: 'cover',
+  borderRadius: '8px',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
+  display: 'block',
 });
 
 const IconWrapper = styled('div')({

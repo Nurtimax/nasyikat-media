@@ -12,8 +12,8 @@ import {
 } from '@mui/material';
 import styled from 'styled-components';
 import { Verified } from '@mui/icons-material';
-import Welcome from '../../components/Welcome';
-import Header from '../../components/Header';
+import Welcome from '../Welcome.jsx';
+import Header from '../Header.jsx';
 import LogoNasyikatMedia from '../../assetts/images/islam/nmlogo.png';
 import example from './src-video-data/example.js';
 
@@ -79,7 +79,7 @@ const extractYouTubeId = (url) => {
   return match ? match[1] || match[2] : null;
 };
 
-const ChubakAjyJallilov = () => {
+const Abdulazizkary = () => {
   return (
     <>
       <Welcome />
@@ -174,4 +174,4 @@ const ChubakAjyJallilov = () => {
   );
 };
 
-export default ChubakAjyJallilov;
+export default Abdulazizkary;

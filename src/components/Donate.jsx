@@ -133,7 +133,7 @@ const Donate = () => {
     <div>
       <DonateContainer>
         <Typography variant="h4" gutterBottom textAlign="center">
-          Биздин каналга салым кошуу
+          Биздин каналга колдоо көрсөтүү
         </Typography>
         <Typography variant="body1" gutterBottom align="center">
           <strong>Садака жана жакшы иштер:</strong> <br /> Сиздин колдооңуз
