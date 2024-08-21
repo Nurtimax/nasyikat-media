@@ -42,7 +42,6 @@ const App = () => {
         sx={{
           textAlign: 'center',
           marginTop: '1.5rem',
-          padding: '1rem',
           backgroundImage: `url(${banner2})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
