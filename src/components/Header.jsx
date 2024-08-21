@@ -127,7 +127,7 @@ const Header = () => {
             { text: 'Пайдалуу дубалар', path: '/duba' },
             { text: 'Куттуy Хадистер', path: '/hadis' },
             { text: 'Онлайн Дүкөн', path: '/store' },
-            { text: 'Кызматтар', path: '/services' },
+            { text: 'Ал Жардам', path: '/aljardam' },
             { text: 'Он Сүрө', path: '/onsuro' },
             { text: 'Тасбих', path: '/zikr' },
           ].map((item, index) => (

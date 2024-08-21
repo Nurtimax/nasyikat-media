@@ -22,7 +22,7 @@ import Zeket from './data/islamdynparzy/Zeket';
 import IslamdynParzdary from './IslamdynParzdary';
 import Books from './Books';
 import AboutUs from './AboutUs';
-import Services from './Services';
+import AlJardam from './AlJardam';
 import OnSuro from './OnSuro';
 import Abdulazizkary from './aalymdar.kg/Abdulazizkary';
 
@@ -53,7 +53,7 @@ const MainRouter = () => {
         <Route path="/zeket" element={<Zeket />} />
         <Route path="/books" element={<Books />} />
         <Route path="/aboutUs" element={<AboutUs />} />
-        <Route path="/services" element={<Services />} />
+        <Route path="/aljardam" element={<AlJardam />} />
         <Route path="/onsuro" element={<OnSuro />} />
       </Routes>
     </Router>
