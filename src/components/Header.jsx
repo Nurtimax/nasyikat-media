@@ -11,7 +11,6 @@ import {
   Button,
   Box,
   ListItemIcon,
-  Snackbar,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Verified } from '@mui/icons-material';
@@ -19,8 +18,6 @@ import { styled } from '@mui/system';
 import { useNavigate } from 'react-router-dom';
 import bgimg from '../assetts/icons/bacimg.png';
 import 'react-toastify/dist/ReactToastify.css';
-import CloseIcon from '@mui/icons-material/Close';
-import bgdialogimg from '../assetts/icons/bgsmall.png';
 import ScrollToTopButton from './ScrollToTopButton';
 
 const ResponsiveDrawer = styled(Drawer)(({ theme }) => ({
@@ -43,9 +40,9 @@ const ResponsiveDrawer = styled(Drawer)(({ theme }) => ({
 
 const ResponsiveListItemText = styled(ListItemText)(({ theme }) => ({
   '& .MuiTypography-root': {
-    fontSize: '1rem',
+    fontSize: '1.2rem',
     [theme.breakpoints.up('sm')]: {
-      fontSize: '1.1rem',
+      fontSize: '1.2rem',
     },
     [theme.breakpoints.up('md')]: {
       fontSize: '1.2rem',
@@ -90,19 +87,6 @@ const Header = () => {
     setMenuOpen(false);
   };
 
-  const [open, setOpen] = React.useState(false);
-
-  const handleClick = () => {
-    setOpen(true);
-  };
-
-  const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
-      return;
-    }
-
-    setOpen(false);
-  };
   return (
     <div>
       <StyledAppBar position="fixed">
@@ -111,7 +95,6 @@ const Header = () => {
             <Box display="flex" justifyContent="start" alignItems="center">
               <div>
                 <Button
-                  onClick={handleClick}
                   style={{
                     color: '#f6edde',
                     marginRight: '5px',
@@ -121,71 +104,6 @@ const Header = () => {
                 >
                   NASYIKAT.MEDIA
                 </Button>
-                <Snackbar
-                  open={open}
-                  autoHideDuration={8000}
-                  onClose={handleClose}
-                  action={
-                    <IconButton
-                      size="large"
-                      color="inherit"
-                      onClick={handleClose}
-                      sx={{
-                        position: 'absolute',
-                        top: '1px',
-                        right: '1px',
-                      }}
-                    >
-                      <CloseIcon fontSize="small" />
-                    </IconButton>
-                  }
-                  ContentProps={{
-                    sx: {
-                      backgroundImage: `url(${bgdialogimg})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                      color: '#fbe4c5',
-                      borderRadius: '8px',
-                      padding: '16px',
-                      marginRight: 'auto',
-                      position: 'relative',
-                    },
-                  }}
-                  message={
-                    <Box>
-                      <Typography
-                        style={{ textAlign: 'center', fontSize: '1.2rem' }}
-                      >
-                        Алланын элчисине салам - <br /> салаваттар болсун
-                      </Typography>
-                      <Typography
-                        textAlign="center"
-                        style={{ marginTop: '10px' }}
-                      >
-                        Аллохумма солли ьалаа Мухаммадин, ва аьлаа аали
-                        Мухаммад, камаа соллайта ьалаа Иброхиима ва ьалаа аали
-                        Иброхима, иннака хамиидум- мажиид. Аллохумма баарик
-                        ьалаа Мухаммадин, ва аьлаа аали Мухаммад, камаа баарокта
-                        ьалаа Иброхиима ва ьалаа аали Иброхима, иннака
-                        хамиидум-мажиид
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        align="center"
-                        sx={{ marginTop: '15px' }}
-                        style={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          gap: '5px',
-                        }}
-                      >
-                        Nasyikat.media
-                        <Verified color="inherit" fontSize="small" />
-                      </Typography>
-                    </Box>
-                  }
-                />
               </div>
               <Verified color="primary" />
             </Box>

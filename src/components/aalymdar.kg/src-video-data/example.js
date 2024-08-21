@@ -1,33 +1,33 @@
 const videoData7 = [
   {
-    speaker: 'Устаз Иляз ажы Абдувалиев',
+    speaker: 'Муфтий Абдулазиз кары Закиров',
     author: 'nasyikat.media',
-    url: 'https://youtube.com/shorts/j3O-Q1WyZtY?si=RdHXN6rVVK332Eun',
+    url: 'https://youtu.be/PwmqIcuhNi4?si=CBwljQP32VVBAXna',
   },
   {
-    speaker: 'Устаз Иляз ажы Абдувалиев',
+    speaker: 'Муфтий Абдулазиз кары Закиров',
     author: 'nasyikat.media',
-    url: 'https://youtube.com/shorts/6NszIeeMPnk?si=zkSN85Cw3cTnwCji',
+    url: 'https://youtu.be/rhXpBdJI-3A?si=fXAh9JcfUA_zTJuI',
   },
   {
-    speaker: 'Устаз Иляз ажы Абдувалиев',
+    speaker: 'Муфтий Абдулазиз кары Закиров',
     author: 'nasyikat.media',
-    url: 'https://youtube.com/shorts/gejYfUmG240?si=4ixoQl9F_F57SrfJ',
+    url: '',
   },
   {
-    speaker: 'Устаз Иляз ажы Абдувалиев',
+    speaker: 'Муфтий Абдулазиз кары Закиров',
     author: 'nasyikat.media',
-    url: 'https://youtube.com/shorts/XazWa56R6Ro?si=YLF0_vzeLc3Sfg22',
+    url: '',
   },
   {
-    speaker: 'Устаз Иляз ажы Абдувалиев',
+    speaker: 'Муфтий Абдулазиз кары Закиров',
     author: 'nasyikat.media',
-    url: 'https://youtube.com/shorts/B4h8AXOlx9A?si=yG-xJyzNI1tUQYLU',
+    url: '',
   },
   {
-    speaker: 'Устаз Иляз ажы Абдувалиев',
+    speaker: 'Муфтий Абдулазиз кары Закиров',
     author: 'nasyikat.media',
-    url: 'https://youtu.be/RIDj8Pw5VbQ?si=3B2iBJgUzqbL1gL0',
+    url: '',
   },
 ];
 

@@ -25,18 +25,6 @@ const StyledCard = styled(Card)(({ theme }) => ({
   background: 'linear-gradient(135deg, #f5f7fa, #c3cfe2)',
   transition: 'transform 0.3s ease, box-shadow 0.3s ease',
   cursor: 'pointer',
-  '&:hover': {
-    transform: 'scale(1.02)', // Slightly enlarge the card on hover
-    boxShadow: '0 12px 30px rgba(0, 0, 0, 0.2)', // More pronounced shadow on hover
-  },
-  '&:active': {
-    transform: 'scale(1)', // Slightly shrink the card when clicked
-    boxShadow: 'inset 0 4px 8px rgba(0, 0, 0, 0.1)', // Inset shadow on click
-  },
-  [theme.breakpoints.down('sm')]: {
-    width: '100%',
-    margin: '10px 0',
-  },
 }));
 
 const StyledCardMedia = styled(CardMedia)(({ theme }) => ({
@@ -194,7 +182,7 @@ const SponsorsList = () => {
       }}
     >
       <Typography variant="h4" gutterBottom>
-        Биздин демөөрчүлөр
+        Бизге колдоо көрсөткөндөр
       </Typography>
       <Box
         sx={{

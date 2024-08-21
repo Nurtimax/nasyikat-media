@@ -48,11 +48,11 @@ const Section = () => {
           </CardContent>
           <CardMedia
             component="img"
-            height="20"
+            height="30"
             image={img}
             alt="Large Card"
             sx={{
-              height: '20px',
+              height: '30px',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               borderRadius: 1,
@@ -60,7 +60,7 @@ const Section = () => {
           />
           <CardContent
             sx={{
-              padding: '16px',
+              padding: '1rem',
               background: '#f6edde',
             }}
           >

@@ -37,7 +37,7 @@ const teamMembers = [
     description:
       'Аллах таалага чексиз мактоолор жана шүгүрлөр болсун <br/>  <br/> Оо, Роббим! Мени кичинемден багып-өстүргөн ата-энеме ырайым кыл.',
     links: {
-      telegram: 'https://t.me/your-channel',
+      telegram: 'https://t.me/MuhammedIbraghim',
       instagram: 'https://www.instagram.com/matraim.official/',
       whatsapp: 'https://wa.me/996556401369',
     },
@@ -96,7 +96,7 @@ const AboutUs = () => {
           align="center"
           sx={{ marginBottom: '2rem' }}
         >
-          Биздин Жөнүндө
+          Биз жөнүндө
         </Typography>
         <Grid container spacing={4} justifyContent="center">
           {teamMembers.map((member, index) => (
