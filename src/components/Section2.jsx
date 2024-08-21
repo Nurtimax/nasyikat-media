@@ -31,7 +31,7 @@ export default Section2;
 
 const SectionContainer = styled('div')({
   textAlign: 'center',
-  margin: '1rem',
+  margin: '1.5rem',
   cursor: 'pointer',
   justifyContent: 'center',
 });

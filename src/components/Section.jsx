@@ -13,14 +13,7 @@ import img from '../assetts/icons/section-img.png';
 
 const Section = () => {
   return (
-    <Grid
-      container
-      spacing={2}
-      justifyContent="center"
-      sx={{
-        background: 'linear-gradient(to bottom, #f6edde, #e3d5bc)',
-      }}
-    >
+    <Grid container spacing={0} justifyContent="center">
       <Grid item xs={12}>
         <Card sx={{ maxWidth: '100%' }}>
           <CardContent
@@ -28,9 +21,6 @@ const Section = () => {
               textAlign: 'center',
               background: '#071c6b',
               color: '#c09b73',
-              pb: 0,
-              borderTopLeftRadius: 4,
-              borderTopRightRadius: 4,
             }}
           >
             <Typography
@@ -38,39 +28,26 @@ const Section = () => {
               align="center"
               gutterBottom
               sx={{
-                paddingBottom: '20px',
+                fontSize: { xs: '1.2rem', sm: '1.5rem' }, // Изменение размера шрифта для мобильных устройств
                 fontFamily: 'Georgia, serif',
               }}
             >
               ААЛЫМДАР ПАЙГАМБАРЛАРДЫН МУРАСКОРЛОРУ.
             </Typography>
           </CardContent>
-          <CardMedia
-            component="img"
-            height="20"
-            image={img}
-            alt="Large Card"
-            sx={{
-              height: '20px',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              borderRadius: 1,
-            }}
-          />
+
           <CardContent
             sx={{
-              padding: '1rem',
-              background: '#080705',
+              background: '#f6edde',
             }}
           >
-            <Grid container spacing={3}>
+            <Grid container spacing={2}>
               {kyrgyzaAlymdary.map((scholar, index) => (
                 <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
                   <Link to={scholar.link} style={{ textDecoration: 'none' }}>
                     <Card
                       sx={{
                         maxWidth: '100%',
-                        margin: '0 auto',
                         boxShadow: 3,
                         borderRadius: 2,
                       }}
@@ -86,7 +63,6 @@ const Section = () => {
                         sx={{
                           textAlign: 'center',
                           background: '#d9d9d9',
-                          p: 2,
                         }}
                       >
                         <Typography
@@ -96,6 +72,7 @@ const Section = () => {
                           sx={{
                             fontFamily: 'Georgia, serif',
                             color: '#333',
+                            fontSize: { xs: '1rem', sm: '1.2rem' }, // Изменение размера шрифта для мобильных устройств
                           }}
                         >
                           {scholar.name}
@@ -111,8 +88,10 @@ const Section = () => {
                         <Button
                           color="secondary"
                           variant="contained"
+                          fullWidth
                           sx={{
                             background: '#071c6b',
+                            fontSize: { xs: '0.8rem', sm: '1rem' }, // Уменьшение размера шрифта кнопки для мобильных устройств
                             '&:hover': {
                               background: '#071d6bd6',
                             },
@@ -132,7 +111,7 @@ const Section = () => {
               image={img}
               alt="Large Card"
               sx={{
-                height: '20px',
+                height: '10px',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 borderRadius: 1,

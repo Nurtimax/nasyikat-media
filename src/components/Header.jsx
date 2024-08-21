@@ -24,10 +24,10 @@ const ResponsiveDrawer = styled(Drawer)(({ theme }) => ({
   '& .MuiDrawer-paper': {
     width: '70%',
     [theme.breakpoints.up('sm')]: {
-      width: '40%',
+      width: '60%', // уменьшаем ширину для маленьких экранов
     },
     [theme.breakpoints.up('md')]: {
-      width: '30%',
+      width: '40%',
     },
     [theme.breakpoints.up('lg')]: {
       width: '20%',
@@ -43,14 +43,8 @@ const ResponsiveDrawer = styled(Drawer)(({ theme }) => ({
 const ResponsiveListItemText = styled(ListItemText)(({ theme }) => ({
   '& .MuiTypography-root': {
     fontSize: '1.2rem',
-    [theme.breakpoints.up('sm')]: {
-      fontSize: '1.2rem',
-    },
-    [theme.breakpoints.up('md')]: {
-      fontSize: '1.2rem',
-    },
-    [theme.breakpoints.up('lg')]: {
-      fontSize: '1.2rem',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1rem', // уменьшаем шрифт для мобильных экранов
     },
   },
 }));
@@ -64,11 +58,15 @@ const Logo = styled(Typography)({
   fontSize: '1.5em',
   fontWeight: 'bold',
   color: '#e8b775',
+  textAlign: 'left', // выравниваем логотип слева
 });
 
-const BurgerMenu = styled(IconButton)({
+const BurgerMenu = styled(IconButton)(({ theme }) => ({
   color: '#e8b775',
-});
+  [theme.breakpoints.down('sm')]: {
+    padding: '8px', // уменьшаем padding для мобильных экранов
+  },
+}));
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -95,17 +93,16 @@ const Header = () => {
         <Toolbar>
           <Logo>
             <Box display="flex" justifyContent="start" alignItems="center">
-              <div>
-                <Button
-                  style={{
-                    color: '#f6edde',
-                    fontFamily: "'Lora', serif",
-                    fontWeight: 'bold',
-                  }}
-                >
-                  NASYIKAT.MEDIA
-                </Button>
-              </div>
+              <Button
+                style={{
+                  color: '#f6edde',
+                  fontFamily: "'Lora', serif",
+                  fontWeight: 'bold',
+                  fontSize: '1rem',
+                }}
+              >
+                NASYIKAT.MEDIA
+              </Button>
               <Verified color="primary" fontSize="small" />
             </Box>
           </Logo>
@@ -186,10 +183,9 @@ const Header = () => {
                     sx={{
                       textTransform: 'none',
                       padding: 0,
-                      fontSize: '1rem',
+                      fontSize: '0.9rem', // уменьшаем размер шрифта для ссылки на мобильных устройствах
                     }}
                   >
-                    {' '}
                     Nasyikat.media
                   </Button>
                   <Verified color="primary" sx={{ marginLeft: '8px' }} />
@@ -199,9 +195,10 @@ const Header = () => {
                 secondary="Динге сый менен келбесең,  ый менен келесиң!"
                 secondaryTypographyProps={{
                   fontStyle: 'initial',
+                  fontSize: '0.8rem', // уменьшаем размер текста для второстепенной информации
                 }}
               />
-              <Typography variant="body6">© Чубак ажы Жалилов</Typography>
+              <Typography variant="body2">© Чубак ажы Жалилов</Typography>
             </ListItem>
           </Box>
         </List>
