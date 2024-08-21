@@ -19,11 +19,10 @@ const Section = () => {
       justifyContent="center"
       sx={{
         background: 'linear-gradient(to bottom, #f6edde, #e3d5bc)',
-        padding: '20px 0',
       }}
     >
       <Grid item xs={12}>
-        <Card sx={{ maxWidth: '100%', margin: '0 auto' }}>
+        <Card sx={{ maxWidth: '100%' }}>
           <CardContent
             sx={{
               textAlign: 'center',
@@ -48,11 +47,11 @@ const Section = () => {
           </CardContent>
           <CardMedia
             component="img"
-            height="30"
+            height="20"
             image={img}
             alt="Large Card"
             sx={{
-              height: '30px',
+              height: '20px',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               borderRadius: 1,
@@ -61,7 +60,7 @@ const Section = () => {
           <CardContent
             sx={{
               padding: '1rem',
-              background: '#f6edde',
+              background: '#080705',
             }}
           >
             <Grid container spacing={3}>
