@@ -22,7 +22,7 @@ import ScrollToTopButton from './ScrollToTopButton';
 
 const ResponsiveDrawer = styled(Drawer)(({ theme }) => ({
   '& .MuiDrawer-paper': {
-    width: '75%',
+    width: '70%',
     [theme.breakpoints.up('sm')]: {
       width: '40%',
     },
@@ -35,6 +35,8 @@ const ResponsiveDrawer = styled(Drawer)(({ theme }) => ({
     backgroundImage: `url(${bgimg})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    display: 'flex',
+    flexDirection: 'column',
   },
 }));
 
@@ -48,7 +50,7 @@ const ResponsiveListItemText = styled(ListItemText)(({ theme }) => ({
       fontSize: '1.2rem',
     },
     [theme.breakpoints.up('lg')]: {
-      fontSize: '1.3rem',
+      fontSize: '1.2rem',
     },
   },
 }));
@@ -97,7 +99,6 @@ const Header = () => {
                 <Button
                   style={{
                     color: '#f6edde',
-                    marginRight: '5px',
                     fontFamily: "'Lora', serif",
                     fontWeight: 'bold',
                   }}
@@ -105,7 +106,7 @@ const Header = () => {
                   NASYIKAT.MEDIA
                 </Button>
               </div>
-              <Verified color="primary" />
+              <Verified color="primary" fontSize="small" />
             </Box>
           </Logo>
           <BurgerMenu edge="end" onClick={toggleDrawer(true)}>
@@ -164,7 +165,7 @@ const Header = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  margin: '1rem',
+                  margin: '1.5rem',
                 }}
               >
                 <IconButton

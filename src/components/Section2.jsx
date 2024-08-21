@@ -31,8 +31,9 @@ export default Section2;
 
 const SectionContainer = styled('div')({
   textAlign: 'center',
-  padding: '20px',
+  margin: '1rem',
   cursor: 'pointer',
+  justifyContent: 'center',
 });
 
 const SectionTitle = styled('h2')({
@@ -59,7 +60,7 @@ const CardsContainer = styled('div')(({ theme }) => ({
 const Card = styled('div')(({ theme }) => ({
   position: 'relative',
   width: '100%',
-  maxWidth: '330px',
+  maxWidth: '340px',
   backgroundImage: `url(${bgimg})`,
   backgroundSize: 'cover',
   backgroundPosition: 'flex-end',
@@ -79,7 +80,7 @@ const Card = styled('div')(({ theme }) => ({
 const CardImage = styled('img')({
   width: '100%',
   height: 'auto',
-  aspectRatio: '3/3',
+  aspectRatio: '4/4',
   objectFit: 'cover',
   borderRadius: '8px',
   backgroundSize: 'cover',

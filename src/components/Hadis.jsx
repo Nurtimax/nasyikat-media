@@ -46,14 +46,14 @@ const StyledAccordionSummary = styled(AccordionSummary)(({ theme }) => ({
 
 const StyledAccordionDetails = styled(AccordionDetails)(({ theme }) => ({
   display: 'flex',
-  flexDirection: 'column', // Ensure column layout for centering
+  flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
   padding: theme.spacing(3),
-  textAlign: 'center', // Center text on all screens
+  textAlign: 'center',
   [theme.breakpoints.up('md')]: {
-    flexDirection: 'row', // Row layout for larger screens
-    textAlign: 'left', // Align text to the left on larger screens
+    flexDirection: 'row',
+    textAlign: 'left',
   },
 }));
 

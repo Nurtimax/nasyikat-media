@@ -17,8 +17,8 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import sponsors from './data/sponsors/sponsor';
 
 const StyledCard = styled(Card)(({ theme }) => ({
-  width: 400,
-  margin: '15px',
+  width: 380,
+  margin: '10px',
   boxShadow: '0 6px 20px rgba(0, 0, 0, 0.15)',
   borderRadius: 20,
   overflow: 'hidden',

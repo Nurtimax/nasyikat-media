@@ -31,7 +31,7 @@ const teamMembers = [
   },
 
   {
-    name: 'Нурматов Матраим Ашимович',
+    name: 'Ансар',
     role: 'Админ Nasyikat.media & Islam.sabaktary',
     image: logoavatar,
     description:

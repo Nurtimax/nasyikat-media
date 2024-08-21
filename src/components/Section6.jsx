@@ -16,9 +16,7 @@ import img from '../assetts/icons/section-img.png';
 
 const Section6 = () => {
   return (
-    <div
-      style={{ marginTop: '20px', backgroundColor: '#f0f0f0', padding: '20px' }}
-    >
+    <div style={{ marginTop: '20px', backgroundColor: '#f0f0f0' }}>
       <Box
         sx={{
           img: {
