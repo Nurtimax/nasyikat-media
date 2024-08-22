@@ -69,7 +69,7 @@ const LogoWrapper = styled(Box)(({ theme }) => ({
   textAlign: 'center',
   marginBottom: theme.spacing(3),
   cursor: 'pointer',
-  position: 'relative', // Needed for positioning confetti
+  position: 'relative',
   '& img': {
     maxWidth: '150px',
     height: 'auto',

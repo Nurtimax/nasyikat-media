@@ -23,7 +23,7 @@ const App = () => {
       <Section2 />
       <Box
         sx={{
-          height: { xs: '150px', sm: '450px' },
+          height: { xs: '150px', sm: '460px' },
           backgroundImage: `url(${banner})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
@@ -47,6 +47,8 @@ const App = () => {
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
+          margin: { xs: '0px', sm: '0px' },
+          padding: { xs: '0px', sm: '0px' },
         }}
       >
         <Typography

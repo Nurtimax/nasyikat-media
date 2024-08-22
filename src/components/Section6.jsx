@@ -16,9 +16,7 @@ import img from '../assetts/icons/section-img.png';
 
 const Section6 = () => {
   return (
-    <div
-      style={{ marginTop: '20px', backgroundColor: '#f0f0f0', margin: '1rem' }}
-    >
+    <div style={{ marginTop: '20px', margin: '0.4rem' }}>
       <Box
         sx={{
           img: {
@@ -43,43 +41,118 @@ const Section6 = () => {
               rel="noopener noreferrer"
               style={{ width: '100%', height: '100%' }}
             >
-              <Card style={{ width: '100%', height: '100%' }}>
+              <Card
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  ...(index === 2 && {
+                    border: '3px solid red',
+                    backgroundColor: '#3f3f3f',
+                    boxShadow: '0px 0px 15px rgba(255, 0, 0, 0.687)',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    borderRadius: '10px',
+                    '&::before': {
+                      content: '""',
+                      position: 'absolute',
+                      top: '0',
+                      left: '0',
+                      width: '100%',
+                      height: '100%',
+                      background:
+                        'linear-gradient(135deg, rgba(255,0,0,0.5), rgb(255, 0, 0))',
+                      zIndex: '1',
+                    },
+                  }),
+                }}
+              >
                 <CardMedia
                   component="img"
                   height="300"
                   image={card.image}
                   alt={card.title}
-                  style={{ objectFit: 'cover' }}
+                  style={{
+                    objectFit: 'cover',
+                    ...(index === 2 && {
+                      filter: 'grayscale(100%) sepia(100%)',
+                      mixBlendMode: 'multiply',
+                    }),
+                  }}
                 />
-                <CardContent style={{ textAlign: 'center' }}>
+                <CardContent
+                  style={{
+                    textAlign: 'center',
+                    position: 'relative',
+                    zIndex: '2',
+                    color: index === 2 ? '#fff' : 'inherit',
+                    background: index === 2 ? 'rgba(0,0,0,0.7)' : 'inherit',
+                  }}
+                >
                   <Typography variant="h5" component="h2" gutterBottom>
                     {card.title}
                   </Typography>
-                  <Typography variant="body2" color="textSecondary">
-                    {card.description}
-                  </Typography>
+                  <Typography variant="body2">{card.description}</Typography>
                   <Box mt={2}>
-                    <Button color="secondary" variant="contained">
-                      Толугураак
+                    <Button
+                      color="secondary"
+                      variant="contained"
+                      fullWidth
+                      sx={{
+                        background: '#071c6b',
+                        fontSize: { xs: '0.7rem', sm: '1rem' },
+                        '&:hover': {
+                          background: '#071d6bd6',
+                        },
+                      }}
+                    >
+                      Кененирээк
                     </Button>
                   </Box>
                   <Box
                     mt={2}
                     display="flex"
-                    justifyContent="center"
+                    justifyContent="space-around"
                     alignItems="center"
                     gap={1}
+                    sx={{ fontSize: '0.5rem' }}
                   >
-                    <LocationOn fontSize="small" />
-                    <Typography variant="body6" color="textSecondary">
+                    <Typography
+                      variant="body6"
+                      color="textSecondary"
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '1rem',
+                        color: index === 2 ? '#fff' : 'inherit',
+                      }}
+                    >
+                      <LocationOn fontSize="small" />
                       {card.location}
                     </Typography>
-                    <CalendarMonthIcon fontSize="small" />
-                    <Typography variant="body6" color="textSecondary">
+                    <Typography
+                      variant="body6"
+                      color="textSecondary"
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.5rem',
+                        color: index === 2 ? '#fff' : 'inherit',
+                      }}
+                    >
+                      <CalendarMonthIcon fontSize="small" />
                       {card.date}
                     </Typography>
-                    <AccessTime fontSize="small" />
-                    <Typography variant="body6" color="textSecondary">
+                    <Typography
+                      variant="body6"
+                      color="textSecondary"
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.5rem',
+                        color: index === 2 ? '#fff' : 'inherit',
+                      }}
+                    >
+                      <AccessTime fontSize="small" />
                       {card.time}
                     </Typography>
                   </Box>

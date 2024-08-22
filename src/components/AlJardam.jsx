@@ -9,6 +9,7 @@ import {
   LinearProgress,
   styled,
   IconButton,
+  Tooltip,
 } from '@mui/material';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -16,9 +17,14 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 import logoaljardam from '../assetts/icons/aljardam.jpg';
 import aljardam from '../assetts/icons/aljarrdam.jpeg';
 import Header from './Header';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import Footer from './Footer';
 
-// Section Wrapper with MUI's styled utility
+import sberbankLogo from '../assetts/icons/sber.png';
+import optimaBankLogo from '../assetts/icons/optima.png';
+import mBankLogo from '../assetts/icons/mbank.png';
+import aylBankLogo from '../assetts/icons/aiylbank.png';
+
 const Section = styled('div')(({ theme, bgColor }) => ({
   minHeight: '100vh',
   display: 'flex',
@@ -28,7 +34,15 @@ const Section = styled('div')(({ theme, bgColor }) => ({
   textAlign: 'center',
 }));
 
-// Flex container for responsive content
+const BankAccount = styled('div')({
+  display: 'flex',
+  alignItems: 'center',
+});
+
+const BankAccountText = styled(Typography)({
+  marginRight: '10px',
+});
+
 const FlexContainer = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'row',
@@ -40,7 +54,29 @@ const FlexContainer = styled('div')(({ theme }) => ({
   },
 }));
 
-// Styled image container with animation on hover
+const bankDetails = [
+  {
+    name: 'Сбербанк',
+    logo: sberbankLogo,
+    accountNumber: '12345678900987654321',
+  },
+  {
+    name: 'Оптима Банк',
+    logo: optimaBankLogo,
+    accountNumber: '12345678900987654321',
+  },
+  {
+    name: 'МБанк',
+    logo: mBankLogo,
+    accountNumber: '12345678900987654321',
+  },
+  {
+    name: 'Айыл Банк',
+    logo: aylBankLogo,
+    accountNumber: '12345678900987654321',
+  },
+];
+
 const ImageContainer = styled('img')({
   width: '100%',
   maxWidth: '500px',
@@ -52,7 +88,19 @@ const ImageContainer = styled('img')({
   },
 });
 
-// Styled larger card for "About Us" section
+const BankInfo = styled('div')({
+  display: 'flex',
+  alignItems: 'center',
+  marginTop: '10px',
+  marginBottom: '10px',
+});
+
+const BankLogo = styled('img')({
+  width: '150px',
+  height: 'auto',
+  marginRight: '10px',
+});
+
 const LargeCard = styled(Card)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
@@ -77,15 +125,20 @@ const SocialMediaButton = styled(IconButton)({
   },
 });
 
-// Styled image container
 const CardImage = styled('img')({
   width: '100%',
-  height: '200px', // Fixed height for images
+  height: '200px',
   objectFit: 'cover',
   borderRadius: '10px',
 });
 
-// Video Reports Data
+const copyToClipboard = (text) => {
+  navigator.clipboard.writeText(text).then(
+    () => alert('Номер счета скопирован!'),
+    (err) => alert('Ошибка при копировании номера счета!')
+  );
+};
+
 const videoReports = [
   {
     title: 'Видео отчет 1',
@@ -203,7 +256,6 @@ export default function CharityComponent() {
         </Container>
       </Section>
 
-      {/* Section 3: Fundraising */}
       <Section bgColor="#d0d0d0">
         <Container>
           <FlexContainer>
@@ -247,37 +299,38 @@ export default function CharityComponent() {
                 component="p"
                 style={{ marginTop: '20px' }}
               >
-                <div style={{ marginTop: '30px' }}>
-                  <Typography variant="h6">Банковские счета:</Typography>
-                  <Typography variant="body1">
-                    Сбербанк: xxxxxxxxxxxxxxx
-                  </Typography>
-                  <Typography variant="body1">
-                    Оптима Банк: xxxxxxxxxxxxxxx
-                  </Typography>
-                  <Typography variant="body1">
-                    МБанк: xxxxxxxxxxxxxxx
-                  </Typography>
-                  <Typography variant="body1">
-                    Айыл Банк: xxxxxxxxxxxxxxx
-                  </Typography>
-                  <Typography variant="h6" style={{ marginTop: '20px' }}>
-                    Номер для информации: +996 555 123 456
-                  </Typography>
-                </div>
+                <Typography variant="h6" component="h3" gutterBottom>
+                  Реквизиты для перевода:
+                </Typography>
+                {bankDetails.map((bank, index) => (
+                  <BankInfo key={index}>
+                    <BankLogo src={bank.logo} alt={bank.name} />
+                    <BankAccount>
+                      <BankAccountText variant="body1">
+                        {bank.accountNumber}
+                      </BankAccountText>
+                      <Tooltip title="Скопировать номер счета" arrow>
+                        <IconButton
+                          onClick={() => copyToClipboard(bank.accountNumber)}
+                        >
+                          <ContentCopyIcon />
+                        </IconButton>
+                      </Tooltip>
+                    </BankAccount>
+                  </BankInfo>
+                ))}
               </Typography>
               <Button
                 variant="contained"
                 color="primary"
                 style={{ marginTop: '20px' }}
               >
-                Поддержать
+                Байланышуу
               </Button>
             </div>
           </FlexContainer>
         </Container>
       </Section>
-
       {/* Section 4: Video Reports */}
       <Section bgColor="#c0c0c0">
         <Container>

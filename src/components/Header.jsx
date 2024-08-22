@@ -55,17 +55,14 @@ const StyledAppBar = styled(AppBar)({
 
 const Logo = styled(Typography)({
   flexGrow: 1,
-  fontSize: '1.5em',
+  fontSize: '0.8rem',
   fontWeight: 'bold',
   color: '#e8b775',
-  textAlign: 'left', // выравниваем логотип слева
+  textAlign: 'left',
 });
 
 const BurgerMenu = styled(IconButton)(({ theme }) => ({
   color: '#e8b775',
-  [theme.breakpoints.down('sm')]: {
-    padding: '8px', // уменьшаем padding для мобильных экранов
-  },
 }));
 
 const Header = () => {
@@ -87,18 +84,21 @@ const Header = () => {
     setMenuOpen(false);
   };
 
+  const handleNavHome = () => {
+    navigate('/');
+  };
+
   return (
     <div>
       <StyledAppBar position="fixed">
         <Toolbar>
-          <Logo>
+          <Logo onClick={handleNavHome}>
             <Box display="flex" justifyContent="start" alignItems="center">
               <Button
                 style={{
                   color: '#f6edde',
                   fontFamily: "'Lora', serif",
-                  fontWeight: 'bold',
-                  fontSize: '1rem',
+                  fontSize: '0.9rem',
                 }}
               >
                 NASYIKAT.MEDIA
