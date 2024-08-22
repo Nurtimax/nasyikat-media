@@ -32,7 +32,8 @@ const teamMembers = [
 
   {
     name: 'Ансар',
-    role: 'Админ Nasyikat.media & Islam.sabaktary',
+    role: 'Администра́ция',
+    channel: 'Nasyikat.media & Islam.sabaktary',
     image: logoavatar,
     description:
       'Аллах таалага чексиз мактоолор жана шүгүрлөр болсун <br/>  <br/> Оо, Роббим! Мени кичинемден багып-өстүргөн ата-энеме ырайым кыл.',
@@ -54,6 +55,30 @@ const teamMembers = [
     },
   },
 ];
+
+const CustomIconButton = styled(IconButton)(({ theme }) => ({
+  fontSize: 24,
+  margin: '0 4px',
+  '&:hover': {
+    opacity: 0.8,
+  },
+}));
+
+const CustomIconButtonYouTube = styled(CustomIconButton)({
+  color: '#FF0000',
+});
+
+const CustomIconButtonInstagram = styled(CustomIconButton)({
+  color: '#E1306C',
+});
+
+const CustomIconButtonTelegram = styled(CustomIconButton)({
+  color: '#0088cc',
+});
+
+const CustomIconButtonWhatsApp = styled(CustomIconButton)({
+  color: '#25d366',
+});
 
 const SpecialTeamCard = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(4),
@@ -77,11 +102,6 @@ const SocialIconContainer = styled(Box)(({ theme }) => ({
   justifyContent: 'center',
   gap: theme.spacing(2),
 }));
-
-const iconStyles = {
-  color: '#1976d2',
-  fontSize: '2rem',
-};
 
 const AboutUs = () => {
   return (
@@ -128,8 +148,20 @@ const AboutUs = () => {
                     >
                       {member.name}
                     </Typography>
-                    <Typography variant="subtitle1" color="textSecondary">
+                    <Typography
+                      variant="subtitle1"
+                      color="textSecondary"
+                      style={{
+                        background: '#071c6b',
+                        width: '100%',
+                        color: '#f6edde',
+                        borderRadius: '5px',
+                      }}
+                    >
                       {member.role}
+                    </Typography>
+                    <Typography variant="subtitle1" color="textSecondary">
+                      {member.channel}
                     </Typography>
                   </Box>
                   <Typography
@@ -139,48 +171,44 @@ const AboutUs = () => {
                   />
                   <SocialIconContainer>
                     {member.links.youtube && (
-                      <IconButton
+                      <CustomIconButtonYouTube
                         component="a"
                         href={member.links.youtube}
                         target="_blank"
                         rel="noopener noreferrer"
-                        sx={iconStyles}
                       >
                         <YouTube />
-                      </IconButton>
+                      </CustomIconButtonYouTube>
                     )}
                     {member.links.instagram && (
-                      <IconButton
+                      <CustomIconButtonInstagram
                         component="a"
                         href={member.links.instagram}
                         target="_blank"
                         rel="noopener noreferrer"
-                        sx={iconStyles}
                       >
                         <Instagram />
-                      </IconButton>
+                      </CustomIconButtonInstagram>
                     )}
                     {member.links.telegram && (
-                      <IconButton
+                      <CustomIconButtonTelegram
                         component="a"
                         href={member.links.telegram}
                         target="_blank"
                         rel="noopener noreferrer"
-                        sx={iconStyles}
                       >
                         <Telegram />
-                      </IconButton>
+                      </CustomIconButtonTelegram>
                     )}
                     {member.links.whatsapp && (
-                      <IconButton
+                      <CustomIconButtonWhatsApp
                         component="a"
                         href={member.links.whatsapp}
                         target="_blank"
                         rel="noopener noreferrer"
-                        sx={iconStyles}
                       >
                         <WhatsApp />
-                      </IconButton>
+                      </CustomIconButtonWhatsApp>
                     )}
                   </SocialIconContainer>
                 </SpecialTeamCard>
@@ -222,48 +250,44 @@ const AboutUs = () => {
                   />
                   <SocialIconContainer>
                     {member.links.youtube && (
-                      <IconButton
+                      <CustomIconButtonYouTube
                         component="a"
                         href={member.links.youtube}
                         target="_blank"
                         rel="noopener noreferrer"
-                        sx={iconStyles}
                       >
                         <YouTube />
-                      </IconButton>
+                      </CustomIconButtonYouTube>
                     )}
                     {member.links.instagram && (
-                      <IconButton
+                      <CustomIconButtonInstagram
                         component="a"
                         href={member.links.instagram}
                         target="_blank"
                         rel="noopener noreferrer"
-                        sx={iconStyles}
                       >
                         <Instagram />
-                      </IconButton>
+                      </CustomIconButtonInstagram>
                     )}
                     {member.links.telegram && (
-                      <IconButton
+                      <CustomIconButtonTelegram
                         component="a"
                         href={member.links.telegram}
                         target="_blank"
                         rel="noopener noreferrer"
-                        sx={iconStyles}
                       >
                         <Telegram />
-                      </IconButton>
+                      </CustomIconButtonTelegram>
                     )}
                     {member.links.whatsapp && (
-                      <IconButton
+                      <CustomIconButtonWhatsApp
                         component="a"
                         href={member.links.whatsapp}
                         target="_blank"
                         rel="noopener noreferrer"
-                        sx={iconStyles}
                       >
                         <WhatsApp />
-                      </IconButton>
+                      </CustomIconButtonWhatsApp>
                     )}
                   </SocialIconContainer>
                 </RegularTeamCard>

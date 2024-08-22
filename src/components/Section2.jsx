@@ -31,9 +31,13 @@ export default Section2;
 
 const SectionContainer = styled('div')({
   textAlign: 'center',
-  margin: '1.5rem',
-  cursor: 'pointer',
+  margin: '0.1em', // Убираем отступы по бокам
+  padding: '0.5px', // Убираем padding
+  width: '100%',
+  display: 'flex',
   justifyContent: 'center',
+  flexDirection: 'column',
+  alignItems: 'center',
 });
 
 const SectionTitle = styled('h2')({
@@ -48,6 +52,9 @@ const CardsContainer = styled('div')(({ theme }) => ({
   display: 'grid',
   gridTemplateColumns: 'repeat(5, 1fr)',
   gap: '20px',
+  width: '100%', // Устанавливаем ширину в 100%
+  padding: '0', // Убираем padding
+  margin: '0', // Убираем margin
   justifyItems: 'center',
   [theme.breakpoints.down('md')]: {
     gridTemplateColumns: 'repeat(3, 1fr)',
@@ -63,11 +70,11 @@ const Card = styled('div')(({ theme }) => ({
   maxWidth: '340px',
   backgroundImage: `url(${bgimg})`,
   backgroundSize: 'cover',
-  backgroundPosition: 'flex-end',
+  backgroundPosition: 'center',
   borderRadius: '8px',
   boxShadow: '0 0 10px rgba(0,0,0,0.1)',
   textAlign: 'center',
-  padding: '10px',
+  margin: '0 auto', // Центрирование карточек
   [theme.breakpoints.down('sm')]: {
     maxWidth: '100%',
   },

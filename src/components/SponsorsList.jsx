@@ -5,7 +5,6 @@ import {
   Card,
   CardContent,
   CardMedia,
-  Link,
   IconButton,
   Tooltip,
   useMediaQuery,
@@ -14,10 +13,13 @@ import { styled, useTheme } from '@mui/system';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkIcon from '@mui/icons-material/Link';
 import sponsors from './data/sponsors/sponsor';
 
+// Styled components for cards and icons
 const StyledCard = styled(Card)(({ theme }) => ({
-  width: 380,
+  width: '100%',
+  maxWidth: 380,
   margin: '10px',
   boxShadow: '0 6px 20px rgba(0, 0, 0, 0.15)',
   borderRadius: 20,
@@ -25,17 +27,17 @@ const StyledCard = styled(Card)(({ theme }) => ({
   background: 'linear-gradient(135deg, #f5f7fa, #c3cfe2)',
   transition: 'transform 0.3s ease, box-shadow 0.3s ease',
   cursor: 'pointer',
+  position: 'relative', // Required for absolute positioning of the icon
+  [theme.breakpoints.down('sm')]: {
+    maxWidth: '95%',
+  },
 }));
 
 const StyledCardMedia = styled(CardMedia)(({ theme }) => ({
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
   height: 250,
   backgroundSize: 'cover',
   [theme.breakpoints.down('sm')]: {
     height: 200,
-    width: '100%',
   },
 }));
 
@@ -84,7 +86,6 @@ const StyledTypographyTitle = styled(Typography)(({ theme }) => ({
 const StyledTypographyBody = styled(Typography)(({ theme }) => ({
   color: '#555',
   lineHeight: 1.6,
-  padding: '10px 0',
   [theme.breakpoints.down('sm')]: {
     fontSize: '0.9rem',
   },
@@ -96,6 +97,16 @@ const StyledTypographyAddress = styled(Typography)(({ theme }) => ({
   fontStyle: 'unset',
   [theme.breakpoints.down('sm')]: {
     fontSize: '0.9rem',
+  },
+}));
+
+const LinkIconButton = styled(IconButton)(({ theme }) => ({
+  position: 'absolute',
+  top: 10,
+  right: 10,
+  backgroundColor: '#3b73eb',
+  '&:hover': {
+    backgroundColor: '#1753d4',
   },
 }));
 
@@ -136,32 +147,35 @@ const SponsorCard = ({ sponsor }) => {
         <StyledTypographyAddress variant="body2" paragraph>
           <strong>Дареги:</strong> {sponsor.address}
         </StyledTypographyAddress>
-        <Box display="flex" justifyContent="space-between" alignItems="center">
-          <Link href={sponsor.link} target="_blank" rel="noopener">
-            <Typography variant="caption" color="primary">
-              Өтүү
-            </Typography>
-          </Link>
-          <Box display="flex" alignItems="center" justifyContent="center">
+        <Box display="flex" flexDirection="column" alignItems="center">
+          <Box
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            flexWrap="wrap"
+          >
             <Tooltip title="Instagram">
               <CustomIconButtonInstagram
                 onClick={() => handleShare('instagram')}
               >
-                <InstagramIcon style={{ fontSize: 24 }} />
+                <InstagramIcon />
               </CustomIconButtonInstagram>
             </Tooltip>
             <Tooltip title="Telegram">
               <CustomIconButtonTelegram onClick={() => handleShare('telegram')}>
-                <TelegramIcon style={{ fontSize: 24 }} />
+                <TelegramIcon />
               </CustomIconButtonTelegram>
             </Tooltip>
             <Tooltip title="WhatsApp">
               <CustomIconButton onClick={() => handleShare('whatsapp')}>
-                <WhatsAppIcon style={{ fontSize: 24 }} />
+                <WhatsAppIcon />
               </CustomIconButton>
             </Tooltip>
           </Box>
         </Box>
+        <LinkIconButton href={sponsor.link} target="_blank" rel="noopener">
+          <LinkIcon />
+        </LinkIconButton>
       </CardContent>
     </StyledCard>
   );
@@ -178,7 +192,7 @@ const SponsorsList = () => {
         flexDirection: 'column',
         alignItems: 'center',
         textAlign: 'center',
-        padding: '20px',
+        padding: '10px',
       }}
     >
       <Typography variant="h4" gutterBottom>

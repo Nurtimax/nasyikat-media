@@ -20,7 +20,7 @@ const Section4 = () => {
         <Typography variant="h5" component="h2" gutterBottom>
           وَذَكِّرْ فَإِنَّ الذِّكْرَىٰ تَنْفَعُ الْمُؤْمِنِينَ
         </Typography>
-        <Typography variant="body2" component="div">
+        <Typography variant="body2" component="div" sx={{ overflowY: 'auto' }}>
           {zaryiat55[textIndex]}
         </Typography>
         <Typography variant="h6" component="h3" gutterBottom>
@@ -35,22 +35,31 @@ export default Section4;
 
 const StyledContainer = styled(Box)(({ theme }) => ({
   width: '100%',
-  height: '400px',
+  height: 'auto',
   marginTop: theme.spacing(2),
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
   textAlign: 'center',
+  padding: theme.spacing(2),
 }));
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
   textAlign: 'center',
-  maxWidth: '80%',
-  height: 'auto',
+  width: '400px', // Фиксированная ширина карточки
+  height: '300px', // Фиксированная высота карточки
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
-  padding: theme.spacing(5),
+  padding: theme.spacing(3),
+  backgroundColor: '#f6edde', // Фоновый цвет
+  overflow: 'hidden', // Скрыть лишний контент
+
+  // Мобильные стили
+  [theme.breakpoints.down('sm')]: {
+    width: '100%', // Сделать карточку чуть меньше на мобильных устройствах
+    height: 'auto',
+  },
 }));
