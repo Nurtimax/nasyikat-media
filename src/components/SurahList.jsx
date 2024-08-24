@@ -14,7 +14,7 @@ import { Verified } from '@mui/icons-material';
 const SurahList = () => {
   return (
     <Box
-      sx={{ padding: { xs: '16px', sm: '20px' }, backgroundColor: '#f0f4f8' }}
+      sx={{ padding: { xs: '16px', sm: '20px' }, backgroundColor: '#f1e3cc' }}
     >
       <Typography
         variant="h4"
@@ -22,7 +22,7 @@ const SurahList = () => {
         gutterBottom
         sx={{ marginBottom: { xs: '16px', sm: '24px' } }}
       >
-        Намазга керектүү 10 кыска сүрө
+        Kыска сүрөлөр
       </Typography>
       <Grid container spacing={2}>
         {surahs.map((surah, index) => (
