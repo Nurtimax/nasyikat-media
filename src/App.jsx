@@ -10,7 +10,6 @@ import Footer from './components/Footer';
 import { Outlet } from 'react-router-dom';
 import Welcome from './components/Welcome';
 import SponsorsList from './components/SponsorsList';
-import banner from './assetts/images/banner.png';
 import banner2 from './assetts/icons/bgsmall.png';
 import { Box } from '@mui/system';
 import { Typography } from '@mui/material';
@@ -23,20 +22,35 @@ const App = () => {
       <Section2 />
       <Box
         sx={{
-          height: { xs: '150px', sm: '460px' },
-          backgroundImage: `url(${banner})`,
+          height: { xs: '280px' },
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
           marginTop: '25px',
           marginBottom: '20px',
           borderRadius: '5px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          textAlign: 'center',
         }}
-      ></Box>
-
+      >
+        <Typography
+          variant="h5"
+          component="div"
+          sx={{
+            color: '#c8831c',
+            padding: '10px',
+            background: '#fffdf6',
+            lineHeight: 1.4,
+            textAlign: 'center',
+            fontFamily: 'Arial, sans-serif',
+            width: '100%',
+          }}
+        >
+          Силер кантип Аллахка ишенбейсиңер? <br /> Ал силердин жансыз денеңерди
+          тирилткен. <br /> Кийин силерди өлтүрүп, андан соң айра тиритлет.
+          <br /> Анан Ага кайтасыңар. <br /> Бакара сүрөсү - 2.28
+        </Typography>
+      </Box>
       <Section />
       <Box
         sx={{
@@ -65,7 +79,6 @@ const App = () => {
           Нахл сүрөсү, 43 аят
         </Typography>
       </Box>
-
       <Section4 />
       <Section5 />
       <Section6 />

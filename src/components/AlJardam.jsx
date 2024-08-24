@@ -20,23 +20,47 @@ import Header from './Header';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import Footer from './Footer';
 
-import sberbankLogo from '../assetts/icons/sber.png';
-import optimaBankLogo from '../assetts/icons/optima.png';
-import mBankLogo from '../assetts/icons/mbank.png';
-import aylBankLogo from '../assetts/icons/aiylbank.png';
+import videoReports from './data/aljardam/aljardam';
+import bankDetails from './data/aljardam/rekivizit';
 
-const Section = styled('div')(({ theme, bgColor }) => ({
+const SectionOne = styled('div')({
   minHeight: '100vh',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   padding: '20px',
   textAlign: 'center',
-}));
+  backgroundColor: '#f6edde', // Цвет фона для первой секции
+});
 
-const BankAccount = styled('div')({
+const SectionTwo = styled('div')({
+  minHeight: '100vh',
   display: 'flex',
   alignItems: 'center',
+  justifyContent: 'center',
+  padding: '20px',
+  textAlign: 'center',
+  backgroundColor: '#f8e9cfdd', // Цвет фона для второй секции
+});
+
+const SectionThree = styled('div')({
+  minHeight: '100vh',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  padding: '20px',
+  textAlign: 'center',
+  backgroundColor: '#f6edde', // Цвет фона для третьей секции
+});
+
+const SectionFour = styled('div')({
+  minHeight: '100vh',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  padding: '20px',
+  textAlign: 'center',
+  backgroundColor: '#f8e9cfdd', // Цвет фона для четвертой секции
 });
 
 const BankAccountText = styled(Typography)({
@@ -54,34 +78,30 @@ const FlexContainer = styled('div')(({ theme }) => ({
   },
 }));
 
-const bankDetails = [
-  {
-    name: 'Сбербанк',
-    logo: sberbankLogo,
-    accountNumber: '12345678900987654321',
+const StyledButton = styled(Button)(({ theme }) => ({
+  backgroundColor: '#071c6b',
+  color: '#fff',
+  borderRadius: 5,
+  boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
+  transition: 'background-color 0.3s, transform 0.3s',
+  textTransform: 'none',
+  fontSize: '1.1rem',
+  width: '100%',
+  cursor: 'pointer',
+  '&:hover': {
+    backgroundColor: '#0a2278e4',
   },
-  {
-    name: 'Оптима Банк',
-    logo: optimaBankLogo,
-    accountNumber: '12345678900987654321',
+  '&:active': {
+    transform: 'scale(0.98)',
   },
-  {
-    name: 'МБанк',
-    logo: mBankLogo,
-    accountNumber: '12345678900987654321',
-  },
-  {
-    name: 'Айыл Банк',
-    logo: aylBankLogo,
-    accountNumber: '12345678900987654321',
-  },
-];
+}));
 
 const ImageContainer = styled('img')({
   width: '100%',
-  maxWidth: '500px',
+  maxWidth: '350px',
   height: 'auto',
   borderRadius: '10px',
+  alignItems: 'start',
   cursor: 'pointer',
   '&:hover': {
     boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.2)',
@@ -139,54 +159,49 @@ const copyToClipboard = (text) => {
   );
 };
 
-const videoReports = [
-  {
-    title: 'Видео отчет 1',
-    description:
-      'ушундай ушундай ушунча акча элден жыйналды топтоп бердик мына амнаттар жетти Аллах ыраазы болсун сиздерден',
-    videoUrl: 'https://youtu.be/p3ZMYRdwIV0?si=L98ryZxSdQ6hpgwo',
-  },
-  {
-    title: 'Видео отчет 2',
-    description:
-      'ушундай ушундай ушунча акча элден жыйналды топтоп бердик мына амнаттар жетти Аллах ыраазы болсун сиздерден',
-    videoUrl: 'https://youtu.be/p3ZMYRdwIV0?si=L98ryZxSdQ6hpgwo',
-  },
-  {
-    title: 'Видео отчет 3',
-    description:
-      'ушундай ушундай ушунча акча элден жыйналды топтоп бердик мына амнаттар жетти Аллах ыраазы болсун сиздерден',
-    videoUrl: 'https://youtu.be/p3ZMYRdwIV0?si=L98ryZxSdQ6hpgwo',
-  },
-];
+const extractYouTubeId = (url) => {
+  if (!url) return null;
+  const regExp =
+    /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/shorts|youtu\.be)\/([^&\s]{11})|(?:https?:\/\/)?(?:www\.)?youtube\.com\/watch\?v=([^&\s]{11})/;
+  const match = url.match(regExp);
+  return match ? match[1] || match[2] : null;
+};
 
 export default function CharityComponent() {
   return (
     <div>
       <Header />
-
       {/* Section 1: Large Image and Text */}
-      <Section bgColor="#f0f0f0">
+      <SectionOne bgColor="#f0f0f0">
         <Container>
           <FlexContainer>
             <ImageContainer src={logoaljardam} alt="Лого" />
             <div>
-              <Typography variant="h2" component="h1" gutterBottom>
-                Ал Жардам Фонду
+              <Typography
+                variant="h3"
+                component="h1"
+                sx={{ marginTop: '1rem' }}
+              >
+                "Ал Жардам"
+              </Typography>
+              <Typography variant="h4" component="h1" gutterBottom>
+                коомдук кайрымдуулук фонду
               </Typography>
               <Typography variant="h6" component="p">
-                Работаем с душой и любовью уже 4 года.
+                Пайгамбарыбыз ﷺ айтты: <br /> Аллах Таала айтты: "Эй Адам
+                баласы!Садака кылсан, мен сага (ырыскынды ) көбөйтүп берем"{' '}
+                <br /> (Бухари Муслим)
               </Typography>
             </div>
           </FlexContainer>
         </Container>
-      </Section>
+      </SectionOne>
 
       {/* Section 2: About Us */}
-      <Section bgColor="#e0e0e0">
+      <SectionTwo bgColor="#e0e0e0">
         <Container>
           <Typography variant="h4" component="h2" gutterBottom>
-            О нас
+            Биз Жөнүндө
           </Typography>
           <Grid container spacing={4}>
             <Grid item xs={12} sm={6} md={4}>
@@ -246,27 +261,56 @@ export default function CharityComponent() {
               <TelegramIcon />
             </SocialMediaButton>
           </div>
-          <Button
-            variant="contained"
-            color="primary"
-            startIcon={<WhatsAppIcon />}
-          >
-            Отправить сообщение
-          </Button>
         </Container>
-      </Section>
+      </SectionTwo>
 
-      <Section bgColor="#d0d0d0">
+      <SectionThree bgColor="#d0d0d0">
         <Container>
           <FlexContainer>
-            <ImageContainer
-              src={aljardam}
-              alt="Человек"
-              style={{ maxWidth: '500px', marginBottom: '20px' }}
-            />
-            <div>
+            <div style={{ textAlign: 'center' }}>
+              <ImageContainer
+                src={aljardam}
+                alt="Человек"
+                style={{
+                  width: '600px',
+                  height: 'auto',
+                  marginBottom: '20px',
+                }}
+              />
+
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  gap: '15px',
+                  marginBottom: '20px',
+                }}
+              >
+                <IconButton
+                  aria-label="WhatsApp"
+                  onClick={() =>
+                    window.open('https://wa.me/ваш_номер', '_blank')
+                  }
+                  style={{ color: '#25D366' }}
+                >
+                  <WhatsAppIcon fontSize="large" />
+                </IconButton>
+
+                <IconButton
+                  aria-label="Instagram"
+                  onClick={() =>
+                    window.open(
+                      'https://www.instagram.com/ваш_аккаунт',
+                      '_blank'
+                    )
+                  }
+                  style={{ color: '#E4405F' }}
+                >
+                  <InstagramIcon fontSize="large" />
+                </IconButton>
+              </div>
               <Typography variant="h4" component="h2" gutterBottom>
-                Сбор на Иван Иванов
+                Сбор на LastName First Name
               </Typography>
               <Typography variant="body1" component="p">
                 Город: Бишкек, Улица: Ленина, Дом: 12, Кв: 34
@@ -298,80 +342,111 @@ export default function CharityComponent() {
                 variant="body1"
                 component="p"
                 style={{ marginTop: '20px' }}
-              >
-                <Typography variant="h6" component="h3" gutterBottom>
-                  Реквизиты для перевода:
-                </Typography>
-                {bankDetails.map((bank, index) => (
-                  <BankInfo key={index}>
-                    <BankLogo src={bank.logo} alt={bank.name} />
-                    <BankAccount>
-                      <BankAccountText variant="body1">
-                        {bank.accountNumber}
-                      </BankAccountText>
-                      <Tooltip title="Скопировать номер счета" arrow>
-                        <IconButton
-                          onClick={() => copyToClipboard(bank.accountNumber)}
-                        >
-                          <ContentCopyIcon />
-                        </IconButton>
-                      </Tooltip>
-                    </BankAccount>
-                  </BankInfo>
-                ))}
-              </Typography>
-              <Button
-                variant="contained"
-                color="primary"
-                style={{ marginTop: '20px' }}
-              >
+              ></Typography>
+              <StyledButton aria-label="Call" href="tel:+ваш_номер">
                 Байланышуу
-              </Button>
+              </StyledButton>
+            </div>
+            <div>
+              <Typography
+                variant="h6"
+                component="h3"
+                gutterBottom
+                sx={{ marginTop: '1rem' }}
+              >
+                Реквизиты для перевода:
+              </Typography>
+              {bankDetails.map((bank, index) => (
+                <BankInfo
+                  key={index}
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    marginBottom: '20px',
+                  }}
+                >
+                  {/* Логотип банка */}
+                  <BankLogo
+                    src={bank.logo}
+                    alt={bank.name}
+                    style={{ marginBottom: '10px' }}
+                  />
+
+                  {/* Номер счета */}
+                  <BankAccountText
+                    variant="body1"
+                    style={{ marginBottom: '5px' }}
+                  >
+                    {bank.accountNumber}
+                  </BankAccountText>
+
+                  {/* Кнопка копирования */}
+                  <Tooltip title="Скопировать номер счета" arrow>
+                    <IconButton
+                      onClick={() => copyToClipboard(bank.accountNumber)}
+                    >
+                      <ContentCopyIcon />
+                    </IconButton>
+                  </Tooltip>
+
+                  {/* Имя получателя */}
+                  <Typography variant="body1" component="p">
+                    {bank.recipientName}
+                  </Typography>
+                </BankInfo>
+              ))}
             </div>
           </FlexContainer>
         </Container>
-      </Section>
+      </SectionThree>
+
       {/* Section 4: Video Reports */}
-      <Section bgColor="#c0c0c0">
+      <SectionFour bgColor="#c0c0c0">
         <Container>
           <Typography variant="h4" component="h2" gutterBottom>
             Видео отчеты
           </Typography>
           <Grid container spacing={2}>
-            {videoReports.map((report, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <Card>
-                  <CardContent>
-                    <img
-                      src={`https://via.placeholder.com/150?text=Image+${
-                        index + 1
-                      }`}
-                      alt={report.title}
-                      style={{ width: '100%', borderRadius: '10px' }}
-                    />
-                    <Typography variant="h6" style={{ marginTop: '10px' }}>
-                      {report.title}
-                    </Typography>
-                    <Typography variant="body2" style={{ marginTop: '10px' }}>
-                      {report.description}
-                    </Typography>
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      href={report.videoUrl}
-                      target="_blank"
-                      style={{ marginTop: '10px' }}
-                    >
-                      Смотреть видео
-                    </Button>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
+            {videoReports.map((report, index) => {
+              const youtubeId = extractYouTubeId(report.videoUrl);
+              return (
+                <Grid item xs={12} sm={6} md={4} key={index}>
+                  <Card>
+                    <CardContent>
+                      <iframe
+                        width="100%"
+                        height="200"
+                        src={`https://www.youtube.com/embed/${youtubeId}`}
+                        title={report.title}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        style={{ borderRadius: '10px' }}
+                      />
+                      <Typography variant="h6" style={{ marginTop: '10px' }}>
+                        {report.title}
+                      </Typography>
+                      <Typography variant="body2" style={{ marginTop: '10px' }}>
+                        {report.description}
+                      </Typography>
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        href={report.videoUrl}
+                        target="_blank"
+                        style={{ marginTop: '10px' }}
+                      >
+                        Смотреть на YouTube
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              );
+            })}
           </Grid>
         </Container>
-      </Section>
-
+      </SectionFour>
       <Footer />
     </div>
   );

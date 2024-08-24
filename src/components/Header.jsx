@@ -128,7 +128,7 @@ const Header = () => {
             { text: 'Куттуy Хадистер', path: '/hadis' },
             { text: 'Онлайн Дүкөн', path: '/store' },
             { text: 'Ал Жардам', path: '/aljardam' },
-            { text: 'Он Сүрө', path: '/onsuro' },
+            { text: 'Сүрөлөр', path: '/onsuro' },
             { text: 'Тасбих', path: '/zikr' },
           ].map((item, index) => (
             <ListItem

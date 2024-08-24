@@ -1,5 +1,4 @@
 import { styled } from '@mui/system';
-import banner from '../assetts/icons/section-img.png';
 import React from 'react';
 
 const Welcome = () => {
@@ -10,8 +9,5 @@ export default Welcome;
 
 const StyleContainer = styled('div')({
   height: '50px',
-  backgroundImage: `url(${banner})`,
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  backgroundRepeat: 'no-repeat',
+  background: '#f6edde',
 });
