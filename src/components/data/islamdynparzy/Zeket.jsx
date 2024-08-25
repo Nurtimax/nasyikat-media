@@ -47,10 +47,8 @@ const Zeket = () => {
           sx={{
             lineHeight: 1.8,
             marginBottom: 4,
-            fontSize: '1.2rem',
             textAlign: 'center',
             textShadow: '0.5px 0.5px 1px rgba(0, 0, 0, 0.3)',
-            padding: 2,
             borderRadius: 1,
           }}
         >
@@ -65,11 +63,8 @@ const Zeket = () => {
           sx={{
             textAlign: 'center',
             textShadow: '0.5px 0.5px 1px rgba(0, 0, 0, 0.3)',
-            padding: 2,
             borderRadius: 1,
             lineHeight: 1.8,
-            marginBottom: 4,
-            fontSize: '1.2rem',
           }}
         >
           Зекет деген- бул пенденин адал эмгек менен тапкан ырыскысынан Аллах

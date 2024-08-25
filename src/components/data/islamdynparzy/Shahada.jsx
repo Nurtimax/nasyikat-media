@@ -14,14 +14,15 @@ const Shahada = () => {
         <StyledImageContainer></StyledImageContainer>
         <StyledTextContainer>
           <StyledTypography variant="h6" gutterBottom>
-            Урматтуу мусулман бир тууганым! Бир Алладан башка Кудай жок жана
-            Мухаммад анын элчиси деп күбөлүк берүү
+            Урматтуу мусулман бир тууганым!
           </StyledTypography>
-          <StyledTypography variant="h6" component="h1" gutterBottom>
-            Лаа илааха иллаллах Мухаммадур расулуллах
-          </StyledTypography>
+          <StyledTypography
+            variant="h6"
+            component="h1"
+            gutterBottom
+          ></StyledTypography>
           <StyledText variant="body1" component="div">
-            ШАХАДАТ айтуу менен пенде Аллах Таалага ыйман келтирип, Мухаммад
+            Шахадат айтуу менен пенде Аллах Таалага ыйман келтирип, Мухаммад
             (салаллоху алейхи уа саллам) Аллах Таала жиберген акыркы пайгамбар
             экенин кабылдоо. Муну айтуу менен пенде эң туура, эң жакшы, эң
             бактылуу, тынчтыктын дини болгон- ислам динин кабыл алат.
@@ -33,6 +34,11 @@ const Shahada = () => {
           <StyledText variant="body1" component="div">
             Шахадат келмеси <br /> أَشْهَدُ أَنْ لَا إِلٰهَ إِلاَّ اللّٰهُ
             وَأَشْهَدُ أَنَّ محَّدًا...
+            <br />
+            Лаа илааха иллаллах Мухаммадур расулуллах
+            <br />
+            Бир Алладан башка Кудай жок жана Мухаммад анын элчиси деп күбөлүк
+            берүү
           </StyledText>
         </StyledTextContainer>
       </StyledContainer>
@@ -70,14 +76,11 @@ const StyledTextContainer = styled(Box)(({ theme }) => ({
   borderRadius: 8,
   margin: '0 auto',
   [theme.breakpoints.down('sm')]: {
-    padding: theme.spacing(2),
     maxWidth: '90%',
   },
 }));
 
 const StyledTypography = styled(Typography)(({ theme }) => ({
-  marginBottom: theme.spacing(2),
-  fontWeight: 'bold',
   color: '#333',
   textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
   [theme.breakpoints.down('sm')]: {
@@ -89,7 +92,7 @@ const StyledTypography = styled(Typography)(({ theme }) => ({
 const StyledText = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(4),
   lineHeight: 1.7,
-  fontSize: '1.1rem',
+  fontSize: '1.2rem',
   color: '#555',
   [theme.breakpoints.down('sm')]: {
     fontSize: '0.9rem',

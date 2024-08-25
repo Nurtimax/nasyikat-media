@@ -31,14 +31,12 @@ const Ajylyk = () => {
               textAlign: 'center',
 
               borderRadius: 2,
-              p: 4,
-              mb: 4,
+              mb: 1,
             }}
           >
             <Typography
-              variant="h3"
+              variant="h5"
               component="h1"
-              gutterBottom
               sx={{
                 fontWeight: 'bold',
                 color: '#000000',
