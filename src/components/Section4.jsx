@@ -17,14 +17,16 @@ const Section4 = () => {
   return (
     <StyledContainer>
       <StyledPaper elevation={3}>
-        <Typography variant="h5" component="h2" gutterBottom>
-          وَذَكِّرْ فَإِنَّ الذِّكْرَىٰ تَنْفَعُ الْمُؤْمِنِينَ
+        <Typography variant="h6" component="h2" gutterBottom>
+          "Эскерткин,- эскертүү момундарга пайда берет" (зарият 55 аят).
         </Typography>
-        <Typography variant="body2" component="div" sx={{ overflowY: 'auto' }}>
+        <Typography
+          variant="body2"
+          component="div"
+          sx={{ overflowY: 'auto' }}
+          style={{ fontSize: '1rem', marginTop: '1rem' }}
+        >
           {zaryiat55[textIndex]}
-        </Typography>
-        <Typography variant="h6" component="h3" gutterBottom>
-          "Эскерткин,- эскертүү момундарга пайда берет" <br /> (зарият 55 аят).
         </Typography>
       </StyledPaper>
     </StyledContainer>

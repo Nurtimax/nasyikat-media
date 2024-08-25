@@ -13,7 +13,6 @@ const Islam = () => {
         </Typography>
         <Box
           sx={{
-            backgroundColor: '#efe1b2a0',
             padding: 3,
             borderRadius: 2,
             marginBottom: 3,
@@ -24,7 +23,7 @@ const Islam = () => {
             sx={{
               lineHeight: '1.6',
               textAlign: 'center',
-              color: '#333',
+              color: '#3f3e3d',
             }}
           >
             Аллаху тааланын Жабраил периште аркылуу сүйүктүү жана акыркы
