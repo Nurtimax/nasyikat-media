@@ -79,9 +79,14 @@ const Header = () => {
     setMenuOpen(open);
   };
 
-  const handleNavigation = (path) => {
-    navigate(path);
-    setMenuOpen(false);
+  const handleNavigation = (path, link) => {
+    if (link) {
+      // Открываем внешнюю ссылку в новой вкладке
+      window.open(link, '_blank', 'noopener,noreferrer');
+    } else if (path) {
+      // Навигация внутри приложения с использованием react-router
+      navigate(path);
+    }
   };
 
   const handleNavHome = () => {
@@ -127,7 +132,10 @@ const Header = () => {
             { text: 'Электрондук китептер', path: '/books' },
             { text: 'Пайдалуу дубалар', path: '/duba' },
             { text: 'Куттуy Хадистер', path: '/hadis' },
-            { text: 'Онлайн Дүкөн', path: '/store' },
+            {
+              text: 'Онлайн Дүкөн',
+              link: 'https://nasyikat-store.vercel.app/',
+            },
             { text: 'Ал Жардам', path: '/aljardam' },
             { text: 'Сүрөлөр', path: '/onsuro' },
             { text: 'Тасбих', path: '/zikr' },
@@ -135,7 +143,7 @@ const Header = () => {
             <ListItem
               button
               key={index}
-              onClick={() => handleNavigation(item.path)}
+              onClick={() => handleNavigation(item.path, item.link)}
             >
               {item.icon && <ListItemIcon>{item.icon}</ListItemIcon>}
               <ResponsiveListItemText primary={item.text} />
