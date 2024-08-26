@@ -109,6 +109,22 @@ const CardInputContainer = styled(Box)(({ theme }) => ({
   },
 }));
 
+const LogoWrapper = styled(Box)(({ theme }) => ({
+  textAlign: 'center',
+  marginBottom: theme.spacing(3),
+  cursor: 'pointer',
+  position: 'relative',
+  '& img': {
+    maxWidth: '150px',
+    height: 'auto',
+    marginTop: '10px',
+    transition: 'transform 0.9s',
+    '&:hover': {
+      transform: 'rotateY(360deg) scale(1.1)',
+    },
+  },
+}));
+
 const CopyIconButton = styled(IconButton)(({ theme }) => ({
   color: '#1976d2',
   '&:hover': {
@@ -143,11 +159,13 @@ const Donate = () => {
         </Typography>
         <ContentWrapper>
           <ImageContainer>
-            <img
-              src={donationImage}
-              alt="Donation"
-              style={{ width: '150px', height: '150px', borderRadius: '50%' }}
-            />
+            <LogoWrapper>
+              <img
+                src={donationImage}
+                alt="Donation"
+                style={{ width: '150px', height: '150px', borderRadius: '50%' }}
+              />
+            </LogoWrapper>
           </ImageContainer>
           <Block style={{ backgroundColor: '#ffeacb' }}>
             <Typography variant="h6">

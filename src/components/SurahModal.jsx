@@ -18,7 +18,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import DownloadIcon from '@mui/icons-material/Download';
-import banner from '../assetts/icons/bacimg.png';
+import banner from '../assetts/icons/quranbg.jpg';
 import VerifiedIcon from '@mui/icons-material/Verified';
 
 const StyledModal = styled(Modal)(({ theme }) => ({
@@ -139,7 +139,7 @@ const SurahModal = ({
       <ModalContent>
         <IconButton
           onClick={onClose}
-          style={{ position: 'absolute', top: 10, right: 10 }}
+          style={{ position: 'absolute', bottom: 10, right: 10 }}
         >
           <CloseIcon />
         </IconButton>
