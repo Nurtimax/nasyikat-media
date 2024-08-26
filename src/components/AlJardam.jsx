@@ -22,6 +22,7 @@ import Footer from './Footer';
 
 import videoReports from './data/aljardam/aljardam';
 import bankDetails from './data/aljardam/rekivizit';
+import Welcome from './Welcome';
 
 const SectionOne = styled('div')({
   minHeight: '100vh',
@@ -154,8 +155,8 @@ const CardImage = styled('img')({
 
 const copyToClipboard = (text) => {
   navigator.clipboard.writeText(text).then(
-    () => alert('Номер счета скопирован!'),
-    (err) => alert('Ошибка при копировании номера счета!')
+    () => alert('Банк эсеби көчүрүлдү!'),
+    (err) => alert('Банк эсеби көчүрүлгөн жок!')
   );
 };
 
@@ -171,7 +172,7 @@ export default function CharityComponent() {
   return (
     <div>
       <Header />
-      {/* Section 1: Large Image and Text */}
+      <Welcome />
       <SectionOne bgColor="#f0f0f0">
         <Container>
           <FlexContainer>

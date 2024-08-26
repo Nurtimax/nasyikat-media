@@ -16,7 +16,7 @@ import ringitoon from '../assetts/quran-audio/ringiton.mp3';
 
 const TasbihCard = styled(Card)(({ theme }) => ({
   maxWidth: 500,
-  margin: '150px auto',
+  margin: '110px auto',
   textAlign: 'center',
   padding: theme.spacing(3),
   background: `url(${islamicBackground})`,

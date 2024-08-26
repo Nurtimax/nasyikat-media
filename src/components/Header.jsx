@@ -16,7 +16,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Verified } from '@mui/icons-material';
 import { styled } from '@mui/system';
 import { useNavigate } from 'react-router-dom';
-import bgimg from '../assetts/icons/bacimg.png';
+import bgimg from '../assetts/icons/as.jpg';
 import 'react-toastify/dist/ReactToastify.css';
 import ScrollToTopButton from './ScrollToTopButton';
 
@@ -145,7 +145,7 @@ const Header = () => {
             sx={{
               display: 'flex',
               flexDirection: 'column',
-              minHeight: '39vh',
+              minHeight: '24vh',
               justifyContent: 'center',
               padding: '0 16px',
             }}
@@ -163,7 +163,6 @@ const Header = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  margin: '1.5rem',
                 }}
               >
                 <IconButton
@@ -184,22 +183,27 @@ const Header = () => {
                     sx={{
                       textTransform: 'none',
                       padding: 0,
-                      fontSize: '0.9rem', // уменьшаем размер шрифта для ссылки на мобильных устройствах
+                      fontSize: '0.9rem',
+                      marginLeft: '1.5rem',
                     }}
                   >
                     Nasyikat.media
                   </Button>
-                  <Verified color="primary" sx={{ marginLeft: '8px' }} />
+                  <Verified
+                    color="primary"
+                    sx={{ marginLeft: '5px', marginBottom: '6px' }}
+                    fontSize="small"
+                  />
                 </IconButton>
               </Box>
               <ListItemText
                 secondary="Динге сый менен келбесең,  ый менен келесиң!"
                 secondaryTypographyProps={{
                   fontStyle: 'initial',
-                  fontSize: '0.8rem', // уменьшаем размер текста для второстепенной информации
+                  fontSize: '0.9rem',
                 }}
               />
-              <Typography variant="body2">© Чубак ажы Жалилов</Typography>
+              <Typography variant="body2">© Чубак ажы Жалилов (р.x)</Typography>
             </ListItem>
           </Box>
         </List>
