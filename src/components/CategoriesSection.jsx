@@ -21,7 +21,7 @@ const CategoriesSection = () => {
   return (
     <Box
       sx={{
-        padding: '20px',
+        padding: '10px',
         backgroundColor: '#f6edde',
         marginTop: '10px',
         color: 'black',
@@ -57,7 +57,6 @@ const CategoriesSection = () => {
           <Box
             sx={{
               fontSize: '1.3rem',
-              marginBottom: '5px',
               transition: 'color 0.3s ease',
             }}
           >
@@ -85,14 +84,13 @@ const CategoriesSection = () => {
               fontSize: '0.5rem',
               fontWeight: 'bold',
               borderRadius: '5px',
-              width: '120px', // Adjust width as needed
-              minWidth: '120px', // Ensure consistent width
+              width: '120px',
+              minWidth: '120px',
             }}
           >
             <Box
               sx={{
                 fontSize: '1.3rem',
-                marginBottom: '5px',
                 transition: 'color 0.3s ease',
               }}
             >
@@ -109,11 +107,24 @@ const CategoriesSection = () => {
       </Box>
 
       {/* Products Display */}
-      <Typography variant="h5" sx={{ marginBottom: '20px' }}>
-        {selectedCategory
-          ? `Продукты в категории "${selectedCategory}"`
-          : 'Все Продукты'}
+      <Typography
+        variant="h6"
+        sx={{
+          marginBottom: '20px',
+          marginTop: '20px',
+          marginLeft: '2px',
+          padding: '10px 20px',
+          backgroundColor: 'rgba(0, 123, 255, 0.1)',
+          color: '#007BFF',
+          borderRadius: '8px',
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+          fontFamily: '"Roboto", sans-serif',
+          textAlign: 'center',
+        }}
+      >
+        {selectedCategory ? `"${selectedCategory}"` : '"NASYIKAT STORE"'}
       </Typography>
+
       <Grid container spacing={2}>
         {displayedProducts.map((product) => (
           <Grid item xs={12} sm={6} md={4} lg={3} key={product.id}>

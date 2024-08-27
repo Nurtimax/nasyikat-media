@@ -1,5 +1,4 @@
 import SportsBasketballIcon from '@mui/icons-material/SportsBasketball';
-import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
 import WcIcon from '@mui/icons-material/Wc';
 import WeekendIcon from '@mui/icons-material/Weekend';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
@@ -10,6 +9,7 @@ import FaceIcon from '@mui/icons-material/Face';
 import ChildFriendlyIcon from '@mui/icons-material/ChildFriendly';
 import MaleIcon from '@mui/icons-material/Male';
 import FemaleIcon from '@mui/icons-material/Female';
+import FilterHdrIcon from '@mui/icons-material/FilterHdr';
 
 const categories = [
   {
@@ -17,8 +17,8 @@ const categories = [
     icon: <MaleIcon style={{ color: 'black', fontSize: '20px' }} />,
   },
   {
-    name: 'Сүрөттөр',
-    icon: <PhotoCameraIcon style={{ color: 'black', fontSize: '20px' }} />,
+    name: 'Военный',
+    icon: <FilterHdrIcon style={{ color: 'black', fontSize: '20px' }} />,
   },
   {
     name: 'Кийимдер',
