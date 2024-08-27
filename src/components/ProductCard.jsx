@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import {
   Card,
   CardContent,
@@ -6,16 +6,12 @@ import {
   Button,
   CardMedia,
   Box,
-  IconButton,
   Tooltip,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import TelegramIcon from '@mui/icons-material/Telegram';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import { Verified } from '@mui/icons-material';
+import { Verified, ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
 
 // Styled components
 const StyledCard = styled(Card)({
@@ -30,7 +26,30 @@ const Avatar = styled('img')({
   marginRight: 10,
 });
 
+const ArrowButton = styled('button')(({ theme }) => ({
+  background: 'rgba(0, 0, 0, 0.5)',
+  color: '#fff',
+  border: 'none',
+  borderRadius: '50%',
+  width: 30,
+  height: 30,
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  cursor: 'pointer',
+  position: 'absolute',
+  top: '50%',
+  transform: 'translateY(-50%)',
+  zIndex: 2,
+  '&:hover': {
+    background: theme.palette.primary.main,
+  },
+}));
+
 const CustomCarousel = styled(Carousel)({
+  '& .carousel .control-prev, .carousel .control-next': {
+    display: 'none', // Hide default arrows
+  },
   '& .carousel .control-dots': {
     bottom: 10,
     display: 'flex',
@@ -47,9 +66,6 @@ const CustomCarousel = styled(Carousel)({
   '& .carousel .control-dots .dot.active': {
     backgroundColor: '#1976d2',
   },
-  '& .carousel .control-prev, .carousel .control-next': {
-    display: 'none',
-  },
   '& .carousel .slide': {
     display: 'flex',
     alignItems: 'center',
@@ -62,17 +78,24 @@ const CustomCarousel = styled(Carousel)({
   },
 });
 
-const SocialIconButton = styled(IconButton)({
-  color: '#000',
-  '&:hover': {
-    color: '#1976d2',
-  },
-});
-
 const ProductCard = ({ product }) => {
+  const carouselRef = useRef(null);
+
+  const handleNext = () => {
+    if (carouselRef.current) {
+      carouselRef.current.moveTo(carouselRef.current.state.selectedItem + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (carouselRef.current) {
+      carouselRef.current.moveTo(carouselRef.current.state.selectedItem - 1);
+    }
+  };
+
   const handleOrder = () => {
     const message = `Привет! Я хочу заказать ${product.name}. Цена: ${product.price} сом.`;
-    const url = `https://wa.me/?text=${encodeURIComponent(message)}`;
+    const url = product.links.whatsapp + `?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   };
 
@@ -80,23 +103,32 @@ const ProductCard = ({ product }) => {
     <StyledCard>
       {/* Image Slider */}
       {product.images && product.images.length > 0 && (
-        <CustomCarousel
-          showArrows={false}
-          showThumbs={false}
-          showStatus={false}
-          infiniteLoop={true}
-          dynamicHeight={false}
-        >
-          {product.images.map((image, index) => (
-            <CardMedia
-              key={index}
-              component="img"
-              image={image}
-              alt={product.name}
-              sx={{ height: '300px', width: 'auto', objectFit: 'cover' }}
-            />
-          ))}
-        </CustomCarousel>
+        <Box sx={{ position: 'relative' }}>
+          <ArrowButton onClick={handlePrev} style={{ left: 10 }}>
+            <ArrowBackIos fontSize="small" />
+          </ArrowButton>
+          <ArrowButton onClick={handleNext} style={{ right: 10 }}>
+            <ArrowForwardIos fontSize="small" />
+          </ArrowButton>
+          <CustomCarousel
+            showArrows={false} // Disable default arrows
+            showThumbs={false}
+            showStatus={false}
+            infiniteLoop={true}
+            dynamicHeight={false}
+            ref={carouselRef} // Attach the ref
+          >
+            {product.images.map((image, index) => (
+              <CardMedia
+                key={index}
+                component="img"
+                image={image}
+                alt={product.name}
+                sx={{ height: '300px', width: 'auto', objectFit: 'cover' }}
+              />
+            ))}
+          </CustomCarousel>
+        </Box>
       )}
       {/* Content */}
       <CardContent>
@@ -151,34 +183,11 @@ const ProductCard = ({ product }) => {
             marginTop: 2,
           }}
         >
-          <Box sx={{ display: 'flex', gap: 1 }}>
-            <SocialIconButton
-              href="https://www.instagram.com"
-              target="_blank"
-              aria-label="Instagram"
-            >
-              <InstagramIcon />
-            </SocialIconButton>
-            <SocialIconButton
-              href="https://t.me"
-              target="_blank"
-              aria-label="Telegram"
-            >
-              <TelegramIcon />
-            </SocialIconButton>
-            <SocialIconButton
-              href="https://wa.me"
-              target="_blank"
-              aria-label="WhatsApp"
-            >
-              <WhatsAppIcon />
-            </SocialIconButton>
-          </Box>
           <Button
             variant="contained"
             color="primary"
             onClick={handleOrder}
-            style={{ width: '80%' }}
+            style={{ width: '100%' }}
           >
             Заказать
           </Button>
