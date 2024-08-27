@@ -132,10 +132,7 @@ const Header = () => {
             { text: 'Электрондук китептер', path: '/books' },
             { text: 'Пайдалуу дубалар', path: '/duba' },
             { text: 'Куттуy Хадистер', path: '/hadis' },
-            {
-              text: 'Онлайн Дүкөн',
-              link: 'https://nasyikat-store.vercel.app/',
-            },
+            { text: 'Онлайн Дүкөн', path: '/store' },
             { text: 'Ал Жардам', path: '/aljardam' },
             { text: 'Сүрөлөр', path: '/onsuro' },
             { text: 'Тасбих', path: '/zikr' },
