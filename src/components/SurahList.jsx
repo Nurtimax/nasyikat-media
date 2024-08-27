@@ -22,7 +22,7 @@ const SurahList = () => {
         gutterBottom
         sx={{ marginBottom: { xs: '16px', sm: '24px' } }}
       >
-        Kыска сүрөлөр
+        Намазга керектүү кыска сүрөлөр
       </Typography>
       <Grid container spacing={2}>
         {surahs.map((surah, index) => (
