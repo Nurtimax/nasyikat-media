@@ -19,15 +19,15 @@ const StyledAccordion = styled(Accordion)(({ theme }) => ({
 }));
 
 const AccordionSummaryStyled = styled(AccordionSummary)(({ theme }) => ({
-  backgroundColor: '#e3dcaf',
+  backgroundColor: '#f4eadb',
   borderRadius: '10px',
   '&:hover': {
-    backgroundColor: '#e3dcaf91',
+    backgroundColor: '#f4eadbda',
   },
 }));
 
 const AccordionDetailsStyled = styled(AccordionDetails)(({ theme }) => ({
-  backgroundColor: '#e3dcaf91',
+  backgroundColor: '#f4eadb',
   borderRadius: '10px',
   position: 'relative',
 }));
@@ -50,7 +50,7 @@ const IslamdynParzdary = () => {
           gutterBottom
           style={{ marginTop: '2rem', marginBottom: '1rem' }}
         >
-          Бактылуулук Исламда 40 Парз
+          Исламдагы 40 Парз
         </Typography>
 
         <StyledAccordion>
