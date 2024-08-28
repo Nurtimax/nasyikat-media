@@ -126,7 +126,7 @@ const Header = () => {
             { text: 'Башкы бет', path: '/app' },
             { text: 'Биз жөнүндө', path: '/aboutUs' },
             { text: 'Акыркы Хутба', path: '/hutba' },
-            { text: 'Китебим Куран', path: '/quran' },
+            // { text: 'Китебим Куран', path: '/quran' },
             { text: 'Исламда 40 парз', path: '/islamdynparzdary' },
             { text: 'Ислам деген эмне?', path: '/islam' },
             { text: 'Электрондук китептер', path: '/books' },
@@ -189,7 +189,7 @@ const Header = () => {
                       textTransform: 'none',
                       padding: 0,
                       fontSize: '0.9rem',
-                      marginLeft: '1.5rem',
+                      marginLeft: '1.1rem',
                     }}
                   >
                     Nasyikat.media

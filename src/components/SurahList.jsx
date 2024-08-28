@@ -10,17 +10,16 @@ import {
 import surahs from './data/quran/surah/suro';
 import bgimg from '../assetts/icons/bacimg.png';
 import { Verified } from '@mui/icons-material';
+import Footer from '../components/Footer';
 
 const SurahList = () => {
   return (
-    <Box
-      sx={{ padding: { xs: '16px', sm: '20px' }, backgroundColor: '#f1e3cc' }}
-    >
+    <Box>
       <Typography
         variant="h4"
         align="center"
         gutterBottom
-        sx={{ marginBottom: { xs: '16px', sm: '24px' } }}
+        style={{ marginTop: '1.5rem' }}
       >
         Намазга керектүү кыска сүрөлөр
       </Typography>
@@ -40,7 +39,6 @@ const SurahList = () => {
             >
               <Box
                 sx={{
-                  padding: '16px',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
@@ -56,20 +54,94 @@ const SurahList = () => {
                   {surah.icon}
                 </IconButton>
                 <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography variant="h6" sx={{ mb: 1 }}>
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      mb: 2, // Increased bottom margin for better spacing
+                      background:
+                        'linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.2))',
+                      padding: '8px', // Increased padding for better readability
+                      borderRadius: '4px',
+                      boxShadow: 1,
+                      lineHeight: 1.4, // Improved line height for readability
+                    }}
+                  >
                     {surah.name}
                   </Typography>
-                  <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 1 }}>
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      mb: 2, // Increased bottom margin for better spacing
+                      background:
+                        'linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.2))',
+                      padding: '8px', // Increased padding for better readability
+                      borderRadius: '4px',
+                      boxShadow: 1,
+                      lineHeight: 1.4, // Improved line height for readability
+                    }}
+                  >
                     {surah.bismillah}
                   </Typography>
-                  <Typography variant="subtitle1" sx={{ mb: 1, color: '#555' }}>
+                  <Typography
+                    sx={{
+                      mb: 2, // Increased bottom margin for better spacing
+                      background:
+                        'linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.2))',
+                      padding: '8px', // Increased padding for better readability
+                      borderRadius: '4px',
+                      boxShadow: 1,
+                      lineHeight: 1.4, // Improved line height for readability
+                    }}
+                  >
+                    {surah.bismillahMeaning}
+                  </Typography>
+                  <Typography
+                    variant="subtitle1"
+                    sx={{
+                      mb: 2, // Increased bottom margin for better spacing
+                      color: '#555',
+                      fontSize: '1.3rem',
+                      background:
+                        'linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.2))',
+                      padding: '8px', // Increased padding for better readability
+                      borderRadius: '4px',
+                      boxShadow: 1,
+                      lineHeight: 1.4, // Improved line height for readability
+                    }}
+                  >
                     {surah.arabic}
                   </Typography>
-                  <Typography variant="subtitle1" sx={{ mb: 1, color: '#555' }}>
-                    {surah.quran}
-                  </Typography>
-                  <Typography variant="body2" sx={{ color: '#777' }}>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      mb: 2, // Increased bottom margin for better spacing
+                      color: '#777',
+                      fontSize: '1.1rem',
+                      background:
+                        'linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.2))',
+                      padding: '8px', // Increased padding for better readability
+                      borderRadius: '4px',
+                      boxShadow: 1,
+                      lineHeight: 1.4, // Improved line height for readability
+                    }}
+                  >
                     {surah.transcription}
+                  </Typography>
+                  <Typography
+                    variant="subtitle1"
+                    sx={{
+                      mb: 2, // Increased bottom margin for better spacing
+                      color: '#555',
+                      fontSize: '1rem',
+                      background:
+                        'linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.2))',
+                      padding: '8px', // Increased padding for better readability
+                      borderRadius: '4px',
+                      boxShadow: 1,
+                      lineHeight: 1.4, // Improved line height for readability
+                    }}
+                  >
+                    {surah.quran}
                   </Typography>
                 </CardContent>
                 <Box
@@ -84,7 +156,7 @@ const SurahList = () => {
                   <Typography
                     variant="body2"
                     color="textSecondary"
-                    style={{
+                    sx={{
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -100,6 +172,9 @@ const SurahList = () => {
           </Grid>
         ))}
       </Grid>
+      <div style={{ marginTop: '1rem' }}>
+        <Footer />
+      </div>
     </Box>
   );
 };
