@@ -8,6 +8,7 @@ import {
   Box,
   Grid,
   IconButton,
+  ListItemText,
 } from '@mui/material';
 import { styled } from '@mui/system';
 import logo from '../assetts/icons/logo-nasykat.png';
@@ -31,8 +32,8 @@ const teamMembers = [
   },
 
   {
-    name: 'Ансар',
-    role: 'Администра́ция',
+    name: 'Нурматов Матраим Ашимович',
+    role: 'Админ',
     channel: 'Nasyikat.media & Islam.sabaktary',
     image: logoavatar,
     description:
@@ -160,9 +161,22 @@ const AboutUs = () => {
                     >
                       {member.role}
                     </Typography>
-                    <Typography variant="subtitle1" color="textSecondary">
+
+                    <Typography
+                      variant="subtitle1"
+                      color="textSecondary"
+                      mt={'10px'}
+                    >
                       {member.channel}
                     </Typography>
+                    <ListItemText
+                      secondary="«Жаратканым мени менен жана сөзсүз мага жол көрсөтөт»"
+                      secondaryTypographyProps={{
+                        fontStyle: 'initial',
+                        fontSize: '0.9rem',
+                        marginTop: '5px',
+                      }}
+                    />
                   </Box>
                   <Typography
                     variant="body1"
