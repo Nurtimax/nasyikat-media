@@ -71,6 +71,16 @@ const VideoIframe = styled.iframe`
   border: none;
 `;
 
+const VideoPlayer = styled.video`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  object-fit: cover;
+`;
+
 const extractYouTubeId = (url) => {
   if (!url) return null;
   const regExp =
@@ -89,19 +99,26 @@ const ChubakAjyJallilov = () => {
           <Grid container spacing={4} maxWidth="lg">
             {videoData.map((video, index) => {
               const youtubeId = extractYouTubeId(video.url);
+              const isLocalVideo = !youtubeId && video.url;
+
               return (
                 <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
                   <StyledCard>
                     <VideoContainer>
-                      <VideoIframe
-                        src={
-                          youtubeId
-                            ? `https://www.youtube.com/embed/${youtubeId}`
-                            : ''
-                        }
-                        title={video.title}
-                        allowFullScreen
-                      />
+                      {youtubeId ? (
+                        <VideoIframe
+                          src={`https://www.youtube.com/embed/${youtubeId}`}
+                          title={video.title}
+                          allowFullScreen
+                        />
+                      ) : (
+                        isLocalVideo && (
+                          <VideoPlayer controls>
+                            <source src={video.url} type="video/mp4" />
+                            Your browser does not support the video tag.
+                          </VideoPlayer>
+                        )
+                      )}
                     </VideoContainer>
                     <StyledCardContent>
                       <Box
