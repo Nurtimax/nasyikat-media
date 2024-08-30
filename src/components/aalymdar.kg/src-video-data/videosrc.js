@@ -1,12 +1,4 @@
-import videotest from '../../../assetts/video/test.MOV';
-
 const videoData = [
-  {
-    speaker: 'Шейх Чубак ажы Жалилов (р.a)',
-    author: 'nasyikat.media',
-    description: 'Устаздын бизге дубасы',
-    url: videotest,
-  },
   {
     url: 'https://youtube.com/shorts/BPcOZMD6u5I?si=zLrRxK7U4XyN9yeL',
     speaker: 'Шейх Чубак ажы Жалилов (р.a)',

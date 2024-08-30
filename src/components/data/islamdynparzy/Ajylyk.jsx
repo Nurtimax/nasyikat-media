@@ -2,6 +2,7 @@ import { Typography, Container, Box } from '@mui/material';
 import Header from '../../Header';
 import Welcome from '../../Welcome';
 import BackgroundImage from '../../../assetts/icons/bacimg.png';
+import Footer from '../../../components/Footer';
 
 const Ajylyk = () => {
   return (
@@ -89,6 +90,7 @@ const Ajylyk = () => {
           </Box>
         </Container>
       </Box>
+      <Footer />
     </div>
   );
 };

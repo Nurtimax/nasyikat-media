@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@emotion/react": "^11.13.0",
+    "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "^5.16.0",
     "@mui/material": "^5.16.7",
@@ -12,7 +12,9 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "date-fns": "^3.6.0",
     "firebase": "^10.12.3",
+    "framer-motion": "^11.3.31",
     "html2canvas": "^1.4.1",
     "i18next": "^23.14.0",
     "prop-types": "^15.8.1",
@@ -30,6 +32,7 @@
     "react-scroll": "^1.9.0",
     "react-slick": "^0.30.2",
     "react-toastify": "^10.0.5",
+    "react-use": "^17.5.1",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.12",
     "web-vitals": "^2.1.4"
@@ -57,5 +60,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-svg-loader": "^3.0.3"
   }
 }

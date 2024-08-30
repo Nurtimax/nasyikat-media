@@ -3,6 +3,7 @@ import React from 'react';
 import BackgroundImage from '../../../assetts/icons/bacimg.png';
 import Header from '../../../components/Header';
 import Welcome from '../../../components/Welcome';
+import Footer from '../../../components/Footer';
 
 const Orozo = () => {
   return (
@@ -76,6 +77,7 @@ const Orozo = () => {
           </Typography>
         </Box>
       </Box>
+      <Footer />
     </div>
   );
 };
