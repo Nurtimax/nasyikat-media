@@ -25,6 +25,7 @@ import AlJardam from './AlJardam';
 import OnSuro from './OnSuro';
 import Abdulazizkary from './aalymdar.kg/Abdulazizkary';
 import Hutba from './Hutba';
+import Kyrgyz from './Kyrgyz';
 
 const MainRouter = () => {
   return (
@@ -37,6 +38,7 @@ const MainRouter = () => {
         <Route path="/duba" element={<Duba />} />
         <Route path="/store" element={<Store />} />
         <Route path="/zikr" element={<Zikr />} />
+        <Route path="/kyrgyz" element={<Kyrgyz />} />
         <Route path="/chubakajyjallilov" element={<ChubakAjyJallilov />} />
         <Route path="/abdushukurajy" element={<AbdushukurAjy />} />
         <Route path="/maksatajy" element={<MaksatAjy />} />

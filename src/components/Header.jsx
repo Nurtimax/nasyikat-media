@@ -124,9 +124,9 @@ const Header = () => {
         <List>
           {[
             { text: 'Башкы бет', path: '/app' },
+            { text: 'Кыргызстан', path: '/kyrgyz' },
             { text: 'Биз жөнүндө', path: '/aboutUs' },
             { text: 'Акыркы Хутба', path: '/hutba' },
-            // { text: 'Китебим Куран', path: '/quran' },
             { text: 'Исламда 40 парз', path: '/islamdynparzdary' },
             { text: 'Ислам деген эмне?', path: '/islam' },
             { text: 'Электрондук китептер', path: '/books' },
