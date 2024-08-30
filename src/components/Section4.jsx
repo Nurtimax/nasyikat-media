@@ -16,18 +16,13 @@ const Section4 = () => {
 
   return (
     <StyledContainer>
-      <StyledPaper elevation={3}>
+      <StyledPaper elevation={6}>
         <Typography variant="h6" component="h2" gutterBottom>
-          "Эскерткин,- эскертүү момундарга пайда берет" (зарият 55 аят).
+          "Эскерткин,- эскертүү момундарга пайда берет" (Зарият 55-аят).
         </Typography>
-        <Typography
-          variant="body2"
-          component="div"
-          sx={{ overflowY: 'auto' }}
-          style={{ fontSize: '1rem', marginTop: '1rem' }}
-        >
+        <StyledText variant="body2" component="div">
           {zaryiat55[textIndex]}
-        </Typography>
+        </StyledText>
       </StyledPaper>
     </StyledContainer>
   );
@@ -35,33 +30,53 @@ const Section4 = () => {
 
 export default Section4;
 
+// Стилизация контейнера
 const StyledContainer = styled(Box)(({ theme }) => ({
   width: '100%',
-  height: 'auto',
-  marginTop: theme.spacing(2),
+  marginTop: theme.spacing(4),
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
-  textAlign: 'center',
   padding: theme.spacing(2),
 }));
 
+// Стилизация карточки
 const StyledPaper = styled(Paper)(({ theme }) => ({
   textAlign: 'center',
-  width: '400px', // Фиксированная ширина карточки
-  height: '300px', // Фиксированная высота карточки
+  width: '950px', // Фиксированная ширина карточки
+  height: '350px', // Фиксированная высота карточки
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
-  padding: theme.spacing(3),
-  backgroundColor: '#f6edde', // Фоновый цвет
-  overflow: 'hidden', // Скрыть лишний контент
-
-  // Мобильные стили
+  padding: theme.spacing(4),
+  backgroundColor: '#f9f5e7', // Мягкий фон
+  boxShadow: '0px 8px 20px rgba(0, 0, 0, 0.2)', // Глубокая тень
+  borderRadius: '15px', // Скругленные углы
+  cursor: 'pointer',
+  '&:hover': {
+    boxShadow: '0px 12px 25px rgba(0, 0, 0, 0.3)', // Увеличенная тень при ховере
+  },
   [theme.breakpoints.down('sm')]: {
-    width: '100%', // Сделать карточку чуть меньше на мобильных устройствах
-    height: 'auto',
+    width: '100%', // Адаптация под мобильные устройства
+    height: '400px',
+    padding: theme.spacing(2),
+  },
+}));
+
+// Стилизация текста
+const StyledText = styled(Typography)(({ theme }) => ({
+  fontSize: '1rem',
+  marginTop: theme.spacing(2),
+  color: '#333',
+  fontFamily: 'Georgia, serif',
+  lineHeight: '1.6',
+  height: '200px', // Фиксированная высота для текстовой области
+  overflowY: 'auto', // Прокрутка по вертикали при необходимости
+  padding: theme.spacing(1),
+  textAlign: 'center', // Выравнивание текста по ширине
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '0.9rem', // Меньший размер текста на мобильных устройствах
   },
 }));

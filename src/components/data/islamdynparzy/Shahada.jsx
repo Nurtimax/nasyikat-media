@@ -4,44 +4,48 @@ import { Box, Typography } from '@mui/material';
 import BackgroundImage from '../../../assetts/icons/bacimg.png';
 import Welcom from '../../../components/Welcome';
 import Header from '../../../components/Header';
+import Footer from '../../../components/Footer';
 
 const Shahada = () => {
   return (
     <div>
-      <Header />
-      <Welcom />
-      <StyledContainer>
-        <StyledImageContainer></StyledImageContainer>
-        <StyledTextContainer>
-          <StyledTypography variant="h6" gutterBottom>
-            Урматтуу мусулман бир тууганым!
-          </StyledTypography>
-          <StyledTypography
-            variant="h6"
-            component="h1"
-            gutterBottom
-          ></StyledTypography>
-          <StyledText variant="body1" component="div">
-            Шахадат айтуу менен пенде Аллах Таалага ыйман келтирип, Мухаммад
-            (салаллоху алейхи уа саллам) Аллах Таала жиберген акыркы пайгамбар
-            экенин кабылдоо. Муну айтуу менен пенде эң туура, эң жакшы, эң
-            бактылуу, тынчтыктын дини болгон- ислам динин кабыл алат.
-          </StyledText>
-          <StyledText variant="body1" component="div">
-            Ыйман бул – тил менен айтуу, жүрөк менен ишенүү жана амал менен
-            тастыктоо...
-          </StyledText>
-          <StyledText variant="body1" component="div">
-            Шахадат келмеси <br /> أَشْهَدُ أَنْ لَا إِلٰهَ إِلاَّ اللّٰهُ
-            وَأَشْهَدُ أَنَّ محَّدًا...
-            <br />
-            Лаа илааха иллаллах Мухаммадур расулуллах
-            <br />
-            Бир Алладан башка Кудай жок жана Мухаммад анын элчиси деп күбөлүк
-            берүү
-          </StyledText>
-        </StyledTextContainer>
-      </StyledContainer>
+      <div>
+        <Header />
+        <Welcom />
+        <StyledContainer>
+          <StyledImageContainer></StyledImageContainer>
+          <StyledTextContainer>
+            <StyledTypography variant="h6" gutterBottom>
+              Урматтуу мусулман бир тууганым!
+            </StyledTypography>
+            <StyledTypography
+              variant="h6"
+              component="h1"
+              gutterBottom
+            ></StyledTypography>
+            <StyledText variant="body1" component="div">
+              Шахадат айтуу менен пенде Аллах Таалага ыйман келтирип, Мухаммад
+              (салаллоху алейхи уа саллам) Аллах Таала жиберген акыркы пайгамбар
+              экенин кабылдоо. Муну айтуу менен пенде эң туура, эң жакшы, эң
+              бактылуу, тынчтыктын дини болгон- ислам динин кабыл алат.
+            </StyledText>
+            <StyledText variant="body1" component="div">
+              Ыйман бул – тил менен айтуу, жүрөк менен ишенүү жана амал менен
+              тастыктоо...
+            </StyledText>
+            <StyledText variant="body1" component="div">
+              Шахадат келмеси <br /> أَشْهَدُ أَنْ لَا إِلٰهَ إِلاَّ اللّٰهُ
+              وَأَشْهَدُ أَنَّ محَّدًا...
+              <br />
+              Лаа илааха иллаллах Мухаммадур расулуллах
+              <br />
+              Бир Алладан башка Кудай жок жана Мухаммад анын элчиси деп күбөлүк
+              берүү
+            </StyledText>
+          </StyledTextContainer>
+        </StyledContainer>
+      </div>
+      <Footer />
     </div>
   );
 };
@@ -49,7 +53,7 @@ const Shahada = () => {
 export default Shahada;
 
 const StyledContainer = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(4),
+  padding: theme.spacing(10),
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
@@ -76,7 +80,7 @@ const StyledTextContainer = styled(Box)(({ theme }) => ({
   borderRadius: 8,
   margin: '0 auto',
   [theme.breakpoints.down('sm')]: {
-    maxWidth: '90%',
+    maxWidth: '100%',
   },
 }));
 

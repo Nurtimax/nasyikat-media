@@ -2,6 +2,8 @@ import { Typography, Box } from '@mui/material';
 import Header from '../../../components/Header';
 import Welcome from '../../../components/Welcome';
 import BackgroundImage from '../../../assetts/icons/bacimg.png';
+import ZakatCalculator from '../../ZakatCalculator';
+import Footer from '../../../components/Footer';
 
 const Zeket = () => {
   return (
@@ -81,7 +83,9 @@ const Zeket = () => {
           Роббилеринин алдында. Аларга коркунуч да, кайгыруу да болбойт” деп
           айтылган. (Бакара:277).
         </Typography>
+        <ZakatCalculator />
       </Box>
+      <Footer />
     </div>
   );
 };
