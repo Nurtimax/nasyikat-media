@@ -2,17 +2,17 @@ const videoData5 = [
   {
     speaker: 'Шейх Максатбек ажы Токтомушев',
     author: 'nasyikat.media',
-    url: 'https://youtube.com/shorts/9ugyseCEzqc?si=HGDCiqn2eAkzT0u4',
+    url: 'https://youtube.com/shorts/C9Q9q4glKWg?si=Lo8rSpBG08uOxQdP',
   },
   {
     speaker: 'Шейх Максатбек ажы Токтомушев',
     author: 'nasyikat.media',
-    url: 'https://youtube.com/shorts/jPAA_uiJGd4?si=WdzlreGDdgoFVV7n',
+    url: 'https://youtube.com/shorts/ZZXTvwgoXe4?si=0wpkYsNQLVP4-oMT',
   },
   {
     speaker: 'Шейх Максатбек ажы Токтомушев',
     author: 'nasyikat.media',
-    url: 'https://youtube.com/shorts/V1FfyyMCuL4?si=sbED9_7eruQ1fbkp',
+    url: 'https://youtube.com/shorts/eT8VijKFaQg?si=o6OjZ0iT-Bz6MWdd',
   },
   {
     speaker: 'Шейх Максатбек ажы Токтомушев',

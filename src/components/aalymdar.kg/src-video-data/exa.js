@@ -17,7 +17,7 @@ const videoData3 = [
   {
     speaker: 'Устаз Бахтияр ажы Шарапов',
     author: 'nasyikat.media',
-    url: 'https://youtube.com/shorts/aZcn9FfNHMM?si=_DUotaSWGSHxfLZR',
+    url: 'https://youtube.com/shorts/jsb36QJjKbs?si=vpYlf8_2dC0MTKtQ',
   },
   {
     speaker: 'Устаз Бахтияр ажы Шарапов',

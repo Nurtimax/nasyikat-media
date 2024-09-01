@@ -16,6 +16,7 @@ import Welcome from '../Welcome.jsx';
 import Header from '../Header.jsx';
 import LogoNasyikatMedia from '../../assetts/images/islam/nmlogo.png';
 import example from './src-video-data/example.js';
+import Footer from '../../components/Footer';
 
 const theme = createTheme({
   typography: {
@@ -170,6 +171,9 @@ const Abdulazizkary = () => {
           </Grid>
         </Box>
       </ThemeProvider>
+      <div style={{ marginTop: '1rem' }}>
+        <Footer />
+      </div>{' '}
     </>
   );
 };

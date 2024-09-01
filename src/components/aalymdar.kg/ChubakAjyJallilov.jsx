@@ -16,6 +16,7 @@ import Welcome from '../../components/Welcome';
 import Header from '../../components/Header';
 import LogoNasyikatMedia from '../../assetts/images/islam/nmlogo.png';
 import videoData from './src-video-data/videosrc';
+import Footer from '../../components/Footer';
 
 const theme = createTheme({
   typography: {
@@ -187,6 +188,9 @@ const ChubakAjyJallilov = () => {
           </Grid>
         </Box>
       </ThemeProvider>
+      <div style={{ marginTop: '1rem' }}>
+        <Footer />
+      </div>
     </>
   );
 };

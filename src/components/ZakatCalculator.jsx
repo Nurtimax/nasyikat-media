@@ -55,7 +55,7 @@ const ZakatCalculator = () => {
       </CustomButton>
       {zakat !== null && (
         <Typography variant="h6" color="textPrimary" marginTop="30px">
-          Ваш Закят составляет: {zakat} единиц валюты
+          Сиздин зекетиңиз {zakat} бирдик акчаны түзөт.
         </Typography>
       )}
     </ZakatContainer>

@@ -42,14 +42,7 @@ const SectionContainer = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down('sm')]: {
     flexDirection: 'column', // Stack items vertically on small screens
     textAlign: 'center', // Center-align content for mobile
-  },
-}));
-
-const SectionContent = styled(Typography)(({ theme }) => ({
-  flex: 1,
-
-  [theme.breakpoints.down('sm')]: {
-    textAlign: 'center', // Center text on mobile
+    margin: theme.spacing(2, 1), // Adjust margin for mobile
   },
 }));
 
@@ -60,8 +53,19 @@ const SectionImage = styled('img')(({ theme }) => ({
   flex: 1,
 
   [theme.breakpoints.down('sm')]: {
-    maxWidth: '100%', // Adjust the image size for mobile
+    width: '100%', // Ensure the image takes full width on mobile
+    maxHeight: '300px', // Limit the height to a maximum of 300px on mobile
     marginBottom: theme.spacing(2), // Add spacing below the image
+    objectFit: 'cover', // Ensure the image scales nicely within its bounds
+    borderRadius: '4px', // Slightly reduce the border-radius on mobile
+  },
+}));
+
+const SectionContent = styled(Typography)(({ theme }) => ({
+  flex: 1,
+
+  [theme.breakpoints.down('sm')]: {
+    textAlign: 'center', // Center text on mobile
   },
 }));
 

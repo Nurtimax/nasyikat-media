@@ -7,13 +7,13 @@ import airpods2 from '../../../assetts/images/airpodsscreen2.png';
 const products = [
   {
     id: 1,
-    name: 'Беспроводные наушники airpods 2',
-    description: 'Беспроводные наушники Беспроводные наушники airpods 2',
-    price: 1000,
+    name: 'Сиздин товарыңыздын аты',
+    description: 'товар жөнүндө кыскача маалымат',
+    price: 'сиздин баа',
     category: 'Эркектерге',
     images: [kurzhun, img],
     avatar: img,
-    brandName: 'Nasyikat.shop',
+    brandName: 'Сиздин магазин',
     verified: true,
     links: {
       whatsapp: 'https://wa.me/996501234567',
@@ -24,12 +24,12 @@ const products = [
   },
   {
     id: 2,
-    name: 'Smartwatch',
-    description: 'Фитнес-трекер Беспроводные наушники airpods 2',
-    price: 2000,
+    name: 'Сиздин товарыңыздын аты',
+    description: 'товар жөнүндө кыскача маалымат',
+    price: 'сиздин баа',
     images: [quran, img],
     avatar: img,
-    brandName: 'Nasyikat.shop',
+    brandName: 'Сиздин магазин',
     category: 'Военный',
     verified: false,
     links: {

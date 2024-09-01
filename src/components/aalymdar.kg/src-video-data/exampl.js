@@ -2,17 +2,17 @@ const videoData6 = [
   {
     speaker: 'Устаз Садыбакас Ажы Доолов',
     author: 'nasyikat.media',
-    url: 'https://youtube.com/shorts/KCNXQg2Tz8M?si=VMFsCT9oOMEozrQC',
+    url: 'https://youtube.com/shorts/bFmORSIsacA?si=E1nkNUO2QeN2TqoX',
   },
   {
     speaker: 'Устаз Садыбакас Ажы Доолов',
     author: 'nasyikat.media',
-    url: 'https://youtube.com/shorts/TJ_lrSAFDLE?si=ROjMW4cNdCockPOJ',
+    url: 'https://youtube.com/shorts/q9KMzuP9GHk?si=voq4SohjzgUAIlL9',
   },
   {
     speaker: 'Устаз Садыбакас Ажы Доолов',
     author: 'nasyikat.media',
-    url: 'https://youtube.com/shorts/sm_PvGkPemk?si=ULf93OdHAWfrWIZx',
+    url: 'https://youtube.com/shorts/cGGai8DPXZs?si=buMyP4p0vRnn-lIk',
   },
   {
     speaker: 'Устаз Садыбакас Ажы Доолов',
