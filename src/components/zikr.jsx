@@ -19,12 +19,12 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import Header from './Header';
 import Welcome from './Welcome';
 import Footer from './Footer';
-import islamicBackground from '../assetts/icons/bacimg.png';
-import background1 from '../assetts/images/islam/muhammadsav.jpeg';
-import background2 from '../assetts/images/islam/muhammadsav.jpeg';
-import background3 from '../assetts/images/islam/muhammadsav.jpeg';
-import background4 from '../assetts/images/islam/muhammadsav.jpeg';
-import background5 from '../assetts/images/islam/muhammadsav.jpeg';
+import islamicBackground from '../assetts/images/bgislam1.webp';
+import background1 from '../assetts/images/bgislam2.avif';
+import background2 from '../assetts/images/bgislam3.jpg';
+import background3 from '../assetts/images/bgislam4.jpg';
+import background4 from '../assetts/images/bgislam6.jpeg';
+import background5 from '../assetts/images/bgislam5.webp';
 import ringitoon from '../assetts/quran-audio/ringiton.mp3';
 
 const backgrounds = [
@@ -43,7 +43,7 @@ const textColors = [
   '#1E90FF',
   '#FF1493',
   '#32CD32',
-]; // 6 цветовых варианта
+];
 
 const TasbihCard = styled(Card)(({ background }) => ({
   maxWidth: '500px',
@@ -51,7 +51,8 @@ const TasbihCard = styled(Card)(({ background }) => ({
   textAlign: 'center',
   background: background ? `url(${background})` : '#f0f0f0',
   backgroundSize: 'cover',
-  color: '#000',
+  backgroundPosition: 'center',
+  color: '#fff',
   position: 'relative',
   padding: '20px',
   boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
@@ -78,26 +79,16 @@ const Zikr = () => {
   const [selectedText, setSelectedText] = useState('');
   const [isSoundOn] = useState(true);
   const [background, setBackground] = useState(islamicBackground);
-  const [textColor, setTextColor] = useState('#000');
+  const [textColor, setTextColor] = useState('#fff');
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const audioRef = useRef(null);
 
   const tasbihTexts = [
-    {
-      zikr: 'СубханАллах',
-    },
-    {
-      zikr: 'Альхамдулиллах',
-    },
-    {
-      zikr: 'Аллаху Акбар',
-    },
-    {
-      zikr: 'Ла илаха иллаллах',
-    },
-    {
-      zikr: 'Астагфируллах',
-    },
+    { zikr: 'СубханАллах' },
+    { zikr: 'Альхамдулиллах' },
+    { zikr: 'Аллаху Акбар' },
+    { zikr: 'Ла илаха иллаллах' },
+    { zikr: 'Астагфируллах' },
   ];
 
   const handleIncrement = () => {
@@ -138,11 +129,7 @@ const Zikr = () => {
       <Welcome />
       <TasbihCard background={background} sx={{ color: textColor }}>
         <CardContent>
-          <Card>
-            <CardContent>
-              <Typography variant="h4">Тасбих</Typography>
-            </CardContent>
-          </Card>
+          <Typography variant="h4">Тасбих</Typography>
 
           <TextField
             select
@@ -157,12 +144,13 @@ const Zikr = () => {
               backgroundColor: '#fff',
               borderRadius: '8px',
               border: '1px solid #008080',
+              color: textColor,
             }}
           >
             <MenuItem value="">Зикр тандаңыз</MenuItem>
             {tasbihTexts.map((text, index) => (
               <MenuItem key={index} value={text.zikr}>
-                ({text.zikr})
+                {text.zikr}
               </MenuItem>
             ))}
           </TextField>
@@ -245,6 +233,7 @@ const Zikr = () => {
                     height: '50px',
                     backgroundImage: `url(${bg})`,
                     backgroundSize: 'cover',
+                    backgroundPosition: 'center',
                     cursor: 'pointer',
                     borderRadius: '8px',
                     border: background === bg ? '3px solid #008080' : 'none',

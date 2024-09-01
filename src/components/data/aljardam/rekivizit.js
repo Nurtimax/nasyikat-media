@@ -7,26 +7,30 @@ const bankDetails = [
   {
     name: 'Сбербанк',
     logo: sberbankLogo,
-    accountNumber: '12345678900987654321-bir',
-    recipientName: 'Ansar Sadaka',
+    phoneNumber: '+79939189498',
+    accountNumber: '2202 2080 8598 5225',
+    recipientName: 'Курбонов Кадырали',
   },
   {
     name: 'Оптима Банк',
+    phoneNumber: '',
     logo: optimaBankLogo,
-    accountNumber: '12345678900987654321-eki',
-    recipientName: 'Ansar Sadaka',
+    accountNumber: '4169 5853 5634 4100',
+    recipientName: 'Асеков Эрмат Бактыбекович',
   },
   {
     name: 'МБанк',
+    phoneNumber: '',
     logo: mBankLogo,
-    accountNumber: '12345678900987654321-uch',
-    recipientName: 'Ansar Sadaka',
+    accountNumber: '0504002828',
+    recipientName: 'Байышбек уулу Темирлан',
   },
   {
     name: 'Айыл Банк',
+    phoneNumber: '',
     logo: aylBankLogo,
-    accountNumber: '12345678900987654321-tort',
-    recipientName: 'Ansar Sadaka',
+    accountNumber: '9417378503134635',
+    recipientName: 'Асеков Эрмат Бактыбекович',
   },
 ];
 

@@ -13,12 +13,14 @@ import {
 } from '@mui/material';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import TelegramIcon from '@mui/icons-material/Telegram';
+// import TelegramIcon from '@mui/icons-material/Telegram';
 import logoaljardam from '../assetts/icons/aljardam.jpg';
-import aljardam from '../assetts/icons/aljarrdam.jpeg';
+import aljardam from '../assetts/aljardamimages/aljardam.png';
 import Header from './Header';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import Footer from './Footer';
+import imgUstav from '../assetts/aljardamimages/doc/ustav.png';
+import imgKuboluk from '../assetts/aljardamimages/doc/kuboluk.png';
 
 import videoReports from './data/aljardam/aljardam';
 import bankDetails from './data/aljardam/rekivizit';
@@ -126,7 +128,7 @@ const LargeCard = styled(Card)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  height: '450px', // Fixed height
+  height: '460px', // Fixed height
   maxWidth: '100%', // Ensure it doesn't overflow
   boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
   borderRadius: '10px',
@@ -135,22 +137,21 @@ const LargeCard = styled(Card)(({ theme }) => ({
 }));
 
 // Styled social media button
-const SocialMediaButton = styled(IconButton)({
-  margin: '0 10px',
-  '& svg': {
-    fontSize: '2rem',
-    transition: 'color 0.3s ease',
-  },
-  '&:hover svg': {
-    color: '#1DA1F2',
-  },
-});
+// const SocialMediaButton = styled(IconButton)({
+//   margin: '0 10px',
+//   '& svg': {
+//     fontSize: '2rem',
+//     transition: 'color 0.3s ease',
+//   },
+//   '&:hover svg': {
+//     color: '#1DA1F2',
+//   },
+// });
 
 const CardImage = styled('img')({
   width: '100%',
-  height: '200px',
+  height: '380px',
   objectFit: 'cover',
-  borderRadius: '10px',
 });
 
 const copyToClipboard = (text) => {
@@ -188,10 +189,16 @@ export default function CharityComponent() {
               <Typography variant="h4" component="h1" gutterBottom>
                 коомдук кайрымдуулук фонду
               </Typography>
-              <Typography variant="h6" component="p">
+              <Typography>
+                Эй ыйман келтиргендер! <br /> Соода, достук жана колдоо болбой
+                турган (Кыямат) Күн келгенге чейин. <br /> Биз берген ырыскыдан
+                садака кылгыла”. <br />
+                (Бакара, 254-аят).
+              </Typography>
+              <Typography component="p">
                 Пайгамбарыбыз ﷺ айтты: <br /> Аллах Таала айтты: "Эй Адам
-                баласы!Садака кылсан, мен сага (ырыскынды ) көбөйтүп берем"{' '}
-                <br /> (Бухари Муслим)
+                баласы! <br /> Садака кылсан, мен сага (ырыскынды ) көбөйтүп
+                берем" <br /> (Бухари Муслим)
               </Typography>
             </div>
           </FlexContainer>
@@ -199,7 +206,7 @@ export default function CharityComponent() {
       </SectionOne>
 
       {/* Section 2: About Us */}
-      <SectionTwo bgColor="#e0e0e0">
+      <SectionTwo>
         <Container>
           <Typography variant="h4" component="h2" gutterBottom>
             Биз Жөнүндө
@@ -208,12 +215,12 @@ export default function CharityComponent() {
             <Grid item xs={12} sm={6} md={4}>
               <LargeCard>
                 <CardContent>
-                  <CardImage src={logoaljardam} alt="Устав" />
+                  <CardImage src={imgUstav} alt="Устав" />
                   <Typography variant="h6" style={{ marginTop: '10px' }}>
-                    Устав
+                    Биздин Устав
                   </Typography>
                   <Typography variant="body2">
-                    Наш устав определяет основные направления нашей работы.
+                    {/* Наш устав определяет основные направления нашей работы. */}
                   </Typography>
                 </CardContent>
               </LargeCard>
@@ -221,32 +228,19 @@ export default function CharityComponent() {
             <Grid item xs={12} sm={6} md={4}>
               <LargeCard>
                 <CardContent>
-                  <CardImage src={logoaljardam} alt="Лицензия" />
+                  <CardImage src={imgKuboluk} alt="Лицензия" />
                   <Typography variant="h6" style={{ marginTop: '10px' }}>
-                    Лицензия
+                    Биздин Күбөлүк
                   </Typography>
                   <Typography variant="body2">
-                    Мы официально лицензированы для ведения благотворительной
-                    деятельности.
-                  </Typography>
-                </CardContent>
-              </LargeCard>
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <LargeCard>
-                <CardContent>
-                  <CardImage src={logoaljardam} alt="Документы" />
-                  <Typography variant="h6" style={{ marginTop: '10px' }}>
-                    Документы
-                  </Typography>
-                  <Typography variant="body2">
-                    Все наши документы доступны для просмотра.
+                    {/* Мы официально лицензированы для ведения благотворительной */}
+                    {/* деятельности. */}
                   </Typography>
                 </CardContent>
               </LargeCard>
             </Grid>
           </Grid>
-          <Typography
+          {/* <Typography
             variant="body1"
             component="p"
             style={{ marginTop: '20px' }}
@@ -261,7 +255,7 @@ export default function CharityComponent() {
             <SocialMediaButton>
               <TelegramIcon />
             </SocialMediaButton>
-          </div>
+          </div> */}
         </Container>
       </SectionTwo>
 
@@ -290,7 +284,7 @@ export default function CharityComponent() {
                 <IconButton
                   aria-label="WhatsApp"
                   onClick={() =>
-                    window.open('https://wa.me/ваш_номер', '_blank')
+                    window.open('https://wa.me/+996708588271', '_blank')
                   }
                   style={{ color: '#25D366' }}
                 >
@@ -301,7 +295,7 @@ export default function CharityComponent() {
                   aria-label="Instagram"
                   onClick={() =>
                     window.open(
-                      'https://www.instagram.com/ваш_аккаунт',
+                      'https://www.instagram.com/aljardam_/',
                       '_blank'
                     )
                   }
@@ -311,21 +305,21 @@ export default function CharityComponent() {
                 </IconButton>
               </div>
               <Typography variant="h4" component="h2" gutterBottom>
-                Сбор на LastName First Name
+                Мамасадыкова Назгүл
               </Typography>
               <Typography variant="body1" component="p">
-                Город: Бишкек, Улица: Ленина, Дом: 12, Кв: 34
+                Ош шаары, Салиева көчөсү 24/13. 1 кирмек 4 этаж 13 батир
               </Typography>
               <Typography
                 variant="body1"
                 component="p"
                 style={{ marginTop: '10px' }}
               >
-                Сумма сбора: 100,000 сом
+                {/* Сумма сбора: 100,000 сом */}
               </Typography>
               <LinearProgress
                 variant="determinate"
-                value={75}
+                value={0}
                 style={{
                   marginTop: '20px',
                   height: '10px',
@@ -337,14 +331,14 @@ export default function CharityComponent() {
                 component="p"
                 style={{ marginTop: '10px' }}
               >
-                Собрано: 75,000 сом (75%)
+                Жыйналды: 00,000 сом (00%)
               </Typography>
               <Typography
                 variant="body1"
                 component="p"
                 style={{ marginTop: '20px' }}
               ></Typography>
-              <StyledButton aria-label="Call" href="tel:+ваш_номер">
+              <StyledButton aria-label="Call" href="tel:+996708588271">
                 Байланышуу
               </StyledButton>
             </div>
@@ -395,6 +389,12 @@ export default function CharityComponent() {
                   <Typography variant="body1" component="p">
                     {bank.recipientName}
                   </Typography>
+                  <BankAccountText
+                    variant="body1"
+                    style={{ marginBottom: '5px' }}
+                  >
+                    {bank.phoneNumber}
+                  </BankAccountText>
                 </BankInfo>
               ))}
             </div>
@@ -405,8 +405,8 @@ export default function CharityComponent() {
       {/* Section 4: Video Reports */}
       <SectionFour bgColor="#c0c0c0">
         <Container>
-          <Typography variant="h4" component="h2" gutterBottom>
-            Видео отчеты
+          <Typography variant="h5" component="h2" gutterBottom>
+            Видео Баяндамалар
           </Typography>
           <Grid container spacing={2}>
             {videoReports.map((report, index) => {
@@ -433,12 +433,12 @@ export default function CharityComponent() {
                       </Typography>
                       <Button
                         variant="contained"
-                        color="primary"
+                        color="success"
                         href={report.videoUrl}
                         target="_blank"
                         style={{ marginTop: '10px' }}
                       >
-                        Смотреть на YouTube
+                        YouTube
                       </Button>
                     </CardContent>
                   </Card>

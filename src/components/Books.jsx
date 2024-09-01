@@ -49,7 +49,7 @@ const Books = () => {
           gutterBottom
           style={{ marginTop: '2rem', fontWeight: 'bold' }}
         >
-          NASYIKAT.MEDIA Электрондук китептерди акысыз окуңуз
+          NASYIKAT.MEDIA Электрондук китептер бизден сизге белек болсун
         </Typography>
         <TextField
           label="Китептин аты"

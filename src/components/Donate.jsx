@@ -142,7 +142,7 @@ const Donate = () => {
   };
 
   const totalAmount = 100000;
-  const collectedAmount = 6552;
+  const collectedAmount = 200;
   const percentage = Math.round((collectedAmount / totalAmount) * 100);
 
   return (
@@ -152,10 +152,9 @@ const Donate = () => {
           Биздин каналга колдоо көрсөтүү
         </Typography>
         <Typography variant="body1" gutterBottom align="center">
-          <strong>Садака жана жакшы иштер:</strong> <br /> Сиздин колдооңуз
-          биздин ишибизди улантууга жана жаңы долбоорлорду ишке ашырууга жардам
-          берет. Бул иш-сапарлардын жана кайрымдуулук иштеринин алкагында,
-          сиздин көмөгүңүз чоң мааниге ээ. Чоң рахмат!
+          <strong>Урматтуу мусулман бир туугандар</strong> <br /> сиздер
+          которгон тыйындар биздин сайттын өнүгүүсүнө жумшалат Аллах Таала
+          сизден бизден ар бир кылган жакшы сооптуу амалдарыбызды кабыл кылсын
         </Typography>
         <ContentWrapper>
           <ImageContainer>
@@ -172,8 +171,8 @@ const Donate = () => {
               <strong>Салым кошуу</strong>
             </Typography>
             <Typography variant="body1">
-              Сиздин колдооңуз биздин ишибизди улантууга жана жаңы долбоорлорду
-              ишке ашырууга жардам берет. <br /> Көп рахмат!
+              Сиздердин салымыңыздар менен Кыргыз тилдүү диний сайт күн сайын
+              өнүгүп турат <br /> Чоң рахмат!
             </Typography>
           </Block>
           <ProgressContainer>
@@ -196,9 +195,10 @@ const Donate = () => {
         <CardInputContainer>
           <Block style={{ backgroundColor: '#ffeacb' }}>
             <Typography variant="body1" gutterBottom>
-              <strong>Банковский счет:</strong> <br /> Мбанк 1234 5678 9012 3456
+              <strong>Банк эсеби:</strong> <br />{' '}
+              <Typography> Мбанк 1030120523575316</Typography>
               <br />
-              <CopyToClipboard text="1234 5678 9012 3456" onCopy={handleCopy}>
+              <CopyToClipboard text="1030120523575316" onCopy={handleCopy}>
                 <CopyIconButton>
                   <ContentCopyIcon />
                 </CopyIconButton>

@@ -127,7 +127,7 @@ const Header = () => {
             { text: 'Биз жөнүндө', path: '/aboutUs' },
             { text: 'Акыркы Хутба', path: '/hutba' },
             { text: 'Исламда 40 парз', path: '/islamdynparzdary' },
-            { text: 'Ислам деген эмне?', path: '/islam' },
+            { text: 'Ислам деген эмне', path: '/islam' },
             { text: 'Электрондук китептер', path: '/books' },
             { text: 'Кыргыз Республикасы', path: '/kyrgyz' },
             { text: 'Пайдалуу дубалар', path: '/duba' },

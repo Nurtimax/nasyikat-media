@@ -145,10 +145,10 @@ export default function MusicPlayerSlider() {
               variant="caption"
               sx={{ color: 'text.secondary', fontWeight: 500 }}
             >
-              Кыргыз Республикасынын Мамлекеттик гимни
+              Кыргыз Республикасынын
             </Typography>
             <Typography noWrap>
-              <b>Кыргызстандын</b>
+              <b>Мамлекеттик</b>
             </Typography>
             <Typography noWrap sx={{ letterSpacing: -0.25 }}>
               гимни
