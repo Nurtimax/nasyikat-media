@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import {
   Card,
   CardContent,
@@ -13,8 +13,35 @@ import { LocationOn, AccessTime } from '@mui/icons-material';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import muslim from './data/islam-3-yiyk-jer/muslimplace';
 import img from '../assetts/icons/section-img.png';
+import soundFile from '../assetts/quran-audio/palestina.mp3';
 
 const Section6 = () => {
+  const audioRef = useRef(null);
+
+  useEffect(() => {
+    const handleUserInteraction = () => {
+      document.removeEventListener('hover', handleUserInteraction);
+      if (audioRef.current) {
+        audioRef.current.play().catch((error) => {
+          console.error('Audio play error:', error);
+        });
+      }
+    };
+    document.addEventListener('hover', handleUserInteraction);
+
+    return () => {
+      document.removeEventListener('hover', handleUserInteraction);
+    };
+  }, []);
+
+  const handlePlaySound = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.error('Audio play error:', error);
+      });
+    }
+  };
+
   return (
     <div style={{ marginTop: '20px', margin: '0.4rem' }}>
       <Box
@@ -40,6 +67,7 @@ const Section6 = () => {
               target="_blank"
               rel="noopener noreferrer"
               style={{ width: '100%', height: '100%' }}
+              onMouseEnter={index === 2 ? handlePlaySound : null}
             >
               <Card
                 style={{
@@ -174,6 +202,7 @@ const Section6 = () => {
       >
         <img src={img} alt="Section Illustration" />
       </Box>
+      <audio ref={audioRef} src={soundFile} />
     </div>
   );
 };

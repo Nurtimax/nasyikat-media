@@ -11,8 +11,7 @@ import { Outlet } from 'react-router-dom';
 import Welcome from './components/Welcome';
 import SponsorsList from './components/SponsorsList';
 import banner2 from './assetts/icons/bgsmall.png';
-import { Box } from '@mui/system';
-import { Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 const App = () => {
   return (
