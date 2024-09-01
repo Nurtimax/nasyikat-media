@@ -3,7 +3,6 @@ import zeketpdf from '../../books-pdf/Зекет-китеби.pdf';
 import historyislampdf from '../../books-pdf/httpsazan_kzuploadИстория20Ислама_20Хайати20Улькю_pdf.pdf';
 import Nurpdf from '../../books-pdf/чексиз нур.pdf';
 import Sahabah from '../../books-pdf/EQAMO_Истории_из_жизни_сподвижниц_Фатхи_Халяль.pdf';
-import Shahadah from '../../books-pdf/Китеп_2020(1).pdf';
 import musulmanka from '../../books-pdf/Мусульманка.pdf';
 import ochposomur from '../../books-pdf/Өчпөс өмүр (2).pdf';
 import paigambarlarhistory from '../../books-pdf/Пайгамбарлар тарыхы.pdf';
@@ -24,19 +23,6 @@ const books = [
     author: 'Nasyikat.media',
     image: logo,
     pdf: zeketpdf,
-    avatar: logo,
-    name: 'Author Name 1',
-    socialLinks: {
-      instagram: 'https://www.instagram.com/nasyikat.media/',
-      telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
-    },
-  },
-  {
-    title: 'Лаа илааха илла Аллах',
-    description: 'рүкүндөрү, шарттары жана талаптары',
-    author: 'Талас Артыкбаев',
-    image: logo,
-    pdf: Shahadah,
     avatar: logo,
     name: 'Author Name 1',
     socialLinks: {
