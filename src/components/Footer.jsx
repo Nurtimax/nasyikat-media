@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-import { Container, Typography, Link, IconButton } from '@mui/material';
+import { Container, Typography, Link, IconButton, Box } from '@mui/material';
 import { Instagram, YouTube } from '@mui/icons-material';
-import { Box, styled } from '@mui/system';
+import { styled } from '@mui/system';
 import logo from '../assetts/icons/logo-nasykat.png';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import Confetti from 'react-confetti';
+import kyrgyzFlag from '../assetts/icons/kgz.png';
+import palestineFlag from '../assetts/icons/Palestine.png';
+import bro from '../assetts/icons/bro.png';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const heartBeatAnimation = `
   @keyframes heartBeat {
@@ -49,19 +53,11 @@ const FooterWrapper = styled('div')(({ theme }) => ({
   padding: '40px 0',
   color: 'white',
   textAlign: 'center',
-  [theme.breakpoints.down('sm')]: {
-    textAlign: 'center',
-  },
+  position: 'relative',
   '@keyframes gradient': {
-    '0%': {
-      backgroundPosition: '0% 50%',
-    },
-    '50%': {
-      backgroundPosition: '100% 50%',
-    },
-    '100%': {
-      backgroundPosition: '0% 50%',
-    },
+    '0%': { backgroundPosition: '0% 50%' },
+    '50%': { backgroundPosition: '100% 50%' },
+    '100%': { backgroundPosition: '0% 50%' },
   },
 }));
 
@@ -94,8 +90,7 @@ const ConfettiWrapper = styled(Box)(({ theme }) => ({
 const SocialIcons = styled(Box)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
-  gap: theme.spacing(2),
-  marginBottom: theme.spacing(5),
+  gap: theme.spacing(5),
   color: '#ffc46b',
   ...heartBeatAnimation,
 }));
@@ -110,9 +105,26 @@ const AnimatedIconButton = styled(IconButton)(({ theme }) => ({
 const FooterText = styled(Typography)(({ theme }) => ({
   color: '#ffc46b',
   textAlign: 'center',
-  marginTop: theme.spacing(2),
-  fontSize: '0.7rem',
+  marginTop: theme.spacing(3),
+  fontSize: '1rem',
 }));
+
+const FlagsWrapper = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'center',
+  cursor: 'pointer',
+  gap: theme.spacing(4),
+  marginTop: theme.spacing(3),
+}));
+
+const FlagImage = styled('img')({
+  width: '50px',
+  height: 'auto',
+  transition: 'transform 0.5s ease',
+  '&:hover': {
+    transform: 'scale(1.2)',
+  },
+});
 
 const Footer = () => {
   const [showConfetti, setShowConfetti] = useState(false);
@@ -148,18 +160,9 @@ const Footer = () => {
             rel="noopener"
             color="inherit"
             aria-label="Instagram"
+            sx={{ color: '#E1306C', '&:hover': { color: '#C13584' } }} // Instagram color
           >
-            <Instagram style={{ fontSize: '36px' }} />
-          </AnimatedIconButton>
-          <AnimatedIconButton
-            component={Link}
-            href="https://www.youtube.com/@nasyikat_media"
-            target="_blank"
-            rel="noopener"
-            color="inherit"
-            aria-label="YouTube"
-          >
-            <YouTube style={{ fontSize: '36px' }} />
+            <Instagram style={{ fontSize: '25px' }} />
           </AnimatedIconButton>
           <AnimatedIconButton
             component={Link}
@@ -168,12 +171,37 @@ const Footer = () => {
             rel="noopener"
             color="inherit"
             aria-label="Telegram"
+            sx={{ color: '#0088CC', '&:hover': { color: '#006AB6' } }} // Telegram color
           >
-            <TelegramIcon style={{ fontSize: '36px' }} />
+            <TelegramIcon style={{ fontSize: '25px' }} />
+          </AnimatedIconButton>
+          <AnimatedIconButton
+            component={Link}
+            href="https://www.youtube.com/@nasyikat_media"
+            target="_blank"
+            rel="noopener"
+            color="inherit"
+            aria-label="YouTube"
+            sx={{ color: '#FF0000', '&:hover': { color: '#CC0000' } }} // YouTube color
+          >
+            <YouTube style={{ fontSize: '25px' }} />
           </AnimatedIconButton>
         </SocialIcons>
-        <FooterText variant="body2">
-          Nasyikat.media © 2024 All Rights Reserved
+        <FlagsWrapper>
+          <FlagImage src={kyrgyzFlag} alt="Kyrgyzstan Flag" />
+          <img src={bro} alt="bro" style={{ width: '30px' }} />
+          <FlagImage src={palestineFlag} alt="Palestine Flag" />
+        </FlagsWrapper>
+        <Typography
+          style={{ marginTop: '1rem', fontSize: '1rem', color: '#ffc46b' }}
+        >
+          Жүрөгүмдөсүң Палестина
+        </Typography>
+        <HeartWrapper>
+          <HeartIcon />
+        </HeartWrapper>
+        <FooterText>
+          Nasyikat.media {/* © 2024 All Rights Reserved */}
         </FooterText>
       </Container>
     </FooterWrapper>
@@ -181,3 +209,31 @@ const Footer = () => {
 };
 
 export default Footer;
+
+const HeartWrapper = styled('div')({
+  display: 'inline-block',
+  marginTop: '0.5rem',
+  animation: 'heartBeat 1.5s infinite',
+  '@keyframes heartBeat': {
+    '0%': {
+      transform: 'scale(1)',
+    },
+    '25%': {
+      transform: 'scale(1.2)',
+    },
+    '50%': {
+      transform: 'scale(1.4)',
+    },
+    '75%': {
+      transform: 'scale(1.2)',
+    },
+    '100%': {
+      transform: 'scale(1)',
+    },
+  },
+});
+
+const HeartIcon = styled(FavoriteIcon)({
+  color: 'red',
+  fontSize: '28px',
+});

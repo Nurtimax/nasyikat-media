@@ -71,10 +71,14 @@ const Hadis = () => {
           fontWeight: 'bold',
           color: '#333',
           mb: 2,
-          fontSize: { xs: '1.5rem', sm: '2rem', md: '2rem' },
+          fontSize: {
+            xs: '1.5rem',
+            sm: '2rem',
+            md: '2rem',
+          },
         }}
       >
-        Куттуу хадистер
+        КУТТУУ ХАДИСТЕР
       </Typography>
       {hadisContent.map((item, index) => (
         <StyledAccordion key={index}>
