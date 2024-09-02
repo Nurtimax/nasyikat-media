@@ -69,6 +69,19 @@ const SurahList = () => {
                     {surah.name}
                   </Typography>
                   <Typography
+                    sx={{
+                      mb: 2, // Increased bottom margin for better spacing
+                      background:
+                        'linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.2))',
+                      padding: '8px', // Increased padding for better readability
+                      borderRadius: '4px',
+                      boxShadow: 1,
+                      lineHeight: 1.4, // Improved line height for readability
+                    }}
+                  >
+                    {surah.bismillahMeaning}
+                  </Typography>
+                  <Typography
                     variant="h6"
                     sx={{
                       mb: 2, // Increased bottom margin for better spacing
@@ -81,19 +94,6 @@ const SurahList = () => {
                     }}
                   >
                     {surah.bismillah}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      mb: 2, // Increased bottom margin for better spacing
-                      background:
-                        'linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.2))',
-                      padding: '8px', // Increased padding for better readability
-                      borderRadius: '4px',
-                      boxShadow: 1,
-                      lineHeight: 1.4, // Improved line height for readability
-                    }}
-                  >
-                    {surah.bismillahMeaning}
                   </Typography>
                   <Typography
                     variant="subtitle1"
@@ -164,7 +164,15 @@ const SurahList = () => {
                       color: '#f6edde',
                     }}
                   >
-                    Nasyikat.media <Verified color="primary" fontSize="small" />
+                    <a
+                      href="https://instagram.com/nasyikat.media"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: '#f6edde', textDecoration: 'none' }}
+                    >
+                      Nasyikat.media
+                    </a>
+                    <Verified color="primary" fontSize="small" />
                   </Typography>
                 </Box>
               </Box>

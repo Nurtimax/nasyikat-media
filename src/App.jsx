@@ -51,6 +51,7 @@ const App = () => {
         </Typography>
       </Box>
       <Section />
+
       <Box
         sx={{
           textAlign: 'center',

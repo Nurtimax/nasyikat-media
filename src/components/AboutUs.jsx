@@ -30,9 +30,9 @@ const teamMembers = [
       telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
     },
   },
-
+  //Нурматов Матраим Ашимович
   {
-    name: 'Нурматов Матраим Ашимович',
+    name: '----------',
     role: 'Админ',
     channel: 'Nasyikat.media & Islam.sabaktary',
     image: logoavatar,

@@ -2,20 +2,19 @@ import React from 'react';
 import { styled } from '@mui/system';
 import islamdyn5Parzy from './data/islamdynparzy/islamdyn5parzy';
 import { Link } from 'react-router-dom';
-import StarsIcon from '@mui/icons-material/Stars';
-import bgimg from '../assetts/icons/bgislam.png';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const Section2 = () => {
   return (
     <SectionContainer>
-      <SectionTitle>ИСЛАМДАГЫ БЕШ ПАРЗ</SectionTitle>
+      <SectionTitle>ИСЛАМДЫН НЕГИЗГИ 5 ТҮРКҮГҮ</SectionTitle>
       <CardsContainer>
         {islamdyn5Parzy.map((card, index) => (
           <Card key={index}>
             <Link to={card.route}>
               <CardImage src={card.image} alt={card.alt} />
               <IconWrapper style={{ color: '#e40001' }}>
-                <StarsIcon fontSize="small" />
+                <FavoriteIcon fontSize="small" />
               </IconWrapper>
               <CardTitle>{card.title}</CardTitle>
               <CardText dangerouslySetInnerHTML={{ __html: card.text }} />
@@ -31,8 +30,8 @@ export default Section2;
 
 const SectionContainer = styled('div')({
   textAlign: 'center',
-  margin: '0.1em', // Убираем отступы по бокам
-  padding: '0.5px', // Убираем padding
+  margin: '0.1em',
+  padding: '0.5px',
   width: '100%',
   display: 'flex',
   justifyContent: 'center',
@@ -52,9 +51,9 @@ const CardsContainer = styled('div')(({ theme }) => ({
   display: 'grid',
   gridTemplateColumns: 'repeat(5, 1fr)',
   gap: '20px',
-  width: '100%', // Устанавливаем ширину в 100%
-  padding: '0', // Убираем padding
-  margin: '0', // Убираем margin
+  width: '100%',
+  padding: '0',
+  margin: '0',
   justifyItems: 'center',
   [theme.breakpoints.down('md')]: {
     gridTemplateColumns: 'repeat(3, 1fr)',
@@ -68,13 +67,13 @@ const Card = styled('div')(({ theme }) => ({
   position: 'relative',
   width: '100%',
   maxWidth: '340px',
-  backgroundImage: `url(${bgimg})`,
+  // backgroundImage: `url(${bgImageText})`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   borderRadius: '8px',
   boxShadow: '0 0 10px rgba(0,0,0,0.1)',
   textAlign: 'center',
-  margin: '0 auto', // Центрирование карточек
+  margin: '0 auto',
   [theme.breakpoints.down('sm')]: {
     maxWidth: '100%',
   },
