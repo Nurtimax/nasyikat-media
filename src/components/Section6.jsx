@@ -44,17 +44,6 @@ const Section6 = () => {
 
   return (
     <div style={{ marginTop: '20px', margin: '0.4rem' }}>
-      <Box
-        sx={{
-          img: {
-            width: '100%',
-            maxWidth: '100%',
-            height: 'auto',
-          },
-        }}
-      >
-        <img src={img} alt="Section Illustration" />
-      </Box>
       <div style={{ textAlign: 'center', marginBottom: '30px' }}>
         <h1>Мусулмандардын 3 ыйык жери</h1>
       </div>

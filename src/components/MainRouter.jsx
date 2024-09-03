@@ -25,6 +25,7 @@ import AlJardam from './AlJardam';
 import OnSuro from './OnSuro';
 import Abdulazizkary from './aalymdar.kg/Abdulazizkary';
 import Hutba from './Hutba';
+import NasyikatVideos from '../components/aalymdar.kg/NasyikatVideos';
 import Kyrgyz from './Kyrgyz';
 
 const MainRouter = () => {
@@ -57,6 +58,7 @@ const MainRouter = () => {
         <Route path="/aljardam" element={<AlJardam />} />
         <Route path="/onsuro" element={<OnSuro />} />
         <Route path="/hutba" element={<Hutba />} />
+        <Route path="/nasyikatvideos" element={<NasyikatVideos />} />
       </Routes>
     </Router>
   );
