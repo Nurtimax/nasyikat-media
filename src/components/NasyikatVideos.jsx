@@ -1,63 +1,66 @@
-import React, { useState } from 'react';
-import {
-  Box,
-  Card,
-  CardContent,
-  Typography,
-  Grid,
-  Button,
-  IconButton,
-  Menu,
-  MenuItem,
-} from '@mui/material';
+import React from 'react';
+import { Box, Card, CardContent, Typography, Avatar } from '@mui/material';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
-import { Facebook, Twitter, Telegram } from '@mui/icons-material';
-import videoTesting from '../assetts/nasyikat-videos/testingvideo.mp4';
-import bannerImage from '../assetts/icons/ali.jpg';
+import { Verified } from '@mui/icons-material';
+import bannerImage from '../assetts/images/madina.jpg';
+import videos from './data/video-block/nasyikat-videos';
+import uigurs from './data/video-block/uigur.js';
+import Header from '../components/Header';
+import Welcome from '../components/Welcome';
+import Footer from '../components/Footer';
 
-const videos = [
-  {
-    title: 'Видео про Палестину',
-    description: 'Это видео рассказывает о текущей ситуации в Палестине.',
-    videoSrc: videoTesting,
-    author: 'Автор: Мухаммед Али',
+// Стили для видео-карточек и контейнера
+const VideoGridContainer = styled(Box)({
+  display: 'grid',
+  gridTemplateColumns: 'repeat(4, 1fr)', // 4 видео в строке
+  gap: '16px',
+  '@media (max-width: 900px)': {
+    gridTemplateColumns: 'repeat(2, 1fr)', // 2 видео в строке на планшетах
   },
-  {
-    title: 'Видео о мусульманах',
-    description: 'Видео посвящено мусульманским сообществам по всему миру.',
-    videoSrc: videoTesting,
-    author: 'Автор: Ахмед Ибрагим',
+  '@media (max-width: 600px)': {
+    gridTemplateColumns: '1fr', // 1 видео в строке на мобильных устройствах
   },
-];
+});
 
-// Стили карточки с видео
 const VideoCard = styled(Card)({
+  position: 'relative',
+  borderRadius: '8px',
+  overflow: 'hidden',
+  width: '100%',
+  height: '100%', // Высота карточки теперь 100%
   display: 'flex',
   flexDirection: 'column',
-  marginBottom: '16px',
-  borderRadius: '8px',
-  position: 'relative',
 });
 
 const VideoPlayer = styled('video')({
   width: '100%',
-  height: '100%',
-  borderRadius: '8px',
+  height: '100%', // Видео занимает всю высоту карточки
+  objectFit: 'cover', // Видео будет адаптироваться под размер карточки
 });
 
-// Стили секции баннера
 const BannerSection = styled(Box)({
-  height: '100vh',
-  backgroundImage: `url(${bannerImage})`,
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
+  height: '100vh', // Полная высота экрана
+  background: '#f6edde',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  color: '#fff',
+  color: '#000000',
   textAlign: 'center',
-  padding: '16px',
+  padding: '0 16px', // Отступы для контента
+  position: 'relative',
+
+  // Мобильные стили
+  '@media (max-width: 600px)': {
+    height: '60vh', // Высота для мобильных устройств
+    backgroundSize: 'cover', // Убедитесь, что изображение все равно покрывает контейнер
+    padding: '0 8px', // Меньше отступов для мобильных устройств
+  },
+
+  // Средние экраны
+  '@media (min-width: 601px) and (max-width: 1200px)': {
+    height: '80vh', // Высота для средних экранов
+  },
 });
 
 // Стили секции с изображением и текстом
@@ -69,122 +72,187 @@ const ImageTextSection = styled(Box)({
   backgroundColor: '#e0e0e0',
   '@media (max-width: 600px)': {
     flexDirection: 'column',
+    textAlign: 'center',
   },
 });
 
-// Основной компонент
 const NasyikatVideos = () => {
-  const [anchorEl, setAnchorEl] = useState(null);
-  const open = Boolean(anchorEl);
-
-  const handleSocialClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
   return (
-    <Box
-      component={motion.div}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      sx={{ backgroundColor: '#f5f5f5' }}
-    >
-      {/* Баннер */}
-      <BannerSection>
-        <Typography variant="h2">Поддержка мусульман по всему миру</Typography>
-      </BannerSection>
+    <div>
+      <Header />
+      <Welcome />
+      <Box
+        component={motion.div}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        sx={{ backgroundColor: '#f5f5f5' }}
+      >
+        <BannerSection>
+          <Typography
+            variant="h2"
+            sx={{ color: '#000000', fontWeight: 'bold' }}
+          >
+            Поддержка мусульман по всему миру
+          </Typography>
+        </BannerSection>
 
-      {/* Секция с изображением и текстом */}
-      <ImageTextSection>
-        <img
-          src={bannerImage}
-          alt="Мусульмане"
-          style={{ width: '40%', borderRadius: '8px' }}
-        />
-        <Typography variant="h5" sx={{ padding: 2 }}>
+        {/* Секция с изображением и текстом */}
+        <ImageTextSection>
+          <img
+            src={bannerImage}
+            alt="Мусульмане"
+            style={{ width: '100%', maxWidth: '800px', borderRadius: '8px' }}
+          />
+          <Typography sx={{ padding: { xs: 2, sm: 0, md: 2 } }}>
+            Мы стоим вместе с мусульманами по всему миру, предоставляя важные
+            обновления и делясь информацией.
+          </Typography>
+        </ImageTextSection>
+
+        {/* Секция с видео-карточками */}
+        <Box sx={{ backgroundColor: '#f5f5f5' }}>
+          {/* Секция с видео-карточками */}
+          <Box sx={{ padding: '16px' }}>
+            <Typography
+              variant="h4"
+              sx={{ marginBottom: '16px', textAlign: 'center' }}
+            >
+              Видео Палестинадагы мусулман бир туугандар жонундо
+            </Typography>
+            <VideoGridContainer>
+              {videos.map((video, index) => (
+                <VideoCard key={index}>
+                  <VideoPlayer controls>
+                    <source src={video.videoSrc} type="video/mp4" />
+                    Ваш браузер не поддерживает тег video.
+                  </VideoPlayer>
+                  <CardContent>
+                    <Typography component="h5" variant="h5">
+                      {video.title}
+                    </Typography>
+                    <Typography variant="subtitle1" color="text.secondary">
+                      {video.description}
+                    </Typography>
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        marginTop: 2,
+                      }}
+                    >
+                      <Avatar
+                        src={video.authorAvatar}
+                        alt={video.author}
+                        sx={{ width: 40, height: 40, marginRight: 1 }}
+                      />
+                      <Typography variant="subtitle1">
+                        {video.author}
+                      </Typography>
+                      {video.isVerified && (
+                        <Verified
+                          sx={{ marginLeft: '4px', fontSize: '1.2rem' }}
+                          color="primary"
+                        />
+                      )}
+                    </Box>
+                  </CardContent>
+                </VideoCard>
+              ))}
+            </VideoGridContainer>
+          </Box>
+        </Box>
+
+        {/* Секция с изображением и текстом */}
+        <ImageTextSection>
+          <Typography sx={{ padding: { xs: 2, sm: 0, md: 2 } }}>
+            Мы стоим вместе с мусульманами по всему миру, предоставляя важные
+            обновления и делясь информацией.
+          </Typography>
+          <img
+            src={bannerImage}
+            alt="Мусульмане"
+            style={{ width: '100%', maxWidth: '800px', borderRadius: '8px' }}
+          />
+        </ImageTextSection>
+
+        <Box sx={{ backgroundColor: '#f5f5f5' }}>
+          <Box sx={{ padding: '16px' }}>
+            <Typography
+              variant="h4"
+              sx={{ marginBottom: '16px', textAlign: 'center' }}
+            >
+              Видео Уйгур мусулман бир туугандар жонундо
+            </Typography>
+            <VideoGridContainer>
+              {uigurs.map((video, index) => (
+                <VideoCard key={index}>
+                  <VideoPlayer controls>
+                    <source src={video.videoSrc} type="video/mp4" />
+                    Ваш браузер не поддерживает тег video.
+                  </VideoPlayer>
+                  <CardContent>
+                    <Typography component="h5" variant="h5">
+                      {video.title}
+                    </Typography>
+                    <Typography variant="subtitle1" color="text.secondary">
+                      {video.description}
+                    </Typography>
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        marginTop: 2,
+                      }}
+                    >
+                      <Avatar
+                        src={video.authorAvatar}
+                        alt={video.author}
+                        sx={{ width: 40, height: 40, marginRight: 1 }}
+                      />
+                      <Typography variant="subtitle1">
+                        {video.author}
+                      </Typography>
+                      {video.isVerified && (
+                        <Verified
+                          sx={{ marginLeft: '4px', fontSize: '1.2rem' }}
+                          color="primary"
+                        />
+                      )}
+                    </Box>
+                  </CardContent>
+                </VideoCard>
+              ))}
+            </VideoGridContainer>
+          </Box>
+        </Box>
+        {/* Секция с изображением и текстом */}
+        <Typography
+          style={{
+            textAlign: 'center',
+            background: '#e0e0e0',
+            height: '250px',
+            padding: '20px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '18px',
+            color: '#333',
+          }}
+        >
           Мы стоим вместе с мусульманами по всему миру, предоставляя важные
-          обновления и делясь информацией.
+          обновления и делясь информацией. Мы поддерживаем Палестину и ее народ
+          в их стремлении к справедливости и миру. Палестинцы продолжают
+          сталкиваться с трудностями и борьбой за свои права и достоинство. Мы
+          также выражаем солидарность с уйгурами, которые сталкиваются с
+          преследованиями и ограничениями своих основных прав. Эти общины
+          заслуживают нашего внимания и поддержки, и мы стремимся помочь
+          распространению информации о их ситуации и работе по улучшению их
+          условий жизни.
         </Typography>
-      </ImageTextSection>
-
-      {/* Секция с видео-карточками */}
-      <Box sx={{ padding: '16px' }}>
-        <Grid container spacing={2}>
-          {videos.map((video, index) => (
-            <Grid item xs={12} sm={6} md={3} key={index}>
-              <VideoCard>
-                <VideoPlayer controls poster={bannerImage}>
-                  <source src={video.videoSrc} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </VideoPlayer>
-                <CardContent>
-                  <Typography component="h5" variant="h5">
-                    {video.title}
-                  </Typography>
-                  <Typography variant="subtitle1" color="text.secondary">
-                    {video.description}
-                  </Typography>
-                  <Typography variant="caption" color="text.secondary">
-                    {video.author}
-                  </Typography>
-                  <IconButton
-                    aria-controls="simple-menu"
-                    aria-haspopup="true"
-                    onClick={handleSocialClick}
-                    sx={{ position: 'absolute', top: 8, right: 8 }}
-                  >
-                    <Telegram />
-                  </IconButton>
-                  <Menu
-                    id="simple-menu"
-                    anchorEl={anchorEl}
-                    open={open}
-                    onClose={handleClose}
-                    anchorOrigin={{
-                      vertical: 'top',
-                      horizontal: 'right',
-                    }}
-                    transformOrigin={{
-                      vertical: 'top',
-                      horizontal: 'right',
-                    }}
-                  >
-                    <MenuItem onClick={handleClose}>
-                      <Facebook /> Facebook
-                    </MenuItem>
-                    <MenuItem onClick={handleClose}>
-                      <Twitter /> Twitter
-                    </MenuItem>
-                    <MenuItem onClick={handleClose}>
-                      <Telegram /> Telegram
-                    </MenuItem>
-                  </Menu>
-                </CardContent>
-              </VideoCard>
-            </Grid>
-          ))}
-        </Grid>
       </Box>
-
-      {/* Секция для новостей и обновлений */}
-      <Box sx={{ padding: '16px', backgroundColor: '#fff' }}>
-        <Typography variant="h4" sx={{ marginBottom: '16px' }}>
-          Новости мусульман
-        </Typography>
-        <Typography variant="body1" sx={{ marginBottom: '16px' }}>
-          Поддержка Палестины и других мусульманских сообществ. Здесь можно
-          делиться новостями и важной информацией о событиях в Исламском мире,
-          включая Кыргызстан и другие мусульманские страны.
-        </Typography>
-        <Button variant="contained" color="primary">
-          Узнать больше
-        </Button>
-      </Box>
-    </Box>
+      <Footer />
+    </div>
   );
 };
 
