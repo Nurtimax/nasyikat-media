@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Card,
@@ -6,51 +6,43 @@ import {
   Typography,
   Grid,
   Button,
+  IconButton,
+  Menu,
+  MenuItem,
 } from '@mui/material';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
-import videoTesting from '../../assetts/nasyikat-videos/testingvideo.mp4';
-import bannerImage from '../../assetts/icons/ali.jpg';
+import { Facebook, Twitter, Telegram } from '@mui/icons-material';
+import videoTesting from '../assetts/nasyikat-videos/testingvideo.mp4';
+import bannerImage from '../assetts/icons/ali.jpg';
 
-// Данные видео
 const videos = [
   {
     title: 'Видео про Палестину',
     description: 'Это видео рассказывает о текущей ситуации в Палестине.',
     videoSrc: videoTesting,
+    author: 'Автор: Мухаммед Али',
   },
   {
     title: 'Видео о мусульманах',
     description: 'Видео посвящено мусульманским сообществам по всему миру.',
     videoSrc: videoTesting,
-  },
-  {
-    title: 'Видео про Палестину',
-    description: 'Это видео рассказывает о текущей ситуации в Палестине.',
-    videoSrc: videoTesting,
-  },
-  {
-    title: 'Видео о мусульманах',
-    description: 'Видео посвящено мусульманским сообществам по всему миру.',
-    videoSrc: videoTesting,
-  },
-  {
-    title: 'Видео о мусульманах',
-    description: 'Видео посвящено мусульманским сообществам по всему миру.',
-    videoSrc: videoTesting,
+    author: 'Автор: Ахмед Ибрагим',
   },
 ];
 
 // Стили карточки с видео
 const VideoCard = styled(Card)({
   display: 'flex',
-  marginBottom: '16px', // Заменил theme.spacing на фиксированные значения
+  flexDirection: 'column',
+  marginBottom: '16px',
   borderRadius: '8px',
+  position: 'relative',
 });
 
 const VideoPlayer = styled('video')({
   width: '100%',
-  height: 'auto',
+  height: '100%',
   borderRadius: '8px',
 });
 
@@ -65,7 +57,7 @@ const BannerSection = styled(Box)({
   justifyContent: 'center',
   color: '#fff',
   textAlign: 'center',
-  padding: '16px', // Заменил theme.spacing на фиксированные значения
+  padding: '16px',
 });
 
 // Стили секции с изображением и текстом
@@ -73,7 +65,7 @@ const ImageTextSection = styled(Box)({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  padding: '32px', // Заменил theme.spacing на фиксированные значения
+  padding: '32px',
   backgroundColor: '#e0e0e0',
   '@media (max-width: 600px)': {
     flexDirection: 'column',
@@ -82,6 +74,17 @@ const ImageTextSection = styled(Box)({
 
 // Основной компонент
 const NasyikatVideos = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleSocialClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <Box
       component={motion.div}
@@ -114,26 +117,53 @@ const NasyikatVideos = () => {
           {videos.map((video, index) => (
             <Grid item xs={12} sm={6} md={3} key={index}>
               <VideoCard>
-                <Box
-                  sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    width: '100%',
-                  }}
-                >
-                  <VideoPlayer controls>
-                    <source src={video.videoSrc} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </VideoPlayer>
-                  <CardContent>
-                    <Typography component="h5" variant="h5">
-                      {video.title}
-                    </Typography>
-                    <Typography variant="subtitle1" color="text.secondary">
-                      {video.description}
-                    </Typography>
-                  </CardContent>
-                </Box>
+                <VideoPlayer controls poster={bannerImage}>
+                  <source src={video.videoSrc} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </VideoPlayer>
+                <CardContent>
+                  <Typography component="h5" variant="h5">
+                    {video.title}
+                  </Typography>
+                  <Typography variant="subtitle1" color="text.secondary">
+                    {video.description}
+                  </Typography>
+                  <Typography variant="caption" color="text.secondary">
+                    {video.author}
+                  </Typography>
+                  <IconButton
+                    aria-controls="simple-menu"
+                    aria-haspopup="true"
+                    onClick={handleSocialClick}
+                    sx={{ position: 'absolute', top: 8, right: 8 }}
+                  >
+                    <Telegram />
+                  </IconButton>
+                  <Menu
+                    id="simple-menu"
+                    anchorEl={anchorEl}
+                    open={open}
+                    onClose={handleClose}
+                    anchorOrigin={{
+                      vertical: 'top',
+                      horizontal: 'right',
+                    }}
+                    transformOrigin={{
+                      vertical: 'top',
+                      horizontal: 'right',
+                    }}
+                  >
+                    <MenuItem onClick={handleClose}>
+                      <Facebook /> Facebook
+                    </MenuItem>
+                    <MenuItem onClick={handleClose}>
+                      <Twitter /> Twitter
+                    </MenuItem>
+                    <MenuItem onClick={handleClose}>
+                      <Telegram /> Telegram
+                    </MenuItem>
+                  </Menu>
+                </CardContent>
               </VideoCard>
             </Grid>
           ))}
@@ -147,7 +177,8 @@ const NasyikatVideos = () => {
         </Typography>
         <Typography variant="body1" sx={{ marginBottom: '16px' }}>
           Поддержка Палестины и других мусульманских сообществ. Здесь можно
-          делиться новостями и важной информацией.
+          делиться новостями и важной информацией о событиях в Исламском мире,
+          включая Кыргызстан и другие мусульманские страны.
         </Typography>
         <Button variant="contained" color="primary">
           Узнать больше

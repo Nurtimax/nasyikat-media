@@ -25,7 +25,7 @@ import AlJardam from './AlJardam';
 import OnSuro from './OnSuro';
 import Abdulazizkary from './aalymdar.kg/Abdulazizkary';
 import Hutba from './Hutba';
-import NasyikatVideos from '../components/aalymdar.kg/NasyikatVideos';
+import NasyikatVideos from '../components/NasyikatVideos';
 import Kyrgyz from './Kyrgyz';
 
 const MainRouter = () => {
