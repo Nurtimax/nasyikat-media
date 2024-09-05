@@ -9,42 +9,35 @@ import Footer from '../../../components/Footer';
 const Shahada = () => {
   return (
     <div>
-      <div>
-        <Header />
-        <Welcom />
-        <StyledContainer>
-          <StyledImageContainer></StyledImageContainer>
-          <StyledTextContainer>
-            <StyledTypography variant="h6" gutterBottom>
-              Урматтуу мусулман бир тууганым!
-            </StyledTypography>
-            <StyledTypography
-              variant="h6"
-              component="h1"
-              gutterBottom
-            ></StyledTypography>
-            <StyledText variant="body1" component="div">
-              Шахадат айтуу менен пенде Аллах Таалага ыйман келтирип, Мухаммад
-              (салаллоху алейхи уа саллам) Аллах Таала жиберген акыркы пайгамбар
-              экенин кабылдоо. Муну айтуу менен пенде эң туура, эң жакшы, эң
-              бактылуу, тынчтыктын дини болгон- ислам динин кабыл алат.
-            </StyledText>
-            <StyledText variant="body1" component="div">
-              Ыйман бул – тил менен айтуу, жүрөк менен ишенүү жана амал менен
-              тастыктоо...
-            </StyledText>
-            <StyledText variant="body1" component="div">
-              Шахадат келмеси <br /> أَشْهَدُ أَنْ لَا إِلٰهَ إِلاَّ اللّٰهُ
-              وَأَشْهَدُ أَنَّ محَّدًا...
-              <br />
-              Лаа илааха иллаллах Мухаммадур расулуллах
-              <br />
-              Бир Алладан башка Кудай жок жана Мухаммад анын элчиси деп күбөлүк
-              берүү
-            </StyledText>
-          </StyledTextContainer>
-        </StyledContainer>
-      </div>
+      <Header />
+      <Welcom />
+      <StyledContainer>
+        <StyledImageContainer />
+        <StyledTextContainer>
+          <StyledTitle variant="h4" gutterBottom>
+            Урматтуу мусулман бир тууганым!
+          </StyledTitle>
+          <StyledText variant="body1">
+            Шахадат айтуу менен пенде Аллах Таалага ыйман келтирип, Мухаммад
+            (салаллоху алейхи уа саллам) Аллах Таала жиберген акыркы пайгамбар
+            экенин кабылдоо. Муну айтуу менен пенде эң туура, эң жакшы, эң
+            бактылуу, тынчтыктын дини болгон ислам динин кабыл алат.
+          </StyledText>
+          <StyledText variant="body1">
+            Ыйман бул – тил менен айтуу, жүрөк менен ишенүү жана амал менен
+            тастыктоо...
+          </StyledText>
+          <StyledText variant="body1">
+            Шахадат келмеси <br /> أَشْهَدُ أَنْ لَا إِلٰهَ إِلاَّ اللّٰهُ
+            وَأَشْهَدُ أَنَّ محَّدًا...
+            <br />
+            Лаа илааха иллаллах Мухаммадур расулуллах
+            <br />
+            Бир Алладан башка Кудай жок жана Мухаммад анын элчиси деп күбөлүк
+            берүү
+          </StyledText>
+        </StyledTextContainer>
+      </StyledContainer>
       <Footer />
     </div>
   );
@@ -53,7 +46,7 @@ const Shahada = () => {
 export default Shahada;
 
 const StyledContainer = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(10),
+  padding: theme.spacing(8),
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
@@ -65,41 +58,49 @@ const StyledContainer = styled(Box)(({ theme }) => ({
   justifyContent: 'center',
   alignItems: 'center',
   [theme.breakpoints.down('sm')]: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(3),
   },
 }));
 
 const StyledImageContainer = styled(Box)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
-  marginBottom: theme.spacing(4),
+  marginBottom: theme.spacing(5),
 }));
 
 const StyledTextContainer = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(4),
-  borderRadius: 8,
+  padding: theme.spacing(5),
+  borderRadius: '16px',
+  backgroundColor: '#f6edde',
+  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+  maxWidth: '800px',
   margin: '0 auto',
   [theme.breakpoints.down('sm')]: {
-    maxWidth: '100%',
+    padding: theme.spacing(3),
+    borderRadius: '12px',
   },
 }));
 
-const StyledTypography = styled(Typography)(({ theme }) => ({
-  color: '#333',
-  textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
+const StyledTitle = styled(Typography)(({ theme }) => ({
+  color: '#2c3e50',
+  fontWeight: 600,
+  textShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)',
   [theme.breakpoints.down('sm')]: {
-    fontSize: '1.5rem',
-    marginBottom: theme.spacing(1),
+    fontSize: '1.8rem',
   },
 }));
 
 const StyledText = styled(Typography)(({ theme }) => ({
-  marginBottom: theme.spacing(4),
-  lineHeight: 1.7,
+  marginBottom: theme.spacing(3),
+  lineHeight: 1.8,
   fontSize: '1.2rem',
-  color: '#555',
+  color: '#34495e',
+  transition: 'color 0.3s ease',
+  '&:hover': {
+    color: '#2c3e50',
+  },
   [theme.breakpoints.down('sm')]: {
-    fontSize: '0.9rem',
+    fontSize: '1rem',
     marginBottom: theme.spacing(2),
   },
 }));

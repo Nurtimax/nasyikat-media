@@ -24,7 +24,7 @@ const ResponsiveDrawer = styled(Drawer)(({ theme }) => ({
   '& .MuiDrawer-paper': {
     width: '70%',
     [theme.breakpoints.up('sm')]: {
-      width: '60%', // уменьшаем ширину для маленьких экранов
+      width: '60%',
     },
     [theme.breakpoints.up('md')]: {
       width: '40%',
@@ -108,7 +108,11 @@ const Header = () => {
               >
                 NASYIKAT.MEDIA
               </Button>
-              <Verified color="primary" fontSize="small" />
+              <Verified
+                color="primary"
+                fontSize="small"
+                style={{ marginBottom: '0.2rem' }}
+              />
             </Box>
           </Logo>
           <BurgerMenu edge="end" onClick={toggleDrawer(true)}>
@@ -129,7 +133,6 @@ const Header = () => {
             { text: 'Исламда 40 парз', path: '/islamdynparzdary' },
             { text: 'Ислам деген эмне', path: '/islam' },
             { text: 'Электрондук китептер', path: '/books' },
-            { text: 'Nasyikat.media видеолор', path: '/nasyikatvideos' },
             { text: 'Кыргыз Республикасы', path: '/kyrgyz' },
             { text: 'Пайдалуу дубалар', path: '/duba' },
             { text: 'Куттуy Хадистер', path: '/hadis' },

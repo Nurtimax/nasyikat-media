@@ -59,7 +59,7 @@ const Contact = () => {
           <Verified sx={{ fontSize: '1.5rem' }} color="primary" />
         </Box>
         <Typography variant="h6" sx={{ marginBottom: '1.5rem' }}>
-          Сунуш пикирлер
+          Ой пикир сунуштар боюнча
         </Typography>
         <Grid container spacing={3}>
           <Grid item xs={12}>
