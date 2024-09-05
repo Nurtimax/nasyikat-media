@@ -28,11 +28,11 @@ import background5 from '../assetts/images/bgislam5.webp';
 import ringitoon from '../assetts/quran-audio/ringiton.mp3';
 
 const backgrounds = [
-  islamicBackground,
+  background4,
   background1,
   background2,
   background3,
-  background4,
+  islamicBackground,
   background5,
 ];
 
@@ -49,7 +49,7 @@ const TasbihCard = styled(Card)(({ background }) => ({
   maxWidth: '500px',
   margin: '50px auto',
   textAlign: 'center',
-  background: background ? `url(${background})` : '#f0f0f0',
+  background: background ? `url(${background4})` : '#f0f0f0',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   color: '#fff',

@@ -10,19 +10,14 @@ import Footer from '../../../components/Footer';
 const Namaz = () => {
   return (
     <div>
-      <StyleBanner>
+      <StyledBanner>
         <Header />
         <Welcom />
         <Container maxWidth="lg">
           <StyledBox>
-            <Typography
-              variant="h6"
-              component="h3"
-              gutterBottom
-              style={{ marginTop: '15px', color: '#071c6b' }}
-            >
+            <Title variant="h4" component="h1" gutterBottom>
               Намаз туурасындагы аяттар жана хадистер
-            </Typography>
+            </Title>
             <StyledImage src={NamazImage1} alt="Изображение намаза" />
             <StyledText variant="body1" component="div">
               «Чындыгында, намаз бузукулуктан жана күнөөдөн тосот» - <br />
@@ -92,7 +87,7 @@ const Namaz = () => {
             </StyledText>
           </StyledBox>
         </Container>
-      </StyleBanner>
+      </StyledBanner>
       <Footer />
     </div>
   );
@@ -100,17 +95,19 @@ const Namaz = () => {
 
 export default Namaz;
 
-const StyleBanner = styled('div')(() => ({
+const StyledBanner = styled('div')(({ theme }) => ({
+  backgroundImage: `url(${BackgroundImage})`,
   backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  paddingBottom: theme.spacing(6),
 }));
 
 const StyledBox = styled(Box)(({ theme }) => ({
-  backgroundPosition: 'center',
-  backgroundRepeat: 'no-repeat',
-  backgroundImage: `url(${BackgroundImage})`,
-  backgroundAttachment: 'fixed',
   padding: theme.spacing(4),
   textAlign: 'center',
+  background: '#f6edde',
+  borderRadius: theme.shape.borderRadius,
+  marginTop: theme.spacing(4),
   maxWidth: '900px',
   margin: '0 auto',
   [theme.breakpoints.down('sm')]: {
@@ -128,10 +125,21 @@ const StyledImage = styled('img')(({ theme }) => ({
 
 const StyledText = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(3),
-  lineHeight: 1.6,
+  lineHeight: 1.7,
   color: '#333',
+  fontWeight: 400,
   [theme.breakpoints.down('sm')]: {
     fontSize: '0.9rem',
     marginBottom: theme.spacing(2),
+  },
+}));
+
+const Title = styled(Typography)(({ theme }) => ({
+  fontWeight: 700,
+  fontSize: '2rem',
+  color: '#071c6b',
+  marginBottom: theme.spacing(2),
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '1.5rem',
   },
 }));

@@ -12,8 +12,9 @@ import {
   Modal,
   Box,
 } from '@mui/material';
-import { Instagram, Telegram, GetApp } from '@mui/icons-material';
+import { Instagram, Telegram, GetApp, MenuBook } from '@mui/icons-material';
 import books from './data/free-books/pdfbooksfree';
+import CloseIcon from '@mui/icons-material/Close';
 import Header from '../components/Header';
 import Welcome from '../components/Welcome';
 import ScrollToTopButton from '../components/ScrollToTopButton';
@@ -62,12 +63,18 @@ const Books = () => {
   };
 
   const handleDownload = () => {
-    // Trigger download after closing the modal
     if (selectedBook) {
       const link = document.createElement('a');
       link.href = selectedBook.pdf;
       link.download = true;
       link.click();
+    }
+    handleCloseModal();
+  };
+
+  const handleRead = () => {
+    if (selectedBook) {
+      window.open(selectedBook.pdf, '_blank');
     }
     handleCloseModal();
   };
@@ -87,7 +94,7 @@ const Books = () => {
           gutterBottom
           style={{ marginTop: '2rem', fontWeight: 'bold' }}
         >
-          NASYIKAT.MEDIA Электрондук китептер бизден сизге белек болсун
+          NASYIKAT.MEDIA ОНЛАЙН КИТЕПКАНА
         </Typography>
         <TextField
           label="Китептин аты"
@@ -135,7 +142,7 @@ const Books = () => {
                   <Button
                     variant="outlined"
                     color="primary"
-                    startIcon={<GetApp />}
+                    startIcon={<MenuBook />}
                     style={{
                       borderColor: '#071c6b',
                       color: '#071c6b',
@@ -154,7 +161,7 @@ const Books = () => {
                     }}
                     onClick={() => handleOpenModal(book)}
                   >
-                    Көчүрүү
+                    ОКУУ
                   </Button>
                 </CardActions>
                 <div
@@ -208,17 +215,32 @@ const Books = () => {
             <br />
             Аллах таала илимиңизге берекесин берсин.
           </Typography>
-          <Box sx={{ mt: 3 }}>
+          <Box sx={{ mt: 3, display: 'flex', justifyContent: 'center' }}>
             <Button
               variant="contained"
               color="primary"
+              startIcon={<MenuBook />}
+              onClick={handleRead}
+              style={{ marginRight: '10px' }}
+            >
+              Окуу
+            </Button>
+            <Button
+              variant="contained"
+              color="secondary"
+              startIcon={<GetApp />}
               onClick={handleDownload}
               style={{ marginRight: '10px' }}
             >
-              Жүктөп алуу
+              Көчүрүү
             </Button>
-            <Button variant="outlined" onClick={handleCloseModal}>
-              Жок, рахмат
+            <Button
+              variant="outlined"
+              color="inherit"
+              startIcon={<CloseIcon />}
+              onClick={handleCloseModal}
+            >
+              Жок
             </Button>
           </Box>
         </Box>

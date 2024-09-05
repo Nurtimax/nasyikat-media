@@ -7,7 +7,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 const Section2 = () => {
   return (
     <SectionContainer>
-      <SectionTitle>ИСЛАМДЫН НЕГИЗГИ 5 ТҮРКҮГҮ</SectionTitle>
+      <SectionTitle>ИСЛАМДЫН НЕГИЗГИ БЕШ ПАРЫЗЫ</SectionTitle>
       <CardsContainer>
         {islamdyn5Parzy.map((card, index) => (
           <Card key={index}>

@@ -15,6 +15,7 @@ import logo from '../assetts/icons/logo-nasykat.png';
 import logo2 from '../assetts/images/islamsabaktary.jpg';
 import logoavatar from '../assetts/images/donate.jpg';
 import { YouTube, Instagram, Telegram, WhatsApp } from '@mui/icons-material';
+import VerifiedIcon from '@mui/icons-material/Verified';
 import Donate from './Donate';
 
 const teamMembers = [
@@ -29,6 +30,7 @@ const teamMembers = [
       instagram: 'https://www.instagram.com/nasyikat.media/',
       telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
     },
+    verified: true,
   },
   //Нурматов Матраим Ашимович
   {
@@ -43,6 +45,7 @@ const teamMembers = [
       instagram: 'https://www.instagram.com/matraim.official/',
       whatsapp: 'https://wa.me/996556401369',
     },
+    verified: false,
   },
   {
     name: 'Islam.sabaktary',
@@ -54,6 +57,7 @@ const teamMembers = [
       instagram: 'https://www.instagram.com/islam.sabaktary/',
       telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
     },
+    verified: true,
   },
 ];
 
@@ -144,11 +148,18 @@ const AboutUs = () => {
                       }}
                     />
                     <Typography
-                      variant="h5"
-                      sx={{ marginTop: '1rem', fontWeight: 'bold' }}
+                      variant="h6"
+                      component="div"
+                      sx={{ display: 'flex', alignItems: 'center' }}
                     >
                       {member.name}
+                      {false && (
+                        <IconButton size="small" sx={{ ml: 1 }}>
+                          <VerifiedIcon color="primary" />
+                        </IconButton>
+                      )}
                     </Typography>
+
                     <Typography
                       variant="subtitle1"
                       color="textSecondary"
@@ -249,9 +260,18 @@ const AboutUs = () => {
                     />
                     <Typography
                       variant="h5"
-                      sx={{ marginTop: '1rem', fontWeight: 'bold' }}
+                      sx={{
+                        marginTop: '1rem',
+                        fontWeight: 'bold',
+                        marginLeft: '0.5rem',
+                      }}
                     >
                       {member.name}
+                      {true && (
+                        <IconButton sx={{ mb: '0.2rem' }}>
+                          <VerifiedIcon color="primary" fontSize="small" />
+                        </IconButton>
+                      )}
                     </Typography>
                     <Typography variant="subtitle1" color="textSecondary">
                       {member.role}

@@ -16,7 +16,7 @@ const sponsors = [
   {
     name: 'Arzanstore.ru',
     description:
-      'Arzanstore.ru – онлайн-магазин, наушник телефондорду эн арзан баада таба алсыз.',
+      'Arzanstore.ru – магазин, наушник телефондорду эн арзан баада таба алсыз.',
     image: arzanpods,
     link: 'https://arzanstore-ru.vercel.app/',
     address: 'Россия, Москва Метро Кузьминки',

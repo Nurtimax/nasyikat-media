@@ -12,6 +12,7 @@ import Welcome from './components/Welcome';
 import SponsorsList from './components/SponsorsList';
 import banner2 from './assetts/icons/bgsmall.png';
 import { Box, Typography } from '@mui/material';
+import Advertising from './components/Advertising';
 
 const App = () => {
   return (
@@ -30,26 +31,30 @@ const App = () => {
           alignItems: 'center',
           justifyContent: 'center',
           textAlign: 'center',
+          backgroundColor: '#f4f4f4',
         }}
       >
         <Typography
-          variant="h5"
+          variant="h6"
           component="div"
           sx={{
             color: '#c8831c',
             padding: '10px',
-            background: '#fffdf6',
             lineHeight: 1.4,
             textAlign: 'center',
-            fontFamily: 'Arial, sans-serif',
+            fontFamily: 'monospace',
             width: '100%',
+            fontWeight: 'bold',
           }}
         >
           Силер кантип Аллахка ишенбейсиңер? <br /> Ал силердин жансыз денеңерди
           тирилткен. <br /> Кийин силерди өлтүрүп, андан соң кайра тирилтет.
-          <br /> Анан Ага кайтасыңар. <br /> Бакара сүрөсү 28-аят
+          <br /> Анан Ага кайтасыңар. <br /> <br /> Бакара сүрөсү 28-аят
         </Typography>
       </Box>
+      <div style={{ marginBottom: '1rem' }}>
+        <Advertising />
+      </div>
       <Section />
 
       <Box
