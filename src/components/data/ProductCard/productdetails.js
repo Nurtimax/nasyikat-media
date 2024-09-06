@@ -8,18 +8,19 @@ const products = [
   {
     id: 1,
     name: 'Сиздин товарыңыздын аты',
-    description: 'товар жөнүндө кыскача маалымат',
     price: 'сиздин баа',
     category: 'Эркектерге',
+    description:
+      'Lorem ipsum dolor sit amet consectetur,Сиздин товарыңыздын аты Lorem ipsum dolor sit amet consectetur,',
     images: [kurzhun, img],
     avatar: img,
     brandName: 'Сиздин магазин',
     verified: true,
     links: {
-      whatsapp: 'https://wa.me/996501234567',
-      instagram: 'https://www.instagram.com/nasyikat.shop',
-      telegram: 'https://t.me/nasyikat.shop',
-      phone: 'tel:+996501234567',
+      whatsapp: 'https://wa.me/0556401369',
+      instagram: 'https://www.instagram.com/nasyikat.media',
+      telegram: 'https://t.me/nasyikat.media',
+      phone: 'tel:+996556401369',
     },
   },
   {
@@ -33,10 +34,10 @@ const products = [
     category: 'Военный',
     verified: false,
     links: {
-      whatsapp: 'https://wa.me/996501234567',
-      instagram: 'https://www.instagram.com/nasyikat.shop',
-      telegram: 'https://t.me/nasyikat.shop',
-      phone: 'tel:+996501234567',
+      whatsapp: 'https://wa.me/0550565542',
+      instagram: 'https://www.instagram.com/nasyikat.media',
+      telegram: 'https://t.me/nasyikat.media',
+      phone: 'tel:+996550565542',
     },
   },
   {
@@ -49,10 +50,10 @@ const products = [
     brandName: 'Nasyikat.shop',
     category: 'Кийимдер',
     links: {
-      whatsapp: 'https://wa.me/996501234567',
-      instagram: 'https://www.instagram.com/nasyikat.shop',
-      telegram: 'https://t.me/nasyikat.shop',
-      phone: 'tel:+996501234567',
+      whatsapp: 'https://wa.me/996559333824',
+      instagram: 'https://www.instagram.com/nasyikat.media',
+      telegram: 'https://t.me/nasyikat.media',
+      phone: 'tel:+996559333824',
     },
   },
   {
@@ -65,10 +66,10 @@ const products = [
     brandName: 'Nasyikat.shop',
     category: 'Үй-буюмдары',
     links: {
-      whatsapp: 'https://wa.me/996501234567',
-      instagram: 'https://www.instagram.com/nasyikat.shop',
-      telegram: 'https://t.me/nasyikat.shop',
-      phone: 'tel:+996501234567',
+      whatsapp: 'https://wa.me/79998152638',
+      instagram: 'https://www.instagram.com/nasyikat.media',
+      telegram: 'https://t.me/nasyikat.media',
+      phone: 'tel:+79998152638',
     },
   },
   {
@@ -90,6 +91,12 @@ const products = [
     avatar: img,
     brandName: 'Nasyikat.shop',
     category: 'Аялдарга',
+    links: {
+      whatsapp: 'https://wa.me/996556401369',
+      instagram: 'https://www.instagram.com/nasyikat.media',
+      telegram: 'https://t.me/nasyikat.media',
+      phone: 'tel:+996556401369',
+    },
   },
   {
     id: 7,

@@ -88,18 +88,14 @@ const Kyrgyz = () => {
           <BannerImage src={KyrgyzflagMap} alt="Kyrgyz Republic" />
           <Typography variant="h4">Кыргыз Республикасы</Typography>
           <Typography variant="body1">
-            <Typography variant="h6">
-              Негизделген 14-октябрь 1924-жылы
-            </Typography>
-            <Typography variant="h6">
+            <Typography>Негизделген 14-октябрь 1924-жылы</Typography>
+            <Typography>
               Эгемендүүлүк күнү 31-август <br />
               1991-жылы
             </Typography>
-            <Typography variant="h6">
-              Расмий тили Кыргыз тили — мамлекеттик тил
-            </Typography>
-            <Typography variant="h6">Кылкынын саны 7 000 000</Typography>
-            <Typography variant="h6">Борбор шаары</Typography>
+            <Typography>Расмий тили Кыргыз тили — мамлекеттик тил</Typography>
+            <Typography>Кылкынын саны 7 000 000</Typography>
+            <Typography>Борбор шаары</Typography>
             <Typography>
               Бишкек, калк боюнча республиканын эң ири шаары. Туруктуу калкы 1
               миллион адамдан ашат.
@@ -275,8 +271,8 @@ const Kyrgyz = () => {
           <strong>Кайырма:</strong>
           <Typography variant="body1" sx={{ mt: 2 }}>
             Алгалай бер,кыргыз эл, <br /> Азаттыктын жолунда. <br />
-            Өркүндөй бер, өсө бер, <br /> Өз тагдырың колуңда. <br /> Аткарылып
-            элдин үмүт тилеги, <br />
+            Өркүндөй бер, өсө бер, <br /> Өз тагдырың колуңда. <br /> <br />{' '}
+            Аткарылып элдин үмүт тилеги, <br />
             Желбиреди эркиндиктин желеги. <br /> Бизге жеткен ата салтын,
             мурасын, <br /> Ыйык сактап урпактарга берели.
           </Typography>
@@ -298,12 +294,12 @@ const Kyrgyz = () => {
           alt="Kyrgyzstan Map"
           style={{ width: '50%', borderRadius: '8px' }}
         />
-        <Typography variant="h6" sx={{ mt: 2 }}>
+        <Typography sx={{ mt: 2 }}>
           Мамлекет Борбордук Азиянын түндүк-чыгышында. Түштүк-батыш жагында
           Памир-Алайда, түндүк-чыгыш жагында Тянь-Шань жагында. Казакстан,
           Тажикстан, Өзбекстан жана Кытай менен чектешет.
         </Typography>
-        <Typography variant="h6">
+        <Typography sx={{ mb: 2 }}>
           Кыргызстан 9 администрациялык аймактан турат — Чүй облусу, Талас
           облусу, Ысык-Көл облусу, Нарын облусу, Жалал-Абад облусу, Ош облусу,
           Баткен облусу, Ош шаары жана Бишкек шаары. Облустук борборлор — Талас,

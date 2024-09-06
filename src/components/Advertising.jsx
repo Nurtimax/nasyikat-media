@@ -13,7 +13,7 @@ import bannerArzanstore from '../assetts/icons/arzanstore.png';
 const SliderContainer = styled(Box)(({ theme }) => ({
   position: 'relative',
   width: '100%',
-  height: '400px', // Default height for larger screens
+  height: '500px', // Default height for larger screens
   overflow: 'hidden',
   [theme.breakpoints.down('md')]: {
     height: '300px', // Smaller height for tablets and mobile devices
@@ -35,7 +35,7 @@ const NavigationButton = styled(IconButton)(({ theme }) => ({
   position: 'absolute',
   top: '50%',
   transform: 'translateY(-50%)',
-  color: '#fff',
+  color: '#0a73c9',
   zIndex: 1,
   [theme.breakpoints.down('md')]: {
     fontSize: '1.5rem', // Smaller navigation button on mobile devices

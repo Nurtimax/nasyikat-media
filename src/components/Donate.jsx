@@ -12,11 +12,12 @@ import { ContentCopy as ContentCopyIcon } from '@mui/icons-material';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import donationImage from '../assetts/icons/logo-nasykat.png';
 import Footer from '../components/Footer';
+import Contact from './Contact';
 
 const DonateContainer = styled(Container)(({ theme }) => ({
   padding: theme.spacing(4),
   borderRadius: theme.shape.borderRadius,
-  background: 'linear-gradient(45deg, #4e663b, #4e663b, #4e663b, #4e663b)',
+  background: 'linear-gradient(45deg, #071c6b, #031555e7, #071c6b, #031555e7)',
   backgroundSize: '400% 400%',
   animation: 'gradient 15s ease infinite',
   display: 'flex',
@@ -142,7 +143,7 @@ const Donate = () => {
   };
 
   const totalAmount = 100000;
-  const collectedAmount = 200;
+  const collectedAmount = 500;
   const percentage = Math.round((collectedAmount / totalAmount) * 100);
 
   return (
@@ -204,11 +205,21 @@ const Donate = () => {
                 </CopyIconButton>
               </CopyToClipboard>
             </Typography>
+            <Typography variant="body1" gutterBottom>
+              <strong>Единица</strong> <br />{' '}
+              <Typography> MegaPay +9965564013..</Typography>
+              <br />
+              <CopyToClipboard text="+996556401369" onCopy={handleCopy}>
+                <CopyIconButton>
+                  <ContentCopyIcon />
+                </CopyIconButton>
+              </CopyToClipboard>
+            </Typography>
           </Block>
 
           <Block style={{ backgroundColor: '#ffeacb' }}>
             <Typography variant="body1" gutterBottom>
-              <strong>Жыйналган суммасы:</strong> <br />
+              <strong>Жыйналган сумма:</strong> <br />
               {collectedAmount} сом
             </Typography>
           </Block>
@@ -217,9 +228,10 @@ const Donate = () => {
           open={openSnackbar}
           autoHideDuration={6000}
           onClose={() => setOpenSnackbar(false)}
-          message="Реквизит көчүрүлдү!"
+          message="Kөчүрүлдү!"
         />
       </DonateContainer>
+      <Contact />
       <Footer />
     </div>
   );
