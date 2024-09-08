@@ -1,33 +1,33 @@
 const videoData4 = [
   {
-    speaker: 'Устаз Эрмек ажы Тынай Уулу',
+    speaker: 'Устаз Жигитали ажы Исмаилов',
     author: 'nasyikat.media',
-    url: 'https://youtube.com/shorts/NGsYqYdI3lM?si=KcMV4FypNiSgdb0s',
+    url: 'https://youtu.be/0vqDl_8lCKY?si=BP4k6XgdV1buE3C_',
   },
   {
-    speaker: 'Устаз Эрмек ажы Тынай Уулу',
+    speaker: 'Устаз Жигитали ажы Исмаилов',
     author: 'nasyikat.media',
-    url: 'https://youtube.com/shorts/-1kb0BxzXlY?si=eDekrucR38dn8f7R',
+    url: 'https://youtu.be/rmFphRTkKDE?si=JU8pqZ0f7GbrE7F0',
   },
   {
-    speaker: 'Устаз Эрмек ажы Тынай Уулу',
+    speaker: 'Устаз Жигитали ажы Исмаилов',
     author: 'nasyikat.media',
-    url: 'https://youtube.com/shorts/ac0ZFKpvprU?si=XV-sQHjNuvNBE5Tv',
+    url: 'https://youtu.be/copxoBY6X9A?si=o6TyYMPPaJt-SO1h',
   },
   {
-    speaker: 'Устаз Эрмек ажы Тынай Уулу',
+    speaker: 'Устаз Жигитали ажы Исмаилов',
     author: 'nasyikat.media',
-    url: 'https://youtube.com/shorts/_KvUO2SHBis?si=b4q9FX16NCOEFNYm',
+    url: 'https://youtu.be/cm-FxcCmJYU?si=JYWzsukAjoVwl9Tv',
   },
   {
-    speaker: 'Устаз Эрмек ажы Тынай Уулу',
+    speaker: 'Устаз Жигитали ажы Исмаилов',
     author: 'nasyikat.media',
-    url: 'https://youtube.com/shorts/ZiUm3w8n32M?si=4QUkRyfeFqxb86Mt',
+    url: 'https://youtu.be/9VIIyy9WWek?si=Q7sFueVC7-NFLR69',
   },
   {
-    speaker: 'Устаз Эрмек ажы Тынай Уулу',
+    speaker: 'Устаз Жигитали ажы Исмаилов',
     author: 'nasyikat.media',
-    url: 'https://youtube.com/shorts/Vrv8kS_7cKY?si=hVAnpEWKsL6bzdwZ',
+    url: 'https://youtu.be/9pc3kZGPHAw?si=_yiaKN6XDD4zCIV5',
   },
 ];
 

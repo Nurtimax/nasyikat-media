@@ -18,6 +18,8 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Verified, Close as CloseIcon } from '@mui/icons-material';
 import { Instagram, Telegram, WhatsApp } from '@mui/icons-material';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 
 // Styled components
 const StyledCard = styled(Card)({
@@ -172,23 +174,58 @@ const ProductCard = ({ product }) => {
           </Box>
         </CardContent>
       </StyledCard>
-
       {/* Modal Dialog */}
       <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
-        <Box sx={{ position: 'relative' }}>
+        <Box
+          sx={{ position: 'relative', width: '100%', p: { xs: '10px', md: 0 } }}
+        >
           <CloseButton onClick={handleClose}>
             <CloseIcon />
           </CloseButton>
-          <DialogContent>
+          <DialogContent sx={{ width: '100%' }}>
             {/* Image Slider */}
             {product.images && product.images.length > 0 && (
-              <Box sx={{ position: 'relative' }}>
+              <Box sx={{ position: 'relative', width: '100%' }}>
                 <CustomCarousel
-                  showArrows={false}
+                  showArrows={true}
                   showThumbs={false}
                   showStatus={false}
                   infiniteLoop={true}
                   dynamicHeight={false}
+                  renderArrowPrev={(onClickHandler, hasPrev) =>
+                    hasPrev && (
+                      <IconButton
+                        onClick={onClickHandler}
+                        sx={{
+                          position: 'absolute',
+                          top: '50%',
+                          left: '10px',
+                          zIndex: 2,
+                          transform: 'translateY(-50%)',
+                          fontSize: { xs: '28px', md: '40px' }, // Ideal size for mobile
+                        }}
+                      >
+                        <KeyboardArrowLeftIcon />
+                      </IconButton>
+                    )
+                  }
+                  renderArrowNext={(onClickHandler, hasNext) =>
+                    hasNext && (
+                      <IconButton
+                        onClick={onClickHandler}
+                        sx={{
+                          position: 'absolute',
+                          top: '50%',
+                          right: '10px',
+                          zIndex: 2,
+                          transform: 'translateY(-50%)',
+                          fontSize: { xs: '28px', md: '40px' }, // Ideal size for mobile
+                        }}
+                      >
+                        <KeyboardArrowRightIcon />
+                      </IconButton>
+                    )
+                  }
                 >
                   {product.images.map((image, index) => (
                     <CardMedia
@@ -197,34 +234,46 @@ const ProductCard = ({ product }) => {
                       image={image}
                       alt={product.name}
                       sx={{
-                        height: '300px',
-                        width: 'auto',
+                        height: { xs: '250px', md: '350px' }, // Adjust height for mobile
+                        width: '100%',
                         objectFit: 'cover',
+                        borderRadius: '12px', // Rounded corners for a modern look
                       }}
                     />
                   ))}
                 </CustomCarousel>
               </Box>
             )}
-            <Typography variant="h5" sx={{ marginY: 2, textAlign: 'center' }}>
+            <Typography
+              variant="h5"
+              sx={{ marginY: 2, textAlign: 'center', width: '100%' }}
+            >
               {product.name}
             </Typography>
             <Typography
               variant="body1"
-              sx={{ marginY: 1, textAlign: 'center' }}
+              sx={{ marginY: 1, textAlign: 'center', width: '100%' }}
             >
               {product.description}
             </Typography>
             <Typography
-              style={{
+              sx={{
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                width: '100%',
               }}
             >
               <Button color="secondary">{product.price} сом</Button>
             </Typography>
-            <SocialIcons>
+            <SocialIcons
+              sx={{
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                mt: 2, // Add margin on top for better spacing
+              }}
+            >
               <Tooltip title="Instagram" arrow>
                 <CustomIconButtonInstagram
                   component="a"
@@ -261,7 +310,7 @@ const ProductCard = ({ product }) => {
             </SocialIcons>
           </DialogContent>
           <Divider />
-          <DialogActions>
+          <DialogActions sx={{ width: '100%' }}>
             <Button
               onClick={handleOrderWhatsApp}
               variant="contained"
