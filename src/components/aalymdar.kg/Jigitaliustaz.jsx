@@ -12,11 +12,11 @@ import {
 } from '@mui/material';
 import styled from 'styled-components';
 import { Verified } from '@mui/icons-material';
-import Welcome from '../../components/Welcome';
-import Header from '../../components/Header';
+import Welcome from '../Welcome.jsx';
+import Header from '../Header.jsx';
 import LogoNasyikatMedia from '../../assetts/images/islam/nmlogo.png';
 import exam from './src-video-data/exam.js';
-import Footer from '../../components/Footer';
+import Footer from '../Footer.jsx';
 
 const theme = createTheme({
   typography: {

@@ -10,7 +10,7 @@ import ChubakAjyJallilov from './aalymdar.kg/ChubakAjyJallilov';
 import AbdushukurAjy from './aalymdar.kg/AbdushukurAjy';
 import MaksatAjy from './aalymdar.kg/MaksatAjy';
 import BakgtyarAjy from './aalymdar.kg/BakgtyarAjy';
-import ErmekAjy from './aalymdar.kg/ErmekAjy';
+import Jigitaliustaz from './aalymdar.kg/Jigitaliustaz';
 import SadybakasAjy from './aalymdar.kg/SadybakasAjy';
 import KalysbekAjy from './aalymdar.kg/KalysbekAjy';
 import Shahada from './data/islamdynparzy/Shahada';
@@ -43,7 +43,7 @@ const MainRouter = () => {
         <Route path="/abdushukurajy" element={<AbdushukurAjy />} />
         <Route path="/maksatajy" element={<MaksatAjy />} />
         <Route path="/bakgtyarajy" element={<BakgtyarAjy />} />
-        <Route path="/ermekajy" element={<ErmekAjy />} />
+        <Route path="/jigitaliustaz" element={<Jigitaliustaz />} />
         <Route path="/sadybakasajy" element={<SadybakasAjy />} />
         <Route path="/Abdulazizkary" element={<Abdulazizkary />} />
         <Route path="/kalysbekajy" element={<KalysbekAjy />} />

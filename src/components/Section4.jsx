@@ -18,7 +18,7 @@ const Section4 = () => {
     <StyledContainer>
       <StyledPaper elevation={6}>
         <Typography variant="h6" component="h2" gutterBottom>
-          "Эскерткин,- эскертүү момундарга пайда берет" (Зарият 55-аят).
+          "Жана Эскерткин, эскертүү момундарга пайда берет" (Зарият 55-аят).
         </Typography>
         <StyledText variant="body2" component="div">
           {zaryiat55[textIndex]}

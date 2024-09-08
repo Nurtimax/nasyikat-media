@@ -65,7 +65,7 @@ const Section5 = () => {
   return (
     <div>
       <Header>
-        Дуба - момундун куралы, диндин түркүгү жана асман менен жердин нуру.
+        Дуба - момундун куралы диндин түркүгү жана асман менен жердин нуру
       </Header>
       <Grid container spacing={3} justifyContent="center">
         {prayers.map((prayer, index) => (
@@ -83,7 +83,7 @@ const Section5 = () => {
                 )}
                 {prayer.transcription && (
                   <>
-                    <BoldParagraph>Транскрипция</BoldParagraph>
+                    <BoldParagraph>Окулушу</BoldParagraph>
                     <Paragraph>{prayer.transcription}</Paragraph>
                   </>
                 )}

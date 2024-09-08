@@ -12,13 +12,14 @@ import {
   Modal,
   Box,
 } from '@mui/material';
-import { Instagram, Telegram, GetApp, MenuBook } from '@mui/icons-material';
+import { Instagram, Telegram, MenuBook, WhatsApp } from '@mui/icons-material';
 import books from './data/free-books/pdfbooksfree';
 import CloseIcon from '@mui/icons-material/Close';
 import Header from '../components/Header';
 import Welcome from '../components/Welcome';
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import Footer from '../components/Footer';
+import styled from 'styled-components';
 
 const cardStyle = {
   display: 'flex',
@@ -43,6 +44,18 @@ const modalStyle = {
   textAlign: 'center',
 };
 
+const CustomIconButtonInstagram = styled(Instagram)({
+  color: '#E1306C',
+});
+
+const CustomIconButtonTelegram = styled(Telegram)({
+  color: '#0088cc',
+});
+
+const CustomIconButtonWhatsApp = styled(WhatsApp)({
+  color: '#25d366',
+});
+
 const Books = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [openModal, setOpenModal] = useState(false);
@@ -60,16 +73,6 @@ const Books = () => {
   const handleCloseModal = () => {
     setOpenModal(false);
     setSelectedBook(null);
-  };
-
-  const handleDownload = () => {
-    if (selectedBook) {
-      const link = document.createElement('a');
-      link.href = selectedBook.pdf;
-      link.download = true;
-      link.click();
-    }
-    handleCloseModal();
   };
 
   const handleRead = () => {
@@ -207,11 +210,42 @@ const Books = () => {
       >
         <Box sx={modalStyle}>
           <Typography id="modal-title" variant="h6" component="h2">
-            Ассаламу алейкум бир тууганым!
+            Урматтуу окурман!
           </Typography>
           <Typography id="modal-description" sx={{ mt: 2 }}>
-            Биздин китептер сизге пайдалуу болсо, инстаграмдан жеке катка пикир
-            калтырып койсоңуз кубанып калат элек. <br /> Бул биз үчүн маанилүү!{' '}
+            Китепти окуп чыккан соң китеп боюнча пикириңизди бөлүшүп коюууңузду
+            өтүнөбүз сиздин пикриңиз биз үчүн чоң мааниге ээ.
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '2rem',
+                marginTop: '1rem',
+              }}
+            >
+              <a
+                href="https://t.me/yourTelegramUsername"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <CustomIconButtonTelegram />
+              </a>
+              <a
+                href="https://www.instagram.com/yourInstagramUsername"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <CustomIconButtonInstagram />
+              </a>
+              <a
+                href="https://wa.me/yourWhatsAppNumber"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <CustomIconButtonWhatsApp />
+              </a>
+            </div>
             <br />
             Аллах таала илимиңизге берекесин берсин.
           </Typography>
@@ -224,15 +258,6 @@ const Books = () => {
               style={{ marginRight: '10px' }}
             >
               Окуу
-            </Button>
-            <Button
-              variant="contained"
-              color="secondary"
-              startIcon={<GetApp />}
-              onClick={handleDownload}
-              style={{ marginRight: '10px' }}
-            >
-              Көчүрүү
             </Button>
             <Button
               variant="outlined"

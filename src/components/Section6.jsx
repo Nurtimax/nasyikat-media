@@ -13,7 +13,7 @@ import { LocationOn, AccessTime } from '@mui/icons-material';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import muslim from './data/islam-3-yiyk-jer/muslimplace';
 import img from '../assetts/icons/section-img.png';
-import soundFile from '../assetts/quran-audio/palestina.mp3';
+import soundFile from '../assetts/quran-audio/tawhid.mp3';
 
 const Section6 = () => {
   const audioRef = useRef(null);
