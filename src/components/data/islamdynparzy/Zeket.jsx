@@ -13,9 +13,6 @@ const Zeket = () => {
         sx={{
           padding: 3,
           marginTop: '20px',
-          backgroundSize: 'cover',
-          backgroundPosition: 'end',
-          backgroundRepeat: 'no-repeat',
           borderRadius: 2,
           backgroundAttachment: 'fixed',
           boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
@@ -32,10 +29,11 @@ const Zeket = () => {
           sx={{
             marginBottom: 2,
             fontWeight: 'bold',
-            textAlign: 'center',
             textShadow: '1px 1px 2px rgba(0, 0, 0, 0.6)',
             padding: 1,
             borderRadius: 1,
+            lineHeight: '1.8',
+            textAlign: 'justify',
           }}
         >
           Зекет
