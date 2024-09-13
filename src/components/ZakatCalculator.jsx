@@ -4,23 +4,12 @@ import { styled } from '@mui/system';
 
 const ZakatContainer = styled(Box)(({ theme }) => ({
   padding: '30px',
-  backgroundColor: '#ffffff',
+  backgroundColor: '#161c25',
   borderRadius: '16px',
   boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
   maxWidth: '600px',
   margin: '40px auto',
   textAlign: 'center',
-}));
-
-const CustomButton = styled(Button)(({ theme }) => ({
-  marginTop: '20px',
-  padding: '10px 20px',
-  backgroundColor: '#4caf50',
-  color: '#fff',
-  '&:hover': {
-    backgroundColor: '#388e3c',
-  },
-  fontSize: '16px',
 }));
 
 const ZakatCalculator = () => {
@@ -50,9 +39,9 @@ const ZakatCalculator = () => {
         fullWidth
         margin="normal"
       />
-      <CustomButton variant="contained" onClick={calculateZakat}>
+      <Button variant="contained" onClick={calculateZakat}>
         Зекетти эсептөө
-      </CustomButton>
+      </Button>
       {zakat !== null && (
         <Typography variant="h6" color="textPrimary" marginTop="30px">
           Сиздин зекетиңиз {zakat} бирдик акчаны түзөт.

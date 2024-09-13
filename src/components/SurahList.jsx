@@ -64,6 +64,7 @@ const SurahList = () => {
                       borderRadius: '4px',
                       boxShadow: 1,
                       lineHeight: 1.4, // Improved line height for readability
+                      color: '#161c25',
                     }}
                   >
                     {surah.name}
@@ -77,6 +78,7 @@ const SurahList = () => {
                       borderRadius: '4px',
                       boxShadow: 1,
                       lineHeight: 1.4, // Improved line height for readability
+                      color: '#161c25',
                     }}
                   >
                     {surah.bismillahMeaning}
@@ -91,6 +93,7 @@ const SurahList = () => {
                       borderRadius: '4px',
                       boxShadow: 1,
                       lineHeight: 1.4, // Improved line height for readability
+                      color: '#161c25',
                     }}
                   >
                     {surah.bismillah}
@@ -172,7 +175,7 @@ const SurahList = () => {
                     >
                       Nasyikat.media
                     </a>
-                    <Verified color="primary" fontSize="small" />
+                    <Verified fontSize="small" sx={{ color: '#4ba9ed' }} />
                   </Typography>
                 </Box>
               </Box>

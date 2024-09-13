@@ -46,19 +46,29 @@ const Contact = () => {
           marginBottom="20px"
         >
           <Typography
-            variant="h4"
+            variant="h5"
             component="span"
             sx={{
               marginRight: '8px',
+              color: '#161c25',
               fontFamily: "'Lora', serif",
-              fontSize: '1.5rem',
+              fontSize: '1.2rem',
             }}
           >
             NASYIKAT.MEDIA
           </Typography>
-          <Verified sx={{ fontSize: '1.5rem' }} color="primary" />
+          <Verified
+            sx={{
+              fontSize: '1.4rem',
+              color: '#0093f7',
+              marginBottom: '0.2rem',
+            }}
+          />
         </Box>
-        <Typography variant="h6" sx={{ marginBottom: '1.5rem' }}>
+        <Typography
+          variant="h6"
+          sx={{ marginBottom: '1.5rem', color: '#161c25' }}
+        >
           Ой пикир сунуштар боюнча
         </Typography>
         <Grid container spacing={3}>
@@ -114,18 +124,6 @@ const Contact = () => {
               variant="contained"
               color="primary"
               onClick={handleWhatsAppMessage}
-              sx={{
-                padding: '12px 30px',
-                borderRadius: '30px',
-                fontSize: '16px',
-                backgroundColor: '#1e3c72',
-                color: '#ffffff',
-                transition: 'transform 0.3s ease',
-                '&:hover': {
-                  backgroundColor: '#2a5298',
-                  transform: 'scale(1.05)',
-                },
-              }}
             >
               <Typography
                 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}

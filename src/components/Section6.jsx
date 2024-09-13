@@ -43,10 +43,12 @@ const Section6 = () => {
   };
 
   return (
-    <div style={{ marginTop: '20px', margin: '0.4rem' }}>
-      <div style={{ textAlign: 'center', marginBottom: '30px' }}>
-        <h1>Мусулмандардын 3 ыйык жери</h1>
-      </div>
+    <div style={{ margin: '20px 0.4rem' }}>
+      <Box textAlign="center" mb={4}>
+        <Typography variant="h4" component="h1" gutterBottom>
+          Мусулмандардын 3 ыйык жери
+        </Typography>
+      </Box>
       <Grid container spacing={3} justifyContent="center">
         {muslim.map((card, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
@@ -59,28 +61,19 @@ const Section6 = () => {
               onMouseEnter={index === 2 ? handlePlaySound : null}
             >
               <Card
-                style={{
+                sx={{
                   width: '100%',
                   height: '100%',
-                  ...(index === 2 && {
-                    border: '3px solid red',
-                    backgroundColor: '#3f3f3f',
-                    boxShadow: '0px 0px 15px rgba(255, 0, 0, 0.687)',
-                    position: 'relative',
-                    overflow: 'hidden',
-                    borderRadius: '10px',
-                    '&::before': {
-                      content: '""',
-                      position: 'absolute',
-                      top: '0',
-                      left: '0',
-                      width: '100%',
-                      height: '100%',
-                      background:
-                        'linear-gradient(135deg, rgba(255,0,0,0.5), rgb(255, 0, 0))',
-                      zIndex: '1',
-                    },
-                  }),
+                  border: index === 2 ? '3px solid #f44336' : 'none',
+                  backgroundColor: index === 2 ? '#333' : 'inherit',
+                  boxShadow:
+                    index === 2 ? '0px 4px 15px rgba(255, 0, 0, 0.7)' : 'none',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  borderRadius: '12px',
+                  '&:hover': {
+                    boxShadow: '0px 8px 20px rgba(0, 0, 0, 0.5)',
+                  },
                 }}
               >
                 <CardMedia
@@ -88,21 +81,19 @@ const Section6 = () => {
                   height="300"
                   image={card.image}
                   alt={card.title}
-                  style={{
+                  sx={{
                     objectFit: 'cover',
-                    ...(index === 2 && {
-                      filter: 'grayscale(100%) sepia(100%)',
-                      mixBlendMode: 'multiply',
-                    }),
+                    filter: index === 2 ? 'grayscale(100%) sepia(50%)' : 'none',
+                    transition: 'filter 0.3s',
                   }}
                 />
                 <CardContent
-                  style={{
+                  sx={{
                     textAlign: 'center',
                     position: 'relative',
-                    zIndex: '2',
                     color: index === 2 ? '#fff' : 'inherit',
-                    background: index === 2 ? 'rgba(0,0,0,0.7)' : 'inherit',
+                    background: index === 2 ? 'rgba(0,0,0,0.6)' : 'inherit',
+                    padding: '16px',
                   }}
                 >
                   <Typography variant="h5" component="h2" gutterBottom>
@@ -115,10 +106,10 @@ const Section6 = () => {
                       variant="contained"
                       fullWidth
                       sx={{
-                        background: '#071c6b',
+                        backgroundColor: '#071c6b',
                         fontSize: { xs: '0.7rem', sm: '1rem' },
                         '&:hover': {
-                          background: '#071d6bd6',
+                          backgroundColor: '#071d6bd6',
                         },
                       }}
                     >
@@ -131,42 +122,42 @@ const Section6 = () => {
                     justifyContent="space-around"
                     alignItems="center"
                     gap={1}
-                    sx={{ fontSize: '0.5rem' }}
+                    sx={{
+                      fontSize: '0.75rem',
+                      color: index === 2 ? '#fff' : 'inherit',
+                    }}
                   >
                     <Typography
-                      variant="body6"
+                      variant="body2"
                       color="textSecondary"
-                      style={{
+                      sx={{
                         display: 'flex',
                         alignItems: 'center',
-                        gap: '1rem',
-                        color: index === 2 ? '#fff' : 'inherit',
+                        gap: '0.5rem',
                       }}
                     >
                       <LocationOn fontSize="small" />
                       {card.location}
                     </Typography>
                     <Typography
-                      variant="body6"
+                      variant="body2"
                       color="textSecondary"
-                      style={{
+                      sx={{
                         display: 'flex',
                         alignItems: 'center',
                         gap: '0.5rem',
-                        color: index === 2 ? '#fff' : 'inherit',
                       }}
                     >
                       <CalendarMonthIcon fontSize="small" />
                       {card.date}
                     </Typography>
                     <Typography
-                      variant="body6"
+                      variant="body2"
                       color="textSecondary"
-                      style={{
+                      sx={{
                         display: 'flex',
                         alignItems: 'center',
                         gap: '0.5rem',
-                        color: index === 2 ? '#fff' : 'inherit',
                       }}
                     >
                       <AccessTime fontSize="small" />
@@ -184,8 +175,8 @@ const Section6 = () => {
           marginTop: '20px',
           img: {
             width: '100%',
-            maxWidth: '100%',
             height: 'auto',
+            borderRadius: '8px',
           },
         }}
       >

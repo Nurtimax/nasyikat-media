@@ -196,7 +196,7 @@ const SponsorsList = () => {
       }}
     >
       <Typography variant="h4" gutterBottom>
-        Бизге колдоо көрсөткөндөр
+        Биздин өнөктөштөр
       </Typography>
       <Box
         sx={{

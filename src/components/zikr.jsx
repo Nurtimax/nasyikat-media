@@ -13,13 +13,17 @@ import {
   Grid,
   RadioGroup,
   Radio,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
 } from '@mui/material';
 import { styled } from '@mui/system';
 import SettingsIcon from '@mui/icons-material/Settings';
 import Header from './Header';
 import Welcome from './Welcome';
 import Footer from './Footer';
-import islamicBackground from '../assetts/images/bgislam1.webp';
 import background1 from '../assetts/images/bgislam2.avif';
 import background2 from '../assetts/images/bgislam3.jpg';
 import background3 from '../assetts/images/bgislam4.jpg';
@@ -32,7 +36,6 @@ const backgrounds = [
   background1,
   background2,
   background3,
-  islamicBackground,
   background5,
 ];
 
@@ -49,7 +52,7 @@ const TasbihCard = styled(Card)(({ background }) => ({
   maxWidth: '500px',
   margin: '50px auto',
   textAlign: 'center',
-  background: background ? `url(${background4})` : '#f0f0f0',
+  background: background ? `url(${background})` : '#f0f0f0',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   color: '#fff',
@@ -78,9 +81,10 @@ const Zikr = () => {
   const [count, setCount] = useState(0);
   const [selectedText, setSelectedText] = useState('');
   const [isSoundOn] = useState(true);
-  const [background, setBackground] = useState(islamicBackground);
+  const [background, setBackground] = useState(background4);
   const [textColor, setTextColor] = useState('#fff');
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false); // State for modal
   const audioRef = useRef(null);
 
   const tasbihTexts = [
@@ -104,12 +108,17 @@ const Zikr = () => {
   };
 
   const handleDecrement = () => setCount(count > 0 ? count - 1 : 0);
-  const handleReset = () => setCount(0);
-  const handleTextChange = (event) => setSelectedText(event.target.value);
 
-  const handleChangeBackground = (event) => {
-    setBackground(URL.createObjectURL(event.target.files[0]));
+  // Show dialog when reset button is clicked
+  const handleReset = () => setIsDialogOpen(true);
+
+  // Confirm reset and close dialog
+  const confirmReset = () => {
+    setCount(0);
+    setIsDialogOpen(false);
   };
+
+  const handleTextChange = (event) => setSelectedText(event.target.value);
 
   const handleSelectBackground = (bg) => {
     setBackground(bg);
@@ -147,21 +156,43 @@ const Zikr = () => {
               color: textColor,
             }}
           >
-            <MenuItem value="">Зикр тандаңыз</MenuItem>
+            <MenuItem value="" color="#000">
+              Зикр тандаңыз
+            </MenuItem>
             {tasbihTexts.map((text, index) => (
-              <MenuItem key={index} value={text.zikr}>
+              <MenuItem
+                key={index}
+                value={text.zikr}
+                style={{ background: '#071c6b' }}
+              >
                 {text.zikr}
               </MenuItem>
             ))}
           </TextField>
-          <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
-            Тандалган Зикр: <br /> {selectedText}
+          <Typography
+            variant="h6"
+            gutterBottom
+            sx={{ mt: 2 }}
+            style={{
+              background: '#071c6b',
+              height: '2rem',
+              borderRadius: '0.5rem',
+            }}
+          >
+            Тандалган Зикр: <br /> <br /> {selectedText}
           </Typography>
         </CardContent>
+        <br />
         <CardContent>
-          <Typography variant="h5">Айтылган Зикр</Typography>
-          <Typography variant="h6" gutterBottom>
-            Саны: {count}
+          <Typography
+            variant="h5"
+            style={{
+              background: '#071c6b',
+              height: '4rem',
+              borderRadius: '0.5rem',
+            }}
+          >
+            Айтылган Зикр <br /> Саны: {count}
           </Typography>
           <LargeButton
             variant="contained"
@@ -273,25 +304,43 @@ const Zikr = () => {
               />
             ))}
           </RadioGroup>
+
+          <Typography variant="h6" sx={{ mt: 2 }}>
+            Жеке фон жүктөө:
+          </Typography>
           <Button
             variant="contained"
             component="label"
-            sx={{ mt: 2, width: '100%' }}
+            sx={{ backgroundColor: '#008080', color: '#fff', mt: 1 }}
           >
-            Фон алмаштыруу
-            <input
-              type="file"
-              accept="image/*"
-              hidden
-              onChange={handleChangeBackground}
-            />
+            Жүктөө
+            <input type="file" hidden onChange={backgrounds} />
           </Button>
         </Box>
       </Drawer>
 
+      {/* Modal for reset confirmation */}
+      <Dialog open={isDialogOpen} onClose={() => setIsDialogOpen(false)}>
+        <DialogTitle>Өчүрүү?</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Сиз чын эле, айтылган зикри өчүрүүнү каалайсызбы?
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setIsDialogOpen(false)} color="primary">
+            Жок
+          </Button>
+          <Button onClick={confirmReset} color="error">
+            Өчүрүү
+          </Button>
+        </DialogActions>
+      </Dialog>
+
       <audio ref={audioRef}>
         <source src={ringitoon} type="audio/mp3" />
       </audio>
+
       <Footer />
     </div>
   );

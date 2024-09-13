@@ -29,11 +29,11 @@ const SectionImage = styled('img')(({ theme }) => ({
   borderRadius: '8px',
   marginBottom: theme.spacing(2),
   objectFit: 'cover',
+  color: '#212b36',
 }));
 
 const CompanyBanner = styled(Box)(({ theme }) => ({
   background: 'linear-gradient(to right, #0c0c0c, #42a5f5)',
-  color: '#fff',
   padding: theme.spacing(6),
   textAlign: 'center',
   borderRadius: '12px',
@@ -70,21 +70,21 @@ const HajjAndUmrahSection = () => {
             viewport={{ once: true }}
           >
             <motion.div variants={fadeInVariants}>
-              <Typography variant="h4" gutterBottom>
+              <Typography variant="h4" gutterBottom color="#212b36">
                 Ажылык
               </Typography>
             </motion.div>
             <Grid container spacing={4}>
               <Grid item xs={12} md={6}>
                 <motion.div variants={fadeInVariants}>
-                  <Typography variant="body1">
+                  <Typography variant="body1" color="#212b36">
                     Ажылык деген эмне? Ажылыктын сөздүк мааниси – улуу нерсеге
                     карай аттануу. Шарият боюнча ажылык бул – Кааба жана анын
                     айланасындагы куттуу деп эсептелген белгилүү жерлерге
                     белгиленген учурда барып, усул-эрежелерине ылайык зарыл
                     ибадаттарды аткаруу болуп эсептелет.
                   </Typography>
-                  <Typography variant="body2" gutterBottom>
+                  <Typography variant="body2" gutterBottom color="#212b36">
                     Аллах Таала өз пенделерине эгер мүмкүнчүлүгү болсо, өмүрүндө
                     бир жолу хаж ибаадатын парз кылды. Хаж- бул Аллах Субхану уа
                     Тааланын үйү болгон ыйык Каабаны, эң биринчи мусулманчылык
@@ -126,7 +126,7 @@ const HajjAndUmrahSection = () => {
             viewport={{ once: true }}
           >
             <motion.div variants={fadeInVariants}>
-              <Typography variant="h4" gutterBottom>
+              <Typography variant="h4" gutterBottom color="#212b36">
                 Умра
               </Typography>
             </motion.div>
@@ -138,20 +138,20 @@ const HajjAndUmrahSection = () => {
               </Grid>
               <Grid item xs={12} md={6}>
                 <motion.div variants={fadeInVariants}>
-                  <Typography variant="body1">
+                  <Typography variant="body1" color="#212b36">
                     1.Умра деген эмне? <br /> 2. Кичи ажылыкты кайсы учурда
                     кылса болот?
                     <br /> 3. Кандай шарттар аткарылат? <br /> Умра деген создун
                     мааниси - зыярат кылуу дегенди тушундурот.
                   </Typography>
-                  <Typography variant="body1">
+                  <Typography variant="body1" color="#212b36">
                     Умра жылдын кайсы бир мезгилинде ихрамга кирип Каабаны таваф
                     кылуу, Сафа жана Марва дөңсөөөнөрүнүн, ортосунда ылдам
                     басуудан сон чач алдырып, ихрамдан чыгуу менен орундалган
                     ибадат. Умранын эки парзы бар: Ихрамга кируу жана Каабаны
                     айлануу.
                   </Typography>
-                  <Typography variant="body1" gutterBottom>
+                  <Typography variant="body1" gutterBottom color="#212b36">
                     Мусулман баласы учун өмүрүндө бир жолу умра кылуу суннөт
                     болуп эсептелет. блдам басуу, жуунуп-тарануу, чач,
                     сакал-мурутту алуу умранын важиптери. Парз-важиптер ажылык

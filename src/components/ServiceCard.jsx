@@ -59,4 +59,3 @@ const ServiceCard = ({ title, icon: Icon, description, iconSize = '3rem' }) => {
 };
 
 export default ServiceCard;
- 

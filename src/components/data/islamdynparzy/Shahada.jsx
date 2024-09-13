@@ -1,7 +1,6 @@
 import React from 'react';
 import { styled } from '@mui/system';
 import { Box, Typography } from '@mui/material';
-import BackgroundImage from '../../../assetts/icons/bacimg.png';
 import Welcom from '../../../components/Welcome';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
@@ -47,12 +46,7 @@ export default Shahada;
 
 const StyledContainer = styled(Box)(({ theme }) => ({
   padding: theme.spacing(8),
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  backgroundRepeat: 'no-repeat',
   textAlign: 'center',
-  backgroundImage: `url(${BackgroundImage})`,
-  backgroundAttachment: 'fixed',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',

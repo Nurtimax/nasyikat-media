@@ -62,7 +62,9 @@ const FooterWrapper = styled('div')(({ theme }) => ({
 }));
 
 const LogoWrapper = styled(Box)(({ theme }) => ({
-  textAlign: 'center',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
   marginBottom: theme.spacing(3),
   cursor: 'pointer',
   position: 'relative',
