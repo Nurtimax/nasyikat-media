@@ -1,7 +1,6 @@
 import { Typography, Box } from '@mui/material';
 import Header from '../../../components/Header';
 import Welcome from '../../../components/Welcome';
-import BackgroundImage from '../../../assetts/icons/bacimg.png';
 import ZakatCalculator from '../../ZakatCalculator';
 import Footer from '../../../components/Footer';
 
@@ -14,14 +13,12 @@ const Zeket = () => {
         sx={{
           padding: 3,
           marginTop: '20px',
-          backgroundImage: `url(${BackgroundImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'end',
           backgroundRepeat: 'no-repeat',
           borderRadius: 2,
           backgroundAttachment: 'fixed',
           boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
-          color: '#000',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',

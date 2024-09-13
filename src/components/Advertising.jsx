@@ -1,34 +1,68 @@
 import React, { useEffect, useState } from 'react';
 import { styled } from '@mui/material/styles';
-import { Box, IconButton } from '@mui/material';
+import { Box, IconButton, Typography } from '@mui/material';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import bannerRe from '../assetts/icons/nasyyikatinsta.png';
-import banneryYt from '../assetts/icons/nasyyikatyout.png';
-import bannerTm from '../assetts/icons/nasyyikatteleg.png';
-import bannerAljardam from '../assetts/icons/aljardam.png';
-import bannerArzanstore from '../assetts/icons/arzanstore.png';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import TelegramIcon from '@mui/icons-material/Telegram';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import slides from '../utils/constants/reclama';
 
 // Styled components for responsive design
 const SliderContainer = styled(Box)(({ theme }) => ({
   position: 'relative',
   width: '100%',
-  height: '500px', // Default height for larger screens
+  height: '370px', // Default height for larger screens
   overflow: 'hidden',
   [theme.breakpoints.down('md')]: {
-    height: '300px', // Smaller height for tablets and mobile devices
+    height: '65vh', // Adjusted height for mobile devices
   },
 }));
 
 const Slide = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'row',
   width: '100%',
   height: '100%',
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  transition: 'opacity 1s ease-in-out',
   position: 'absolute',
   top: 0,
   left: 0,
+  opacity: '0',
+  transition: 'opacity 1s ease-in-out',
+  [theme.breakpoints.down('md')]: {
+    flexDirection: 'column',
+  },
+}));
+
+const ImageSection = styled(Box)(({ theme, bgimg }) => ({
+  width: '50%',
+  height: '100%',
+  backgroundImage: `url(${bgimg})`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  [theme.breakpoints.down('md')]: {
+    width: '100%',
+    height: '70%', // Increased height for mobile devices
+  },
+}));
+
+const ContentSection = styled(Box)(({ theme }) => ({
+  width: '50%',
+  height: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  backgroundColor: '#071c6b', // Semi-transparent background
+  color: '#f6ecde',
+  textAlign: 'center',
+  padding: '20px',
+  [theme.breakpoints.down('md')]: {
+    width: '100%',
+    height: '30%', // Adjusted height for mobile devices
+    justifyContent: 'flex-start', // Align content to top
+    padding: '10px', // Add padding if needed
+  },
 }));
 
 const NavigationButton = styled(IconButton)(({ theme }) => ({
@@ -40,16 +74,27 @@ const NavigationButton = styled(IconButton)(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     fontSize: '1.5rem', // Smaller navigation button on mobile devices
   },
+  '&:hover': {
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+  },
 }));
 
-// Slide data
-const slides = [
-  { url: bannerRe, alt: 'Slide 1' },
-  { url: bannerArzanstore, alt: 'Slide 2' },
-  { url: bannerTm, alt: 'Slide 3' },
-  { url: bannerAljardam, alt: 'Slide 4' },
-  { url: banneryYt, alt: 'Slide 5' },
-];
+const SocialIcons = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'center',
+  gap: '10px',
+  marginTop: '20px',
+  '& svg': {
+    fontSize: '2rem',
+    color: '#fff',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '1.5rem',
+    },
+    '&:hover': {
+      color: '#0a73c9',
+    },
+  },
+}));
 
 const Advertising = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -84,12 +129,49 @@ const Advertising = () => {
       {slides.map((slide, index) => (
         <Slide
           key={index}
+          bgimg={slide.bgimg}
           style={{
-            backgroundImage: `url(${slide.url})`,
             opacity: index === currentSlide ? 1 : 0, // Show only the current slide
           }}
           aria-label={`Slide ${index + 1}`}
-        />
+        >
+          <ImageSection bgimg={slide.bgimg} aria-hidden="true" />
+          <ContentSection>
+            <Typography variant="h5" gutterBottom>
+              {slide.title}
+            </Typography>
+            <Typography variant="body1">{slide.description}</Typography>
+            <SocialIcons>
+              {slide.socialLinks.instagram && (
+                <IconButton
+                  href={slide.socialLinks.instagram}
+                  target="_blank"
+                  aria-label="Instagram"
+                >
+                  <InstagramIcon />
+                </IconButton>
+              )}
+              {slide.socialLinks.telegram && (
+                <IconButton
+                  href={slide.socialLinks.telegram}
+                  target="_blank"
+                  aria-label="Telegram"
+                >
+                  <TelegramIcon />
+                </IconButton>
+              )}
+              {slide.socialLinks.whatsapp && (
+                <IconButton
+                  href={slide.socialLinks.whatsapp}
+                  target="_blank"
+                  aria-label="WhatsApp"
+                >
+                  <WhatsAppIcon />
+                </IconButton>
+              )}
+            </SocialIcons>
+          </ContentSection>
+        </Slide>
       ))}
       <NavigationButton
         onClick={handlePrev}

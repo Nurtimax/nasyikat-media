@@ -17,7 +17,7 @@ const Section4 = () => {
   return (
     <StyledContainer>
       <StyledPaper elevation={6}>
-        <Typography variant="h6" component="h2" gutterBottom>
+        <Typography variant="h6" component="h2" gutterBottom color="#2c3e50">
           "Жана Эскерткин, эскертүү момундарга пайда берет" (Зарият 55-аят).
         </Typography>
         <StyledText variant="body2" component="div">

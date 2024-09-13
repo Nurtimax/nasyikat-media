@@ -25,7 +25,6 @@ const Islam = () => {
               sx={{
                 lineHeight: '1.6',
                 textAlign: 'center',
-                color: '#3f3e3d',
               }}
             >
               Аллах тааланын Жабраил периште аркылуу сүйүктүү жана акыркы

@@ -19,15 +19,10 @@ const StyledAccordion = styled(Accordion)(({ theme }) => ({
 }));
 
 const AccordionSummaryStyled = styled(AccordionSummary)(({ theme }) => ({
-  backgroundColor: '#f4eadb',
   borderRadius: '10px',
-  '&:hover': {
-    backgroundColor: '#f4eadbda',
-  },
 }));
 
 const AccordionDetailsStyled = styled(AccordionDetails)(({ theme }) => ({
-  backgroundColor: '#f4eadb',
   borderRadius: '10px',
   position: 'relative',
 }));
@@ -35,7 +30,10 @@ const AccordionDetailsStyled = styled(AccordionDetails)(({ theme }) => ({
 const Heading = styled(Typography)(({ theme }) => ({
   fontSize: '1.2rem',
   fontWeight: 'bold',
-  color: '#32383b',
+}));
+
+const ListItem = styled('li')(({ theme }) => ({
+  margin: '0.5rem 1rem', // Добавляем отступы между элементами списка
 }));
 
 const IslamdynParzdary = () => {
@@ -60,15 +58,17 @@ const IslamdynParzdary = () => {
           <AccordionDetailsStyled>
             <Typography component="div">
               <ol>
-                <li>Аллах Тааланын бардыгына жана жалгыздыгына ишенүү</li>
-                <li>Аллах Тааланын периштелерине</li>
-                <li>Аллах Тааланын китептерине</li>
-                <li>Аллах Тааланын пайгамбарларына</li>
-                <li>Акырет күнүнө</li>
-                <li>
+                <ListItem>
+                  Аллах Тааланын бардыгына жана жалгыздыгына ишенүү
+                </ListItem>
+                <ListItem>Аллах Тааланын периштелерине</ListItem>
+                <ListItem>Аллах Тааланын китептерине</ListItem>
+                <ListItem>Аллах Тааланын пайгамбарларына</ListItem>
+                <ListItem>Акырет күнүнө</ListItem>
+                <ListItem>
                   Тагдырга; жакшылык жана жамандык Аллахтан экендигине ишенүү
-                </li>
-                <li>Өлгөндөн кийин кайра тирилүүгө ишенүү</li>
+                </ListItem>
+                <ListItem>Өлгөндөн кийин кайра тирилүүгө ишенүү</ListItem>
               </ol>
             </Typography>
           </AccordionDetailsStyled>
@@ -81,11 +81,13 @@ const IslamdynParzdary = () => {
           <AccordionDetailsStyled>
             <Typography component="div">
               <ol>
-                <li>Шахадат (күбөлүк) келимеси</li>
-                <li>Беш убак намаз окуу</li>
-                <li>Зекет берүү</li>
-                <li>Орозо кармоо (жылына 1 жолу Рамазан айында)</li>
-                <li>Хаж ибадатын аткаруу (өмүрүндө бир жолу ажыга баруу)</li>
+                <ListItem>Шахадат (күбөлүк) келимеси</ListItem>
+                <ListItem>Беш убак намаз окуу</ListItem>
+                <ListItem>Зекет берүү</ListItem>
+                <ListItem>Орозо кармоо (жылына 1 жолу Рамазан айында)</ListItem>
+                <ListItem>
+                  Хаж ибадатын аткаруу (өмүрүндө бир жолу ажыга баруу)
+                </ListItem>
               </ol>
             </Typography>
           </AccordionDetailsStyled>
@@ -98,10 +100,12 @@ const IslamdynParzdary = () => {
           <AccordionDetailsStyled>
             <Typography component="div">
               <ol>
-                <li>Колду жуу (чыканакты кошуп)</li>
-                <li>Бетти (чач чыккан жерден баштап ээктин астын кошуп) жуу</li>
-                <li>Баштын төрттөн бир бөлүгүнө масх тартуу</li>
-                <li>Буттарды жуу</li>
+                <ListItem>Колду жуу (чыканакты кошуп)</ListItem>
+                <ListItem>
+                  Бетти (чач чыккан жерден баштап ээктин астын кошуп) жуу
+                </ListItem>
+                <ListItem>Баштын төрттөн бир бөлүгүнө масх тартуу</ListItem>
+                <ListItem>Буттарды жуу</ListItem>
               </ol>
             </Typography>
           </AccordionDetailsStyled>
@@ -114,9 +118,9 @@ const IslamdynParzdary = () => {
           <AccordionDetailsStyled>
             <Typography component="div">
               <ol>
-                <li>Оозго суу алып тамакка жеткире чайкоо</li>
-                <li>Мурунга суу алып, таноо ачышканча суу алуу</li>
-                <li>Денеде кургак жер калтырбай жуу</li>
+                <ListItem>Оозго суу алып тамакка жеткире чайкоо</ListItem>
+                <ListItem>Мурунга суу алып, таноо ачышканча суу алуу</ListItem>
+                <ListItem>Денеде кургак жер калтырбай жуу</ListItem>
               </ol>
             </Typography>
           </AccordionDetailsStyled>
@@ -129,10 +133,12 @@ const IslamdynParzdary = () => {
           <AccordionDetailsStyled>
             <Typography component="div">
               <ol>
-                <li>Ниет кылуу</li>
-                <li>Таза топурак табуу</li>
-                <li>Биринчи уруш менен бетти сүртүү</li>
-                <li>Экинчи уруш менен эки колду чыканак менен кошо сүртүү</li>
+                <ListItem>Ниет кылуу</ListItem>
+                <ListItem>Таза топурак табуу</ListItem>
+                <ListItem>Биринчи уруш менен бетти сүртүү</ListItem>
+                <ListItem>
+                  Экинчи уруш менен эки колду чыканак менен кошо сүртүү
+                </ListItem>
               </ol>
             </Typography>
           </AccordionDetailsStyled>
@@ -146,26 +152,26 @@ const IslamdynParzdary = () => {
             <Typography component="div">
               <strong>Сыртында:</strong>
               <ol>
-                <li>
+                <ListItem>
                   Нажасаттан таза болуу; даарат, гусул алуу, хайз жана нифастан
                   тазалануу
-                </li>
-                <li>
+                </ListItem>
+                <ListItem>
                   Нажасаттан таза болуу; кийимдин жана жай намаздын таза болуусу
-                </li>
-                <li>Аврат жерлердин жабык болуусу</li>
-                <li>Кыбылага жүз буруу</li>
-                <li>Окула турган намаздын убактысынын кирүүсү</li>
-                <li>Намаз окуш үчүн ниет кылуу</li>
+                </ListItem>
+                <ListItem>Аврат жерлердин жабык болуусу</ListItem>
+                <ListItem>Кыбылага жүз буруу</ListItem>
+                <ListItem>Окула турган намаздын убактысынын кирүүсү</ListItem>
+                <ListItem>Намаз окуш үчүн ниет кылуу</ListItem>
               </ol>
               <strong>Ичинде:</strong>
               <ol>
-                <li>Такбир тахрима</li>
-                <li>Кыям (Түз туруу)</li>
-                <li>Кыраат</li>
-                <li>Руку</li>
-                <li>Сажда — бешене, мурун саждага тийүүсү керек</li>
-                <li>Каада-ахир – акыркы олтуруу</li>
+                <ListItem>Такбир тахрима</ListItem>
+                <ListItem>Кыям (Түз туруу)</ListItem>
+                <ListItem>Кыраат</ListItem>
+                <ListItem>Руку</ListItem>
+                <ListItem>Сажда — бешене, мурун саждага тийүүсү керек</ListItem>
+                <ListItem>Каада-ахир – акыркы олтуруу</ListItem>
               </ol>
             </Typography>
           </AccordionDetailsStyled>
@@ -213,11 +219,32 @@ const IslamdynParzdary = () => {
 
         <StyledAccordion>
           <AccordionSummaryStyled expandIcon={<ExpandMoreIcon />}>
-            <Heading variant="h6">Илимде 1 парз бар</Heading>
+            <Heading variant="h6">Таза адам 1 парз бар</Heading>
           </AccordionSummaryStyled>
+          <AccordionDetailsStyled>
+            <Typography component="div">1. Таза болуу</Typography>
+          </AccordionDetailsStyled>
+        </StyledAccordion>
 
-          <AccordionDetailsStyled style={{ marginBottom: '10px' }}>
-            <Typography component="div">1. Илим алуу</Typography>
+        <StyledAccordion>
+          <AccordionSummaryStyled expandIcon={<ExpandMoreIcon />}>
+            <Heading variant="h6">Топуракта 1 парз бар</Heading>
+          </AccordionSummaryStyled>
+          <AccordionDetailsStyled>
+            <Typography component="div">
+              1. Топуракка (таямум) колдонуу
+            </Typography>
+          </AccordionDetailsStyled>
+        </StyledAccordion>
+
+        <StyledAccordion>
+          <AccordionSummaryStyled expandIcon={<ExpandMoreIcon />}>
+            <Heading variant="h6">Күнөөда 1 парз бар</Heading>
+          </AccordionSummaryStyled>
+          <AccordionDetailsStyled>
+            <Typography component="div">
+              1. Күнөөсүн (күнөө кылуу) таануусу
+            </Typography>
           </AccordionDetailsStyled>
         </StyledAccordion>
       </div>

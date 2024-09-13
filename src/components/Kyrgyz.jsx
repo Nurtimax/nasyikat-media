@@ -289,11 +289,23 @@ const Kyrgyz = () => {
         {/* Area Section */}
         <Divider sx={{ my: 4 }} />
         <SectionTitle variant="h3">Кыргызстан</SectionTitle>
-        <img
-          src={KyrgyzMap}
-          alt="Kyrgyzstan Map"
-          style={{ width: '50%', borderRadius: '8px' }}
-        />
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            margin: '0 auto',
+          }}
+        >
+          <img
+            src={KyrgyzMap}
+            alt="Kyrgyzstan Map"
+            style={{
+              width: '50%',
+              borderRadius: '8px',
+            }}
+          />
+        </div>
         <Typography sx={{ mt: 2 }}>
           Мамлекет Борбордук Азиянын түндүк-чыгышында. Түштүк-батыш жагында
           Памир-Алайда, түндүк-чыгыш жагында Тянь-Шань жагында. Казакстан,

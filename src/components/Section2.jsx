@@ -67,11 +67,6 @@ const Card = styled('div')(({ theme }) => ({
   position: 'relative',
   width: '100%',
   maxWidth: '340px',
-  // backgroundImage: `url(${bgImageText})`,
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  borderRadius: '8px',
-  boxShadow: '0 0 10px rgba(0,0,0,0.1)',
   textAlign: 'center',
   margin: '0 auto',
   [theme.breakpoints.down('sm')]: {

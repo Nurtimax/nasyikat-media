@@ -8,6 +8,5 @@ const Welcome = () => {
 export default Welcome;
 
 const StyleContainer = styled('div')({
-  height: '50px',
-  background: '#f6edde',
+  height: '70px',
 });

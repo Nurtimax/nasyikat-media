@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './components/Header';
-import Section from './components/Section';
 import Section2 from './components/Section2';
 import Section4 from './components/Section4';
 import Section5 from './components/Section5';
@@ -11,6 +10,7 @@ import Welcome from './components/Welcome';
 import SponsorsList from './components/SponsorsList';
 import { Box, Typography } from '@mui/material';
 import Advertising from './components/Advertising';
+import Aalymdar from './section/Aalymdar';
 
 const App = () => {
   return (
@@ -21,25 +21,26 @@ const App = () => {
       <div style={{ marginTop: '25px', marginBottom: '20px' }}>
         <Advertising />
       </div>
-      <Section />
+      <Aalymdar />
       <Box
         sx={{
           textAlign: 'center',
           marginTop: '1.5rem',
-
-          boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
-          margin: { xs: '0px', sm: '0px' },
-          padding: { xs: '0px', sm: '0px' },
+          marginBottom: '1.5rem',
+          padding: '2rem',
+          background: 'linear-gradient(135deg, #f6edde 0%, #f6edde 100%)',
+          borderRadius: '12px',
         }}
       >
         <Typography
           variant="h6"
           sx={{
             fontWeight: 'bold',
-            color: '#000000',
-            lineHeight: 1.4,
-            fontFamily: 'inherit',
-            letterSpacing: '1.5px',
+            color: '#333333',
+            lineHeight: 1.6,
+            fontFamily: "'Playfair Display', serif",
+            letterSpacing: '1.2px',
+            marginTop: '1rem',
           }}
         >
           "Эгер билбесеңер, илимдүүлөрдөн сурагыла" <br />- Нахл сүрөсү, 43 аят
@@ -66,7 +67,7 @@ const App = () => {
           variant="h6"
           component="div"
           sx={{
-            color: '#c8831c',
+            color: '#f6edde',
             padding: '10px',
             lineHeight: 1.4,
             textAlign: 'center',
@@ -76,8 +77,9 @@ const App = () => {
         >
           "Силер кантип Аллахка ишенбейсиңер? <br /> Ал силердин жансыз
           денеңерди тирилткен. <br /> Кийин силерди өлтүрүп, андан соң кайра
-          тирилтет."
-          <br /> Анан Ага кайтасыңар. <br /> <br />
+          тирилтет.
+          <br /> Анан Ага кайтасыңар."
+          <br /> <br />
           Бакара сүрөсү 28-аят
         </Typography>
       </Box>

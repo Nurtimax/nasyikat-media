@@ -6,13 +6,6 @@ import Hadis from './Hadis';
 import Duba from './Duba';
 import Store from './Store';
 import Zikr from '../components/zikr';
-import ChubakAjyJallilov from './aalymdar.kg/ChubakAjyJallilov';
-import AbdushukurAjy from './aalymdar.kg/AbdushukurAjy';
-import MaksatAjy from './aalymdar.kg/MaksatAjy';
-import BakgtyarAjy from './aalymdar.kg/BakgtyarAjy';
-import Jigitaliustaz from './aalymdar.kg/Jigitaliustaz';
-import SadybakasAjy from './aalymdar.kg/SadybakasAjy';
-import KalysbekAjy from './aalymdar.kg/KalysbekAjy';
 import Shahada from './data/islamdynparzy/Shahada';
 import Ajylyk from './data/islamdynparzy/Ajylyk';
 import Namaz from './data/islamdynparzy/Namaz';
@@ -23,9 +16,10 @@ import Books from './Books';
 import AboutUs from './AboutUs';
 import AlJardam from './AlJardam';
 import OnSuro from './OnSuro';
-import Abdulazizkary from './aalymdar.kg/Abdulazizkary';
 import Hutba from './Hutba';
 import Kyrgyz from './Kyrgyz';
+import Aalymdar from '../section/Aalymdar';
+import AalymdarDetails from '../pages/AalymdarDetails';
 
 const MainRouter = () => {
   return (
@@ -39,14 +33,6 @@ const MainRouter = () => {
         <Route path="/store" element={<Store />} />
         <Route path="/zikr" element={<Zikr />} />
         <Route path="/kyrgyz" element={<Kyrgyz />} />
-        <Route path="/chubakajyjallilov" element={<ChubakAjyJallilov />} />
-        <Route path="/abdushukurajy" element={<AbdushukurAjy />} />
-        <Route path="/maksatajy" element={<MaksatAjy />} />
-        <Route path="/bakgtyarajy" element={<BakgtyarAjy />} />
-        <Route path="/jigitaliustaz" element={<Jigitaliustaz />} />
-        <Route path="/sadybakasajy" element={<SadybakasAjy />} />
-        <Route path="/Abdulazizkary" element={<Abdulazizkary />} />
-        <Route path="/kalysbekajy" element={<KalysbekAjy />} />
         <Route path="/shahada" element={<Shahada />} />
         <Route path="/ajylyk" element={<Ajylyk />} />
         <Route path="/namaz" element={<Namaz />} />
@@ -57,6 +43,8 @@ const MainRouter = () => {
         <Route path="/aljardam" element={<AlJardam />} />
         <Route path="/onsuro" element={<OnSuro />} />
         <Route path="/hutba" element={<Hutba />} />
+        <Route path="/aalymdar" element={<Aalymdar />} />
+        <Route path="/aalymdar/:id" element={<AalymdarDetails />} />
       </Routes>
     </Router>
   );

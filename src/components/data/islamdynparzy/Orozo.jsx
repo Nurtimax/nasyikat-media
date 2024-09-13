@@ -1,6 +1,5 @@
 import { Typography, Box } from '@mui/material';
 import React from 'react';
-import BackgroundImage from '../../../assetts/icons/bacimg.png';
 import Header from '../../../components/Header';
 import Welcome from '../../../components/Welcome';
 import Footer from '../../../components/Footer';
@@ -13,10 +12,6 @@ const Orozo = () => {
       <Box
         sx={{
           padding: { xs: 2, md: 4 },
-          backgroundImage: `url(${BackgroundImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
           minHeight: '100vh',
           display: 'flex',
           justifyContent: 'center',

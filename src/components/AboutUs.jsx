@@ -12,9 +12,15 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/system';
 import logo from '../assetts/icons/logo-nasykat.png';
-import logo2 from '../assetts/images/islamsabaktary.jpg';
+import logo2 from '../assetts/images/ustazdar/чубакажы.jpg';
 import logoavatar from '../assetts/images/donate.jpg';
-import { YouTube, Instagram, Telegram, WhatsApp } from '@mui/icons-material';
+import {
+  YouTube,
+  Instagram,
+  Telegram,
+  WhatsApp,
+  Verified,
+} from '@mui/icons-material';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import Donate from './Donate';
 
@@ -36,7 +42,7 @@ const teamMembers = [
   {
     name: '----------',
     role: 'Админ',
-    channel: 'Nasyikat.media & Islam.sabaktary',
+    channel: 'Nasyikat.media',
     image: logoavatar,
     description:
       'Аллах таалага чексиз мактоолор жана шүгүрлөр болсун <br/>  <br/> Оо, Роббим! Мени кичинемден багып-өстүргөн ата-энеме ырайым кыл.',
@@ -48,13 +54,13 @@ const teamMembers = [
     verified: false,
   },
   {
-    name: 'Islam.sabaktary',
-    role: 'Ислам сабактары',
+    name: 'kyrgyz.muslims',
+    role: 'Кыргыз эли Исламда',
     image: logo2,
     description:
-      'Оо, Жараткан Раббим бизге бул дүйнөнүн жана акыреттин жакшылыгын бер. Бизди тозок отунан сактагын. <br/> 2024-жылы 17-Август',
+      'Оо, Жараткан Раббим бизге бул дүйнөнүн жана акыреттин жакшылыгын бер. Бизди тозок отунан сактагын. <br/> амин',
     links: {
-      instagram: 'https://www.instagram.com/islam.sabaktary/',
+      instagram: 'https://www.instagram.com/kyrgyz.muslims/',
       telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
     },
     verified: true,
@@ -90,7 +96,7 @@ const SpecialTeamCard = styled(Paper)(({ theme }) => ({
   textAlign: 'center',
   borderRadius: '15px',
   cursor: 'pointer',
-  background: 'linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%)',
+  background: '#212b36',
   border: '2px solid #1976d2',
 }));
 
@@ -164,7 +170,6 @@ const AboutUs = () => {
                       variant="subtitle1"
                       color="textSecondary"
                       style={{
-                        background: '#071c6b',
                         width: '100%',
                         color: '#f6edde',
                         borderRadius: '5px',
@@ -269,7 +274,13 @@ const AboutUs = () => {
                       {member.name}
                       {true && (
                         <IconButton sx={{ mb: '0.2rem' }}>
-                          <VerifiedIcon color="primary" fontSize="small" />
+                          <Verified
+                            sx={{
+                              marginBottom: '2px',
+                              color: '#4ba9ed',
+                            }}
+                            fontSize="small"
+                          />
                         </IconButton>
                       )}
                     </Typography>

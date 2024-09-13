@@ -27,8 +27,6 @@ const cardStyle = {
   justifyContent: 'space-between',
   height: '100%',
   borderRadius: '15px',
-  boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.1)',
-  backgroundColor: '#fdfdfd',
 };
 
 const modalStyle = {
@@ -37,8 +35,8 @@ const modalStyle = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: 400,
-  bgcolor: 'background.paper',
   borderRadius: '10px',
+  backgroundColor: '#92907a',
   boxShadow: 24,
   p: 4,
   textAlign: 'center',
@@ -132,10 +130,7 @@ const Books = () => {
                   <Typography variant="subtitle1" style={{ marginTop: 8 }}>
                     {book.description}
                   </Typography>
-                  <Typography
-                    variant="subtitle2"
-                    style={{ marginTop: 8, color: '#757575' }}
-                  >
+                  <Typography variant="subtitle2" style={{ marginTop: 8 }}>
                     Автор: {book.author}
                   </Typography>
                 </CardContent>
@@ -147,20 +142,10 @@ const Books = () => {
                     color="primary"
                     startIcon={<MenuBook />}
                     style={{
-                      borderColor: '#071c6b',
-                      color: '#071c6b',
                       borderRadius: 5,
                       transition: 'border-color 0.3s, color 0.3s',
                       fontSize: '1.1rem',
                       width: '100%',
-                    }}
-                    onMouseOver={(e) => {
-                      e.currentTarget.style.borderColor = '#0a2278e4';
-                      e.currentTarget.style.color = '#0a2278e4';
-                    }}
-                    onMouseOut={(e) => {
-                      e.currentTarget.style.borderColor = '#071c6b';
-                      e.currentTarget.style.color = '#071c6b';
                     }}
                     onClick={() => handleOpenModal(book)}
                   >

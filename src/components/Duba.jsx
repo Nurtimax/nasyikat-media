@@ -13,12 +13,12 @@ import Footer from './Footer';
 
 const Duba = () => {
   return (
-    <Box sx={{ backgroundColor: '#f6edde', minHeight: '100vh' }}>
+    <Box sx={{ minHeight: '100vh' }}>
       <Header />
       <Box
         sx={{
           textAlign: 'center',
-          marginTop: '90px',
+          marginTop: '80px',
           padding: '0 20px',
         }}
       >
@@ -28,7 +28,7 @@ const Duba = () => {
           gutterBottom
           sx={{
             fontWeight: 'bold',
-            color: '#333',
+            color: '#efefef',
             mb: 4,
           }}
         >
@@ -42,7 +42,6 @@ const Duba = () => {
               borderRadius: '8px',
               boxShadow: 2,
               '&:before': { display: 'none' },
-              backgroundColor: '#f6edde',
             }}
           >
             <AccordionSummary
@@ -50,7 +49,6 @@ const Duba = () => {
               aria-controls={`panel-content-${index}`}
               id={`panel-header-${index}`}
               sx={{
-                backgroundColor: '#f6edde',
                 borderBottom: '1px solid #ddd',
                 borderRadius: '8px 8px 0 0',
               }}
@@ -59,7 +57,7 @@ const Duba = () => {
                 variant="h6"
                 sx={{
                   fontWeight: 'bold',
-                  color: '#333',
+                  color: '#efefef',
                 }}
               >
                 {dua.title}
@@ -67,7 +65,6 @@ const Duba = () => {
             </AccordionSummary>
             <AccordionDetails
               sx={{
-                backgroundColor: '#f6edde',
                 borderRadius: '0 0 8px 8px',
                 padding: '16px',
               }}
@@ -77,7 +74,7 @@ const Duba = () => {
                 sx={{
                   marginBottom: 1,
                   lineHeight: '1.6',
-                  color: '#555',
+                  color: '#efefef',
                 }}
               >
                 {dua.text}
@@ -86,8 +83,8 @@ const Duba = () => {
                 variant="body2"
                 sx={{
                   marginBottom: 1,
-                  color: '#efefef',
-                  background: '#071c6b',
+                  color: '#161c25',
+                  background: '#f6ecde',
                   borderRadius: '5px',
                   padding: '5px',
                 }}
@@ -98,20 +95,20 @@ const Duba = () => {
                 variant="body2"
                 sx={{
                   marginBottom: 1,
-                  color: '#efefef',
-                  background: '#071c6b',
+                  color: '#161c25',
+                  background: '#f6ecde',
                   borderRadius: '5px',
                   padding: '5px',
                 }}
               >
-                Транскрипция: <br /> {dua.transcription}
+                Окулушу: <br /> {dua.transcription}
               </Typography>
               <Typography
                 variant="body2"
                 sx={{
                   marginBottom: 1,
-                  color: '#efefef',
-                  background: '#071c6b',
+                  color: '#161c25',
+                  background: '#f6ecde',
                   borderRadius: '5px',
                   padding: '5px',
                 }}

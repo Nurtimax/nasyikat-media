@@ -44,7 +44,7 @@ const ResponsiveListItemText = styled(ListItemText)(({ theme }) => ({
   '& .MuiTypography-root': {
     fontSize: '1.2rem',
     [theme.breakpoints.down('sm')]: {
-      fontSize: '1rem', // уменьшаем шрифт для мобильных экранов
+      fontSize: '1rem',
     },
   },
 }));
@@ -57,7 +57,6 @@ const Logo = styled(Typography)({
   flexGrow: 1,
   fontSize: '0.8rem',
   fontWeight: 'bold',
-  color: '#e8b775',
   textAlign: 'left',
 });
 
@@ -81,10 +80,8 @@ const Header = () => {
 
   const handleNavigation = (path, link) => {
     if (link) {
-      // Открываем внешнюю ссылку в новой вкладке
       window.open(link, '_blank', 'noopener,noreferrer');
     } else if (path) {
-      // Навигация внутри приложения с использованием react-router
       navigate(path);
     }
   };
@@ -109,9 +106,11 @@ const Header = () => {
                 NASYIKAT.MEDIA
               </Button>
               <Verified
-                color="primary"
+                sx={{
+                  marginBottom: '4px',
+                  color: '#4ba9ed',
+                }}
                 fontSize="small"
-                style={{ marginBottom: '0.2rem' }}
               />
             </Box>
           </Logo>
@@ -125,7 +124,13 @@ const Header = () => {
         open={menuOpen}
         onClose={toggleDrawer(false)}
       >
-        <List>
+        <List
+          style={{
+            color: '#111111',
+            lineHeight: '2rem', // Line height adjusted for readability
+            padding: '10px', // Added padding for list
+          }}
+        >
           {[
             { text: 'Башкы бет', path: '/app' },
             { text: 'Биз жөнүндө', path: '/aboutUs' },
@@ -145,6 +150,11 @@ const Header = () => {
               button
               key={index}
               onClick={() => handleNavigation(item.path, item.link)}
+              sx={{
+                marginBottom: '10px',
+                cursor: 'pointer', // Added margin between items
+                padding: '10px 0', // Vertical padding
+              }}
             >
               {item.icon && <ListItemIcon>{item.icon}</ListItemIcon>}
               <ResponsiveListItemText primary={item.text} />
@@ -194,22 +204,27 @@ const Header = () => {
                       padding: 0,
                       fontSize: '0.9rem',
                       marginLeft: '1.1rem',
+                      color: '#161d23',
                     }}
                   >
-                    Nasyikat.media
+                    NASYIKAT.MEDIA
                   </Button>
                   <Verified
-                    color="primary"
-                    sx={{ marginLeft: '5px', marginBottom: '6px' }}
+                    sx={{
+                      marginLeft: '5px',
+                      marginBottom: '4px',
+                      color: '#47a8ed',
+                    }}
                     fontSize="small"
                   />
                 </IconButton>
               </Box>
               <ListItemText
-                secondary="Динге сый менен келбесең,  ый менен келесиң!"
+                secondary="Динге сый менен келбесең, ый менен келесиң!"
                 secondaryTypographyProps={{
                   fontStyle: 'initial',
                   fontSize: '0.9rem',
+                  color: 'black',
                 }}
               />
               <Typography variant="body2">© Чубак ажы Жалилов (р.x)</Typography>
