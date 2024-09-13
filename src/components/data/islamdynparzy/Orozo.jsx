@@ -49,7 +49,7 @@ const Orozo = () => {
               fontSize: { xs: '1rem', md: '1.1rem' },
               color: '#555',
               marginBottom: 4,
-              textAlign: 'left',
+              textAlign: 'center',
             }}
           >
             Теңдикти сүйгөн Аллах Субхану уа Таала бир жылда бир жолу Рамазан
