@@ -1,16 +1,19 @@
+import musulmani from '../../assetts/icons/musulmani.png';
+import logokyrgyzmuslims from '../../assetts/icons/logo-nasykat.png';
+
 const followers = [
   {
     id: 1,
     name: 'Kyrgyz.muslims',
     country: 'KGZ',
-    avatarUrl: 'https://randomuser.me/api/portraits/men/1.jpg',
+    avatarUrl: logokyrgyzmuslims,
     instagram: 'https://www.instagram.com/kyrgyz.muslims/',
   },
   {
     id: 2,
     name: 'Musulmani.571',
     country: 'KGZ',
-    avatarUrl: 'https://randomuser.me/api/portraits/men/1.jpg',
+    avatarUrl: musulmani,
     instagram: 'https://www.instagram.com/musulmani.571/',
   },
   // {

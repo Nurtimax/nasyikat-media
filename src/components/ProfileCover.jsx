@@ -5,7 +5,7 @@ import { Box, Typography } from '@mui/material';
 import cssStyles from '../utils/cssStyles.js';
 import MyAvatar from './MyAvatar.jsx';
 import Image from './Image.jsx';
-import img1 from '../assetts/images/mountain.jpg';
+import img1 from '../assetts/images/bgustaz.jpg';
 
 // ----------------------------------------------------------------------
 

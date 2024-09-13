@@ -15,12 +15,7 @@ import Footer from '../components/Footer';
 const SurahList = () => {
   return (
     <Box>
-      <Typography
-        variant="h4"
-        align="center"
-        gutterBottom
-        style={{ marginTop: '1.5rem' }}
-      >
+      <Typography variant="h4" align="center" gutterBottom marginBottom="1rem">
         Намазга керектүү кыска сүрөлөр
       </Typography>
       <Grid container spacing={2}>
