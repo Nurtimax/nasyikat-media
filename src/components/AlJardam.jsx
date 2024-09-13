@@ -14,83 +14,58 @@ import {
 import FileCopyIcon from '@mui/icons-material/FileCopy';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import '../index.css';
-import BannerImage from '../assetts/images/mountain.jpg';
+import BannerImage from '../assetts/aljardamimages/bgimg.avif';
 import GoalImage from '../assetts/icons/aljardam.jpg';
+import logofonds from '../assetts/icons/logo-nasykat.png';
 import DocumentImage from '../assetts/aljardamimages/doc/kuboluk.png';
+import DocumentImage2 from '../assetts/aljardamimages/doc/ustav.png';
 import Footer from './Footer';
 import Header from './Header';
 import Welcome from './Welcome';
-import sberbankLogo from '../assetts/icons/sber.png';
-import optimaBankLogo from '../assetts/icons/optima.png';
-import mBankLogo from '../assetts/icons/mbank.png';
-import aylBankLogo from '../assetts/icons/aiylbank.png';
+import bankAccounts from '../utils/constants/aljardamBank.js';
 
 const AlJardam = () => {
   const isMobile = useMediaQuery('(max-width:600px)');
-
-  const bankAccounts = [
-    {
-      bankName: 'Bank 1',
-      accountNumber: '1234567890',
-      image: mBankLogo,
-    },
-    {
-      bankName: 'Bank 2',
-      accountNumber: '0987654321',
-      image: sberbankLogo,
-    },
-    {
-      bankName: 'Bank 3',
-      accountNumber: '1122334455',
-      image: optimaBankLogo,
-    },
-    {
-      bankName: 'Bank 4',
-      accountNumber: '5566778899',
-      image: aylBankLogo,
-    },
-    {
-      bankName: 'Bank 5',
-      accountNumber: '6677889900',
-      image: GoalImage,
-    },
-  ];
+  const handleClick = () => {
+    alert('Сизге ыңгайлуу банкты тандаңыз');
+  };
 
   const videoReports = [
     {
-      title: 'Видео Отчет 1',
-      description: 'Описание первого видео отчета',
-      videoUrl: 'https://www.youtube.com/embed/JLpTZ55y6M4', // Updated for embedded YouTube link
+      title: 'Нарындагы ата энеси жок 3 балдарга | Отчёт 153°',
+      description: '48339 сомго мектепке барганга даярдык көрүштү',
+      videoUrl: 'https://www.youtube.com/embed/nWc5MhPWcyE', // Updated for embedded YouTube link
     },
     {
-      title: 'Видео Отчет 2',
-      description: 'Описание второго видео отчета',
-      videoUrl: 'https://www.youtube.com/embed/JLpTZ55y6M4',
+      title: 'Буту өсүп, кургап, кареги артка кеткен Өмүрканга',
+      description: '62692 сом берилди🤗 | Отчёт 151°',
+      videoUrl: 'https://www.youtube.com/embed/BAMsxOWCfYY',
     },
     {
-      title: 'Видео Отчет 3',
-      description: 'Описание третьего видео отчета',
-      videoUrl: 'https://www.youtube.com/embed/JLpTZ55y6M4',
+      title: 'Перизатка 2-ирет чогултуу болуп ',
+      description: '13500 сом берилди | Отчёт 149°',
+      videoUrl: 'https://www.youtube.com/embed/aNn7qwQyxLU',
     },
   ];
+
   const videoReports2 = [
     {
-      title: 'Видео Отчет 1',
-      description: 'Описание первого видео отчета',
-      videoUrl: 'https://www.youtube.com/embed/JLpTZ55y6M4', // Updated for embedded YouTube link
+      title: 'ОНКОЛОГИЯ ООРУСУ МЕНЕН',
+      description: '17 ЖЫЛДАН БЕРИ ООРУЙТ',
+      videoUrl: 'https://www.youtube.com/embed/p3ZMYRdwIV0', // Updated for embedded YouTube link
     },
   ];
 
   const otherFunds = [
-    { name: 'Фонд 1', image: GoalImage },
-    { name: 'Фонд 2', image: GoalImage },
-    { name: 'Фонд 3', image: GoalImage },
-    { name: 'Фонд 4', image: GoalImage },
+    { name: 'Кыргыз Фонд', image: logofonds },
+    { name: 'Кыргыз Фонд', image: logofonds },
+    { name: 'Кыргыз Фонд', image: logofonds },
+    { name: 'Кыргыз Фонд', image: logofonds },
   ];
 
   const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text);
-    alert(`Номер счета ${text} скопирован!`);
+    alert(`Номер ${text} көчүрүлдү!`);
   };
 
   return (
@@ -114,7 +89,11 @@ const AlJardam = () => {
         >
           <Typography variant="h2" component="h1" textAlign="center">
             Фонд Ал Жардам <br />
-            <Typography>Мы помогаем тем, кто в этом нуждается</Typography>
+            <Typography>
+              Пайгамбарыбыз ﷺ айтты: Аллах Таала айтты: <br /> "Эй Адам баласы!
+              Садака кылсан, мен сага (ырыскынды ) көбөйтүп берем" <br />{' '}
+              (Бухари Муслим)
+            </Typography>
           </Typography>
         </div>
 
@@ -134,7 +113,7 @@ const AlJardam = () => {
               разные категории людей, от детей до пожилых, и наши цели всегда
               направлены на улучшение качества жизни.
               <img
-                src={DocumentImage}
+                src={GoalImage}
                 alt="Документ 1"
                 style={{ width: '100%', height: '380px', marginTop: '20px' }}
               />
@@ -142,7 +121,7 @@ const AlJardam = () => {
           </Grid>
           <Grid item xs={12} md={4}>
             <img
-              src={DocumentImage}
+              src={DocumentImage2}
               alt="Документ 2"
               style={{ width: '100%' }}
             />
@@ -154,23 +133,20 @@ const AlJardam = () => {
           <Grid item xs={12} md={6}>
             <Card style={{ marginTop: '62px' }}>
               <CardContent>
-                <Typography variant="h4">Цель Сбора</Typography>
+                <Typography variant="h4">ФИО</Typography>
                 <img
                   src={GoalImage}
                   alt="Goal"
                   style={{ width: '100%', marginTop: '10px' }}
                 />
                 <Typography variant="subtitle1" style={{ marginTop: '10px' }}>
-                  Наша цель – собрать средства для строительства школы в
-                  регионе, где в этом есть острая необходимость.
-                </Typography>
-                <Typography variant="h6" style={{ marginTop: '10px' }}>
-                  Собрано: 200 000 KGS / 500 000 KGS
+                  муктаж адамдын керектүү данныйлары
                 </Typography>
                 <Button
                   variant="contained"
                   color="primary"
                   style={{ width: '100%', marginTop: '15px' }}
+                  onClick={handleClick}
                 >
                   Поддержать
                 </Button>
@@ -216,7 +192,7 @@ const AlJardam = () => {
 
           {/* Bank Account Section */}
           <Grid item xs={12} md={6}>
-            <Typography variant="h4">Реквизиты для перевода</Typography>
+            <Typography variant="h4">Биздин Реквизиттер</Typography>
             <Grid container spacing={2} style={{ marginTop: '10px' }}>
               {bankAccounts.map((bank, index) => (
                 <Grid item xs={12} key={index}>
@@ -244,8 +220,15 @@ const AlJardam = () => {
                     <CardContent>
                       <Typography variant="h6">{bank.bankName}</Typography>
                       <Typography variant="body2">
-                        Номер счета: {bank.accountNumber}
+                        Счет номер : {bank.accountNumber}
                       </Typography>
+                      <Typography variant="body2">
+                        Телефон номер: {bank.phonenumber}
+                      </Typography>
+                      <Typography variant="body2">
+                        {bank.call} {bank.num}
+                      </Typography>
+                      <Typography variant="body2">{bank.name}</Typography>
                       <Tooltip title="Копировать номер счета">
                         <IconButton
                           onClick={() => copyToClipboard(bank.accountNumber)}
@@ -262,13 +245,13 @@ const AlJardam = () => {
           </Grid>
         </Grid>
 
-        {/* Video Reports Section */}
-        <Typography variant="h4" style={{ marginTop: '50px' }}>
-          Видео Отчеты
+        {/* Video Reports */}
+        <Typography variant="h4" align="center" style={{ marginTop: '40px' }}>
+          Наши Видео Отчёты
         </Typography>
         <Grid container spacing={4} style={{ marginTop: '20px' }}>
           {videoReports.map((video, index) => (
-            <Grid item xs={12} md={4} key={index}>
+            <Grid item xs={12} md={6} key={index}>
               <Card>
                 <CardContent>
                   <Typography variant="h5">{video.title}</Typography>
@@ -295,10 +278,16 @@ const AlJardam = () => {
             </Grid>
           ))}
         </Grid>
-
         {/* Other Funds Slider */}
-        <Typography variant="h4" style={{ marginTop: '50px' }}>
-          Другие Фонды Кыргызстана
+        <Typography
+          variant="h4"
+          style={{
+            marginTop: '50px',
+            marginBottom: '1rem',
+            textAlign: 'center',
+          }}
+        >
+          Кыргызстандагы башка кайрымдуулук фондтор
         </Typography>
         <Swiper spaceBetween={30} slidesPerView={isMobile ? 1 : 3} loop={true}>
           {otherFunds.map((fund, index) => (
@@ -318,9 +307,9 @@ const AlJardam = () => {
           ))}
         </Swiper>
       </Container>
-      <div style={{ marginTop: '2rem' }}>
+      <div style={{ marginTop: '1rem' }}>
         <Footer />
-      </div>
+      </div>{' '}
     </div>
   );
 };

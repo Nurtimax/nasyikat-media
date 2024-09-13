@@ -36,10 +36,11 @@ const modalStyle = {
   transform: 'translate(-50%, -50%)',
   width: 400,
   borderRadius: '10px',
-  backgroundColor: '#92907a',
+  backgroundColor: '#f6edde',
   boxShadow: 24,
   p: 4,
   textAlign: 'center',
+  color: '#161c25',
 };
 
 const CustomIconButtonInstagram = styled(Instagram)({

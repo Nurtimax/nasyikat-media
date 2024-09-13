@@ -324,7 +324,7 @@ const Zikr = () => {
         <DialogTitle>Өчүрүү?</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Сиз чын эле, айтылган зикри өчүрүүнү каалайсызбы?
+            Сиз чын эле, айтылган зикрди өчүрүүнү каалайсызбы?
           </DialogContentText>
         </DialogContent>
         <DialogActions>
