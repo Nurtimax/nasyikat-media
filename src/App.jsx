@@ -8,9 +8,10 @@ import Footer from './components/Footer';
 import { Outlet } from 'react-router-dom';
 import Welcome from './components/Welcome';
 import SponsorsList from './components/SponsorsList';
-import { Box, Typography } from '@mui/material';
 import Advertising from './components/Advertising';
 import Aalymdar from './section/Aalymdar';
+import TextBanner from './components/TextBanner';
+import TextBanner2 from './components/TextBanner2';
 
 const App = () => {
   return (
@@ -18,71 +19,14 @@ const App = () => {
       <Header />
       <Welcome />
       <Section2 />
-      <div style={{ marginTop: '25px', marginBottom: '20px' }}>
-        <Advertising />
-      </div>
+      <Advertising />
       <Aalymdar />
-      <Box
-        sx={{
-          textAlign: 'center',
-          marginTop: '1.5rem',
-          marginBottom: '1.5rem',
-          padding: '2rem',
-          background: 'linear-gradient(135deg, #f6edde 0%, #f6edde 100%)',
-          borderRadius: '12px',
-        }}
-      >
-        <Typography
-          variant="h6"
-          sx={{
-            fontWeight: 'bold',
-            color: '#333333',
-            lineHeight: 1.6,
-            fontFamily: "'Playfair Display', serif",
-            letterSpacing: '1.2px',
-            marginTop: '1rem',
-          }}
-        >
-          "Эгер билбесеңер, илимдүүлөрдөн сурагыла" <br />- Нахл сүрөсү, 43 аят
-        </Typography>
-      </Box>
+      <TextBanner />
       <Section5 />
       <Section4 />
       <Section6 />
       <SponsorsList />
-      <Box
-        sx={{
-          height: { xs: '280px' },
-          backgroundSize: 'cover',
-          marginTop: '25px',
-          marginBottom: '20px',
-          borderRadius: '5px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          textAlign: 'center',
-        }}
-      >
-        <Typography
-          variant="h6"
-          component="div"
-          sx={{
-            color: '#f6edde',
-            padding: '10px',
-            lineHeight: 1.4,
-            textAlign: 'center',
-            fontFamily: 'inherit',
-            width: '100%',
-          }}
-        >
-          "Силер кантип Аллахка ишенбейсиңер? <br /> Ал силердин жансыз
-          денеңерди тирилткен. <br /> Кийин силерди өлтүрүп, андан соң кайра
-          тирилтет.
-          <br /> Анан Ага кайтасыңар."
-          <br /> <br />
-          Бакара сүрөсү 28-аят
-        </Typography>
-      </Box>
+      <TextBanner2 />
       <Footer />
       <Outlet />
     </>

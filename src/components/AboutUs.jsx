@@ -38,10 +38,9 @@ const teamMembers = [
     },
     verified: true,
   },
-  //Нурматов Матраим Ашимович
   {
-    name: '----------',
-    role: 'Админ',
+    name: '',
+    role: 'Нурматов Матраим',
     channel: 'Nasyikat.media',
     image: logoavatar,
     description:

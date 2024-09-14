@@ -14,6 +14,8 @@ const SliderContainer = styled(Box)(({ theme }) => ({
   width: '100%',
   height: '370px', // Default height for larger screens
   overflow: 'hidden',
+  marginTop: '25px',
+  marginBottom: '20px',
   [theme.breakpoints.down('md')]: {
     height: '65vh', // Adjusted height for mobile devices
   },
