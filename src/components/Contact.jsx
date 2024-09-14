@@ -69,7 +69,7 @@ const Contact = () => {
           variant="h6"
           sx={{ marginBottom: '1.5rem', color: '#161c25' }}
         >
-          Ой пикир сунуштар боюнча
+          Кызматташуу боюнча
         </Typography>
         <Grid container spacing={3}>
           <Grid item xs={12}>

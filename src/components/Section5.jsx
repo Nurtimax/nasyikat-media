@@ -85,7 +85,9 @@ const Section5 = () => {
   return (
     <div>
       <Header>
-        Дуба - Момундун куралы, диндин түркүгү жана асман менен жердин нуру
+        <Typography variant="h3">
+          Дуба - Момундун куралы, диндин түркүгү жана асман менен жердин нуру
+        </Typography>
       </Header>
       <CardsContainer>
         {prayers.map((prayer, index) => (

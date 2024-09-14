@@ -3,7 +3,7 @@ import { styled } from '@mui/system';
 import islamdyn5Parzy from './data/islamdynparzy/islamdyn5parzy';
 import { Link } from 'react-router-dom';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import { Container } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import { GREY } from '../theme/palette';
 
 const Section2 = () => {
@@ -24,6 +24,21 @@ const Section2 = () => {
           </Card>
         ))}
       </CardsContainer>
+      <Typography
+        style={{
+          textAlign: 'center',
+          marginTop: '1rem',
+          marginBottom: '1rem',
+          background: '#f8d7da',
+          padding: '1rem',
+          color: '#000',
+          fontSize: '0.8rem',
+          borderRadius: '0.5rem',
+        }}
+      >
+        Учурда сайтты жаңылоо иштери жүрүп жатат. Сайтта каталар пайда болушу
+        мүмкүн, бирок биз аларды оңдойбуз.
+      </Typography>
     </Container>
   );
 };

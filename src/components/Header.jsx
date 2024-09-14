@@ -37,6 +37,7 @@ const ResponsiveDrawer = styled(Drawer)(({ theme }) => ({
     backgroundPosition: 'center',
     display: 'flex',
     flexDirection: 'column',
+    backdropFilter: 'blur(8px)', // Adds a blur effect for better text contrast
   },
 }));
 
@@ -50,19 +51,44 @@ const ResponsiveListItemText = styled(ListItemText)(({ theme }) => ({
 }));
 
 const StyledAppBar = styled(AppBar)({
-  backgroundColor: '#071c6b',
+  backgroundImage: 'linear-gradient(to right, #071c6b, #304d9a)',
+  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)', // Adds a subtle shadow for depth
 });
 
 const Logo = styled(Typography)({
   flexGrow: 1,
-  fontSize: '0.8rem',
+  fontSize: '0.9rem',
   fontWeight: 'bold',
   textAlign: 'left',
+  cursor: 'pointer',
+  color: '#f6edde',
 });
 
 const BurgerMenu = styled(IconButton)(({ theme }) => ({
   color: '#e8b775',
+  fontSize: '1.8rem',
+  '&:hover': {
+    color: '#ffffff', // Hover effect for icon
+  },
 }));
+
+const DrawerFooter = styled(Box)({
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  padding: '1rem',
+  backgroundColor: '#161c2513',
+  border: '1px solid #161c25',
+  borderRadius: '0.5rem',
+});
+
+const FooterText = styled(Typography)({
+  color: '#111111',
+  fontSize: '0.9rem',
+  marginTop: '8px',
+  textAlign: 'center',
+});
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -100,7 +126,7 @@ const Header = () => {
                 style={{
                   color: '#f6edde',
                   fontFamily: "'Lora', serif",
-                  fontSize: '0.9rem',
+                  fontSize: '1rem',
                 }}
               >
                 NASYIKAT.MEDIA
@@ -115,7 +141,7 @@ const Header = () => {
             </Box>
           </Logo>
           <BurgerMenu edge="end" onClick={toggleDrawer(true)}>
-            <MenuIcon />
+            <MenuIcon sx={{ fontSize: '2rem' }} />
           </BurgerMenu>
         </Toolbar>
       </StyledAppBar>
@@ -127,13 +153,14 @@ const Header = () => {
         <List
           style={{
             color: '#111111',
-            lineHeight: '2rem', // Line height adjusted for readability
-            padding: '10px', // Added padding for list
+            lineHeight: '2rem',
+            padding: '10px',
           }}
         >
           {[
             { text: 'Башкы бет', path: '/app' },
             { text: 'Биз жөнүндө', path: '/aboutUs' },
+            { text: 'Муаллим сани', path: '/MualimSani' },
             { text: 'Акыркы Хутба', path: '/hutba' },
             { text: 'Исламда 40 парз', path: '/islamdynparzdary' },
             { text: 'Ислам деген эмне', path: '/islam' },
@@ -152,84 +179,47 @@ const Header = () => {
               onClick={() => handleNavigation(item.path, item.link)}
               sx={{
                 marginBottom: '10px',
-                cursor: 'pointer', // Added margin between items
-                padding: '10px 0', // Vertical padding
+                padding: '10px 10px',
+                cursor: 'pointer',
               }}
             >
               {item.icon && <ListItemIcon>{item.icon}</ListItemIcon>}
               <ResponsiveListItemText primary={item.text} />
             </ListItem>
           ))}
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              minHeight: '24vh',
-              justifyContent: 'center',
-              padding: '0 16px',
-            }}
-          >
-            <ListItem
-              sx={{
-                textAlign: 'center',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-              }}
-            >
-              <Box
+          <DrawerFooter>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <Typography
+                color="secondary"
                 sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
+                  textTransform: 'none',
+                  padding: 0,
+                  fontSize: '1rem',
+                  marginLeft: '1.1rem',
+                  color: '#161d23',
                 }}
               >
-                <IconButton
-                  component="a"
-                  href="https://www.instagram.com/nasyikat.media/"
-                  target="_blank"
-                  sx={{
-                    backgroundColor: 'transparent',
-                    padding: 0,
-                    borderRadius: 0,
-                    '&:hover': {
-                      backgroundColor: 'transparent',
-                    },
-                  }}
-                >
-                  <Button
-                    color="secondary"
-                    sx={{
-                      textTransform: 'none',
-                      padding: 0,
-                      fontSize: '0.9rem',
-                      marginLeft: '1.1rem',
-                      color: '#161d23',
-                    }}
-                  >
-                    NASYIKAT.MEDIA
-                  </Button>
-                  <Verified
-                    sx={{
-                      marginLeft: '5px',
-                      marginBottom: '4px',
-                      color: '#47a8ed',
-                    }}
-                    fontSize="small"
-                  />
-                </IconButton>
-              </Box>
-              <ListItemText
-                secondary="Динге сый менен келбесең, ый менен келесиң!"
-                secondaryTypographyProps={{
-                  fontStyle: 'initial',
-                  fontSize: '0.9rem',
-                  color: 'black',
+                NASYIKAT.MEDIA
+              </Typography>
+              <Verified
+                sx={{
+                  marginLeft: '5px',
+                  marginBottom: '4px',
+                  color: '#47a8ed',
                 }}
+                fontSize="small"
               />
-              <Typography variant="body2">© Чубак ажы Жалилов (р.x)</Typography>
-            </ListItem>
-          </Box>
+            </Box>
+            <ListItemText
+              secondary="Динге сый менен келбесең, ый менен келесиң!"
+              secondaryTypographyProps={{
+                fontSize: '1rem',
+                color: 'black',
+                textAlign: 'center',
+              }}
+            />
+            <FooterText variant="body2">© Чубак ажы Жалилов (р.x)</FooterText>
+          </DrawerFooter>
         </List>
       </ResponsiveDrawer>
       <ScrollToTopButton />

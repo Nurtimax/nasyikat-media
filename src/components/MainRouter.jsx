@@ -20,6 +20,7 @@ import Hutba from './Hutba';
 import Kyrgyz from './Kyrgyz';
 import Aalymdar from '../section/Aalymdar';
 import AalymdarDetails from '../pages/AalymdarDetails';
+import MualimSani from '../components/MualimSani';
 
 const MainRouter = () => {
   return (
@@ -35,6 +36,7 @@ const MainRouter = () => {
         <Route path="/kyrgyz" element={<Kyrgyz />} />
         <Route path="/shahada" element={<Shahada />} />
         <Route path="/ajylyk" element={<Ajylyk />} />
+        <Route path="/mualimsani" element={<MualimSani />} />
         <Route path="/namaz" element={<Namaz />} />
         <Route path="/orozo" element={<Orozo />} />
         <Route path="/zeket" element={<Zeket />} />
