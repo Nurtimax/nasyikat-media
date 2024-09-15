@@ -66,7 +66,7 @@ const Logo = styled(Typography)({
 
 const BurgerMenu = styled(IconButton)(({ theme }) => ({
   color: '#e8b775',
-  fontSize: '1.8rem',
+  fontSize: '1.5rem',
   '&:hover': {
     color: '#ffffff', // Hover effect for icon
   },
@@ -126,7 +126,7 @@ const Header = () => {
                 style={{
                   color: '#f6edde',
                   fontFamily: "'Lora', serif",
-                  fontSize: '1rem',
+                  fontSize: '0.8rem',
                 }}
               >
                 NASYIKAT.MEDIA
@@ -153,7 +153,7 @@ const Header = () => {
         <List
           style={{
             color: '#111111',
-            lineHeight: '2rem',
+            lineHeight: '1.7rem',
             padding: '10px',
           }}
         >
@@ -161,10 +161,13 @@ const Header = () => {
             { text: 'Башкы бет', path: '/app' },
             { text: 'Биз жөнүндө', path: '/aboutUs' },
             { text: 'Муаллим сани', path: '/MualimSani' },
-            { text: 'Акыркы Хутба', path: '/hutba' },
             { text: 'Исламда 40 парз', path: '/islamdynparzdary' },
             { text: 'Ислам деген эмне', path: '/islam' },
             { text: 'Электрондук китептер', path: '/books' },
+            {
+              text: 'Пайгамбарыбыздын  с.а.в акыркы хутбасы',
+              path: '/hutba',
+            },
             { text: 'Кыргыз Республикасы', path: '/kyrgyz' },
             { text: 'Пайдалуу дубалар', path: '/duba' },
             { text: 'Куттуy Хадистер', path: '/hadis' },
@@ -179,7 +182,7 @@ const Header = () => {
               onClick={() => handleNavigation(item.path, item.link)}
               sx={{
                 marginBottom: '10px',
-                padding: '10px 10px',
+                padding: '6px 10px',
                 cursor: 'pointer',
               }}
             >

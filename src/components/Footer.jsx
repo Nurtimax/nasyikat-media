@@ -8,7 +8,6 @@ import Confetti from 'react-confetti';
 import kyrgyzFlag from '../assetts/icons/kgz.png';
 import palestineFlag from '../assetts/icons/Palestine.png';
 import bro from '../assetts/icons/bro.png';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const heartBeatAnimation = `
   @keyframes heartBeat {
@@ -69,7 +68,7 @@ const LogoWrapper = styled(Box)(({ theme }) => ({
   cursor: 'pointer',
   position: 'relative',
   '& img': {
-    maxWidth: '150px',
+    maxWidth: '130px',
     height: 'auto',
     marginTop: '10px',
     transition: 'transform 0.8s',
@@ -120,8 +119,8 @@ const FlagsWrapper = styled(Box)(({ theme }) => ({
 }));
 
 const FlagImage = styled('img')({
-  width: '50px',
-  height: 'auto',
+  width: '30px',
+  height: '20px',
   transition: 'transform 0.5s ease',
   '&:hover': {
     transform: 'scale(1.2)',
@@ -194,14 +193,7 @@ const Footer = () => {
           <img src={bro} alt="bro" style={{ width: '30px' }} />
           <FlagImage src={palestineFlag} alt="Palestine Flag" />
         </FlagsWrapper>
-        <Typography
-          style={{ marginTop: '1rem', fontSize: '1rem', color: '#ffc46b' }}
-        >
-          Жүрөгүмдөсүң Палестина
-        </Typography>
-        <HeartWrapper>
-          <HeartIcon />
-        </HeartWrapper>
+
         <FooterText>
           Nasyikat.media 2020-2024 {/* © 2024 All Rights Reserved */}
         </FooterText>
@@ -211,31 +203,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-const HeartWrapper = styled('div')({
-  display: 'inline-block',
-  marginTop: '0.5rem',
-  animation: 'heartBeat 1.5s infinite',
-  '@keyframes heartBeat': {
-    '0%': {
-      transform: 'scale(1)',
-    },
-    '25%': {
-      transform: 'scale(1.2)',
-    },
-    '50%': {
-      transform: 'scale(1.4)',
-    },
-    '75%': {
-      transform: 'scale(1.2)',
-    },
-    '100%': {
-      transform: 'scale(1)',
-    },
-  },
-});
-
-const HeartIcon = styled(FavoriteIcon)({
-  color: 'red',
-  fontSize: '28px',
-});

@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 
 const dua = {
   transliteration: 'Рабби йассир ва ля туассир. Рабби тамим биль-хайр',
-  translation: 'Оо, Роббим! Жеңил кылгын, оор кылба. Жакшылык менен бүтүргүн.',
+  translation: 'Оо, Роббим Жеңил кылгын, оор кылба! Жакшылык менен бүтүргүн!.',
 };
 
 const MualimSani = () => {
