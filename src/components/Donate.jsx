@@ -6,6 +6,7 @@ import {
   CircularProgress,
   IconButton,
   Snackbar,
+  CardMedia,
 } from '@mui/material';
 import { styled } from '@mui/system';
 import { ContentCopy as ContentCopyIcon } from '@mui/icons-material';
@@ -13,6 +14,10 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import donationImage from '../assetts/icons/logo-nasykat.png';
 import Footer from '../components/Footer';
 import Contact from './Contact';
+import imageMbank from '../assetts/icons/mbank.png';
+import megapay from '../assetts/icons/megapay.svg';
+import optimabank from '../assetts/icons/optima.png';
+import odengin from '../assetts/icons/odengi.png';
 
 const DonateContainer = styled(Container)(({ theme }) => ({
   padding: theme.spacing(4),
@@ -153,9 +158,9 @@ const Donate = () => {
           Биздин каналга колдоо көрсөтүү
         </Typography>
         <Typography variant="body1" gutterBottom align="center">
-          <strong>Урматтуу мусулман бир туугандар</strong> <br /> сиздер
-          которгон тыйындар биздин сайттын өнүгүүсүнө жумшалат Аллах Таала
-          сизден бизден ар бир кылган жакшы сооптуу амалдарыбызды кабыл кылсын
+          <strong>Урматтуу мусулман бир туугандар!</strong> <br /> Сиздерден
+          которгон тыйындар биздин сайттын өнүгүүсүнө жумшалат. Аллах Таала
+          сизден бизден ар бир кылган жакшы сооптуу амалдарыбызды кабыл кылсын!.
         </Typography>
         <ContentWrapper>
           <ImageContainer>
@@ -173,7 +178,7 @@ const Donate = () => {
             </Typography>
             <Typography variant="body1">
               Сиздердин салымыңыздар менен Кыргыз тилдүү диний сайт күн сайын
-              өнүгүп турат <br /> Чоң рахмат!
+              өнүгүп турат. <br /> Чоң рахмат!
             </Typography>
           </Block>
           <ProgressContainer>
@@ -196,20 +201,75 @@ const Donate = () => {
         <CardInputContainer>
           <Block style={{ backgroundColor: '#ffeacb' }}>
             <Typography variant="body1" gutterBottom>
-              <strong>Банк эсеби:</strong> <br />{' '}
-              <Typography> Мбанк 1030120523575316</Typography>
-              <br />
-              <CopyToClipboard text="1030120523575316" onCopy={handleCopy}>
+              <CardMedia
+                component="img"
+                image={imageMbank}
+                style={{
+                  maxWidth: '100px', // Ensure the image does not exceed 100px in width
+                  width: 'auto', // Adjust width based on content
+                  height: 'auto', // Adjust height based on content
+                  marginBottom: '10px',
+                }}
+              />
+              <p>0556401369</p>
+              <CopyToClipboard text="556401369" onCopy={handleCopy}>
                 <CopyIconButton>
                   <ContentCopyIcon />
                 </CopyIconButton>
               </CopyToClipboard>
             </Typography>
+            <br />
             <Typography variant="body1" gutterBottom>
-              <strong>Единица</strong> <br />{' '}
-              <Typography> MegaPay +9965564013..</Typography>
-              <br />
-              <CopyToClipboard text="+996556401369" onCopy={handleCopy}>
+              <CardMedia
+                component="img"
+                image={megapay}
+                style={{
+                  maxWidth: '100px', // Ensure the image does not exceed 100px in width
+                  width: 'auto', // Adjust width based on content
+                  height: 'auto', // Adjust height based on content
+                  marginBottom: '10px',
+                }}
+              />
+              <p>0556401369</p>
+              <CopyToClipboard text="556401369" onCopy={handleCopy}>
+                <CopyIconButton>
+                  <ContentCopyIcon />
+                </CopyIconButton>
+              </CopyToClipboard>
+            </Typography>
+            <br />
+            <Typography variant="body1" gutterBottom>
+              <CardMedia
+                component="img"
+                image={optimabank}
+                style={{
+                  maxWidth: '100px', // Ensure the image does not exceed 100px in width
+                  width: 'auto', // Adjust width based on content
+                  height: 'auto', // Adjust height based on content
+                  marginBottom: '10px',
+                }}
+              />
+              <p>Optima</p>
+              <CopyToClipboard text="Optima" onCopy={handleCopy}>
+                <CopyIconButton>
+                  <ContentCopyIcon />
+                </CopyIconButton>
+              </CopyToClipboard>
+            </Typography>
+            <br />
+            <Typography variant="body1" gutterBottom>
+              <CardMedia
+                component="img"
+                image={odengin}
+                style={{
+                  maxWidth: '100px', // Ensure the image does not exceed 100px in width
+                  width: 'auto', // Adjust width based on content
+                  height: 'auto', // Adjust height based on content
+                  marginBottom: '10px',
+                }}
+              />
+              <p>Number</p>
+              <CopyToClipboard text="Number" onCopy={handleCopy}>
                 <CopyIconButton>
                   <ContentCopyIcon />
                 </CopyIconButton>

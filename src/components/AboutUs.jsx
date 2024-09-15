@@ -41,10 +41,10 @@ const teamMembers = [
   {
     name: '',
     role: 'Нурматов Матраим',
-    channel: 'Nasyikat.media',
+    channel: 'Админ',
     image: logoavatar,
     description:
-      'Аллах таалага чексиз мактоолор жана шүгүрлөр болсун <br/>  <br/> Оо, Роббим! Мени кичинемден багып-өстүргөн ата-энеме ырайым кыл.',
+      'Жаратканым мени туура жолго салып! <br/>  <br/> мен аркылуу башкаларды да туура жолго салсын!.',
     links: {
       telegram: 'https://t.me/MuhammedIbraghim',
       instagram: 'https://www.instagram.com/matraim.official/',
@@ -54,10 +54,10 @@ const teamMembers = [
   },
   {
     name: 'kyrgyz.muslims',
-    role: 'Кыргыз эли Исламда',
+    role: 'Мусулман Кыргыз эли',
     image: logo2,
     description:
-      'Оо, Жараткан Раббим бизге бул дүйнөнүн жана акыреттин жакшылыгын бер. Бизди тозок отунан сактагын. <br/> амин',
+      'Оо, Жараткан Раббим! Бизге бул дүйнөнүн жана акыреттин жакшылыгын бер! Бизди тозок отунан сактагын!. <br/> Амин',
     links: {
       instagram: 'https://www.instagram.com/kyrgyz.muslims/',
       telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
@@ -155,7 +155,11 @@ const AboutUs = () => {
                     <Typography
                       variant="h6"
                       component="div"
-                      sx={{ display: 'flex', alignItems: 'center' }}
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        marginTop: '10px',
+                      }}
                     >
                       {member.name}
                       {false && (
@@ -177,11 +181,7 @@ const AboutUs = () => {
                       {member.role}
                     </Typography>
 
-                    <Typography
-                      variant="subtitle1"
-                      color="textSecondary"
-                      mt={'10px'}
-                    >
+                    <Typography variant="subtitle1" color="textSecondary">
                       {member.channel}
                     </Typography>
                     <ListItemText
