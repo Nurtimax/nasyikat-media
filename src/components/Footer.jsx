@@ -195,7 +195,7 @@ const Footer = () => {
         </FlagsWrapper>
 
         <FooterText>
-          Nasyikat.media 2020-2024 {/* © 2024 All Rights Reserved */}
+          Nasyikat.media 2024 {/* © 2024 All Rights Reserved */}
         </FooterText>
       </Container>
     </FooterWrapper>
