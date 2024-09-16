@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   MenuItem,
   Select,
@@ -23,42 +23,72 @@ const regions = [
   { name: 'Нарын', latitude: 41.4287, longitude: 75.9911 },
 ];
 
-const defaultTimes = {
-  Fajr: '05:06',
-  Sunrise: '06:43',
-  Dhuhr: '12:56',
-  Asr: '17:20',
-  Maghrib: '19:14',
-  Isha: '20:47',
-  Tahajjud: '02:20',
+const timeKeys = {
+  Fajr: 'Багымдат',
+  Sunrise: 'Күн чыгуу',
+  Dhuhr: 'Бешим',
+  Asr: 'Аср',
+  Maghrib: 'Шам',
+  Isha: 'Куптан',
+  Tahajjud: 'Тахажжуд',
 };
 
 const NamazTimes = () => {
   const [selectedRegion, setSelectedRegion] = useState('Баткен');
-  const [prayerTimes, setPrayerTimes] = useState(defaultTimes);
+  const [prayerTimes, setPrayerTimes] = useState({});
   const [nextPrayer, setNextPrayer] = useState(null);
   const [timeLeft, setTimeLeft] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const now = new Date();
+
+  const calculateNextPrayer = useCallback((timings) => {
+    const now = new Date();
+    const nextTime = Object.keys(timings).find((time) => {
+      const [hours, minutes] = timings[time].split(':');
+      const prayerTime = new Date();
+      prayerTime.setHours(hours, minutes, 0, 0);
+      return prayerTime > now;
+    });
+
+    setNextPrayer(timings[nextTime] || timings['Fajr']);
+  }, []);
+
+  const fetchPrayerTimes = useCallback(
+    async (latitude, longitude) => {
+      try {
+        setLoading(true);
+        setError(null);
+        const response = await axios.get(
+          `https://api.aladhan.com/v1/timings?latitude=${latitude}&longitude=${longitude}&method=2`
+        );
+        setPrayerTimes({
+          Fajr: response.data.data.timings['Fajr'],
+          Sunrise: response.data.data.timings['Sunrise'],
+          Dhuhr: response.data.data.timings['Dhuhr'],
+          Asr: response.data.data.timings['Asr'],
+          Maghrib: response.data.data.timings['Maghrib'],
+          Isha: response.data.data.timings['Isha'],
+          Tahajjud: '02:20',
+        });
+        setLoading(false);
+        calculateNextPrayer(response.data.data.timings);
+      } catch (error) {
+        setError('Не удалось загрузить время намаза');
+        setLoading(false);
+      }
+    },
+    [calculateNextPrayer]
+  );
 
   useEffect(() => {
     if (selectedRegion) {
       const region = regions.find((reg) => reg.name === selectedRegion);
       fetchPrayerTimes(region.latitude, region.longitude);
     }
-  });
+  }, [selectedRegion, fetchPrayerTimes]);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      if (nextPrayer) {
-        calculateTimeLeft();
-      }
-    }, 1000);
-
-    return () => clearInterval(timer);
-  });
-
-  const calculateTimeLeft = () => {
+  const calculateTimeLeft = useCallback(() => {
     const now = new Date();
     const nextPrayerTime = new Date();
     const [hours, minutes] = nextPrayer.split(':');
@@ -75,45 +105,39 @@ const NamazTimes = () => {
       minutes: Math.floor((difference / (1000 * 60)) % 60),
       seconds: Math.floor((difference / 1000) % 60),
     });
-  };
 
-  const fetchPrayerTimes = async (latitude, longitude) => {
-    try {
-      setLoading(true);
-      setError(null);
-      const response = await axios.get(
-        `https://api.aladhan.com/v1/timings?latitude=${latitude}&longitude=${longitude}&method=2`
-      );
-      setPrayerTimes({
-        ...response.data.data.timings,
-        Tahajjud: '02:20', // Время Тахаджуд можно вычислить, но для примера указано вручную
-      });
-      setLoading(false);
-      calculateNextPrayer(response.data.data.timings);
-    } catch (error) {
-      setError('Не удалось загрузить время намаза');
-      setLoading(false);
+    // Check if it's time to send a notification
+    if (difference <= 10 * 60 * 1000 && difference > 9 * 60 * 1000) {
+      sendNotification('Внимание', `До следующего намаза осталось 10 минут`);
     }
-  };
+  }, [nextPrayer]);
 
-  const calculateNextPrayer = (timings) => {
-    const now = new Date();
-    const timeKeys = ['Fajr', 'Dhuhr', 'Asr', 'Maghrib', 'Isha'];
-    const nextTime = timeKeys.find((time) => {
-      const [hours, minutes] = timings[time].split(':');
-      const prayerTime = new Date();
-      prayerTime.setHours(hours, minutes, 0, 0);
-      return prayerTime > now;
-    });
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (nextPrayer) {
+        calculateTimeLeft();
+      }
+    }, 1000);
 
-    setNextPrayer(timings[nextTime] || timings['Fajr']);
+    return () => clearInterval(timer);
+  }, [nextPrayer, calculateTimeLeft]);
+
+  useEffect(() => {
+    // Request notification permission when the component mounts
+    if ('Notification' in window) {
+      Notification.requestPermission();
+    }
+  }, []);
+
+  const sendNotification = (title, body) => {
+    if (Notification.permission === 'granted') {
+      new Notification(title, { body });
+    }
   };
 
   const handleRegionChange = (event) => {
     setSelectedRegion(event.target.value);
   };
-
-  const now = new Date();
 
   return (
     <div>
@@ -161,45 +185,14 @@ const NamazTimes = () => {
                   </Typography>
                 </TimeDisplay>
                 <PrayerTimes>
-                  <Typography
-                    sx={{
-                      background: 'red',
-                      color: '#fff',
-                      textAlign: 'center',
-                      padding: '1rem',
-                      borderRadius: '1rem',
-                    }}
-                  >
-                    Учурда намаз убактылары такталып жатат
-                  </Typography>
-                  <NamazItem>
-                    <Typography variant="h6">Багымдат</Typography>
-                    <Typography variant="h6">{prayerTimes.Fajr}</Typography>
-                  </NamazItem>
-                  <NamazItem>
-                    <Typography variant="h6">Күн чыгуу</Typography>
-                    <Typography variant="h6">{prayerTimes.Sunrise}</Typography>
-                  </NamazItem>
-                  <NamazItem>
-                    <Typography variant="h6">Бешим</Typography>
-                    <Typography variant="h6">{prayerTimes.Dhuhr}</Typography>
-                  </NamazItem>
-                  <NamazItem>
-                    <Typography variant="h6">Аср</Typography>
-                    <Typography variant="h6">{prayerTimes.Asr}</Typography>
-                  </NamazItem>
-                  <NamazItem>
-                    <Typography variant="h6">Шам</Typography>
-                    <Typography variant="h6">{prayerTimes.Maghrib}</Typography>
-                  </NamazItem>
-                  <NamazItem>
-                    <Typography variant="h6">Куптан</Typography>
-                    <Typography variant="h6">{prayerTimes.Isha}</Typography>
-                  </NamazItem>
-                  <NamazItem>
-                    <Typography variant="h6">Тахаджуд</Typography>
-                    <Typography variant="h6">{prayerTimes.Tahajjud}</Typography>
-                  </NamazItem>
+                  {Object.entries(prayerTimes).map(([key, value]) => (
+                    <NamazItem key={key}>
+                      <Typography variant="h6">
+                        {timeKeys[key] || key}
+                      </Typography>
+                      <Typography variant="h6">{value}</Typography>
+                    </NamazItem>
+                  ))}
                 </PrayerTimes>
                 <NextPrayerTime>
                   <Typography
@@ -238,41 +231,31 @@ const Container = styled('div')({
 const CardStyled = styled(Card)({
   width: '100%',
   maxWidth: '600px',
-  boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
+  boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
   borderRadius: '10px',
-  border: '2px solid #d4af37', // Золотая рамка
+  padding: '20px',
+  margin: '20px',
+  border: '2px solid #d4af37',
   backgroundImage:
-    'url("https://www.transparenttextures.com/patterns/arabesque.png")', // Этнический фон
+    'url("https://www.transparenttextures.com/patterns/arabesque.png")',
 });
 
 const TimeDisplay = styled('div')({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-  marginBottom: '10px',
-  padding: '10px',
-  borderRadius: '8px',
+  marginBottom: '20px',
 });
 
 const PrayerTimes = styled('div')({
   marginBottom: '20px',
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '10px',
 });
 
 const NamazItem = styled('div')({
   display: 'flex',
   justifyContent: 'space-between',
-  padding: '10px 10px',
-  borderRadius: '8px',
-  boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
+  marginBottom: '10px',
 });
 
 const NextPrayerTime = styled('div')({
-  textAlign: 'center',
   marginTop: '20px',
-  fontSize: '1rem',
 });
 
 export default NamazTimes;

@@ -1,4 +1,4 @@
-import musulmani from '../../assetts/icons/musulmani.png';
+import iteasy from '../../assetts/icons/iteeasy.png';
 import logokyrgyzmuslims from '../../assetts/icons/logo-nasykat.png';
 
 const followers = [
@@ -11,20 +11,11 @@ const followers = [
   },
   {
     id: 2,
-    name: 'Musulmani.571',
+    name: 'ITeasy.Kg',
     country: 'KGZ',
-    avatarUrl: musulmani,
-    instagram: 'https://www.instagram.com/musulmani.571/',
+    avatarUrl: iteasy,
+    instagram: 'https://www.instagram.com/iteasy.kg/',
   },
-  // {
-  //   id: 3,
-  //   name: 'Адилет',
-  //   country: 'KGZ',
-  //   avatarUrl: 'https://randomuser.me/api/portraits/men/1.jpg',
-  //   instagram: 'https://instagram.com/alicejohnson',
-  //   telegram: 'https://t.me/alicejohnson',
-  //   whatsapp: 'https://wa.me/1122334455',
-  // },
 ];
 
 export default followers;

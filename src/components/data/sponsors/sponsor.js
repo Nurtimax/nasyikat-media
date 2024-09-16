@@ -35,6 +35,16 @@ const sponsors = [
     telegram: 'https://www.instagram.com/kurzhun.shop/',
     instagram: 'kurzhun.shop',
   },
+  {
+    name: 'ITeasy.KG',
+    description: 'ITeasy.kg – Балдар үчүн программалоо курсу онлайн',
+    image: iteaasy,
+    link: 'https://iteasy-kg.netlify.app/',
+    address: 'Кыргызстан онлайн',
+    whatsapp: '+996556401369',
+    telegram: '@iteasykg',
+    instagram: 'iteasy.kg',
+  },
 ];
 
 export default sponsors;
