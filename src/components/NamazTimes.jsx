@@ -46,7 +46,7 @@ const NamazTimes = () => {
       const region = regions.find((reg) => reg.name === selectedRegion);
       fetchPrayerTimes(region.latitude, region.longitude);
     }
-  }, [selectedRegion]);
+  });
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -56,7 +56,7 @@ const NamazTimes = () => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [nextPrayer]);
+  });
 
   const calculateTimeLeft = () => {
     const now = new Date();
