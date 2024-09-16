@@ -161,6 +161,7 @@ const Header = () => {
             { text: 'Башкы бет', path: '/app' },
             { text: 'Биз жөнүндө', path: '/aboutUs' },
             { text: 'Муаллим сани', path: '/MualimSani' },
+            { text: 'Намаз убактысы', path: '/namaztimes' },
             { text: 'Исламда 40 парз', path: '/islamdynparzdary' },
             { text: 'Ислам деген эмне', path: '/islam' },
             { text: 'Электрондук китептер', path: '/books' },

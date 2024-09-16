@@ -21,6 +21,7 @@ import Kyrgyz from './Kyrgyz';
 import Aalymdar from '../section/Aalymdar';
 import AalymdarDetails from '../pages/AalymdarDetails';
 import MualimSani from '../components/MualimSani';
+import NamazTimes from './NamazTimes';
 
 const MainRouter = () => {
   return (
@@ -38,6 +39,7 @@ const MainRouter = () => {
         <Route path="/ajylyk" element={<Ajylyk />} />
         <Route path="/mualimsani" element={<MualimSani />} />
         <Route path="/namaz" element={<Namaz />} />
+        <Route path="/namaztimes" element={<NamazTimes />} />
         <Route path="/orozo" element={<Orozo />} />
         <Route path="/zeket" element={<Zeket />} />
         <Route path="/books" element={<Books />} />
