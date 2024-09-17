@@ -59,7 +59,6 @@ const NamazTimes = () => {
         setLoading(true);
         setError(null);
 
-        // Hardcoded prayer times for today in Kyrgyzstan
         const prayerTimesForToday = {
           Fajr: '05:08',
           Sunrise: '06:44',
@@ -106,7 +105,6 @@ const NamazTimes = () => {
       seconds: Math.floor((difference / 1000) % 60),
     });
 
-    // Check if it's time to send a notification
     if (difference <= 10 * 60 * 1000 && difference > 9 * 60 * 1000) {
       sendNotification('Внимание', `До следующего намаза осталось 10 минут`);
     }
@@ -231,13 +229,7 @@ const Container = styled('div')({
 const CardStyled = styled(Card)({
   width: '100%',
   maxWidth: '600px',
-  boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
-  borderRadius: '10px',
-  padding: '20px',
   margin: '20px',
-  border: '2px solid #d4af37',
-  backgroundImage:
-    'url("https://www.transparenttextures.com/patterns/arabesque.png")',
 });
 
 const TimeDisplay = styled('div')({
@@ -245,17 +237,21 @@ const TimeDisplay = styled('div')({
 });
 
 const PrayerTimes = styled('div')({
-  marginBottom: '20px',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
 });
 
 const NamazItem = styled('div')({
   display: 'flex',
   justifyContent: 'space-between',
-  marginBottom: '10px',
+  width: '100%',
+  padding: '5px 0',
 });
 
 const NextPrayerTime = styled('div')({
   marginTop: '20px',
+  textAlign: 'center',
 });
 
 export default NamazTimes;
