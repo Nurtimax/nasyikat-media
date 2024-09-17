@@ -59,14 +59,15 @@ const IslamdynParzdary = () => {
             <Typography component="div">
               <ol>
                 <ListItem>
-                  Аллах Тааланын бардыгына жана жалгыздыгына ишенүү
+                  Аллах Тааланын жалгыздыгына жана бар экенине ишенүү
                 </ListItem>
-                <ListItem>Аллах Тааланын периштелерине</ListItem>
-                <ListItem>Аллах Тааланын китептерине</ListItem>
-                <ListItem>Аллах Тааланын пайгамбарларына</ListItem>
-                <ListItem>Акырет күнүнө</ListItem>
+                <ListItem>Аллах Тааланын периштелерине ишенүү</ListItem>
+                <ListItem>Аллах Тааланын китептерине ишенүү</ListItem>
+                <ListItem>Аллах Тааланын пайгамбарларына м</ListItem>
+                <ListItem>Акырет күнүнө ишенүү</ListItem>
                 <ListItem>
-                  Тагдырга; жакшылык жана жамандык Аллахтан экендигине ишенүү
+                  Тагдырга ишенүү : жакшылык жана жамандык Аллахтан экендигине
+                  ишенүү
                 </ListItem>
                 <ListItem>Өлгөндөн кийин кайра тирилүүгө ишенүү</ListItem>
               </ol>
@@ -84,9 +85,9 @@ const IslamdynParzdary = () => {
                 <ListItem>Шахадат (күбөлүк) келимеси</ListItem>
                 <ListItem>Беш убак намаз окуу</ListItem>
                 <ListItem>Зекет берүү</ListItem>
-                <ListItem>Орозо кармоо (жылына 1 жолу Рамазан айында)</ListItem>
+                <ListItem>Орозо кармоо </ListItem>
                 <ListItem>
-                  Хаж ибадатын аткаруу (өмүрүндө бир жолу ажыга баруу)
+                  Ажылык ибадатын аткаруу (өмүрүндө бир жолу )
                 </ListItem>
               </ol>
             </Typography>
@@ -101,11 +102,9 @@ const IslamdynParzdary = () => {
             <Typography component="div">
               <ol>
                 <ListItem>Колду жуу (чыканакты кошуп)</ListItem>
-                <ListItem>
-                  Бетти (чач чыккан жерден баштап ээктин астын кошуп) жуу
-                </ListItem>
+                <ListItem>Бетти жуу</ListItem>
                 <ListItem>Баштын төрттөн бир бөлүгүнө масх тартуу</ListItem>
-                <ListItem>Буттарды жуу</ListItem>
+                <ListItem>Бутту жуу</ListItem>
               </ol>
             </Typography>
           </AccordionDetailsStyled>
@@ -118,9 +117,9 @@ const IslamdynParzdary = () => {
           <AccordionDetailsStyled>
             <Typography component="div">
               <ol>
-                <ListItem>Оозго суу алып тамакка жеткире чайкоо</ListItem>
-                <ListItem>Мурунга суу алып, таноо ачышканча суу алуу</ListItem>
-                <ListItem>Денеде кургак жер калтырбай жуу</ListItem>
+                <ListItem>Оозду чайкоо</ListItem>
+                <ListItem>Мурунду чайкоо</ListItem>
+                <ListItem>Бүткүл денени жуу</ListItem>
               </ol>
             </Typography>
           </AccordionDetailsStyled>
@@ -146,32 +145,31 @@ const IslamdynParzdary = () => {
 
         <StyledAccordion>
           <AccordionSummaryStyled expandIcon={<ExpandMoreIcon />}>
-            <Heading variant="h6">Намазда 12 парз бар</Heading>
+            <Heading variant="h6">Намазда 13 парз бар</Heading>
           </AccordionSummaryStyled>
           <AccordionDetailsStyled>
             <Typography component="div">
               <strong>Сыртында:</strong>
               <ol>
                 <ListItem>
-                  Нажасаттан таза болуу; даарат, гусул алуу, хайз жана нифастан
-                  тазалануу
+                  Нажасаттан таза болуу: даарат алуу, гусул алуу, айыз жана
+                  нифастан таза болуу
                 </ListItem>
-                <ListItem>
-                  Нажасаттан таза болуу; кийимдин жана жай намаздын таза болуусу
-                </ListItem>
+                <ListItem>Кийимдин таза болуусу</ListItem>
+                <ListItem>Намаз окуй турган жайдын таза болуусу</ListItem>
                 <ListItem>Аврат жерлердин жабык болуусу</ListItem>
                 <ListItem>Кыбылага жүз буруу</ListItem>
                 <ListItem>Окула турган намаздын убактысынын кирүүсү</ListItem>
-                <ListItem>Намаз окуш үчүн ниет кылуу</ListItem>
+                <ListItem>Намаз убактысын кирүүсү</ListItem>
               </ol>
               <strong>Ичинде:</strong>
               <ol>
-                <ListItem>Такбир тахрима</ListItem>
+                <ListItem>Ниет кылуу</ListItem>
                 <ListItem>Кыям (Түз туруу)</ListItem>
                 <ListItem>Кыраат</ListItem>
                 <ListItem>Руку</ListItem>
-                <ListItem>Сажда — бешене, мурун саждага тийүүсү керек</ListItem>
-                <ListItem>Каада-ахир – акыркы олтуруу</ListItem>
+                <ListItem>Сажда</ListItem>
+                <ListItem>Каада-ахира – акыркы олтуруу</ListItem>
               </ol>
             </Typography>
           </AccordionDetailsStyled>
@@ -191,17 +189,17 @@ const IslamdynParzdary = () => {
             <Heading variant="h6">Нахий мункарда 1 парз бар</Heading>
           </AccordionSummaryStyled>
           <AccordionDetailsStyled>
-            <Typography component="div">1. Жаман иштен кайтаруу</Typography>
+            <Typography component="div">1. Жамандыктан кайтаруу</Typography>
           </AccordionDetailsStyled>
         </StyledAccordion>
 
         <StyledAccordion>
           <AccordionSummaryStyled expandIcon={<ExpandMoreIcon />}>
-            <Heading variant="h6">Хайзда 1 парз бар</Heading>
+            <Heading variant="h6">Айызда 1 парз бар</Heading>
           </AccordionSummaryStyled>
           <AccordionDetailsStyled>
             <Typography component="div">
-              1. Хайз бүткөндөн кийин гусул алуу
+              1. Айыз бүткөндөн кийин гусул алуу
             </Typography>
           </AccordionDetailsStyled>
         </StyledAccordion>
@@ -213,37 +211,6 @@ const IslamdynParzdary = () => {
           <AccordionDetailsStyled>
             <Typography component="div">
               1. Нифас бүткөндөн кийин гусул алуу
-            </Typography>
-          </AccordionDetailsStyled>
-        </StyledAccordion>
-
-        <StyledAccordion>
-          <AccordionSummaryStyled expandIcon={<ExpandMoreIcon />}>
-            <Heading variant="h6">Таза адам 1 парз бар</Heading>
-          </AccordionSummaryStyled>
-          <AccordionDetailsStyled>
-            <Typography component="div">1. Таза болуу</Typography>
-          </AccordionDetailsStyled>
-        </StyledAccordion>
-
-        <StyledAccordion>
-          <AccordionSummaryStyled expandIcon={<ExpandMoreIcon />}>
-            <Heading variant="h6">Топуракта 1 парз бар</Heading>
-          </AccordionSummaryStyled>
-          <AccordionDetailsStyled>
-            <Typography component="div">
-              1. Топуракка (таямум) колдонуу
-            </Typography>
-          </AccordionDetailsStyled>
-        </StyledAccordion>
-
-        <StyledAccordion>
-          <AccordionSummaryStyled expandIcon={<ExpandMoreIcon />}>
-            <Heading variant="h6">Күнөөда 1 парз бар</Heading>
-          </AccordionSummaryStyled>
-          <AccordionDetailsStyled>
-            <Typography component="div">
-              1. Күнөөсүн (күнөө кылуу) таануусу
             </Typography>
           </AccordionDetailsStyled>
         </StyledAccordion>

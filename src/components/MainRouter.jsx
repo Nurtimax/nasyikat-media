@@ -22,6 +22,7 @@ import Aalymdar from '../section/Aalymdar';
 import AalymdarDetails from '../pages/AalymdarDetails';
 import MualimSani from '../components/MualimSani';
 import NamazTimes from './NamazTimes';
+import DetailsPage from './ProductDetails';
 
 const MainRouter = () => {
   return (
@@ -33,6 +34,7 @@ const MainRouter = () => {
         <Route path="/hadis" element={<Hadis />} />
         <Route path="/duba" element={<Duba />} />
         <Route path="/store" element={<Store />} />
+        <Route path="/details/:id" element={<DetailsPage />} />
         <Route path="/zikr" element={<Zikr />} />
         <Route path="/kyrgyz" element={<Kyrgyz />} />
         <Route path="/shahada" element={<Shahada />} />

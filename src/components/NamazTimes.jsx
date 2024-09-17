@@ -8,7 +8,6 @@ import {
   CircularProgress,
 } from '@mui/material';
 import { styled } from '@mui/system';
-import axios from 'axios';
 import Header from '../components/Header';
 import Welcome from '../components/Welcome';
 import Footer from '../components/Footer';
@@ -59,20 +58,21 @@ const NamazTimes = () => {
       try {
         setLoading(true);
         setError(null);
-        const response = await axios.get(
-          `https://api.aladhan.com/v1/timings?latitude=${latitude}&longitude=${longitude}&method=2`
-        );
-        setPrayerTimes({
-          Fajr: response.data.data.timings['Fajr'],
-          Sunrise: response.data.data.timings['Sunrise'],
-          Dhuhr: response.data.data.timings['Dhuhr'],
-          Asr: response.data.data.timings['Asr'],
-          Maghrib: response.data.data.timings['Maghrib'],
-          Isha: response.data.data.timings['Isha'],
+
+        // Hardcoded prayer times for today in Kyrgyzstan
+        const prayerTimesForToday = {
+          Fajr: '05:08',
+          Sunrise: '06:44',
+          Dhuhr: '12:56',
+          Asr: '17:18',
+          Maghrib: '19:12',
+          Isha: '20:45',
           Tahajjud: '02:20',
-        });
+        };
+
+        setPrayerTimes(prayerTimesForToday);
         setLoading(false);
-        calculateNextPrayer(response.data.data.timings);
+        calculateNextPrayer(prayerTimesForToday);
       } catch (error) {
         setError('Не удалось загрузить время намаза');
         setLoading(false);
@@ -218,7 +218,7 @@ const NamazTimes = () => {
   );
 };
 
-// Styled Components with Ethnic Styles
+// Styled Components
 const Container = styled('div')({
   display: 'flex',
   flexDirection: 'column',

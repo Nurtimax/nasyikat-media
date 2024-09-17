@@ -16,6 +16,11 @@ const products = [
     avatar: img,
     brandName: 'Сиздин магазин',
     verified: true,
+    kg: '860 г', // Вес
+    color: 'black', // Цвет
+    material: 'Кожа', // Материал
+    size: 'M', // Размер
+    available: true, // Доступность
     links: {
       whatsapp: 'https://wa.me/0556401369',
       instagram: 'https://www.instagram.com/nasyikat.media',
@@ -43,9 +48,10 @@ const products = [
   {
     id: 3,
     name: 'Smartwatch Men',
-    description: 'Фитнес-трекер для мужчин Беспроводные наушники airpods 2',
+    description:
+      'Фитнес-трекер для мужчин Беспроводные наушники airpods 2 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, corporis, dolorum inventore molestiae cum maxime rem ullam earum labore, dicta expedita consectetur totam dolores corrupti minima reprehenderit quia iure adipisci.',
     price: 2000,
-    images: [airpods1, airpods2],
+    images: [airpods1, airpods2, airpods1],
     avatar: img,
     brandName: 'Nasyikat.shop',
     category: 'Кийимдер',
