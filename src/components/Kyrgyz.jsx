@@ -88,13 +88,13 @@ const Kyrgyz = () => {
           <BannerImage src={KyrgyzflagMap} alt="Kyrgyz Republic" />
           <Typography variant="h4">Кыргыз Республикасы</Typography>
           <Typography variant="body1">
-            <Typography>Негизделген 14-октябрь 1924-жылы</Typography>
+            <Typography>14-октябрь 1924-жылы Негизделген</Typography>
             <Typography>
               Эгемендүүлүк күнү 31-август <br />
-              1991-жылы
+              1991-жылы жарыяланган
             </Typography>
-            <Typography>Расмий тили Кыргыз тили — мамлекеттик тил</Typography>
-            <Typography>Кылкынын саны 7 000 000</Typography>
+            <Typography>Расмий жана мамлекеттик тил - Кыргыз тили</Typography>
+            <Typography>Кылкынын саны 8 000 000 го жакын</Typography>
             <Typography>Борбор шаары</Typography>
             <Typography>
               Бишкек, калк боюнча республиканын эң ири шаары. Туруктуу калкы 1
@@ -145,7 +145,9 @@ const Kyrgyz = () => {
 
         {/* Regions Section with Swiper */}
         <Divider sx={{ my: 4 }} />
-        <SectionTitle variant="h5">Тарыхта калган кара так</SectionTitle>
+        <SectionTitle variant="h5">
+          Тарыхта из калтырган чыгаан инсандар
+        </SectionTitle>
         <SwiperContainer>
           <Swiper
             effect={'coverflow'}

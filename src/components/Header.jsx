@@ -182,7 +182,7 @@ const Header = () => {
               key={index}
               onClick={() => handleNavigation(item.path, item.link)}
               sx={{
-                marginBottom: '10px',
+                marginBottom: '13px',
                 padding: '6px 10px',
                 cursor: 'pointer',
               }}

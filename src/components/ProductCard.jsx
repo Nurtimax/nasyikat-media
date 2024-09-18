@@ -20,6 +20,7 @@ import { Verified, Close as CloseIcon } from '@mui/icons-material';
 import { Instagram, Telegram, WhatsApp } from '@mui/icons-material';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import { useNavigate } from 'react-router-dom';
 
 // Styled components
 const StyledCard = styled(Card)({
@@ -63,10 +64,15 @@ const CloseButton = styled(IconButton)({
 
 const ProductCard = ({ product }) => {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
-  const handleOrder = () => {
-    setOpen(true);
+  const handleDetails = () => {
+    navigate(`/details/${product.id}`, { state: { product } });
   };
+
+  // const handleOrder = () => {
+  //   setOpen(true);
+  // };
 
   const handleClose = () => {
     setOpen(false);
@@ -166,7 +172,7 @@ const ProductCard = ({ product }) => {
             <Button
               variant="contained"
               color="primary"
-              onClick={handleOrder}
+              onClick={handleDetails}
               style={{ width: '100%' }}
             >
               Толугураак

@@ -3476,6 +3476,11 @@
   "resolved" "https://registry.npmjs.org/@xtuc/long/-/long-4.2.2.tgz"
   "version" "4.2.2"
 
+"18@^0.0.0":
+  "integrity" "sha512-2SPMA/ciHy16yY4uVXDrW8q7nLwb2F2Vrt8Qz5OiVo9cyC8Wo8/rwC2hDzbqlTXhIwzt2Y4yJRLem6XMNbT/3A=="
+  "resolved" "https://registry.npmjs.org/18/-/18-0.0.0.tgz"
+  "version" "0.0.0"
+
 "abab@^2.0.3", "abab@^2.0.5":
   "integrity" "sha512-j2afSsaIENvHZN2B8GOpF566vZ5WVk5opAiMTvWgaQT8DkbOqsTfvNAvHoRGU2zzP8cPoqys+xHTRDWW8L+/BA=="
   "resolved" "https://registry.npmjs.org/abab/-/abab-2.0.6.tgz"
@@ -8191,6 +8196,11 @@
   "resolved" "https://registry.npmjs.org/numeral/-/numeral-2.0.6.tgz"
   "version" "2.0.6"
 
+"nvm@^0.0.4":
+  "integrity" "sha512-jvmyELykYcdyd0VCGY0E8Aqe5MngEasVvlPvrcJHbwBMUbVqa72mPdQuPzyTcykEtEx7jDrMY0QA5MoV+8EhgA=="
+  "resolved" "https://registry.npmjs.org/nvm/-/nvm-0.0.4.tgz"
+  "version" "0.0.4"
+
 "nwsapi@^2.2.0":
   "integrity" "sha512-QK0sRs7MKv0tKe1+5uZIQk/C8XGza4DAnztJG8iD+TpJIORARrCxczA738awHrZoHeTjSSoHqao2teO0dC/gFQ=="
   "resolved" "https://registry.npmjs.org/nwsapi/-/nwsapi-2.2.10.tgz"
@@ -9455,6 +9465,11 @@
     "@mui/material" "^5.4.1"
     "@mui/system" "^5.4.1"
     "framer-motion" "^4.1.17"
+
+"react-medium-image-zoom@^5.2.9":
+  "integrity" "sha512-NtjuwWdvjyjIo+IBv2Ka/oQwYMDlPM0M1nHYM3Ga1QBnr/YwpjyrEWKQB2FlGCmgiBmgIMsb6Dij2RTWxKkY+w=="
+  "resolved" "https://registry.npmjs.org/react-medium-image-zoom/-/react-medium-image-zoom-5.2.9.tgz"
+  "version" "5.2.9"
 
 "react-refresh@^0.11.0", "react-refresh@>=0.10.0 <1.0.0":
   "integrity" "sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A=="

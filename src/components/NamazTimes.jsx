@@ -8,7 +8,6 @@ import {
   CircularProgress,
 } from '@mui/material';
 import { styled } from '@mui/system';
-import axios from 'axios';
 import Header from '../components/Header';
 import Welcome from '../components/Welcome';
 import Footer from '../components/Footer';
@@ -59,20 +58,20 @@ const NamazTimes = () => {
       try {
         setLoading(true);
         setError(null);
-        const response = await axios.get(
-          `https://api.aladhan.com/v1/timings?latitude=${latitude}&longitude=${longitude}&method=2`
-        );
-        setPrayerTimes({
-          Fajr: response.data.data.timings['Fajr'],
-          Sunrise: response.data.data.timings['Sunrise'],
-          Dhuhr: response.data.data.timings['Dhuhr'],
-          Asr: response.data.data.timings['Asr'],
-          Maghrib: response.data.data.timings['Maghrib'],
-          Isha: response.data.data.timings['Isha'],
+
+        const prayerTimesForToday = {
+          Fajr: '05:08',
+          Sunrise: '06:44',
+          Dhuhr: '12:56',
+          Asr: '17:18',
+          Maghrib: '19:12',
+          Isha: '20:45',
           Tahajjud: '02:20',
-        });
+        };
+
+        setPrayerTimes(prayerTimesForToday);
         setLoading(false);
-        calculateNextPrayer(response.data.data.timings);
+        calculateNextPrayer(prayerTimesForToday);
       } catch (error) {
         setError('Не удалось загрузить время намаза');
         setLoading(false);
@@ -106,7 +105,6 @@ const NamazTimes = () => {
       seconds: Math.floor((difference / 1000) % 60),
     });
 
-    // Check if it's time to send a notification
     if (difference <= 10 * 60 * 1000 && difference > 9 * 60 * 1000) {
       sendNotification('Внимание', `До следующего намаза осталось 10 минут`);
     }
@@ -218,7 +216,7 @@ const NamazTimes = () => {
   );
 };
 
-// Styled Components with Ethnic Styles
+// Styled Components
 const Container = styled('div')({
   display: 'flex',
   flexDirection: 'column',
@@ -231,13 +229,7 @@ const Container = styled('div')({
 const CardStyled = styled(Card)({
   width: '100%',
   maxWidth: '600px',
-  boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
-  borderRadius: '10px',
-  padding: '20px',
   margin: '20px',
-  border: '2px solid #d4af37',
-  backgroundImage:
-    'url("https://www.transparenttextures.com/patterns/arabesque.png")',
 });
 
 const TimeDisplay = styled('div')({
@@ -245,17 +237,21 @@ const TimeDisplay = styled('div')({
 });
 
 const PrayerTimes = styled('div')({
-  marginBottom: '20px',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
 });
 
 const NamazItem = styled('div')({
   display: 'flex',
   justifyContent: 'space-between',
-  marginBottom: '10px',
+  width: '100%',
+  padding: '5px 0',
 });
 
 const NextPrayerTime = styled('div')({
   marginTop: '20px',
+  textAlign: 'center',
 });
 
 export default NamazTimes;

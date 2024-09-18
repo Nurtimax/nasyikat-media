@@ -41,7 +41,7 @@ const MualimSani = () => {
         </Typography>
         <Grid container spacing={2} justifyContent="center">
           {arabicLetters.map(({ letter, transliteration }, index) => (
-            <Grid item xs={4} sm={2} md={1.7} key={index}>
+            <Grid item xs={4} sm={2} md={1.6} key={index}>
               <Card sx={{ textAlign: 'center', padding: 2 }}>
                 <CardContent>
                   <Typography
@@ -76,7 +76,7 @@ const MualimSani = () => {
               Иннаа анзалнааху кураанан ъаробииййаа
             </Typography>
             <Typography variant="subtitle2" sx={{ marginTop: 1 }}>
-              "Чындыгында, Биз Куранды араб тилинде түшүрдүк." <br />
+              "Чындыгында Биз Куранды араб тилинде түшүрдүк" <br />
               (Юсуф сүрөсү-2)
             </Typography>
           </CardContent>
