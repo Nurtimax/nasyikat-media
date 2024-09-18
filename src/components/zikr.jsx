@@ -250,7 +250,7 @@ const Zikr = () => {
 
       <Drawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer(false)}>
         <Box sx={{ width: 320, padding: 2, textAlign: 'center' }}>
-          <Typography variant="h6">Настройки</Typography>
+          <Typography variant="h6">Настройка</Typography>
 
           <Typography variant="h6" sx={{ mt: 2 }}>
             Фон тандаңыз:
@@ -304,18 +304,6 @@ const Zikr = () => {
               />
             ))}
           </RadioGroup>
-
-          <Typography variant="h6" sx={{ mt: 2 }}>
-            Жеке фон жүктөө:
-          </Typography>
-          <Button
-            variant="contained"
-            component="label"
-            sx={{ backgroundColor: '#008080', color: '#fff', mt: 1 }}
-          >
-            Жүктөө
-            <input type="file" hidden onChange={backgrounds} />
-          </Button>
         </Box>
       </Drawer>
 
