@@ -1,5 +1,6 @@
 import iteasy from '../../assetts/icons/iteeasy.png';
 import logokyrgyzmuslims from '../../assetts/icons/logo-nasykat.png';
+import admin from '../../assetts/icons/герб.png';
 
 const followers = [
   {
@@ -11,6 +12,13 @@ const followers = [
   },
   {
     id: 2,
+    name: 'Matraim Nurmatov',
+    country: 'Админ Nasyikat.media',
+    avatarUrl: admin,
+    instagram: 'https://www.instagram.com/matraim.official/',
+  },
+  {
+    id: 3,
     name: 'ITeasy.Kg',
     country: 'KGZ',
     avatarUrl: iteasy,

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Card,
   CardContent,
@@ -8,6 +8,7 @@ import {
   ButtonBase,
   Button,
   Box,
+  useTheme,
 } from '@mui/material';
 import { LocationOn, AccessTime } from '@mui/icons-material';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
@@ -15,29 +16,32 @@ import muslim from './data/islam-3-yiyk-jer/muslimplace';
 import img from '../assetts/icons/section-img.png';
 
 const Section6 = () => {
-  const audioRef = useRef(null);
+  const theme = useTheme();
+  const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
-    const handleUserInteraction = () => {
-      document.removeEventListener('hover', handleUserInteraction);
-      if (audioRef.current) {
-        audioRef.current.play().catch((error) => {
-          console.error('Audio play error:', error);
-        });
-      }
-    };
-    document.addEventListener('hover', handleUserInteraction);
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
 
-    return () => {
-      document.removeEventListener('hover', handleUserInteraction);
-    };
+    return () => clearInterval(timer);
   }, []);
 
-  const handlePlaySound = () => {
-    if (audioRef.current) {
-      audioRef.current.play().catch((error) => {
-        console.error('Audio play error:', error);
-      });
+  const formatTime = (date) => {
+    return date.toLocaleTimeString('ru-RU', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+    });
+  };
+
+  const getBorderColor = (index) => {
+    if (index === 2) {
+      // Красная граница для третьей карточки
+      return theme.palette.error.main;
+    } else {
+      // Белая граница для первой и второй карточки
+      return theme.palette.common.white;
     }
   };
 
@@ -57,21 +61,18 @@ const Section6 = () => {
               target="_blank"
               rel="noopener noreferrer"
               style={{ width: '100%', height: '100%' }}
-              onMouseEnter={index === 2 ? handlePlaySound : null}
             >
               <Card
                 sx={{
                   width: '100%',
                   height: '100%',
-                  border: index === 2 ? '3px solid #f44336' : 'none',
-                  backgroundColor: index === 2 ? '#333' : 'inherit',
-                  boxShadow:
-                    index === 2 ? '0px 4px 15px rgba(255, 0, 0, 0.7)' : 'none',
+                  border: `3px solid ${getBorderColor(index)}`, // Используем функцию для определения цвета границы
+                  backgroundColor: theme.palette.grey[900],
                   position: 'relative',
                   overflow: 'hidden',
                   borderRadius: '12px',
                   '&:hover': {
-                    boxShadow: '0px 8px 20px rgba(0, 0, 0, 0.5)',
+                    boxShadow: theme.shadows[10],
                   },
                 }}
               >
@@ -82,7 +83,7 @@ const Section6 = () => {
                   alt={card.title}
                   sx={{
                     objectFit: 'cover',
-                    filter: index === 2 ? 'grayscale(100%) sepia(50%)' : 'none',
+                    filter: 'grayscale(100%) sepia(50%)',
                     transition: 'filter 0.3s',
                   }}
                 />
@@ -90,8 +91,8 @@ const Section6 = () => {
                   sx={{
                     textAlign: 'center',
                     position: 'relative',
-                    color: index === 2 ? '#fff' : 'inherit',
-                    background: index === 2 ? 'rgba(0,0,0,0.6)' : 'inherit',
+                    color: theme.palette.common.white,
+                    background: 'rgba(0,0,0,0.6)',
                     padding: '16px',
                   }}
                 >
@@ -109,6 +110,7 @@ const Section6 = () => {
                       color="secondary"
                       variant="contained"
                       fullWidth
+                      disableElevation
                       sx={{
                         backgroundColor: '#071c6b',
                         fontSize: { xs: '0.7rem', sm: '1rem' },
@@ -128,7 +130,7 @@ const Section6 = () => {
                     gap={1}
                     sx={{
                       fontSize: '0.75rem',
-                      color: index === 2 ? '#fff' : 'inherit',
+                      color: theme.palette.common.white,
                     }}
                   >
                     <Typography
@@ -165,7 +167,7 @@ const Section6 = () => {
                       }}
                     >
                       <AccessTime fontSize="small" />
-                      {card.time}
+                      {formatTime(currentTime)}
                     </Typography>
                   </Box>
                 </CardContent>

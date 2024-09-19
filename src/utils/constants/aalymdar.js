@@ -1,5 +1,5 @@
-// User List Constants
-import Abdulazizkary from '../../assetts/images/ustazdar/muftiyat.jpg';
+import bannerNasy from '../../assetts/images/batkenaigul.jpg';
+import bannerNasyikat from '../../assetts/images/Batken.png';
 import ChubakAjy from '../../assetts/images/ustazdar/chubakajy.jpg';
 import Abdyshukurajy from '../../assetts/images/ustazdar/abdushukurajy.jpg';
 import SadybakasAjy from '../../assetts/images/ustazdar/sadybakasajy.jpg';
@@ -19,18 +19,6 @@ import { kalysustazposts } from './kalysustazposts';
 const USER_LIST = [
   {
     id: 1,
-    name: 'Муфтий Абдулазиз кары Закиров',
-    cover: Abdulazizkary,
-    position: '',
-    follower: 12400,
-    description: 'Nasyikat.media порталы',
-    following: 180,
-    totalPost: 102,
-    avatarUrl: Abdulazizkary, // Replace with actual path or URL
-    posts: postList,
-  },
-  {
-    id: 2,
     name: 'Устаз Чубак ажы Жалилов (р.x)',
     cover: ChubakAjy, // Replace with actual path or URL
     position: '',
@@ -42,7 +30,7 @@ const USER_LIST = [
     description: 'Nasyikat.media порталы',
   },
   {
-    id: 3,
+    id: 2,
     name: 'Устаз Абдушукур Ажы Нарматов',
     cover: Abdyshukurajy, // Replace with actual path or URL
     position: 'Устаз',
@@ -54,7 +42,7 @@ const USER_LIST = [
     description: 'Nasyikat.media порталы',
   },
   {
-    id: 4,
+    id: 3,
     name: 'Устаз Садыбакас ажы Доолов',
     cover: SadybakasAjy, // Replace with actual path or URL
     position: 'Устаз',
@@ -66,7 +54,7 @@ const USER_LIST = [
     description: 'Nasyikat.media порталы',
   },
   {
-    id: 5,
+    id: 4,
     name: 'Устаз Максатбек ажы Токтомушев',
     cover: MaksatbekAjy, // Replace with actual path or URL
     position: 'Устаз',
@@ -78,7 +66,7 @@ const USER_LIST = [
     description: 'Nasyikat.media порталы',
   },
   {
-    id: 6,
+    id: 5,
     name: 'Устаз Жигитали Исмалилов',
     cover: JigitaliUstaz, // Replace with actual path or URL
     position: 'Устаз',
@@ -90,7 +78,7 @@ const USER_LIST = [
     description: 'Nasyikat.media порталы',
   },
   {
-    id: 7,
+    id: 6,
     name: 'Устаз Бахтияр ажы Шарапов',
     cover: BahtiyarUstaz, // Replace with actual path or URL
     position: 'Устаз',
@@ -102,7 +90,7 @@ const USER_LIST = [
     description: 'Nasyikat.media порталы',
   },
   {
-    id: 8,
+    id: 7,
     name: 'Устаз Калысбек ажы Заманбеков',
     cover: KalysbekUstaz, // Replace with actual path or URL
     follower: 15000,
@@ -111,6 +99,18 @@ const USER_LIST = [
     avatarUrl: KalysbekUstaz, // Replace with actual path or URL
     posts: kalysustazposts,
     description: 'Nasyikat.media порталы',
+  },
+  {
+    id: 8,
+    name: 'Nasyikat.media Видеолор',
+    cover: bannerNasy,
+    position: '',
+    follower: 12400,
+    description: 'Nasyikat.media порталы',
+    following: 180,
+    totalPost: 102,
+    avatarUrl: bannerNasyikat, // Replace with actual path or URL
+    posts: postList,
   },
 ];
 
