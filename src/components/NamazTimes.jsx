@@ -13,11 +13,11 @@ import Welcome from '../components/Welcome';
 import Footer from '../components/Footer';
 
 const regions = [
-  { name: 'Баткен', latitude: 39.9365, longitude: 70.0 },
   { name: 'Бишкек', latitude: 42.8746, longitude: 74.5698 },
+  { name: 'Баткен', latitude: 39.9365, longitude: 70.0 },
   { name: 'Ош', latitude: 40.5135, longitude: 72.8161 },
-  { name: 'Джалал-Абад', latitude: 40.9338, longitude: 72.9817 },
-  { name: 'Иссык-Куль', latitude: 42.4417, longitude: 77.0836 },
+  { name: 'Жалал-Абад', latitude: 40.9338, longitude: 72.9817 },
+  { name: 'Ыссык-Көл', latitude: 42.4417, longitude: 77.0836 },
   { name: 'Талас', latitude: 42.5228, longitude: 72.2427 },
   { name: 'Нарын', latitude: 41.4287, longitude: 75.9911 },
 ];
@@ -33,7 +33,7 @@ const timeKeys = {
 };
 
 const NamazTimes = () => {
-  const [selectedRegion, setSelectedRegion] = useState('Баткен');
+  const [selectedRegion, setSelectedRegion] = useState('Бишкек');
   const [prayerTimes, setPrayerTimes] = useState({});
   const [nextPrayer, setNextPrayer] = useState(null);
   const [timeLeft, setTimeLeft] = useState({});
@@ -121,7 +121,6 @@ const NamazTimes = () => {
   }, [nextPrayer, calculateTimeLeft]);
 
   useEffect(() => {
-    // Request notification permission when the component mounts
     if ('Notification' in window) {
       Notification.requestPermission();
     }
