@@ -25,7 +25,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
   animation: `${fadeInUp} 0.6s ease forwards`,
   '&:hover': {
     transform: 'translateY(-15px)',
-    boxShadow: '0px 20px 40px rgba(0, 0, 0, 0.25)',
+    boxShadow: '0px 5px 30px rgba(255, 255, 255, 0.417)',
   },
   backgroundImage: 'linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%)',
   width: '100%',
@@ -116,7 +116,7 @@ const Section5 = () => {
                   <Paragraph>{prayer.transcription}</Paragraph>
                 </>
               )}
-              <BoldParagraph>Кыргызча мааниси</BoldParagraph>
+              <BoldParagraph>Мааниси</BoldParagraph>
               <Paragraph>{prayer.meaning}</Paragraph>
             </CardContent>
           </StyledCard>

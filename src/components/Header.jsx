@@ -166,7 +166,7 @@ const Header = () => {
             { text: 'Ислам деген эмне', path: '/islam' },
             { text: 'Электрондук китептер', path: '/books' },
             {
-              text: 'Пайгамбарыбыздын  с.а.в акыркы хутбасы',
+              text: 'Пайгамбарыбыздын с.а.в акыркы хутбасы',
               path: '/hutba',
             },
             { text: 'Кыргыз Республикасы', path: '/kyrgyz' },
@@ -182,9 +182,16 @@ const Header = () => {
               key={index}
               onClick={() => handleNavigation(item.path, item.link)}
               sx={{
-                marginBottom: '13px',
+                marginBottom: '15px',
                 padding: '6px 10px',
                 cursor: 'pointer',
+                borderRadius: '8px',
+                transition: 'background-color 0.3s, transform 0.2s',
+                '&:hover': {
+                  backgroundColor: '#161c25b7',
+                  transform: 'scale(1.02)',
+                  color: '#f6ecde',
+                },
               }}
             >
               {item.icon && <ListItemIcon>{item.icon}</ListItemIcon>}

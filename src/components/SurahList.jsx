@@ -8,7 +8,6 @@ import {
   IconButton,
 } from '@mui/material';
 import surahs from './data/quran/surah/suro';
-import bgimg from '../assetts/icons/bacimg.png';
 import { Verified } from '@mui/icons-material';
 import Footer from '../components/Footer';
 
@@ -39,7 +38,6 @@ const SurahList = () => {
                   alignItems: 'center',
                   textAlign: 'center',
                   height: '100%',
-                  backgroundImage: `url(${bgimg})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'flex-end',
                   backgroundRepeat: 'no-repeat',
@@ -54,7 +52,7 @@ const SurahList = () => {
                     sx={{
                       mb: 2, // Increased bottom margin for better spacing
                       background:
-                        'linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.2))',
+                        'linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgb(255, 249, 214))',
                       padding: '8px', // Increased padding for better readability
                       borderRadius: '4px',
                       boxShadow: 1,
@@ -68,7 +66,7 @@ const SurahList = () => {
                     sx={{
                       mb: 2, // Increased bottom margin for better spacing
                       background:
-                        'linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.2))',
+                        'linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgb(255, 249, 214))',
                       padding: '8px', // Increased padding for better readability
                       borderRadius: '4px',
                       boxShadow: 1,
@@ -83,7 +81,7 @@ const SurahList = () => {
                     sx={{
                       mb: 2, // Increased bottom margin for better spacing
                       background:
-                        'linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.2))',
+                        'linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgb(255, 249, 214))',
                       padding: '8px', // Increased padding for better readability
                       borderRadius: '4px',
                       boxShadow: 1,
@@ -100,7 +98,7 @@ const SurahList = () => {
                       color: '#555',
                       fontSize: '1.3rem',
                       background:
-                        'linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.2))',
+                        'linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgb(255, 249, 214))',
                       padding: '8px', // Increased padding for better readability
                       borderRadius: '4px',
                       boxShadow: 1,
@@ -116,7 +114,7 @@ const SurahList = () => {
                       color: '#777',
                       fontSize: '1.1rem',
                       background:
-                        'linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.2))',
+                        'linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgb(255, 249, 214))',
                       padding: '8px', // Increased padding for better readability
                       borderRadius: '4px',
                       boxShadow: 1,
@@ -132,7 +130,7 @@ const SurahList = () => {
                       color: '#555',
                       fontSize: '1rem',
                       background:
-                        'linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.2))',
+                        'linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgb(255, 249, 214))',
                       padding: '8px', // Increased padding for better readability
                       borderRadius: '4px',
                       boxShadow: 1,

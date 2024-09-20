@@ -22,10 +22,10 @@ export default function Aalymdar() {
             xs: '1.1rem',
             sm: '1.2rem',
             mb: '1rem',
-            background: '#071c6b',
+            background: '#f6ecde',
             padding: '2rem',
             marginBottom: '1rem',
-            color: '#f6edde',
+            color: '#071c6b',
           },
           fontFamily: 'Georgia, serif',
         }}

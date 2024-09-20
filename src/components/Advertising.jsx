@@ -55,8 +55,8 @@ const ContentSection = styled(Box)(({ theme }) => ({
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
-  backgroundColor: '#071c6b', // Semi-transparent background
-  color: '#f6ecde',
+  backgroundColor: '#f6ecde', // Semi-transparent background
+  color: '#071c6b',
   textAlign: 'center',
   padding: '20px',
   [theme.breakpoints.down('md')]: {
@@ -88,7 +88,7 @@ const SocialIcons = styled(Box)(({ theme }) => ({
   marginTop: '20px',
   '& svg': {
     fontSize: '2rem',
-    color: '#fff',
+    color: '#071c6b',
     [theme.breakpoints.down('md')]: {
       fontSize: '1.5rem',
     },
