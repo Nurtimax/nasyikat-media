@@ -29,7 +29,7 @@ const Section2 = () => {
           textAlign: 'center',
           marginTop: '1rem',
           marginBottom: '1rem',
-          background: '#f8d7da',
+          background: '#f6ecde',
           padding: '1rem',
           color: '#000',
           fontSize: '0.8rem',
@@ -49,6 +49,7 @@ const SectionTitle = styled('h2')({
   fontSize: '2rem',
   marginBottom: '20px',
   textAlign: 'center',
+  color: '#f6ecde',
   '@media (max-width: 600px)': {
     fontSize: '1.5rem',
   },

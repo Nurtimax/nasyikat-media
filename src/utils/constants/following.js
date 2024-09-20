@@ -1,14 +1,13 @@
 import iteasy from '../../assetts/icons/iteeasy.png';
-import logokyrgyzmuslims from '../../assetts/icons/logo-nasykat.png';
 import admin from '../../assetts/icons/герб.png';
 
 const followers = [
   {
     id: 1,
-    name: 'Kyrgyz.muslims',
+    name: 'ITeasy.Kg',
     country: 'KGZ',
-    avatarUrl: logokyrgyzmuslims,
-    instagram: 'https://www.instagram.com/kyrgyz.muslims/',
+    avatarUrl: iteasy,
+    instagram: 'https://www.instagram.com/iteasy.kg/',
   },
   {
     id: 2,
@@ -17,13 +16,13 @@ const followers = [
     avatarUrl: admin,
     instagram: 'https://www.instagram.com/matraim.official/',
   },
-  {
-    id: 3,
-    name: 'ITeasy.Kg',
-    country: 'KGZ',
-    avatarUrl: iteasy,
-    instagram: 'https://www.instagram.com/iteasy.kg/',
-  },
+  // {
+  //   id: 3,
+  //   name: 'Musulmani.571',
+  //   country: 'KGZ',
+  //   avatarUrl: logokyrgyzmuslims,
+  //   instagram: 'https://www.instagram.com/kyrgyz.muslims/',
+  // },
 ];
 
 export default followers;
