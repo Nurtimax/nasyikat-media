@@ -23,6 +23,8 @@ import AalymdarDetails from '../pages/AalymdarDetails';
 import MualimSani from '../components/MualimSani';
 import NamazTimes from './NamazTimes';
 import DetailsPage from './ProductDetails';
+import IslamicCourses from './IslamicCourses';
+import CourseDetails from './CourseDetails';
 
 const MainRouter = () => {
   return (
@@ -49,6 +51,8 @@ const MainRouter = () => {
         <Route path="/aljardam" element={<AlJardam />} />
         <Route path="/onsuro" element={<OnSuro />} />
         <Route path="/hutba" element={<Hutba />} />
+        <Route path="/islamiccourses" element={<IslamicCourses />} />
+        <Route path="/course/:id" element={<CourseDetails />} />
         <Route path="/aalymdar" element={<Aalymdar />} />
         <Route path="/aalymdar/:id" element={<AalymdarDetails />} />
       </Routes>
