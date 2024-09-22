@@ -106,21 +106,7 @@ const Section6 = () => {
                     {card.description}
                   </Typography>
                   <Box mt={2}>
-                    <Button
-                      color="secondary"
-                      variant="contained"
-                      fullWidth
-                      disableElevation
-                      sx={{
-                        backgroundColor: '#071c6b',
-                        fontSize: { xs: '0.7rem', sm: '1rem' },
-                        '&:hover': {
-                          backgroundColor: '#071d6bd6',
-                        },
-                      }}
-                    >
-                      Кененирээк
-                    </Button>
+                    <Button fullWidth>Кененирээк</Button>
                   </Box>
                   <Box
                     mt={2}

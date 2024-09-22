@@ -6,23 +6,37 @@ const TextBanner2 = () => {
     <div>
       <Box
         sx={{
-          height: { xs: '280px' },
-          backgroundSize: 'cover',
-          marginTop: '25px',
-          marginBottom: '20px',
-          borderRadius: '5px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          textAlign: 'center',
+          backgroundColor: '#f6edde',
+          borderLeft: `5px solid #6a4b1e`,
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+          fontFamily: 'Amiri, serif',
+          margin: '0 auto',
+          color: '#161c25',
+          position: 'relative',
+          marginBottom: '1.5rem',
+          '&:before': {
+            content: '"\\201C"',
+            position: 'absolute',
+            top: '-15px',
+            left: '5px',
+            fontSize: '50px',
+            color: '#6a4b1e',
+          },
+          '&:after': {
+            content: '"\\201D"',
+            position: 'absolute',
+            bottom: '-35px',
+            right: '5px',
+            fontSize: '50px',
+            color: '#6a4b1e',
+          },
         }}
       >
         <Typography
           variant="h6"
           component="div"
           sx={{
-            color: '#f6edde',
-            padding: '10px',
+            padding: '40px',
             lineHeight: 1.4,
             textAlign: 'center',
             fontFamily: 'inherit',

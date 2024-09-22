@@ -33,12 +33,11 @@ export default Section4;
 // Стилизация контейнера
 const StyledContainer = styled(Box)(({ theme }) => ({
   width: '100%',
-  marginTop: theme.spacing(4),
+  marginTop: theme.spacing(3),
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
-  padding: theme.spacing(2),
 }));
 
 // Стилизация карточки

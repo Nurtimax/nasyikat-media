@@ -11,11 +11,6 @@ import { styled } from '@mui/system';
 import { motion } from 'framer-motion';
 import umrah from '../assetts/icons/umrah.webp';
 import ajylyk from '../assetts/icons/hadj.webp';
-import airplaneIcon from '../assetts/icons/airplaneIcon.svg';
-import hotelIcon from '../assetts/icons/hotelIcon.svg';
-import foodIcon from '../assetts/icons/foodIcon.svg';
-import trainIcon from '../assetts/icons/trainIcon.webp';
-import ServiceCard from './ServiceCard';
 
 import { Instagram, Phone, WhatsApp } from '@mui/icons-material';
 
@@ -33,7 +28,7 @@ const SectionImage = styled('img')(({ theme }) => ({
 }));
 
 const CompanyBanner = styled(Box)(({ theme }) => ({
-  background: 'linear-gradient(to right, #0c0c0c, #42a5f5)',
+  background: 'linear-gradient(to right, #327b3e, #327b3e)',
   padding: theme.spacing(6),
   textAlign: 'center',
   borderRadius: '12px',
@@ -198,7 +193,7 @@ const HajjAndUmrahSection = () => {
                   }}
                 >
                   <StyledIconButton
-                    href="https://www.instagram.com/amanat.umra_/"
+                    href="https://www.instagram.com/amanat_umra_/"
                     target="_blank"
                     rel="noopener"
                     color="#E4405F" // Instagram color
@@ -206,7 +201,8 @@ const HajjAndUmrahSection = () => {
                     <Instagram />
                   </StyledIconButton>
                   <StyledIconButton
-                    href="tel:+"
+                    // href="tel:+"
+                    href="https://www.instagram.com/amanat_umra_/"
                     target="_blank"
                     rel="noopener"
                     color="#34b7f1" // Phone color
@@ -219,7 +215,8 @@ const HajjAndUmrahSection = () => {
                 <WhatsAppButton
                   variant="contained"
                   startIcon={<WhatsApp />}
-                  href="https://wa.me/+?text=Hello%20Amanat%20Umra,%20I%20would%20like%20more%20information%20about%20your%20Umrah%20packages."
+                  // href="https://wa.me/+?text=Hello%20Amanat%20Umra,%20I%20would%20like%20more%20information%20about%20your%20Umrah%20packages."
+                  href="https://www.instagram.com/amanat_umra_/"
                   target="_blank"
                   rel="noopener"
                 >
@@ -227,60 +224,6 @@ const HajjAndUmrahSection = () => {
                 </WhatsAppButton>
               </SocialMediaIcons>
             </CompanyBanner>
-          </motion.div>
-        </SectionContainer>
-
-        {/* Services Section */}
-        <SectionContainer>
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <motion.div variants={fadeInVariants}>
-              <Typography
-                variant="h4"
-                gutterBottom
-                style={{ marginTop: '1rem', marginBottom: '1rem' }}
-              >
-                Биздин кызматтар
-              </Typography>
-            </motion.div>
-            <Grid container spacing={4}>
-              <Grid item xs={12} sm={6} md={3}>
-                <ServiceCard
-                  title="Авиабилеттер"
-                  icon={airplaneIcon} // Pass the path to the PNG or SVG icon
-                  description="Умра ибадатына арзан комфорт учактар менен"
-                  iconSize="10rem"
-                />
-              </Grid>
-              <Grid item xs={12} sm={6} md={3}>
-                <ServiceCard
-                  title="Мейманкана"
-                  icon={hotelIcon} // Pass the path to the PNG or SVG icon
-                  description="Мекке мединага жакын Эконом 3 4 жылдыздуу комфорт 4 5 жылдыздуу мейманканалар"
-                  iconSize="10rem"
-                />
-              </Grid>
-              <Grid item xs={12} sm={6} md={3}>
-                <ServiceCard
-                  title="2 мааал тамак аш"
-                  icon={foodIcon} // Pass the path to the PNG or SVG icon
-                  description="2 маал ыссык тамак аш"
-                  iconSize="10rem"
-                />
-              </Grid>
-              <Grid item xs={12} sm={6} md={3}>
-                <ServiceCard
-                  title="Поезд Мекке - Медина"
-                  icon={trainIcon} // Pass the path to the PNG or SVG icon
-                  description="Мединадан меккеге эконом автобустар комфорт поездер менен"
-                  iconSize="10rem"
-                />
-              </Grid>
-            </Grid>
           </motion.div>
         </SectionContainer>
       </Box>
