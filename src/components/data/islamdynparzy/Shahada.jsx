@@ -11,7 +11,6 @@ const Shahada = () => {
       <Header />
       <Welcom />
       <StyledContainer>
-        <StyledImageContainer />
         <StyledTextContainer>
           <StyledTitle variant="h4" gutterBottom>
             Урматтуу мусулман бир тууганым!
@@ -56,31 +55,49 @@ const StyledContainer = styled(Box)(({ theme }) => ({
   },
 }));
 
-const StyledImageContainer = styled(Box)(({ theme }) => ({
-  display: 'flex',
-  justifyContent: 'center',
-  marginBottom: theme.spacing(5),
-}));
-
 const StyledTextContainer = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(5),
-  borderRadius: '16px',
-  backgroundColor: '#f6edde',
-  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
-  maxWidth: '800px',
-  margin: '0 auto',
+  background: 'linear-gradient(135deg, #faf5e4, #e9d9a9)', // Более теплый градиентный фон
+  borderRadius: '15px', // Более скругленные углы для мягкости
+  boxShadow: '0 5px 25px rgba(0, 0, 0, 0.15)', // Более глубокая тень
+  padding: theme.spacing(5), // Дополнительное внутреннее пространство
+  maxWidth: '1000px', // Увеличенная ширина для более удобного чтения
+  margin: '0 auto 30px', // Дополнительное нижнее поле
+  position: 'relative',
+  fontFamily: "'Amiri', serif", // Элегантный арабский шрифт
+  color: '#3b2f2f', // Глубокий темно-коричневый цвет текста
+  textAlign: 'justify',
+  lineHeight: 1.8, // Увеличенный межстрочный интервал для улучшенного восприятия
+  borderLeft: `4px solid #c9a475`, // Более широкий акцентный бордюр
+  '&:before': {
+    content: '"\\275D"', // Левый акцентный символ
+    position: 'absolute',
+    top: '-20px', // Положение символа
+    left: '5px',
+    fontSize: '50px', // Увеличенный размер символа
+    color: '#c9a475', // Цвет в тон бордюру
+  },
+  '&:after': {
+    content: '"\\275E"', // Правый акцентный символ
+    position: 'absolute',
+    bottom: '-35px',
+    right: '5px',
+    fontSize: '50px',
+    color: '#c9a475',
+  },
+  '&:hover': {
+    background: 'linear-gradient(135deg, #fef8e0, #e9d9a9)', // Лёгкое изменение фона при наведении
+  },
   [theme.breakpoints.down('sm')]: {
-    padding: theme.spacing(3),
-    borderRadius: '12px',
+    padding: theme.spacing(3), // Уменьшение внутреннего пространства на мобильных устройствах
   },
 }));
 
 const StyledTitle = styled(Typography)(({ theme }) => ({
   color: '#2c3e50',
-  fontWeight: 600,
-  textShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)',
+  fontWeight: 700,
+  textShadow: '2px 2px 8px rgba(0, 0, 0, 0.3)',
   [theme.breakpoints.down('sm')]: {
-    fontSize: '1.8rem',
+    fontSize: '1.5rem',
   },
 }));
 
@@ -88,10 +105,10 @@ const StyledText = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(3),
   lineHeight: 1.8,
   fontSize: '1.2rem',
-  color: '#34495e',
+  color: '#5d4037',
   transition: 'color 0.3s ease',
   '&:hover': {
-    color: '#2c3e50',
+    color: '#3e2723',
   },
   [theme.breakpoints.down('sm')]: {
     fontSize: '1rem',
