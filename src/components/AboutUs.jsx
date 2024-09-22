@@ -53,13 +53,13 @@ const teamMembers = [
     verified: false,
   },
   {
-    name: 'kyrgyz.muslims',
+    name: 'Ustazdan.nasaat',
     role: 'Мусулман Кыргыз эли',
     image: logo2,
     description:
       'Оо, Жараткан Раббим! Бизге бул дүйнөнүн жана акыреттин жакшылыгын бер! Бизди тозок отунан сактагын!. <br/> Амин',
     links: {
-      instagram: 'https://www.instagram.com/kyrgyz.muslims/',
+      instagram: 'https://www.instagram.com/ustazdan.nasaat/',
       telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
     },
     verified: true,

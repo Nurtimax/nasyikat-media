@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import Welcome from '../components/Welcome';
 import Footer from '../components/Footer';
-import { Typography, Container } from '@mui/material';
+import { Typography, Container, styled } from '@mui/material';
 
 const Hutba = () => {
   return (
@@ -25,7 +25,7 @@ const Hutba = () => {
           Пайгамбарыбыз Мухаммад саллаллаху алейхи вассаламдын <br /> акыркы
           хутбасы
         </Typography>
-        <Typography
+        <StyledTypography
           variant="body1"
           sx={{ lineHeight: 1.6, whiteSpace: 'pre-wrap' }}
         >
@@ -101,7 +101,7 @@ const Hutba = () => {
           сураганда: «Бул аяти карима Расулуллахтын кайтыш боло турчу
           убактысынын жакындаганын керсөтүп турат. Ошол учун ыйлап жатам», -
           деди.
-        </Typography>
+        </StyledTypography>
       </Container>
       <Footer />
     </div>
@@ -109,3 +109,20 @@ const Hutba = () => {
 };
 
 export default Hutba;
+
+const StyledTypography = styled(Typography)(({ theme }) => ({
+  lineHeight: 1.8, // Увеличенный межстрочный интервал для лучшей читаемости
+  whiteSpace: 'pre-wrap', // Сохранение форматирования текста
+  fontFamily: "'Amiri', serif", // Элегантный арабский шрифт
+  color: '#4e4c4a', // Глубокий тёмный цвет текста
+  background: 'linear-gradient(135deg, #faf5e4, #e9d9a9)', // Светлый градиентный фон
+  padding: theme.spacing(3), // Внутренние отступы для выделения текста
+  borderRadius: '10px', // Скругленные углы
+  margin: '0 auto 20px', // Центрирование и отступы
+  boxShadow: '0 3px 15px rgba(0, 0, 0, 0.08)', // Лёгкая тень
+  borderLeft: `5px solid #d8a66f`, // Акцентный бордюр
+  position: 'relative',
+  [theme.breakpoints.down('sm')]: {
+    padding: theme.spacing(2), // Уменьшение отступов на мобильных устройствах
+  },
+}));

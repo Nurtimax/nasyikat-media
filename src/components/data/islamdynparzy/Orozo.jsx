@@ -20,13 +20,37 @@ const Orozo = () => {
       >
         <Box
           sx={{
-            backgroundColor: '#f6edde',
+            backgroundColor: '#f6edde', // Цвет фона бокса
             padding: { xs: 3, md: 5 },
-            borderRadius: 2,
+            borderRadius: '15px', // Скругленные углы
             textAlign: 'center',
             maxWidth: '800px',
             margin: '0 auto',
-            boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1)',
+            boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1)', // Легкая тень
+            position: 'relative',
+            borderLeft: '6px solid #d8a66f', // Левый бордюр акцента
+            '&:before': {
+              content: '""',
+              position: 'absolute',
+              top: '-20px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '80px',
+              height: '4px',
+              backgroundColor: '#d8a66f', // Декоративная полоска сверху
+              borderRadius: '2px',
+            },
+            '&:after': {
+              content: '""',
+              position: 'absolute',
+              bottom: '-20px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '60px',
+              height: '4px',
+              backgroundColor: '#d8a66f', // Декоративная полоска снизу
+              borderRadius: '2px',
+            },
           }}
         >
           <Typography
@@ -35,8 +59,9 @@ const Orozo = () => {
             sx={{
               marginBottom: 3,
               fontWeight: 'bold',
-              fontSize: { xs: '1.5rem', md: '2rem' },
-              color: '#333',
+              fontSize: { xs: '1.8rem', md: '2.4rem' }, // Увеличенный шрифт
+              color: '#3d2c2e', // Темный цвет заголовка
+              fontFamily: "'Amiri', serif", // Элегантный арабский шрифт
             }}
           >
             Орозо жөнүндө
@@ -46,10 +71,11 @@ const Orozo = () => {
             component="p"
             sx={{
               lineHeight: 1.8,
-              fontSize: { xs: '1rem', md: '1.1rem' },
+              fontSize: { xs: '1rem', md: '1.2rem' }, // Чуть больше стандартного
               color: '#555',
               marginBottom: 4,
-              textAlign: 'center',
+              textAlign: 'justify', // Выравнивание текста по ширине
+              fontFamily: "'Amiri', serif", // Тот же шрифт для единства стиля
             }}
           >
             Теңдикти сүйгөн Аллах Субхану уа Таала бир жылда бир жолу Рамазан
