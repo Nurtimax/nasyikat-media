@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, Typography, Box } from '@mui/material';
+import { CardContent, Typography, Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { keyframes } from '@emotion/react';
 import prayers from './data/dubalar/prayers';
@@ -16,26 +16,6 @@ const fadeInUp = keyframes`
   }
 `;
 
-// Стиль для карточки с улучшенной анимацией и тенями
-const StyledCard = styled(Card)(({ theme }) => ({
-  borderRadius: '20px',
-  overflow: 'hidden',
-  boxShadow: '0px 10px 30px rgba(0, 0, 0, 0.15)',
-  transition: 'transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out',
-  animation: `${fadeInUp} 0.6s ease forwards`,
-  '&:hover': {
-    transform: 'translateY(-15px)',
-    boxShadow: '0px 5px 30px rgba(255, 255, 255, 0.417)',
-  },
-  backgroundImage: 'linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%)',
-  width: '100%',
-  height: 'auto', // Allow height to be dynamic based on content
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  padding: theme.spacing(2),
-}));
-
 // Стиль для заголовка секции
 const Header = styled('h2')(({ theme }) => ({
   textAlign: 'center',
@@ -47,6 +27,34 @@ const Header = styled('h2')(({ theme }) => ({
   [theme.breakpoints.down('sm')]: {
     fontSize: '2rem',
     marginBottom: '30px',
+  },
+}));
+
+const StyledCard = styled('h2')(() => ({
+  backgroundColor: '#f6edde',
+  borderLeft: `5px solid #6a4b1e`,
+  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+  fontFamily: 'Amiri, serif',
+  margin: '0 auto',
+  color: '#161c25',
+  transition: 'transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out',
+  animation: `${fadeInUp} 0.6s ease forwards`,
+  position: 'relative',
+  '&:before': {
+    content: '"\\201C"',
+    position: 'absolute',
+    top: '-15px',
+    left: '10px',
+    fontSize: '50px',
+    color: '#6a4b1e',
+  },
+  '&:after': {
+    content: '"\\201D"',
+    position: 'absolute',
+    bottom: '-35px',
+    right: '10px',
+    fontSize: '50px',
+    color: '#6a4b1e',
   },
 }));
 

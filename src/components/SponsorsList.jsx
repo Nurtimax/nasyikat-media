@@ -1,9 +1,36 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Box, Typography, IconButton, Avatar, Button } from '@mui/material';
+import { Box, Typography, IconButton, Button } from '@mui/material';
 import { Instagram, WhatsApp } from '@mui/icons-material';
-import sponsors from '../components/data/sponsors/sponsor.js';
+import LaptopMacIcon from '@mui/icons-material/LaptopMac'; // IT Developer
+import HeadsetIcon from '@mui/icons-material/Headset'; // Airpods
+import BagIcon from '@mui/icons-material/ShoppingBag'; // Bags
+import ApiIcon from '@mui/icons-material/Api'; // Honey Bee
+import LocalDiningIcon from '@mui/icons-material/LocalDining'; // Mkka
+import TravelExploreIcon from '@mui/icons-material/TravelExplore'; // Travel
+import { Autoplay } from 'swiper/modules'; // Correct import for Autoplay
 import 'swiper/css';
+import 'swiper/css/autoplay'; // Ensure autoplay styles are imported
+import sponsors from '../components/data/sponsors/sponsor.js';
+
+const getIcon = (name) => {
+  switch (name) {
+    case 'ITeasy.KG':
+      return <LaptopMacIcon sx={{ fontSize: 90, color: '#f6ecde' }} />;
+    case 'Arzanstore.ru':
+      return <HeadsetIcon sx={{ fontSize: 90, color: '#f6ecde' }} />;
+    case 'Kurzhun.shop':
+      return <BagIcon sx={{ fontSize: 90, color: '#f6ecde' }} />;
+    case 'HoneyBee':
+      return <ApiIcon sx={{ fontSize: 90, color: '#f6ecde' }} />;
+    case 'Mkka':
+      return <LocalDiningIcon sx={{ fontSize: 90, color: '#f6ecde' }} />;
+    case 'Travel':
+      return <TravelExploreIcon sx={{ fontSize: 90, color: '#f6ecde' }} />;
+    default:
+      return null;
+  }
+};
 
 const PartnerCard = ({ partner }) => (
   <Box
@@ -12,45 +39,53 @@ const PartnerCard = ({ partner }) => (
       flexDirection: 'column',
       alignItems: 'center',
       padding: '20px',
-      backgroundColor: '#f9f5e7',
-      color: '#161c25',
-      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-      margin: '0 10px',
+      textAlign: 'center',
+      border: '1px solid #c2c1a9',
+      borderRadius: '15px',
+      backgroundColor: '#f6ecde',
+      cursor: 'pointer',
     }}
   >
-    <Avatar
-      src={partner.image}
-      alt={partner.name}
+    <Box
       sx={{
-        width: 300, // Set width
-        height: 300, // Set height
-        marginBottom: '10px',
-        borderRadius: '0', // Remove border radius for square
+        width: 150,
+        height: 150,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: '15px',
+        borderRadius: '50%',
+        backgroundColor: '#161c25',
+        color: '#f6ecde',
       }}
-    />
-    <Typography variant="h6" sx={{ marginBottom: '10px', fontWeight: 'bold' }}>
+    >
+      {getIcon(partner.name)}
+    </Box>
+    <Typography
+      variant="h6"
+      sx={{ marginBottom: '10px', fontWeight: 'bold', color: 'black' }}
+    >
       {partner.name}
     </Typography>
-    <Typography
-      variant="body2"
-      sx={{ textAlign: 'center', marginBottom: '10px' }}
-    >
+    <Typography variant="body2" sx={{ marginBottom: '15px', color: 'black' }}>
       {partner.description}
     </Typography>
-    <Box sx={{ display: 'flex', gap: '10px', marginBottom: '10px' }}>
+    <Box sx={{ display: 'flex', gap: '15px', marginBottom: '15px' }}>
       <IconButton
         component="a"
         href={`https://instagram.com/${partner.instagram}`}
         target="_blank"
+        sx={{ color: '#E1306C' }}
       >
-        <Instagram sx={{ color: '#E1306C' }} />
+        <Instagram />
       </IconButton>
       <IconButton
         component="a"
         href={`https://wa.me/${partner.whatsapp}`}
         target="_blank"
+        sx={{ color: '#25D366' }}
       >
-        <WhatsApp sx={{ color: '#25D366' }} />
+        <WhatsApp />
       </IconButton>
     </Box>
     <Button
@@ -59,36 +94,45 @@ const PartnerCard = ({ partner }) => (
       component="a"
       href={partner.link}
       target="_blank"
-      sx={{ marginTop: '10px' }}
     >
-      Подробнее
+      Сайтка өтүү
     </Button>
   </Box>
 );
 
-// Main component for sponsors list
 const SponsorsList = () => {
   return (
-    <Box sx={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 0' }}>
+    <Box
+      sx={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '40px 20px',
+      }}
+    >
       <Typography
-        variant="h4"
-        sx={{ marginBottom: '20px', textAlign: 'center' }}
+        variant="h3"
+        sx={{
+          marginBottom: '30px',
+          textAlign: 'center',
+          fontWeight: 'bold',
+          color: '#f6ecde',
+        }}
       >
-        Наши Партнеры
+        Биздин демөөрчүлөр
       </Typography>
       <Swiper
         spaceBetween={30}
         slidesPerView={3}
+        loop={true}
+        autoplay={{
+          delay: 3000, // 2 секунды
+          disableOnInteraction: false,
+        }}
+        modules={[Autoplay]} // Подключите модуль Autoplay
         breakpoints={{
-          1024: {
-            slidesPerView: 3,
-          },
-          600: {
-            slidesPerView: 2,
-          },
-          0: {
-            slidesPerView: 1,
-          },
+          1024: { slidesPerView: 3 }, // Десктоп
+          600: { slidesPerView: 2 }, // Пэдж
+          0: { slidesPerView: 1 }, // Мобильный
         }}
       >
         {sponsors.map((partner, index) => (

@@ -97,43 +97,40 @@ const SocialIcons = styled(Box)(({ theme }) => ({
     },
   },
 }));
-
 const Advertising = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [autoSlide, setAutoSlide] = useState(true);
 
-  // Handle automatic sliding
+  // Обработчик автоматической прокрутки
   useEffect(() => {
     let interval;
     if (autoSlide) {
       interval = setInterval(() => {
         setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-      }, 3000); // Change slide every 3 seconds
+      }, 3000);
     }
     return () => clearInterval(interval);
   }, [autoSlide]);
 
-  // Handle previous slide
   const handlePrev = () => {
     setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   };
 
-  // Handle next slide
   const handleNext = () => {
     setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   };
 
   return (
     <SliderContainer
-      onMouseEnter={() => setAutoSlide(false)} // Pause auto-slide on hover
-      onMouseLeave={() => setAutoSlide(true)} // Resume auto-slide on mouse leave
+      onMouseEnter={() => setAutoSlide(false)} // Остановка автопрокрутки при наведении
+      onMouseLeave={() => setAutoSlide(true)} // Возобновление автопрокрутки
     >
       {slides.map((slide, index) => (
         <Slide
           key={index}
           bgimg={slide.bgimg}
           style={{
-            opacity: index === currentSlide ? 1 : 0, // Show only the current slide
+            opacity: index === currentSlide ? 1 : 0,
           }}
           aria-label={`Slide ${index + 1}`}
         >

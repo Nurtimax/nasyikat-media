@@ -207,6 +207,19 @@ const NamazTimes = () => {
             )}
           </CardContent>
         </CardStyled>
+
+        <div>
+          <Typography
+            style={{
+              backgroundColor: '#c63b00',
+              padding: '0.7rem',
+              borderRadius: '10px',
+              width: '100%',
+            }}
+          >
+            Учурда такталып оңдолуп жатат.
+          </Typography>
+        </div>
       </Container>
       <div style={{ marginTop: '0.5rem' }}>
         <Footer />

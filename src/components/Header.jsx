@@ -141,7 +141,7 @@ const Header = () => {
             </Box>
           </Logo>
           <BurgerMenu edge="end" onClick={toggleDrawer(true)}>
-            <MenuIcon sx={{ fontSize: '2rem' }} />
+            <MenuIcon sx={{ fontSize: '1.9rem' }} />
           </BurgerMenu>
         </Toolbar>
       </StyledAppBar>
