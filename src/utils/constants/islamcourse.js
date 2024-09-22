@@ -1,29 +1,29 @@
-import img from '../../assetts/icons/bacimg.png';
+import logo from '../../assetts/icons/logo-nasykat.png';
 
 const courses = [
   {
     id: 1,
     title: 'Курс по Корану',
-    description: 'Изучение Корана и его толкования.',
-    image: img,
+    description: 'Изучение Корана и его толкования Пророк Мухаммад с.a.в.',
+    image: logo,
   },
   {
     id: 2,
     title: 'Курс по хадисам',
     description: 'Изучение хадисов Пророка Мухаммада.',
-    image: img,
+    image: logo,
   },
   {
     id: 3,
-    title: 'Курс по исламскому праву',
+    title: 'Курс по праву',
     description: 'Основы исламского права и его применение.',
-    image: img,
+    image: logo,
   },
   {
     id: 4,
-    title: 'Курс по арабскому языку',
+    title: 'Курс по арабскому',
     description: 'Основы арабского языка для понимания религиозных текстов.',
-    image: img,
+    image: logo,
   },
 ];
 

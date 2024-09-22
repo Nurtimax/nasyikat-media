@@ -23,7 +23,33 @@ import Footer from '../components/Footer';
 const QuoteCard = styled(Paper)(({ theme }) => ({
   maxWidth: 400,
   padding: theme.spacing(4),
-  backgroundColor: '#f9f6f2',
+  backgroundColor: '#f6edde',
+  borderLeft: `5px solid #6a4b1e`,
+  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+  fontFamily: 'Amiri, serif',
+  margin: '0 auto',
+  color: '#161c25',
+  position: 'relative',
+  '&:before': {
+    content: '"\\201C"',
+    position: 'absolute',
+    top: '-15px',
+    left: '10px',
+    fontSize: '50px',
+    color: '#6a4b1e',
+  },
+  '&:after': {
+    content: '"\\201D"',
+    position: 'absolute',
+    bottom: '-35px',
+    right: '10px',
+    fontSize: '50px',
+    color: '#6a4b1e',
+  },
+}));
+
+const BannerText = styled(Box)(() => ({
+  backgroundColor: '#f6edde',
   borderLeft: `5px solid #6a4b1e`,
   boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
   fontFamily: 'Amiri, serif',
@@ -53,10 +79,6 @@ const CourseCard = styled(Card)({
   display: 'flex',
   flexDirection: 'column',
   cursor: 'pointer',
-  transition: 'transform 0.3s ease-in-out',
-  '&:hover': {
-    transform: 'scale(1.03)',
-  },
 });
 
 // Основной компонент
@@ -73,7 +95,7 @@ const IslamicCourses = () => {
       <Welcome />
       <Container sx={{ py: 5 }}>
         {/* Блок с исламской каллиграфией */}
-        <Box
+        <BannerText
           sx={{
             mb: 5,
             p: 7,
@@ -85,12 +107,15 @@ const IslamicCourses = () => {
           }}
         >
           <Typography variant="h2" sx={{ fontFamily: 'Amiri, serif' }}>
-            Исламские Курсы
+            Диний Курстар
           </Typography>
           <Typography variant="h5" sx={{ fontFamily: 'Amiri, serif', mt: 2 }}>
-            Изучайте и приумножайте знания с верой и мудростью.
+            «Аллахумма-нфа’нии бимаа ‘алламтании, ва ‘аллимнии маа йанфа’унии»{' '}
+            <br />
+            Оо, Аллахым! Үйрөткөн нерсең менен мага пайда бер, <br /> жана мага
+            пайдалуу нерсе үйрөт!.
           </Typography>
-        </Box>
+        </BannerText>
 
         {/* Секция с аятами */}
         <Typography
@@ -98,7 +123,7 @@ const IslamicCourses = () => {
           gutterBottom
           sx={{ textAlign: 'center', mb: 3, fontFamily: 'Amiri, serif' }}
         >
-          Аяты о знании
+          Куран аяттары
         </Typography>
         <Grid
           container
@@ -112,9 +137,6 @@ const IslamicCourses = () => {
                 <Typography variant="body1" gutterBottom>
                   {ayah}
                 </Typography>
-                <Typography variant="body2" sx={{ mt: 2, fontStyle: 'italic' }}>
-                  Священный Коран
-                </Typography>
               </QuoteCard>
             </Grid>
           ))}
@@ -126,7 +148,7 @@ const IslamicCourses = () => {
           gutterBottom
           sx={{ textAlign: 'center', mb: 3, fontFamily: 'Amiri, serif' }}
         >
-          Доступные Курсы
+          Биздин диний курстар
         </Typography>
         <Grid
           container
@@ -139,9 +161,20 @@ const IslamicCourses = () => {
               <CourseCard onClick={() => handleCourseClick(course.id)}>
                 <CardMedia
                   component="img"
-                  sx={{ height: 200 }}
                   image={course.image}
                   alt={course.title}
+                  sx={{
+                    height: 'auto', // Автоматическая высота для сохранения пропорций
+                    maxWidth: '100%', // Максимальная ширина изображения не более контейнера
+                    maxHeight: '100%', // Максимальная высота не более контейнера
+                    objectFit: 'contain', // Показывает изображение целиком
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    width: 243,
+                    margin: 'auto',
+                    padding: '1rem',
+                  }}
                 />
                 <CardContent sx={{ flexGrow: 1 }}>
                   <Typography
@@ -161,7 +194,7 @@ const IslamicCourses = () => {
                 </CardContent>
                 <Box sx={{ textAlign: 'center', pb: 2 }}>
                   <Button variant="contained" color="primary" fullWidth>
-                    Узнать больше
+                    Толугураак маалымат
                   </Button>
                 </Box>
               </CourseCard>
@@ -175,7 +208,7 @@ const IslamicCourses = () => {
           gutterBottom
           sx={{ textAlign: 'center', mb: 3, fontFamily: 'Amiri, serif' }}
         >
-          Хадисы о знании
+          Куттуу хадистер
         </Typography>
         <Grid container spacing={{ xs: 1, sm: 2 }} justifyContent="center">
           {hadiths.map((hadith, index) => (
@@ -183,9 +216,6 @@ const IslamicCourses = () => {
               <QuoteCard>
                 <Typography variant="body1" gutterBottom>
                   {hadith}
-                </Typography>
-                <Typography variant="body2" sx={{ mt: 2, fontStyle: 'italic' }}>
-                  Сахих аль-Бухари
                 </Typography>
               </QuoteCard>
             </Grid>

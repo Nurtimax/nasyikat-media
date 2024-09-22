@@ -21,7 +21,7 @@ const InfoBlock = styled(Box)(({ theme }) => ({
 
 const courseDetails = {
   1: {
-    title: 'Курс по Корану',
+    title: 'Куран окуп үйрөнүү курсу',
     description: 'Подробное изучение Корана с толкованием.',
     verse:
       'الَّذِينَ يَذْكُرُونَ اللَّهَ قِيَامًا وَقُعُودًا وَعَلَى جُنُوبِهِمْ\n“Истинно, те, кто поминает Аллаха, стоя, сидя и на своих сторонах” (Сура Аль-Имран, 3:191)',
@@ -41,7 +41,7 @@ const courseDetails = {
     },
   },
   2: {
-    title: 'Курс по Хадису',
+    title: 'Диний курстун аты',
     description: 'Изучение хадисов Пророка Мухаммада.',
     verse: 'العِلْمُ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ',
     hadith: 'Поиск знания - это обязанность каждого мусульманина.',
@@ -59,7 +59,7 @@ const courseDetails = {
     },
   },
   3: {
-    title: 'Курс по Корану с толкованием',
+    title: 'Диний курстун аты',
     description: 'Углубленное изучение Корана с акцентом на толкование.',
     verse: 'وَقُلْ رَبِّ زِدْنِي عِلْمًا',
     hadith: 'Знание - это свет.',
@@ -77,7 +77,7 @@ const courseDetails = {
     },
   },
   4: {
-    title: 'Курс по арабскому языку',
+    title: 'Диний курстун аты',
     description: 'Основы арабского языка для понимания религиозных текстов.',
     verse: 'إِنَّ أَكْرَمَكُمْ عِندَ اللَّهِ أَتْقَاكُمْ',
     hadith: 'Кто изучает арабский, тот лучше понимает религию.',
@@ -101,7 +101,7 @@ const CourseDetails = () => {
   const course = courseDetails[id];
 
   if (!course) {
-    return <Typography>Курс не найден</Typography>;
+    return <Typography>Курс табылган жок</Typography>;
   }
 
   return (
@@ -109,7 +109,7 @@ const CourseDetails = () => {
       <Header />
       <Welcome />
       <Container sx={{ py: 5 }}>
-        <Box
+        <BannerTextCourse
           sx={{
             mb: 5,
             textAlign: 'center',
@@ -125,7 +125,7 @@ const CourseDetails = () => {
           <Typography variant="h5" gutterBottom>
             {course.description}
           </Typography>
-        </Box>
+        </BannerTextCourse>
 
         {/* Слайдер изображений */}
         <Swiper spaceBetween={10} slidesPerView={1}>
@@ -142,7 +142,7 @@ const CourseDetails = () => {
 
         {/* Информация о курсе и о нас в одном ряду */}
         <InfoBlock>
-          <Box
+          <BannerTextCourse
             sx={{
               flex: 1,
               backgroundColor: '#f6edde',
@@ -151,14 +151,12 @@ const CourseDetails = () => {
               borderRadius: 2,
             }}
           >
-            <Typography variant="h6">Информация о курсе:</Typography>
-            <Typography variant="body1">Цена: {course.price}</Typography>
+            <Typography variant="h6">Курс тууралуу маалымат</Typography>
+            <Typography variant="body1">Баасы: {course.price}</Typography>
             <Typography variant="body1">Группа: {course.groupSize}</Typography>
-            <Typography variant="body1">
-              Продолжительность: {course.duration}
-            </Typography>
-          </Box>
-          <Box
+            <Typography variant="body1">Мөөнөтү: {course.duration}</Typography>
+          </BannerTextCourse>
+          <BannerTextCourse
             sx={{
               flex: 1,
               backgroundColor: '#f6edde',
@@ -167,13 +165,13 @@ const CourseDetails = () => {
               borderRadius: 2,
             }}
           >
-            <Typography variant="h6">О нас:</Typography>
+            <Typography variant="h6">Биз жөнүндө:</Typography>
             <Typography variant="body1">{course.about}</Typography>
-          </Box>
+          </BannerTextCourse>
         </InfoBlock>
 
         {/* Адрес и телефон */}
-        <Box
+        <BannerTextCourse
           sx={{
             flex: 1,
             backgroundColor: '#f6edde',
@@ -182,11 +180,11 @@ const CourseDetails = () => {
             borderRadius: 2,
           }}
         >
-          <Typography variant="h6">Адрес:</Typography>
+          <Typography variant="h6">Дареги:</Typography>
           <Typography variant="body1">{course.address}</Typography>
           <Typography variant="h6">Телефон:</Typography>
           <Typography variant="body1">{course.phone}</Typography>
-        </Box>
+        </BannerTextCourse>
 
         {/* Социальные сети и кнопка записаться */}
         <Grid container spacing={2} sx={{ mt: 5 }}>
@@ -239,3 +237,29 @@ const CourseDetails = () => {
 };
 
 export default CourseDetails;
+
+const BannerTextCourse = styled(Box)(() => ({
+  backgroundColor: '#f6edde',
+  borderLeft: `5px solid #6a4b1e`,
+  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+  fontFamily: 'Amiri, serif',
+  margin: '0 auto',
+  color: '#161c25',
+  position: 'relative',
+  '&:before': {
+    content: '"\\201C"',
+    position: 'absolute',
+    top: '-15px',
+    left: '10px',
+    fontSize: '50px',
+    color: '#6a4b1e',
+  },
+  '&:after': {
+    content: '"\\201D"',
+    position: 'absolute',
+    bottom: '-35px',
+    right: '10px',
+    fontSize: '50px',
+    color: '#6a4b1e',
+  },
+}));
