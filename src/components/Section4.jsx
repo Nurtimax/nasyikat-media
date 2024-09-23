@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import zaryiat55 from './data/quran-khadis/zariyat';
-import { Typography, Box, Paper } from '@mui/material';
+import { Typography, Box, Paper, Container } from '@mui/material';
 import { styled } from '@mui/system';
 
 const Section4 = () => {
@@ -15,16 +15,18 @@ const Section4 = () => {
   }, []);
 
   return (
-    <StyledContainer>
-      <StyledPaper elevation={6}>
-        <Typography variant="h6" component="h2" gutterBottom color="#2c3e50">
-          "Жана Эскерткин, эскертүү момундарга пайда берет" (Зарият 55-аят).
-        </Typography>
-        <StyledText variant="body2" component="div">
-          {zaryiat55[textIndex]}
-        </StyledText>
-      </StyledPaper>
-    </StyledContainer>
+    <Container maxWidth="100%">
+      <StyledContainer>
+        <StyledPaper elevation={6}>
+          <Quote variant="h6" component="h2" gutterBottom>
+            "Жана Эскерткин, эскертүү момундарга пайда берет" (Зарият 55-аят).
+          </Quote>
+          <StyledText variant="body2" component="div">
+            {zaryiat55[textIndex]}
+          </StyledText>
+        </StyledPaper>
+      </StyledContainer>
+    </Container>
   );
 };
 
@@ -43,24 +45,52 @@ const StyledContainer = styled(Box)(({ theme }) => ({
 // Стилизация карточки
 const StyledPaper = styled(Paper)(({ theme }) => ({
   textAlign: 'center',
-  width: '950px', // Фиксированная ширина карточки
-  height: '350px', // Фиксированная высота карточки
+  width: '950px',
+  height: '350px',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
   padding: theme.spacing(4),
-  backgroundColor: '#f9f5e7', // Мягкий фон
-  boxShadow: '0px 8px 20px rgba(0, 0, 0, 0.2)', // Глубокая тень
-  borderRadius: '15px', // Скругленные углы
+  backgroundColor: '#f9f5e7',
+  boxShadow: '0px 8px 20px rgba(0, 0, 0, 0.2)',
+  position: 'relative', // Для декоративных элементов
+  overflow: 'hidden',
   cursor: 'pointer',
   '&:hover': {
-    boxShadow: '0px 12px 25px rgba(0, 0, 0, 0.3)', // Увеличенная тень при ховере
+    boxShadow: '0px 12px 25px rgba(0, 0, 0, 0.3)',
   },
   [theme.breakpoints.down('sm')]: {
-    width: '100%', // Адаптация под мобильные устройства
-    height: '400px',
+    width: '100%',
+    height: 'auto',
     padding: theme.spacing(2),
+  },
+}));
+
+// Стилизация цитаты
+const Quote = styled(Typography)(({ theme }) => ({
+  fontSize: '1.1rem',
+  fontWeight: 'bold',
+  color: '#b89c6f',
+  fontFamily: 'Georgia, serif',
+  margin: theme.spacing(2, 0),
+  position: 'relative',
+  '&::before': {
+    fontSize: '2rem',
+    color: '#b89c6f',
+    position: 'absolute',
+    top: '-20px',
+    left: '-20px',
+  },
+  '&::after': {
+    fontSize: '2rem',
+    color: '#b89c6f',
+    position: 'absolute',
+    bottom: '-20px',
+    right: '-20px',
+  },
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '1rem',
   },
 }));
 
@@ -71,11 +101,13 @@ const StyledText = styled(Typography)(({ theme }) => ({
   color: '#333',
   fontFamily: 'Georgia, serif',
   lineHeight: '1.6',
-  height: '200px', // Фиксированная высота для текстовой области
-  overflowY: 'auto', // Прокрутка по вертикали при необходимости
+  height: '200px',
+  overflowY: 'auto',
   padding: theme.spacing(1),
-  textAlign: 'center', // Выравнивание текста по ширине
+  textAlign: 'center',
+  borderLeft: '4px solid #b89c6f', // Декоративная линия слева
+  paddingLeft: theme.spacing(2),
   [theme.breakpoints.down('sm')]: {
-    fontSize: '0.9rem', // Меньший размер текста на мобильных устройствах
+    fontSize: '0.9rem',
   },
 }));

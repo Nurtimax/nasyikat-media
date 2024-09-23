@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { styled } from '@mui/material/styles';
-import { Box, IconButton, Typography } from '@mui/material';
+import { Box, Container, IconButton, Typography } from '@mui/material';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -121,72 +121,74 @@ const Advertising = () => {
   };
 
   return (
-    <SliderContainer
-      onMouseEnter={() => setAutoSlide(false)} // Остановка автопрокрутки при наведении
-      onMouseLeave={() => setAutoSlide(true)} // Возобновление автопрокрутки
-    >
-      {slides.map((slide, index) => (
-        <Slide
-          key={index}
-          bgimg={slide.bgimg}
-          style={{
-            opacity: index === currentSlide ? 1 : 0,
-          }}
-          aria-label={`Slide ${index + 1}`}
+    <Container maxWidth="100%">
+      <SliderContainer
+        onMouseEnter={() => setAutoSlide(false)} // Остановка автопрокрутки при наведении
+        onMouseLeave={() => setAutoSlide(true)} // Возобновление автопрокрутки
+      >
+        {slides.map((slide, index) => (
+          <Slide
+            key={index}
+            bgimg={slide.bgimg}
+            style={{
+              opacity: index === currentSlide ? 1 : 0,
+            }}
+            aria-label={`Slide ${index + 1}`}
+          >
+            <ImageSection bgimg={slide.bgimg} aria-hidden="true" />
+            <ContentSection>
+              <Typography variant="h5" gutterBottom>
+                {slide.title}
+              </Typography>
+              <Typography variant="body1">{slide.description}</Typography>
+              <SocialIcons>
+                {slide.socialLinks.instagram && (
+                  <IconButton
+                    href={slide.socialLinks.instagram}
+                    target="_blank"
+                    aria-label="Instagram"
+                  >
+                    <InstagramIcon />
+                  </IconButton>
+                )}
+                {slide.socialLinks.telegram && (
+                  <IconButton
+                    href={slide.socialLinks.telegram}
+                    target="_blank"
+                    aria-label="Telegram"
+                  >
+                    <TelegramIcon />
+                  </IconButton>
+                )}
+                {slide.socialLinks.whatsapp && (
+                  <IconButton
+                    href={slide.socialLinks.whatsapp}
+                    target="_blank"
+                    aria-label="WhatsApp"
+                  >
+                    <WhatsAppIcon />
+                  </IconButton>
+                )}
+              </SocialIcons>
+            </ContentSection>
+          </Slide>
+        ))}
+        <NavigationButton
+          onClick={handlePrev}
+          aria-label="Previous Slide"
+          style={{ left: '10px' }}
         >
-          <ImageSection bgimg={slide.bgimg} aria-hidden="true" />
-          <ContentSection>
-            <Typography variant="h5" gutterBottom>
-              {slide.title}
-            </Typography>
-            <Typography variant="body1">{slide.description}</Typography>
-            <SocialIcons>
-              {slide.socialLinks.instagram && (
-                <IconButton
-                  href={slide.socialLinks.instagram}
-                  target="_blank"
-                  aria-label="Instagram"
-                >
-                  <InstagramIcon />
-                </IconButton>
-              )}
-              {slide.socialLinks.telegram && (
-                <IconButton
-                  href={slide.socialLinks.telegram}
-                  target="_blank"
-                  aria-label="Telegram"
-                >
-                  <TelegramIcon />
-                </IconButton>
-              )}
-              {slide.socialLinks.whatsapp && (
-                <IconButton
-                  href={slide.socialLinks.whatsapp}
-                  target="_blank"
-                  aria-label="WhatsApp"
-                >
-                  <WhatsAppIcon />
-                </IconButton>
-              )}
-            </SocialIcons>
-          </ContentSection>
-        </Slide>
-      ))}
-      <NavigationButton
-        onClick={handlePrev}
-        aria-label="Previous Slide"
-        style={{ left: '10px' }}
-      >
-        <ArrowBackIosIcon />
-      </NavigationButton>
-      <NavigationButton
-        onClick={handleNext}
-        aria-label="Next Slide"
-        style={{ right: '10px' }}
-      >
-        <ArrowForwardIosIcon />
-      </NavigationButton>
-    </SliderContainer>
+          <ArrowBackIosIcon />
+        </NavigationButton>
+        <NavigationButton
+          onClick={handleNext}
+          aria-label="Next Slide"
+          style={{ right: '10px' }}
+        >
+          <ArrowForwardIosIcon />
+        </NavigationButton>
+      </SliderContainer>
+    </Container>
   );
 };
 

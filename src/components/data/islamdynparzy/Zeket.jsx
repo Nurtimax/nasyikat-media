@@ -1,8 +1,9 @@
-import { Typography, Box } from '@mui/material';
+import React from 'react';
+import { Box, Typography, Button } from '@mui/material';
 import Header from '../../../components/Header';
 import Welcome from '../../../components/Welcome';
-import ZakatCalculator from '../../ZakatCalculator';
 import Footer from '../../../components/Footer';
+import zeketpdf from '../../books-pdf/Зекет-китеби.pdf';
 
 const Zeket = () => {
   return (
@@ -14,71 +15,118 @@ const Zeket = () => {
           padding: 3,
           marginTop: '20px',
           borderRadius: 2,
-          backgroundAttachment: 'fixed',
           boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
           minHeight: '100vh',
+          color: '#f6ecde',
         }}
       >
+        {/* Информация о зекете */}
         <Typography
-          variant="h5"
+          variant="h4"
           component="h2"
           sx={{
-            marginBottom: 2,
+            marginBottom: 3,
             fontWeight: 'bold',
-            textShadow: '1px 1px 2px rgba(0, 0, 0, 0.6)',
-            padding: 1,
-            borderRadius: 1,
-            lineHeight: '1.8',
-            textAlign: 'justify',
+            color: '#f6ecde', // Темный цвет для заголовка
+            textAlign: 'center',
+            fontFamily: 'Amiri, serif', // Арабский стиль шрифта
+            textShadow: '1px 1px 2px rgba(0, 0, 0, 0.2)',
           }}
         >
-          Зекет
+          Зекет деген эмне?
         </Typography>
         <Typography
           variant="body1"
           component="p"
           sx={{
             lineHeight: 1.8,
+            maxWidth: '1000px',
             marginBottom: 4,
-            textAlign: 'center',
-            textShadow: '0.5px 0.5px 1px rgba(0, 0, 0, 0.3)',
-            borderRadius: 1,
+            textAlign: 'justify',
+            padding: 3,
+            borderRadius: 2,
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+            color: '#f6ecde', // Цвет текста
+            fontFamily: 'Amiri, serif',
+            fontSize: '18px',
           }}
         >
-          Ыйман келтирип, жакшы иштерди жасап, намазын окуп, зекет бергендердин
-          сооптору Жараткандын алдында. Аларга коркунуч да, кайгыруу да болбойт.{' '}
+          <strong>Зекет</strong> — бул Исламдагы милдеттүү ибадаттардын бири, ал
+          жерде мусулмандар өз мүлкүнүн бир бөлүгүн муктаждарга садага кылып
+          беришет. Зекет берилгендин мүлкүн тазалоого жана коомдогу тилектештик
+          жана жардам духун бекемдөөгө жардам берет. Ал Исламдын беш тирегинин
+          бири болуп саналат жана мусулмандарга Алланын жана коомдун алдындагы
+          милдеттерин эске салуу үчүн маанилүү.
           <br />
-          (Бакара; 277)
+          <br />
+          <strong>Зекет берилчү мүлктүн түрлөрү:</strong>
+          <ul style={{ marginLeft: '20px', lineHeight: '1.8' }}>
+            <li>Алтын жана күмүш.</li>
+            <li>Акча жана аманаттар.</li>
+            <li>Коммерциялык товарлар.</li>
+            <li>Айыл чарба продукциялары.</li>
+            <li>Үй жаныбарлары (төө, уй, кой).</li>
+          </ul>
+          <br />
+          <strong>Зекет берилчү адамдардын категориялары (8 категория):</strong>
+          <ol style={{ marginLeft: '20px', lineHeight: '1.8' }}>
+            <li>
+              Кедейлер (фукара) — жашоого жетиштүү мүлкү же кирешеси жоктор.
+            </li>
+            <li>
+              Жарды (мискин) — өтө муктаждыкта жана жакырчылыкта жашагандар.
+            </li>
+            <li>
+              Зекет чогултуучулар (амилин) — зекет чогултуу жана бөлүштүрүү
+              менен алектенгендер.
+            </li>
+            <li>
+              Жаңы мусулмандар (муаллафат аль-кулюб) — жүрөктөрүн Исламга
+              бекемдөө үчүн.
+            </li>
+            <li>
+              Кулдарды бошотуу үчүн (ар-рикак) — кулдарды же согуш туткундарына
+              жардам берүү үчүн.
+            </li>
+            <li>
+              Карызкорлор (гхаримин) — карыздарга малынып, аларды төлөй
+              албагандар.
+            </li>
+            <li>
+              Алланын жолунда (фи сабиль Аллах) — жихадды же башка Алла
+              жолундагы иштерди колдоо үчүн.
+            </li>
+            <li>
+              Сапардагы (ибнус-сабиль) — үйдөн алыс жүрүп, жардамга муктаж
+              болгондор.
+            </li>
+          </ol>
         </Typography>
-        <Typography
-          variant="body1"
-          component="p"
+
+        {/* Кнопка для открытия PDF */}
+        <Button
+          variant="contained"
+          color="primary"
           sx={{
-            textAlign: 'center',
-            textShadow: '0.5px 0.5px 1px rgba(0, 0, 0, 0.3)',
-            borderRadius: 1,
-            lineHeight: 1.8,
+            fontWeight: 'bold',
+            fontSize: '16px',
+            padding: '10px 20px',
+            borderRadius: '8px',
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+            textTransform: 'none',
+            backgroundColor: '#00ab55',
+            ':hover': {
+              backgroundColor: '#01964c',
+            },
           }}
+          onClick={() => window.open(zeketpdf, '_blank')}
         >
-          Зекет деген- бул пенденин адал эмгек менен тапкан ырыскысынан Аллах
-          жолуна сарптоо. Муну менен Аллах Таала Өз пендесин берешендике, кең
-          пейилдүүлүккө, боорукерликке, жакшылыкты жакшылык менен кайтарууга
-          үндөйт, муктаж болгон бир туугандары да бар экенин пенденин эсине
-          салып турат. Анткени, зекет муктаж адамдарга берилет. Муктаждын
-          муктаждыгын аткаруу менен пенденин Жараткандын алдында даражасы
-          көтөрүлөт. Хадисте айтылгандай: “Ким бул дүйнөдө бирөөнүн муктаждыгын
-          аткарса, Аллах Таала кыяматта анын муктаждыгын аткарат” деп айтылат
-          эмеспи. Зекет- бул Аллах Таалам берген ырыскысына ыраазычылык, шүгүр,
-          рахмат айтуу. Зекет бергендер тууралуу Кураанда: “Ыйман келтирип,
-          жакшы амал кылган (өзгөчө) намаз окуган, зекет бергендердин сооптору
-          Роббилеринин алдында. Аларга коркунуч да, кайгыруу да болбойт” деп
-          айтылган. (Бакара:277).
-        </Typography>
-        <ZakatCalculator />
+          «Зекет китеби» окуу
+        </Button>
       </Box>
       <Footer />
     </div>

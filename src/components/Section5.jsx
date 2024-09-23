@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardContent, Typography, Box } from '@mui/material';
+import { CardContent, Typography, Box, Container } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { keyframes } from '@emotion/react';
 import prayers from './data/dubalar/prayers';
@@ -91,7 +91,7 @@ const CardsContainer = styled(Box)(({ theme }) => ({
 
 const Section5 = () => {
   return (
-    <div>
+    <Container maxWidth="100%">
       <Header>
         <Typography variant="h3">
           Дуба - Момундун куралы, диндин түркүгү жана асман менен жердин нуру
@@ -130,7 +130,7 @@ const Section5 = () => {
           </StyledCard>
         ))}
       </CardsContainer>
-    </div>
+    </Container>
   );
 };
 

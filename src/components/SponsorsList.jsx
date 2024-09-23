@@ -1,6 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Box, Typography, IconButton, Button } from '@mui/material';
+import { Box, Typography, IconButton, Button, Container } from '@mui/material';
 import { Instagram, WhatsApp } from '@mui/icons-material';
 import LaptopMacIcon from '@mui/icons-material/LaptopMac'; // IT Developer
 import HeadsetIcon from '@mui/icons-material/Headset'; // Airpods
@@ -102,13 +102,7 @@ const PartnerCard = ({ partner }) => (
 
 const SponsorsList = () => {
   return (
-    <Box
-      sx={{
-        maxWidth: '1200px',
-        margin: '0 auto',
-        padding: '40px 20px',
-      }}
-    >
+    <Container maxWidth="100%">
       <Typography
         variant="h3"
         sx={{
@@ -141,7 +135,7 @@ const SponsorsList = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </Box>
+    </Container>
   );
 };
 

@@ -1,9 +1,9 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import React from 'react';
 
 const TextBanner2 = () => {
   return (
-    <div>
+    <Container maxWidth="100%">
       <Box
         sx={{
           backgroundColor: '#f6edde',
@@ -51,7 +51,7 @@ const TextBanner2 = () => {
           Бакара сүрөсү 28-аят
         </Typography>
       </Box>
-    </div>
+    </Container>
   );
 };
 

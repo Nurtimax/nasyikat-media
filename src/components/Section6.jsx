@@ -9,11 +9,11 @@ import {
   Button,
   Box,
   useTheme,
+  Container,
 } from '@mui/material';
 import { LocationOn, AccessTime } from '@mui/icons-material';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import muslim from './data/islam-3-yiyk-jer/muslimplace';
-import img from '../assetts/icons/section-img.png';
 
 const Section6 = () => {
   const theme = useTheme();
@@ -46,7 +46,7 @@ const Section6 = () => {
   };
 
   return (
-    <div style={{ margin: '20px 0.4rem' }}>
+    <Container maxWidth="100%">
       <Box textAlign="center" mb={4}>
         <Typography variant="h4" component="h1" gutterBottom>
           Мусулмандардын 3 ыйык жери
@@ -171,10 +171,8 @@ const Section6 = () => {
             borderRadius: '8px',
           },
         }}
-      >
-        <img src={img} alt="Section Illustration" />
-      </Box>
-    </div>
+      ></Box>
+    </Container>
   );
 };
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Typography, Link, IconButton, Box } from '@mui/material';
-import { Instagram, YouTube } from '@mui/icons-material';
+import { Instagram, WhatsApp, YouTube } from '@mui/icons-material';
 import { styled } from '@mui/system';
 import logo from '../assetts/icons/logo-nasykat.png';
 import TelegramIcon from '@mui/icons-material/Telegram';
@@ -187,6 +187,17 @@ const Footer = () => {
           >
             <YouTube style={{ fontSize: '25px' }} />
           </AnimatedIconButton>
+          <AnimatedIconButton
+            component={Link}
+            href="https://wa.me/996556401369"
+            target="_blank"
+            rel="noopener"
+            color="inherit"
+            aria-label="YouTube"
+            sx={{ color: '#55ff00', '&:hover': { color: '#03cc00' } }} // YouTube color
+          >
+            <WhatsApp style={{ fontSize: '25px' }} />
+          </AnimatedIconButton>
         </SocialIcons>
         <FlagsWrapper>
           <FlagImage src={kyrgyzFlag} alt="Kyrgyzstan Flag" />
@@ -195,7 +206,7 @@ const Footer = () => {
         </FlagsWrapper>
 
         <FooterText>
-          Nasyikat.media 2024 {/* © 2024 All Rights Reserved */}
+          © Nasyikat.media 2020 {/* © 2024 All Rights Reserved */}
         </FooterText>
       </Container>
     </FooterWrapper>
