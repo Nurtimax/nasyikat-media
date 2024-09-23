@@ -12,44 +12,44 @@ import USER_LIST from '../utils/constants/aalymdar';
 
 export default function Aalymdar() {
   return (
-    <>
+    <Container maxWidth="100%">
       <Typography
         variant="h4"
         align="center"
         gutterBottom
         sx={{
           fontSize: {
-            xs: '1.1rem',
-            sm: '1.2rem',
-            mb: '1rem',
-            background: '#f6ecde',
-            padding: '2rem',
-            marginBottom: '1rem',
-            color: '#071c6b',
+            background: 'linear-gradient(145deg, #f9f3e7 20%, #f6ecde 80%)', // Градиент для придания глубины фону
+            padding: '1.5rem',
+            marginBottom: '1.5rem',
+            color: '#34495e', // Темно-синий цвет для текста
+            border: '2px solid #b89c6f', // Золотистая рамка для более изысканного вида
+            borderRadius: '5px', // Округлые углы для рамки
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Легкая тень для объема
+            fontFamily: 'Georgia, serif',
+            position: 'relative',
           },
           fontFamily: 'Georgia, serif',
         }}
       >
         ААЛЫМДАР ПАЙГАМБАРЛАРДЫН МУРАСКОРЛОРУ.
       </Typography>
-      <Container maxWidth={'xl'}>
-        <Box
-          sx={{
-            display: 'grid',
-            gap: 3,
-            gridTemplateColumns: {
-              xs: 'repeat(1, 1fr)',
-              sm: 'repeat(2, 1fr)',
-              md: 'repeat(3, 1fr)',
-              lg: 'repeat(4, 1fr)',
-            },
-          }}
-        >
-          {USER_LIST.map((user) => (
-            <AalymdarCards key={user.id} user={user} />
-          ))}
-        </Box>
-      </Container>
-    </>
+      <Box
+        sx={{
+          display: 'grid',
+          gap: 3,
+          gridTemplateColumns: {
+            xs: 'repeat(1, 1fr)',
+            sm: 'repeat(2, 1fr)',
+            md: 'repeat(3, 1fr)',
+            lg: 'repeat(4, 1fr)',
+          },
+        }}
+      >
+        {USER_LIST.map((user) => (
+          <AalymdarCards key={user.id} user={user} />
+        ))}
+      </Box>
+    </Container>
   );
 }

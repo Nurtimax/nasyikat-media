@@ -20,10 +20,8 @@ import optimabank from '../assetts/icons/optima.png';
 import odengin from '../assetts/icons/odengi.png';
 
 const DonateContainer = styled(Container)(({ theme }) => ({
-  padding: theme.spacing(4),
+  padding: theme.spacing(2),
   borderRadius: theme.shape.borderRadius,
-  background: 'linear-gradient(45deg, #071c6b, #031555e7, #071c6b, #031555e7)',
-  backgroundSize: '400% 400%',
   animation: 'gradient 15s ease infinite',
   display: 'flex',
   flexDirection: 'column',
@@ -211,7 +209,7 @@ const Donate = () => {
                   marginBottom: '10px',
                 }}
               />
-              <p>0556401369</p>
+              <p>0556....69</p>
               <CopyToClipboard text="556401369" onCopy={handleCopy}>
                 <CopyIconButton>
                   <ContentCopyIcon />
@@ -230,7 +228,7 @@ const Donate = () => {
                   marginBottom: '10px',
                 }}
               />
-              <p>0556401369</p>
+              <p>0556....69</p>
               <CopyToClipboard text="556401369" onCopy={handleCopy}>
                 <CopyIconButton>
                   <ContentCopyIcon />

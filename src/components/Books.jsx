@@ -12,23 +12,31 @@ import {
   Modal,
   Box,
 } from '@mui/material';
-import { Instagram, Telegram, MenuBook, WhatsApp } from '@mui/icons-material';
+import { Instagram, Telegram, MenuBook } from '@mui/icons-material';
 import books from './data/free-books/pdfbooksfree';
 import CloseIcon from '@mui/icons-material/Close';
 import Header from '../components/Header';
 import Welcome from '../components/Welcome';
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import Footer from '../components/Footer';
-import styled from 'styled-components';
 
+// Общий стиль карточек
 const cardStyle = {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
   height: '100%',
   borderRadius: '15px',
+  backgroundColor: '#f9f3e7', // Легкий бежевый фон для исламской эстетики
+  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Мягкая тень для объемности
+  transition: 'transform 0.3s ease-in-out',
+  '&:hover': {
+    transform: 'translateY(-5px)', // Легкий эффект при наведении
+    boxShadow: '0 6px 12px rgba(0, 0, 0, 0.15)',
+  },
 };
 
+// Стиль модального окна
 const modalStyle = {
   position: 'absolute',
   top: '50%',
@@ -41,19 +49,8 @@ const modalStyle = {
   p: 4,
   textAlign: 'center',
   color: '#161c25',
+  border: '1px solid #ddd', // Дополнительная граница
 };
-
-const CustomIconButtonInstagram = styled(Instagram)({
-  color: '#E1306C',
-});
-
-const CustomIconButtonTelegram = styled(Telegram)({
-  color: '#0088cc',
-});
-
-const CustomIconButtonWhatsApp = styled(WhatsApp)({
-  color: '#25d366',
-});
 
 const Books = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -94,7 +91,12 @@ const Books = () => {
           variant="h5"
           align="center"
           gutterBottom
-          style={{ marginTop: '2rem', fontWeight: 'bold' }}
+          style={{
+            marginTop: '2rem',
+            fontWeight: 'bold',
+            color: '#f6edde',
+            fontFamily: 'Georgia, serif',
+          }}
         >
           NASYIKAT.MEDIA ОНЛАЙН КИТЕПКАНА
         </Typography>
@@ -105,6 +107,19 @@ const Books = () => {
           style={{ marginBottom: '2rem' }}
           value={searchQuery}
           onChange={handleSearchChange}
+          sx={{
+            '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+                borderColor: '#ddd', // Цвет рамки текстового поля
+              },
+              '&:hover fieldset': {
+                borderColor: '#b89c6f', // Цвет при наведении
+              },
+              '&.Mui-focused fieldset': {
+                borderColor: '#b89c6f', // Цвет при фокусе
+              },
+            },
+          }}
         />
         <Grid container spacing={4}>
           {filteredBooks.map((book, index) => (
@@ -119,19 +134,30 @@ const Books = () => {
                       height: 'auto',
                       maxHeight: 220,
                       objectFit: 'cover',
-                      borderRadius: '10px',
+                      borderRadius: '15px',
+                      border: '1px solid #ddd',
                     }}
                   />
                   <Typography
                     variant="h6"
-                    style={{ marginTop: 12, fontWeight: 'bold' }}
+                    style={{
+                      marginTop: 12,
+                      fontWeight: 'bold',
+                      color: '#34495e',
+                    }}
                   >
                     {book.title}
                   </Typography>
-                  <Typography variant="subtitle1" style={{ marginTop: 8 }}>
+                  <Typography
+                    variant="subtitle1"
+                    style={{ marginTop: 8, color: '#7f8c8d' }}
+                  >
                     {book.description}
                   </Typography>
-                  <Typography variant="subtitle2" style={{ marginTop: 8 }}>
+                  <Typography
+                    variant="subtitle2"
+                    style={{ marginTop: 8, color: '#7f8c8d' }}
+                  >
                     Автор: {book.author}
                   </Typography>
                 </CardContent>
@@ -147,6 +173,13 @@ const Books = () => {
                       transition: 'border-color 0.3s, color 0.3s',
                       fontSize: '1.1rem',
                       width: '100%',
+                      backgroundColor: '#f9f3e7',
+                      borderColor: '#b89c6f', // Золотистая рамка кнопки
+                      color: '#b89c6f',
+                      '&:hover': {
+                        borderColor: '#967f45',
+                        color: '#967f45',
+                      },
                     }}
                     onClick={() => handleOpenModal(book)}
                   >
@@ -199,61 +232,22 @@ const Books = () => {
             Урматтуу окурман!
           </Typography>
           <Typography id="modal-description" sx={{ mt: 2 }}>
-            Китепти окуп чыккан соң китеп боюнча пикириңизди бөлүшүп коюууңузду
-            өтүнөбүз сиздин пикриңиз биз үчүн чоң мааниге ээ.
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '2rem',
-                marginTop: '1rem',
-              }}
-            >
-              <a
-                href="https://t.me/yourTelegramUsername"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <CustomIconButtonTelegram />
-              </a>
-              <a
-                href="https://www.instagram.com/yourInstagramUsername"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <CustomIconButtonInstagram />
-              </a>
-              <a
-                href="https://wa.me/yourWhatsAppNumber"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <CustomIconButtonWhatsApp />
-              </a>
-            </div>
-            <br />
-            Аллах таала илимиңизге берекесин берсин.
+            Бул китепти окууну каалайсызбы?
           </Typography>
-          <Box sx={{ mt: 3, display: 'flex', justifyContent: 'center' }}>
-            <Button
-              variant="contained"
-              color="primary"
-              startIcon={<MenuBook />}
-              onClick={handleRead}
-              style={{ marginRight: '10px' }}
-            >
-              Окуу
-            </Button>
-            <Button
-              variant="outlined"
-              color="inherit"
-              startIcon={<CloseIcon />}
-              onClick={handleCloseModal}
-            >
-              Жок
-            </Button>
-          </Box>
+          <Button
+            onClick={handleRead}
+            variant="contained"
+            color="primary"
+            style={{ marginTop: '1rem' }}
+          >
+            Окуу
+          </Button>
+          <IconButton
+            style={{ position: 'absolute', top: 10, right: 10 }}
+            onClick={handleCloseModal}
+          >
+            <CloseIcon />
+          </IconButton>
         </Box>
       </Modal>
     </div>

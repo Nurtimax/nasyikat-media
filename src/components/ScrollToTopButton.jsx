@@ -31,12 +31,18 @@ const ScrollToTopButton = () => {
         onClick={scrollToTop}
         style={{
           position: 'fixed',
-          bottom: 20,
-          left: 20,
-          backgroundColor: '#071c6b',
-          color: '#fff',
-          boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
-          zIndex: '99',
+          bottom: '20px',
+          right: '20px',
+          backgroundColor: '#f6ecde',
+          color: '#161c25',
+          borderRadius: '50%',
+          boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
+          zIndex: 99,
+          transition: 'background-color 0.3s, transform 0.3s',
+          '&:hover': {
+            backgroundColor: '#d9c7aedb',
+            transform: 'scale(1.1)',
+          },
         }}
       >
         <ArrowUpward />

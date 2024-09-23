@@ -9,7 +9,7 @@ import { GREY } from '../theme/palette';
 const Section2 = () => {
   return (
     <Container maxWidth="100%">
-      <SectionTitle>ИСЛАМДЫН НЕГИЗГИ БЕШ ПАРЫЗЫ</SectionTitle>
+      <SectionTitle>ИСЛАМДЫН БЕШ ПАРЫЗЫ</SectionTitle>
       <CardsContainer>
         {islamdyn5Parzy.map((card, index) => (
           <Card key={index}>
@@ -26,18 +26,21 @@ const Section2 = () => {
       </CardsContainer>
       <Typography
         style={{
+          background: 'linear-gradient(145deg, #f9f3e7 20%, #e9d0ae 80%)',
+          padding: '1.5rem',
+          marginBottom: '1.5rem',
+          marginTop: '1.5rem',
+          color: '#34495e',
+          border: '2px solid #ff0000',
+          borderRadius: '5px',
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+          fontFamily: 'Georgia, serif',
+          position: 'relative',
           textAlign: 'center',
-          marginTop: '1rem',
-          marginBottom: '1rem',
-          background: '#f6ecde',
-          padding: '1rem',
-          color: '#000',
-          fontSize: '0.8rem',
-          borderRadius: '0.5rem',
         }}
       >
         Учурда сайтты жаңылоо иштери жүрүп жатат. Сайтта каталар пайда болушу
-        мүмкүн, бирок биз аларды оңдойбуз.
+        мүмкүн, биз аларды оңдоп жатабыз.
       </Typography>
     </Container>
   );
