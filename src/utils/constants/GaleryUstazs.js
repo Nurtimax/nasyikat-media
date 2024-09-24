@@ -1,4 +1,3 @@
-import mufti from '../../assetts/images/ustazdar/muftiyat.jpg';
 import chubakajy from '../../assetts/images/ustazdar/chubakajy.jpg';
 import abdushukurajy from '../../assetts/images/ustazdar/abdushukurajy.jpg';
 import sadybakasajy from '../../assetts/images/ustazdar/sadybakasajy.jpg';
@@ -8,11 +7,6 @@ import bahtyarajy from '../../assetts/images/ustazdar/bakhtyarajyy.jpg';
 import kalysajy from '../../assetts/images/ustazdar/kalysajy.png';
 
 export const GalleryList = [
-  {
-    imageUrl: mufti,
-    title: 'Муфтий Абдулазиз кары Закиров',
-    postAt: '2024-09-01',
-  },
   {
     imageUrl: chubakajy,
     title: 'Устаз ЧУБАК ажы Жалилов (р.х)',

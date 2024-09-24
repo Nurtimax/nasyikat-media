@@ -70,12 +70,12 @@ export default function ProfileAbout({ profile }) {
               <IconStyle icon={'eva:instagram-fill'} /> @nasyikat.media
             </Link>
             <Link
-              href="https://www.instagram.com/kyrgyz.muslims/"
+              href="https://www.instagram.com/ustazdan.nasaat/"
               target="_blank"
               rel="noopener"
               color="text.primary"
             >
-              <IconStyle icon={'eva:instagram-fill'} /> @Kyrgyz.muslims
+              <IconStyle icon={'eva:instagram-fill'} /> @ustazdan.nasaat
             </Link>
           </Stack>
         </Stack>
@@ -85,7 +85,7 @@ export default function ProfileAbout({ profile }) {
         {/* Location */}
         <Stack direction="row" alignItems="center" justifyContent="center">
           <Typography variant="body2">
-            Кыргызстан Бишкек Баткен &nbsp;
+            Кыргызстан Бишкек &nbsp;
             <Link component="span" variant="subtitle2" color="text.primary">
               {country}
             </Link>
