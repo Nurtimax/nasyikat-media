@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { styled } from '@mui/material/styles';
-import { Box, Container, IconButton, Typography } from '@mui/material';
+import { Box, Container, IconButton, Typography, Avatar } from '@mui/material';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -8,16 +8,17 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import slides from '../utils/constants/reclama';
 
-// Styled components for responsive design
+// Styled components
 const SliderContainer = styled(Box)(({ theme }) => ({
   position: 'relative',
   width: '100%',
-  height: '370px', // Default height for larger screens
+  height: '370px',
   overflow: 'hidden',
   marginTop: '25px',
   marginBottom: '20px',
+  borderRadius: '5px',
   [theme.breakpoints.down('md')]: {
-    height: '65vh', // Adjusted height for mobile devices
+    height: '65vh',
   },
 }));
 
@@ -44,7 +45,7 @@ const ImageSection = styled(Box)(({ theme, bgimg }) => ({
   backgroundPosition: 'center',
   [theme.breakpoints.down('md')]: {
     width: '100%',
-    height: '70%', // Increased height for mobile devices
+    height: '70%',
   },
 }));
 
@@ -55,15 +56,15 @@ const ContentSection = styled(Box)(({ theme }) => ({
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
-  backgroundColor: '#f6ecde', // Semi-transparent background
+  backgroundColor: '#f6ecde',
   color: '#071c6b',
   textAlign: 'center',
   padding: '20px',
   [theme.breakpoints.down('md')]: {
     width: '100%',
-    height: '30%', // Adjusted height for mobile devices
-    justifyContent: 'flex-start', // Align content to top
-    padding: '10px', // Add padding if needed
+    height: '60%',
+    justifyContent: 'flex-start',
+    padding: '10px',
   },
 }));
 
@@ -74,7 +75,7 @@ const NavigationButton = styled(IconButton)(({ theme }) => ({
   color: '#0a73c9',
   zIndex: 1,
   [theme.breakpoints.down('md')]: {
-    fontSize: '1.5rem', // Smaller navigation button on mobile devices
+    fontSize: '1.5rem',
   },
   '&:hover': {
     backgroundColor: 'rgba(255, 255, 255, 0.2)',
@@ -84,7 +85,7 @@ const NavigationButton = styled(IconButton)(({ theme }) => ({
 const SocialIcons = styled(Box)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
-  gap: '10px',
+  gap: '15px',
   marginTop: '20px',
   '& svg': {
     fontSize: '2rem',
@@ -97,11 +98,11 @@ const SocialIcons = styled(Box)(({ theme }) => ({
     },
   },
 }));
+
 const Advertising = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [autoSlide, setAutoSlide] = useState(true);
 
-  // Обработчик автоматической прокрутки
   useEffect(() => {
     let interval;
     if (autoSlide) {
@@ -120,16 +121,20 @@ const Advertising = () => {
     setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   };
 
+  // Функция для перехода по ссылке на Instagram
+  const handleAvatarClick = (link) => {
+    window.open(link, '_blank');
+  };
+
   return (
     <Container maxWidth="100%">
       <SliderContainer
-        onMouseEnter={() => setAutoSlide(false)} // Остановка автопрокрутки при наведении
-        onMouseLeave={() => setAutoSlide(true)} // Возобновление автопрокрутки
+        onMouseEnter={() => setAutoSlide(false)}
+        onMouseLeave={() => setAutoSlide(true)}
       >
         {slides.map((slide, index) => (
           <Slide
             key={index}
-            bgimg={slide.bgimg}
             style={{
               opacity: index === currentSlide ? 1 : 0,
             }}
@@ -137,37 +142,51 @@ const Advertising = () => {
           >
             <ImageSection bgimg={slide.bgimg} aria-hidden="true" />
             <ContentSection>
+              {/* Добавление аватара с событием onClick */}
+              <Avatar
+                src={slide.avatar}
+                alt="Avatar"
+                sx={{
+                  width: 80,
+                  height: 80,
+                  marginBottom: 2,
+                  border: '2px solid #071c6b',
+                  backgroundColor: '#ffffff',
+                  cursor: 'pointer', // Указатель мыши при наведении
+                }}
+                onClick={() => handleAvatarClick(slide.instagramLink)} // Переход по ссылке
+              />
               <Typography variant="h5" gutterBottom>
                 {slide.title}
               </Typography>
               <Typography variant="body1">{slide.description}</Typography>
               <SocialIcons>
                 {slide.socialLinks.instagram && (
-                  <IconButton
+                  <CustomIconButtonInstagram
                     href={slide.socialLinks.instagram}
                     target="_blank"
                     aria-label="Instagram"
                   >
                     <InstagramIcon />
-                  </IconButton>
+                  </CustomIconButtonInstagram>
                 )}
                 {slide.socialLinks.telegram && (
-                  <IconButton
+                  <CustomIconButtonTelegram
                     href={slide.socialLinks.telegram}
                     target="_blank"
                     aria-label="Telegram"
                   >
                     <TelegramIcon />
-                  </IconButton>
+                  </CustomIconButtonTelegram>
                 )}
                 {slide.socialLinks.whatsapp && (
-                  <IconButton
+                  <CustomIconButtonWhatsApp
                     href={slide.socialLinks.whatsapp}
                     target="_blank"
                     aria-label="WhatsApp"
                   >
                     <WhatsAppIcon />
-                  </IconButton>
+                  </CustomIconButtonWhatsApp>
                 )}
               </SocialIcons>
             </ContentSection>
@@ -193,3 +212,15 @@ const Advertising = () => {
 };
 
 export default Advertising;
+
+const CustomIconButtonInstagram = styled(IconButton)({
+  color: '#E1306C',
+});
+
+const CustomIconButtonTelegram = styled(IconButton)({
+  color: '#0088cc',
+});
+
+const CustomIconButtonWhatsApp = styled(IconButton)({
+  color: '#25d366',
+});

@@ -25,8 +25,6 @@ import NamazTimes from './NamazTimes';
 import DetailsPage from './ProductDetails';
 import IslamicCourses from './IslamicCourses';
 import CourseDetails from './CourseDetails';
-import KhalifaCards from '../components/KhalifaCards';
-import KhalifaDetail from '../components/KhalifaDetail';
 
 const MainRouter = () => {
   return (
@@ -57,8 +55,6 @@ const MainRouter = () => {
         <Route path="/course/:id" element={<CourseDetails />} />
         <Route path="/aalymdar" element={<Aalymdar />} />
         <Route path="/aalymdar/:id" element={<AalymdarDetails />} />
-        <Route path="/khalifacards" element={<KhalifaCards />} />
-        <Route path="/khalifacards/:id" element={<KhalifaDetail />} />
       </Routes>
     </Router>
   );

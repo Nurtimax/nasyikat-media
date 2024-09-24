@@ -9,19 +9,16 @@ import {
   Paper,
   Avatar,
   Checkbox,
-  TextField,
   Typography,
   CardHeader,
   IconButton,
   AvatarGroup,
-  InputAdornment,
   FormControlLabel,
 } from '@mui/material';
 // components
 import Iconify from './Iconify';
 import MyAvatar from './MyAvatar';
 import { fDate } from '../utils/formatTime';
-import EmojiPicker from './emoji-picker/EmojiPicker';
 
 const extractYouTubeId = (url) => {
   if (!url) return null;
@@ -39,10 +36,8 @@ ProfilePostCard.propTypes = {
 
 export default function ProfilePostCard({ post }) {
   const commentInputRef = useRef(null);
-  const fileInputRef = useRef(null);
 
   const [isLiked, setLiked] = useState(post.isLiked);
-  const [message, setMessage] = useState('');
 
   const hasComments = post.comments.length > 0;
 
@@ -52,14 +47,6 @@ export default function ProfilePostCard({ post }) {
 
   const handleUnlike = () => {
     setLiked(false);
-  };
-
-  const handleChangeMessage = (value) => {
-    setMessage(value);
-  };
-
-  const handleClickAttach = () => {
-    fileInputRef.current?.click();
   };
 
   const handleClickComment = () => {
@@ -139,7 +126,7 @@ export default function ProfilePostCard({ post }) {
           />
           <AvatarGroup
             max={4}
-            sx={{ '& .MuiAvatar-root': { width: 32, height: 32 } }}
+            sx={{ '& .MuiAvatar-root': { width: 25, height: 25 } }}
           >
             {post.personLikes.map((person) => (
               <Avatar
@@ -199,53 +186,6 @@ export default function ProfilePostCard({ post }) {
             ))}
           </Stack>
         )}
-
-        <Stack direction="row" alignItems="center">
-          <MyAvatar />
-
-          <TextField
-            fullWidth
-            size="small"
-            value={message}
-            inputRef={commentInputRef}
-            placeholder="Write a comment…"
-            onChange={(event) => handleChangeMessage(event.target.value)}
-            InputProps={{
-              endAdornment: (
-                <InputAdornment position="end">
-                  <IconButton size="small" onClick={handleClickAttach}>
-                    <Iconify
-                      icon={'ic:round-add-photo-alternate'}
-                      width={24}
-                      height={24}
-                    />
-                  </IconButton>
-
-                  <EmojiPicker
-                    value={message}
-                    setValue={setMessage}
-                    sx={{ right: { xs: -80, sm: 0 } }}
-                  />
-                </InputAdornment>
-              ),
-            }}
-            sx={{
-              ml: 2,
-              mr: 1,
-              '& fieldset': {
-                borderWidth: `1px !important`,
-                borderColor: (theme) =>
-                  `${theme.palette.grey[500_32]} !important`,
-              },
-            }}
-          />
-
-          <IconButton>
-            <Iconify icon={'ic:round-send'} width={24} height={24} />
-          </IconButton>
-
-          <input type="file" ref={fileInputRef} style={{ display: 'none' }} />
-        </Stack>
       </Stack>
     </Card>
   );
