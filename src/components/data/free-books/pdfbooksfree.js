@@ -1,19 +1,19 @@
 import logo from '../../../assetts/icons/pdflogo.jpg';
 import zeketpdf from '../../books-pdf/Зекет-китеби.pdf';
 import historyislampdf from '../../books-pdf/httpsazan_kzuploadИстория20Ислама_20Хайати20Улькю_pdf.pdf';
-import Nurpdf from '../../books-pdf/чексиз нур.pdf';
+// import Nurpdf from '../../books-pdf/чексиз нур.pdf';
 import Sahabah from '../../books-pdf/EQAMO_Истории_из_жизни_сподвижниц_Фатхи_Халяль.pdf';
 import musulmanka from '../../books-pdf/Мусульманка.pdf';
-import ochposomur from '../../books-pdf/Өчпөс өмүр (2).pdf';
-import paigambarlarhistory from '../../books-pdf/Пайгамбарлар тарыхы.pdf';
+// import ochposomur from '../../books-pdf/Өчпөс өмүр (2).pdf';
+// import paigambarlarhistory from '../../books-pdf/Пайгамбарлар тарыхы.pdf';
 import navigatemusulima from '../../books-pdf/putevoditelummhalid.pdf';
-import adamkorku from '../../books-pdf/adamkorku.pdf';
-import amanat from '../../books-pdf/amanat.pdf';
-import ooruluulargakat from '../../books-pdf/Оорулууларгакат..pdf';
+// import adamkorku from '../../books-pdf/adamkorku.pdf';
+// import amanat from '../../books-pdf/amanat.pdf';
+// import ooruluulargakat from '../../books-pdf/Оорулууларгакат..pdf';
 import surootozok from '../../books-pdf/75 вопросов о Аде.pdf';
 import islamagymdar from '../../books-pdf/Исламские течения и группы.pdf';
 import khalidibnvalid from '../../books-pdf/Рыцарь в пустынии.pdf';
-import kekel from '../../books-pdf/Kelkel-Tologon-Kasymbekov.pdf';
+// import kekel from '../../books-pdf/Kelkel-Tologon-Kasymbekov.pdf';
 import nastavlenie from '../../books-pdf/Наставление_сыну_Имам_Абуль_Фарадж_ибн_аль_Джаузи.pdf';
 
 const books = [
@@ -56,19 +56,19 @@ const books = [
       telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
     },
   },
-  {
-    title: 'Чексиз нур – Мухаммад Пайгамбар (с.a.в)',
-    description: 'Пайгамбарыбыздын кайталангыс өмүр баяны',
-    author: 'Мухаммед Фетхуллах Гүлен.',
-    image: logo,
-    pdf: Nurpdf,
-    avatar: logo,
-    name: 'Author Name 1',
-    socialLinks: {
-      instagram: 'https://www.instagram.com/nasyikat.media/',
-      telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
-    },
-  },
+  // {
+  //   title: 'Чексиз нур – Мухаммад Пайгамбар (с.a.в)',
+  //   description: 'Пайгамбарыбыздын кайталангыс өмүр баяны',
+  //   author: 'Мухаммед Фетхуллах Гүлен.',
+  //   image: logo,
+  //   pdf: Nurpdf,
+  //   avatar: logo,
+  //   name: 'Author Name 1',
+  //   socialLinks: {
+  //     instagram: 'https://www.instagram.com/nasyikat.media/',
+  //     telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
+  //   },
+  // },
   {
     title: 'Мусульманка',
     description: 'и ее личность в свете Корана и сунны',
@@ -81,32 +81,32 @@ const books = [
       telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
     },
   },
-  {
-    title: 'Өчпөс өмүр',
-    description: 'Пайгамбарыбыздын (с.a.в) өмүр баяны',
-    author: 'Абдушүкүр Нарматов',
-    image: logo,
-    pdf: ochposomur,
-    avatar: logo,
-    socialLinks: {
-      instagram: 'https://www.instagram.com/nasyikat.media/',
-      telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
-    },
-  },
-  {
-    title: 'Пайгамбарлар Тарыхы',
-    description:
-      'Бул эмгекте Ыйык Куранда баяндалып, аты аталган пайгамбарлар тууралуу маалымат берилет.',
-    author: 'ТАГАЕВ МАЙРАМБЕК КУДАЙБЕРДИЕВИЧ',
-    image: logo,
-    pdf: paigambarlarhistory,
-    avatar: logo,
-    name: 'Author Name 1',
-    socialLinks: {
-      instagram: 'https://www.instagram.com/nasyikat.media/',
-      telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
-    },
-  },
+  // {
+  //   title: 'Өчпөс өмүр',
+  //   description: 'Пайгамбарыбыздын (с.a.в) өмүр баяны',
+  //   author: 'Абдушүкүр Нарматов',
+  //   image: logo,
+  //   pdf: ochposomur,
+  //   avatar: logo,
+  //   socialLinks: {
+  //     instagram: 'https://www.instagram.com/nasyikat.media/',
+  //     telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
+  //   },
+  // },
+  // {
+  //   title: 'Пайгамбарлар Тарыхы',
+  //   description:
+  //     'Бул эмгекте Ыйык Куранда баяндалып, аты аталган пайгамбарлар тууралуу маалымат берилет.',
+  //   author: 'ТАГАЕВ МАЙРАМБЕК КУДАЙБЕРДИЕВИЧ',
+  //   image: logo,
+  //   pdf: paigambarlarhistory,
+  //   avatar: logo,
+  //   name: 'Author Name 1',
+  //   socialLinks: {
+  //     instagram: 'https://www.instagram.com/nasyikat.media/',
+  //     telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
+  //   },
+  // },
   {
     title: 'Путеводитель мусульманки',
     description:
@@ -121,45 +121,45 @@ const books = [
       telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
     },
   },
-  {
-    title: 'Адам көркү адеп',
-    description:
-      'Бул китепте жаш муундарды адеп-ахлактуулука үндөгөн материалдар берилген. Китеп жалпы окурмандарга арналат.',
-    author: 'Ж.Абидетегин, Жапарбек уулу А, Насыпбек Асанбаев',
-    image: logo,
-    pdf: adamkorku,
-    avatar: logo,
-    name: 'Author Name 1',
-    socialLinks: {
-      instagram: 'https://www.instagram.com/nasyikat.media/',
-      telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
-    },
-  },
-  {
-    title: 'АМАНАТ',
-    description: 'ырлар, поэмалар, терме',
-    author: 'Элмирбек ИМАНАЛИЕВ',
-    image: logo,
-    pdf: amanat,
-    avatar: logo,
-    socialLinks: {
-      instagram: 'https://www.instagram.com/nasyikat.media/',
-      telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
-    },
-  },
-  {
-    title: 'Оорулууларга кат',
-    description:
-      'Демек, адам бул дүйнөгө бир гана жакшы жашаш үчүн жана тынчтыкта, көңүл ачып өмүр сүрүү үчүн келген эмес.',
-    author: 'Бедиүззаман Саид Нурси Кыргызчага которгон: Какишев Кенжебек',
-    image: logo,
-    pdf: ooruluulargakat,
-    avatar: logo,
-    socialLinks: {
-      instagram: 'https://www.instagram.com/nasyikat.media/',
-      telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
-    },
-  },
+  // {
+  //   title: 'Адам көркү адеп',
+  //   description:
+  //     'Бул китепте жаш муундарды адеп-ахлактуулука үндөгөн материалдар берилген. Китеп жалпы окурмандарга арналат.',
+  //   author: 'Ж.Абидетегин, Жапарбек уулу А, Насыпбек Асанбаев',
+  //   image: logo,
+  //   pdf: adamkorku,
+  //   avatar: logo,
+  //   name: 'Author Name 1',
+  //   socialLinks: {
+  //     instagram: 'https://www.instagram.com/nasyikat.media/',
+  //     telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
+  //   },
+  // },
+  // {
+  //   title: 'АМАНАТ',
+  //   description: 'ырлар, поэмалар, терме',
+  //   author: 'Элмирбек ИМАНАЛИЕВ',
+  //   image: logo,
+  //   pdf: amanat,
+  //   avatar: logo,
+  //   socialLinks: {
+  //     instagram: 'https://www.instagram.com/nasyikat.media/',
+  //     telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
+  //   },
+  // },
+  // {
+  //   title: 'Оорулууларга кат',
+  //   description:
+  //     'Демек, адам бул дүйнөгө бир гана жакшы жашаш үчүн жана тынчтыкта, көңүл ачып өмүр сүрүү үчүн келген эмес.',
+  //   author: 'Бедиүззаман Саид Нурси Кыргызчага которгон: Какишев Кенжебек',
+  //   image: logo,
+  //   pdf: ooruluulargakat,
+  //   avatar: logo,
+  //   socialLinks: {
+  //     instagram: 'https://www.instagram.com/nasyikat.media/',
+  //     telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
+  //   },
+  // },
   {
     title: 'Семьдесят пять вопросов об Аде',
     description:
@@ -198,18 +198,18 @@ const books = [
       telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
     },
   },
-  {
-    title: 'КЕЛКЕЛ',
-    description: 'ТАРЫХЫЙ РОМАН',
-    author: 'ТӨЛӨГӨН КАСЫМБЕКОВ',
-    image: logo,
-    pdf: kekel,
-    avatar: logo,
-    socialLinks: {
-      instagram: 'https://www.instagram.com/nasyikat.media/',
-      telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
-    },
-  },
+  // {
+  //   title: 'КЕЛКЕЛ',
+  //   description: 'ТАРЫХЫЙ РОМАН',
+  //   author: 'ТӨЛӨГӨН КАСЫМБЕКОВ',
+  //   image: logo,
+  //   pdf: kekel,
+  //   avatar: logo,
+  //   socialLinks: {
+  //     instagram: 'https://www.instagram.com/nasyikat.media/',
+  //     telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
+  //   },
+  // },
   {
     title: 'НАСТАВЛЕНИЕ СЫНУ',
     description:
