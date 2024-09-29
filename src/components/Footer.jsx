@@ -189,7 +189,7 @@ const Footer = () => {
           </AnimatedIconButton>
           <AnimatedIconButton
             component={Link}
-            href="https://wa.me/996556401369"
+            href="https://chat.whatsapp.com/ICLMmCjxqH1EMuPM81qaim"
             target="_blank"
             rel="noopener"
             color="inherit"
@@ -206,7 +206,7 @@ const Footer = () => {
         </FlagsWrapper>
 
         <FooterText>
-          © Nasyikat.media 2020 {/* © 2024 All Rights Reserved */}
+          © Nasyikat.media 2020 <br /> © Бардык укуктар корголгон
         </FooterText>
       </Container>
     </FooterWrapper>

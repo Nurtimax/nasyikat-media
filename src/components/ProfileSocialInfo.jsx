@@ -16,7 +16,7 @@ export default function ProfileSocialInfo({ profile }) {
   const {
     telegramLink = 'https://t.me/MuhammedIbraghim', // Replace with your Telegram link
     instagramLink = 'https://www.instagram.com/nasyikat.media', // Replace with your Instagram link
-    whatsappLink = 'https://wa.me/556401369', // Replace with your WhatsApp link
+    whatsappLink = 'https://chat.whatsapp.com/ICLMmCjxqH1EMuPM81qaim', // Replace with your WhatsApp link
     phoneLink = 'tel:+996556401369', // Replace with your Phone number link
   } = profile;
 
