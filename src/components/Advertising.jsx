@@ -6,6 +6,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import LinkIcon from '@mui/icons-material/Link'; // Import the link icon
 import slides from '../utils/constants/reclama';
 
 // Styled components
@@ -99,6 +100,18 @@ const SocialIcons = styled(Box)(({ theme }) => ({
   },
 }));
 
+// New styled component for the top-right icon
+const WebsiteLinkIcon = styled(IconButton)(({ theme }) => ({
+  position: 'absolute',
+  top: '10px',
+  right: '10px',
+  backgroundColor: 'rgba(255, 255, 255, 0.8)',
+  zIndex: 2,
+  '&:hover': {
+    backgroundColor: '#e0e0e0',
+  },
+}));
+
 const Advertising = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [autoSlide, setAutoSlide] = useState(true);
@@ -121,7 +134,7 @@ const Advertising = () => {
     setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   };
 
-  // Функция для перехода по ссылке на Instagram
+  // Function for navigating to the external link
   const handleAvatarClick = (link) => {
     window.open(link, '_blank');
   };
@@ -140,9 +153,17 @@ const Advertising = () => {
             }}
             aria-label={`Slide ${index + 1}`}
           >
+            {/* Link icon in top-right corner */}
+            <WebsiteLinkIcon
+              onClick={() => handleAvatarClick(slide.instagramLink)}
+              aria-label="Go to website"
+            >
+              <LinkIcon />
+            </WebsiteLinkIcon>
+
             <ImageSection bgimg={slide.bgimg} aria-hidden="true" />
             <ContentSection>
-              {/* Добавление аватара с событием onClick */}
+              {/* Adding the avatar with onClick event */}
               <Avatar
                 src={slide.avatar}
                 alt="Avatar"
@@ -152,10 +173,11 @@ const Advertising = () => {
                   marginBottom: 2,
                   border: '2px solid #071c6b',
                   backgroundColor: '#ffffff',
-                  cursor: 'pointer', // Указатель мыши при наведении
+                  cursor: 'pointer',
                 }}
-                onClick={() => handleAvatarClick(slide.instagramLink)} // Переход по ссылке
+                onClick={() => handleAvatarClick(slide.instagramLink)} // Navigate to link
               />
+
               <Typography variant="h5" gutterBottom>
                 {slide.title}
               </Typography>

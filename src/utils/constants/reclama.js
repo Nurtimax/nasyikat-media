@@ -1,16 +1,30 @@
-import bannerRe from '../../assetts/icons/nasyyikatinsta.png';
-import banneryYt from '../../assetts/icons/nasyyikatyout.png';
-import bannerTm from '../../assetts/icons/nasyyikatteleg.png';
-import avatarInsta from '../../assetts/icons/logo-nasykat.png';
+import iteasyreclama from '../../assetts/icons/iteasyreclama.png';
+import logoiteasy from '../../assetts/icons/iteeasy.png';
+import logokurzhun from '../../assetts/icons/kurzhun.png';
+import kurzhunreclama from '../../assetts/icons/kurzhunreclama.png';
+import arzanstore from '../../assetts/icons/arzanreclama.png';
+import arzanstoreimg from '../../assetts/icons/arzan.png';
 
 const slides = [
   {
-    bgimg: bannerRe,
-    title: 'NASYIKAT.MEDIA',
+    bgimg: iteasyreclama,
+    title: 'ITeasy.kg',
     description:
-      'Биздин инстаграм каналга катталып пайдалуу кыска баяндарды көрүп дүйнө акыретиңиздерге пайда алыңыздар!',
-    avatar: avatarInsta,
-    instagramLink: 'https://www.instagram.com/nasyikat.media/',
+      '3 АЙЛЫК ОНЛАЙН ПРОГРАММАЛОО 9 жаштан 17 жашка чейинки таланттуу өспүрүмдөргө арналган курс',
+    avatar: logoiteasy,
+    instagramLink: 'https://www.instagram.com/iteasy.kg/',
+    socialLinks: {
+      instagram: 'https://www.instagram.com/iteasy.kg/',
+      telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
+      whatsapp: 'https://wa.me/996556401369',
+    },
+  },
+  {
+    bgimg: kurzhunreclama,
+    title: 'Приветствуем вас в Kurzhun-shop',
+    description: 'Вашем надежном партнере в мире стильных мужских аксессуаров!',
+    avatar: logokurzhun,
+    instagramLink: 'https://www.instagram.com/kurzhun.shop/', //YouTube Link
     socialLinks: {
       instagram: 'https://www.instagram.com/nasyikat.media/',
       telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
@@ -18,25 +32,12 @@ const slides = [
     },
   },
   {
-    bgimg: banneryYt,
-    title: 'NASYIKAT.MEDIA YouTube каналга катталыңыздар!',
+    bgimg: arzanstore,
+    title: 'ARZANSTORE.RU магазин airpods smartwatch',
     description:
-      'Биздин YouTube каналга катталып устаздардын кыска сабактарын көрүңүздөр!',
-    avatar: avatarInsta,
-    instagramLink: 'https://www.youtube.com/@nasyikat_media', //YouTube Link
-    socialLinks: {
-      instagram: 'https://www.instagram.com/nasyikat.media/',
-      telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
-      whatsapp: 'https://wa.me/996556401369',
-    },
-  },
-  {
-    bgimg: bannerTm,
-    title: 'NASYIKAT.MEDIA Telegram каналга катталыңыздар!',
-    description:
-      'Биздин инстаграм каналга катталып пайдалуу электрондук китептерди окуп Умар ибн хаттабтын киносун көрүңүздөр',
-    avatar: avatarInsta,
-    instagramLink: 'https://www.instagram.com/nasyikat.media/',
+      'Москва шаарында сапаттуу арзан баадагы айрдос кол сааттарды таба аласыз!',
+    avatar: arzanstoreimg,
+    instagramLink: 'https://www.instagram.com/arzanstore.ru/',
     socialLinks: {
       instagram: 'https://www.instagram.com/nasyikat.media/',
       telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
