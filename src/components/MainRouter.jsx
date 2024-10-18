@@ -25,6 +25,7 @@ import NamazTimes from './NamazTimes';
 import DetailsPage from './ProductDetails';
 import IslamicCourses from './IslamicCourses';
 import CourseDetails from './CourseDetails';
+import KhalifsCard from './KhalifsCard';
 
 const MainRouter = () => {
   return (
@@ -55,6 +56,7 @@ const MainRouter = () => {
         <Route path="/course/:id" element={<CourseDetails />} />
         <Route path="/aalymdar" element={<Aalymdar />} />
         <Route path="/aalymdar/:id" element={<AalymdarDetails />} />
+        <Route path="/caliphs" element={<KhalifsCard />} />
       </Routes>
     </Router>
   );

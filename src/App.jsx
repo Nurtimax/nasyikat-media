@@ -14,6 +14,7 @@ import TextBanner from './components/TextBanner';
 import TextBanner2 from './components/TextBanner2';
 import ZakatCalculator from './components/ZakatCalculator';
 import TextBannerDua from './components/TextBannerDua';
+import KhalifsCard from './components/KhalifsCard';
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
       <TextBannerDua />
       <Section4 />
       <Section6 />
+      <KhalifsCard />
       <SponsorsList />
       <ZakatCalculator />
       <TextBanner2 />

@@ -70,12 +70,12 @@ export default function ProfileAbout({ profile }) {
               <IconStyle icon={'eva:instagram-fill'} /> @nasyikat.media
             </Link>
             <Link
-              href="https://www.instagram.com/ustazdan.nasaat/"
+              href="https://www.instagram.com/islam.sabaktary/"
               target="_blank"
               rel="noopener"
               color="text.primary"
             >
-              <IconStyle icon={'eva:instagram-fill'} /> @ustazdan.nasaat
+              <IconStyle icon={'eva:instagram-fill'} /> @islam.sabaktary
             </Link>
           </Stack>
         </Stack>
