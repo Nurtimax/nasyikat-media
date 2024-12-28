@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
-import { Box, TextField, Button, Typography, Container } from '@mui/material';
+import {
+  Box,
+  TextField,
+  Button,
+  Typography,
+  Container,
+  Snackbar,
+  Alert,
+} from '@mui/material';
 import { styled } from '@mui/system';
 
 const ZakatContainer = styled(Box)(({ theme }) => ({
@@ -53,18 +61,30 @@ const HeaderText = styled(Typography)(({ theme }) => ({
 const ZakatCalculator = () => {
   const [value, setValue] = useState('');
   const [zakat, setZakat] = useState(null);
+  const [error, setError] = useState(false);
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
 
   const handleValueChange = (event) => {
     setValue(event.target.value);
+    setError(false);
   };
 
   const calculateZakat = () => {
+    if (!value || isNaN(value) || value <= 0) {
+      setError(true);
+      setSnackbarOpen(true);
+      return;
+    }
     const zakatAmount = (value * 2.5) / 100;
     setZakat(zakatAmount);
   };
 
+  const handleCloseSnackbar = () => {
+    setSnackbarOpen(false);
+  };
+
   return (
-    <Container maxWidth="100%">
+    <Container maxWidth="lg">
       <ZakatContainer>
         <HeaderText>Зекет Калькулятор</HeaderText>
         <Typography variant="body1" style={{ marginBottom: '1.3rem' }}>
@@ -77,21 +97,38 @@ const ZakatCalculator = () => {
           value={value}
           onChange={handleValueChange}
           variant="outlined"
+          error={error}
+          helperText={error ? 'Сумма туура эмес киргизилди' : ''}
         />
 
-        <Button onClick={calculateZakat} color="primary" variant="outlined">
+        <Button onClick={calculateZakat} color="primary" variant="contained">
           Зекетти эсептөө
         </Button>
 
-        {zakat !== null && (
+        {zakat !== null && !error && (
           <Typography
             variant="h6"
-            style={{ marginTop: '10px', color: '#f6ecde' }}
+            style={{ marginTop: '20px', color: '#f6ecde' }}
           >
             Сиз: {zakat.toFixed(2)} сом зекет беришиңиз керек
           </Typography>
         )}
       </ZakatContainer>
+
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={4000}
+        onClose={handleCloseSnackbar}
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+      >
+        <Alert
+          onClose={handleCloseSnackbar}
+          severity="error"
+          sx={{ width: '100%' }}
+        >
+          Сураныч, туура сумма киргизиңиз!
+        </Alert>
+      </Snackbar>
     </Container>
   );
 };

@@ -4,16 +4,19 @@ import {
   CardContent,
   CardMedia,
   Typography,
-  Grid,
   ButtonBase,
   Button,
   Box,
   useTheme,
   Container,
+  styled,
 } from '@mui/material';
 import { LocationOn, AccessTime } from '@mui/icons-material';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import muslim from './data/islam-3-yiyk-jer/muslimplace';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css'; // Import Swiper core styles
+import 'swiper/css/pagination'; // Import pagination styles
+import { Pagination } from 'swiper/modules';
 
 const Section6 = () => {
   const theme = useTheme();
@@ -37,24 +40,36 @@ const Section6 = () => {
 
   const getBorderColor = (index) => {
     if (index === 2) {
-      // Красная граница для третьей карточки
-      return theme.palette.error.main;
+      return theme.palette.error.main; // Red border for the third card
     } else {
-      // Белая граница для первой и второй карточки
-      return theme.palette.common.white;
+      return theme.palette.common.white; // White border for the first and second cards
     }
   };
 
   return (
     <Container maxWidth="100%">
       <Box textAlign="center" mb={4}>
-        <Typography variant="h4" component="h1" gutterBottom>
+        <Header variant="h4" component="h1" gutterBottom>
           Мусулмандардын 3 ыйык жери
-        </Typography>
+        </Header>
       </Box>
-      <Grid container spacing={3} justifyContent="center">
+
+      <Swiper
+        spaceBetween={30} // Space between slides
+        slidesPerView={1} // Display one card per slide on mobile
+        pagination={{
+          clickable: true, // Enable clickable pagination dots
+        }}
+        modules={[Pagination]} // Add Pagination module to Swiper
+        breakpoints={{
+          600: {
+            slidesPerView: 3, // Display 3 cards per row on desktop (>= 600px)
+          },
+        }}
+        style={{ paddingBottom: '20px' }} // Add space for pagination at the bottom
+      >
         {muslim.map((card, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
+          <SwiperSlide key={index}>
             <ButtonBase
               component="a"
               href={card.link}
@@ -66,7 +81,7 @@ const Section6 = () => {
                 sx={{
                   width: '100%',
                   height: '100%',
-                  border: `3px solid ${getBorderColor(index)}`, // Используем функцию для определения цвета границы
+                  border: `3px solid ${getBorderColor(index)}`,
                   backgroundColor: theme.palette.grey[900],
                   position: 'relative',
                   overflow: 'hidden',
@@ -131,18 +146,7 @@ const Section6 = () => {
                       <LocationOn fontSize="small" />
                       {card.location}
                     </Typography>
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.5rem',
-                      }}
-                    >
-                      <CalendarMonthIcon fontSize="small" />
-                      {card.date}
-                    </Typography>
+
                     <Typography
                       variant="body2"
                       color="textSecondary"
@@ -159,9 +163,10 @@ const Section6 = () => {
                 </CardContent>
               </Card>
             </ButtonBase>
-          </Grid>
+          </SwiperSlide>
         ))}
-      </Grid>
+      </Swiper>
+
       <Box
         sx={{
           marginTop: '20px',
@@ -177,3 +182,17 @@ const Section6 = () => {
 };
 
 export default Section6;
+
+const Header = styled('h4')(({ theme }) => ({
+  textAlign: 'center',
+  color: '#f6edde',
+  marginBottom: '20px',
+  marginTop: '20px',
+  fontFamily: 'Roboto, sans-serif',
+  fontSize: '2.2rem',
+  fontWeight: '700',
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '2rem',
+    marginBottom: '30px',
+  },
+}));

@@ -1,36 +1,18 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Box, Typography, IconButton, Button, Container } from '@mui/material';
+import {
+  Box,
+  Typography,
+  IconButton,
+  Button,
+  Container,
+  styled,
+} from '@mui/material';
 import { Instagram, WhatsApp } from '@mui/icons-material';
-import LaptopMacIcon from '@mui/icons-material/LaptopMac'; // IT Developer
-import HeadsetIcon from '@mui/icons-material/Headset'; // Airpods
-import BagIcon from '@mui/icons-material/ShoppingBag'; // Bags
-import ApiIcon from '@mui/icons-material/Api'; // Honey Bee
-import LocalDiningIcon from '@mui/icons-material/LocalDining'; // Mkka
-import TravelExploreIcon from '@mui/icons-material/TravelExplore'; // Travel
-import { Autoplay } from 'swiper/modules'; // Correct import for Autoplay
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/autoplay'; // Ensure autoplay styles are imported
+import 'swiper/css/autoplay';
 import sponsors from '../components/data/sponsors/sponsor.js';
-
-const getIcon = (name) => {
-  switch (name) {
-    case 'ITeasy.KG':
-      return <LaptopMacIcon sx={{ fontSize: 90, color: '#f6ecde' }} />;
-    case 'Arzanstore.ru':
-      return <HeadsetIcon sx={{ fontSize: 90, color: '#f6ecde' }} />;
-    case 'Kurzhun.shop':
-      return <BagIcon sx={{ fontSize: 90, color: '#f6ecde' }} />;
-    case 'HoneyBee':
-      return <ApiIcon sx={{ fontSize: 90, color: '#f6ecde' }} />;
-    case 'Mkka':
-      return <LocalDiningIcon sx={{ fontSize: 90, color: '#f6ecde' }} />;
-    case 'Travel':
-      return <TravelExploreIcon sx={{ fontSize: 90, color: '#f6ecde' }} />;
-    default:
-      return null;
-  }
-};
 
 const PartnerCard = ({ partner }) => (
   <Box
@@ -55,11 +37,13 @@ const PartnerCard = ({ partner }) => (
         alignItems: 'center',
         marginBottom: '15px',
         borderRadius: '50%',
-        backgroundColor: '#161c25',
-        color: '#f6ecde',
       }}
     >
-      {getIcon(partner.name)}
+      <img
+        src={partner.image}
+        alt={partner.name}
+        style={{ width: '100%', height: '100%' }}
+      />
     </Box>
     <Typography
       variant="h6"
@@ -103,32 +87,23 @@ const PartnerCard = ({ partner }) => (
 const SponsorsList = () => {
   return (
     <Container maxWidth="100%">
-      <Typography
-        variant="h3"
-        sx={{
-          marginBottom: '30px',
-          textAlign: 'center',
-          fontWeight: 'bold',
-          color: '#f6ecde',
-        }}
-      >
-        Биздин демөөрчүлөр
-      </Typography>
+      <Header>Биздин демөөрчүлөр</Header>
       <Swiper
         spaceBetween={30}
         slidesPerView={3}
         loop={true}
         autoplay={{
-          delay: 3000, // 2 секунды
+          delay: 3000, // 3 seconds
           disableOnInteraction: false,
         }}
-        modules={[Autoplay]} // Подключите модуль Autoplay
+        modules={[Autoplay]} // Autoplay module
         breakpoints={{
-          1024: { slidesPerView: 3 }, // Десктоп
-          600: { slidesPerView: 2 }, // Пэдж
-          0: { slidesPerView: 1 }, // Мобильный
+          1024: { slidesPerView: 4 }, // Desktop
+          600: { slidesPerView: 3 }, // Tablet
+          0: { slidesPerView: 1 }, // Mobile
         }}
       >
+        {/* Loop through sponsors array and display each partner */}
         {sponsors.map((partner, index) => (
           <SwiperSlide key={index}>
             <PartnerCard partner={partner} />
@@ -140,3 +115,18 @@ const SponsorsList = () => {
 };
 
 export default SponsorsList;
+
+// Style for section header
+const Header = styled('h2')(({ theme }) => ({
+  textAlign: 'center',
+  color: '#f6edde',
+  marginBottom: '40px',
+  marginTop: '40px',
+  fontFamily: 'Roboto, sans-serif',
+  fontSize: '2.2rem',
+  fontWeight: '700',
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '2rem',
+    marginBottom: '30px',
+  },
+}));

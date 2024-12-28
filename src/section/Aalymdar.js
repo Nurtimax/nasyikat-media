@@ -37,9 +37,9 @@ export default function Aalymdar() {
       <Box
         sx={{
           display: 'grid',
-          gap: 3,
+          gap: 1.5,
           gridTemplateColumns: {
-            xs: 'repeat(1, 1fr)',
+            xs: 'repeat(2, 1fr)',
             sm: 'repeat(2, 1fr)',
             md: 'repeat(3, 1fr)',
             lg: 'repeat(4, 1fr)',
