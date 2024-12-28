@@ -1,29 +1,60 @@
 import React from 'react';
 import { styled } from '@mui/system';
-import islamdyn5Parzy from './data/islamdynparzy/islamdyn5parzy';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
 import { Link } from 'react-router-dom';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import { Container, Typography } from '@mui/material';
+import { Container, Typography, useMediaQuery } from '@mui/material';
+import islamdyn5Parzy from './data/islamdynparzy/islamdyn5parzy';
 import { GREY } from '../theme/palette';
+import { Pagination } from 'swiper/modules';
 
 const Section2 = () => {
+  const isMobile = useMediaQuery('(max-width: 600px)');
+
   return (
     <Container maxWidth="100%">
       <SectionTitle>ИСЛАМДЫН БЕШ ПАРЫЗЫ</SectionTitle>
-      <CardsContainer>
-        {islamdyn5Parzy.map((card, index) => (
-          <Card key={index}>
-            <Link to={card.route}>
-              <CardImage src={card.image} alt={card.alt} />
-              <IconWrapper style={{ color: '#e40001' }}>
-                <FavoriteIcon fontSize="small" />
-              </IconWrapper>
-              <CardTitle>{card.title}</CardTitle>
-              <CardText dangerouslySetInnerHTML={{ __html: card.text }} />
-            </Link>
-          </Card>
-        ))}
-      </CardsContainer>
+      {isMobile ? (
+        <Swiper
+          modules={[Pagination]}
+          pagination={{ clickable: true }}
+          spaceBetween={20}
+          slidesPerView={1}
+          style={{ padding: '30px 0' }}
+        >
+          {islamdyn5Parzy.map((card, index) => (
+            <SwiperSlide key={index}>
+              <Card>
+                <Link to={card.route}>
+                  <CardImage src={card.image} alt={card.alt} />
+                  <IconWrapper style={{ color: '#e40001' }}>
+                    <FavoriteIcon fontSize="small" />
+                  </IconWrapper>
+                  <CardTitle>{card.title}</CardTitle>
+                  <CardText dangerouslySetInnerHTML={{ __html: card.text }} />
+                </Link>
+              </Card>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      ) : (
+        <CardList>
+          {islamdyn5Parzy.map((card, index) => (
+            <Card key={index}>
+              <Link to={card.route}>
+                <CardImage src={card.image} alt={card.alt} />
+                <IconWrapper style={{ color: '#e40001' }}>
+                  <FavoriteIcon fontSize="small" />
+                </IconWrapper>
+                <CardTitle>{card.title}</CardTitle>
+                <CardText dangerouslySetInnerHTML={{ __html: card.text }} />
+              </Link>
+            </Card>
+          ))}
+        </CardList>
+      )}
       <Typography
         style={{
           background: 'linear-gradient(145deg, #f9f3e7 20%, #e9d0ae 80%)',
@@ -58,31 +89,17 @@ const SectionTitle = styled('h2')({
   },
 });
 
-const CardsContainer = styled('div')(({ theme }) => ({
+const CardList = styled('div')({
   display: 'grid',
-  gridTemplateColumns: 'repeat(5, 1fr)',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
   gap: '20px',
-  width: '100%',
-  padding: '0',
-  margin: '0',
-  justifyItems: 'center',
-  [theme.breakpoints.down('md')]: {
-    gridTemplateColumns: 'repeat(3, 1fr)',
-  },
-  [theme.breakpoints.down('sm')]: {
-    gridTemplateColumns: 'repeat(1, 1fr)',
-  },
-}));
+});
 
 const Card = styled('div')(({ theme }) => ({
   position: 'relative',
   width: '100%',
-  maxWidth: '340px',
+  maxWidth: '100%',
   textAlign: 'center',
-  margin: '0 auto',
-  [theme.breakpoints.down('sm')]: {
-    maxWidth: '100%',
-  },
   '& a': {
     textDecoration: 'none',
     color: 'inherit',

@@ -1,8 +1,12 @@
-import React from 'react';
-import { CardContent, Typography, Box, Container } from '@mui/material';
+import React, { useEffect, useRef, useState } from 'react';
+import { CardContent, Typography, Container } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { keyframes } from '@emotion/react';
-import prayers from './data/dubalar/prayers';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css'; // Import Swiper core styles
+import 'swiper/css/pagination'; // Import pagination styles
+import prayers from './data/dubalar/prayers'; // Assuming prayers data is in this path
+import { Pagination } from 'swiper/modules';
 
 // Анимация появления карточек
 const fadeInUp = keyframes`
@@ -40,6 +44,7 @@ const StyledCard = styled('h2')(() => ({
   transition: 'transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out',
   animation: `${fadeInUp} 0.6s ease forwards`,
   position: 'relative',
+  borderRadius: '9px',
   '&:before': {
     content: '"\\201C"',
     position: 'absolute',
@@ -76,20 +81,17 @@ const BoldParagraph = styled(Paragraph)({
   color: '#2c3e50',
 });
 
-// Стиль для контейнера с карточками
-const CardsContainer = styled(Box)(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'row', // Stack cards horizontally by default
-  flexWrap: 'wrap',
-  justifyContent: 'space-between',
-  gap: theme.spacing(3),
-  [theme.breakpoints.down('sm')]: {
-    flexDirection: 'column', // Stack cards vertically on mobile
-    gap: theme.spacing(2),
-  },
-}));
-
+// Стиль для контейнера с карточками (Now handled by Swiper)
 const Section5 = () => {
+  const [maxHeight, setMaxHeight] = useState(0);
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    // Calculate max height of all cards
+    const heights = cardRefs.current.map((ref) => ref?.offsetHeight || 0);
+    setMaxHeight(Math.max(...heights));
+  }, []);
+
   return (
     <Container maxWidth="100%">
       <Header>
@@ -97,39 +99,56 @@ const Section5 = () => {
           Дуба - Момундун куралы, диндин түркүгү жана асман менен жердин нуру
         </Typography>
       </Header>
-      <CardsContainer>
+      <Swiper
+        spaceBetween={30} // Space between slides
+        slidesPerView={1} // Default: 1 slide on mobile
+        pagination={{
+          clickable: true, // Enable clickable pagination dots
+        }}
+        modules={[Pagination]} // Add Pagination module to the Swiper
+        breakpoints={{
+          600: {
+            slidesPerView: 3, // 3 slides on desktop (>= 600px)
+          },
+        }}
+      >
         {prayers.map((prayer, index) => (
-          <StyledCard
-            key={index}
-            sx={{ flex: '1 1 calc(25% - 16px)', cursor: 'pointer' }}
-          >
-            <CardContent>
-              <Typography
-                variant="h6"
-                align="center"
-                gutterBottom
-                color="#2c3e50"
-              >
-                {prayer.title}
-              </Typography>
-              {prayer.arabic && (
-                <>
-                  <BoldParagraph>Арабча</BoldParagraph>
-                  <Paragraph>{prayer.arabic}</Paragraph>
-                </>
-              )}
-              {prayer.transcription && (
-                <>
-                  <BoldParagraph>Окулушу</BoldParagraph>
-                  <Paragraph>{prayer.transcription}</Paragraph>
-                </>
-              )}
-              <BoldParagraph>Мааниси</BoldParagraph>
-              <Paragraph>{prayer.meaning}</Paragraph>
-            </CardContent>
-          </StyledCard>
+          <SwiperSlide key={index}>
+            <StyledCard
+              ref={(el) => (cardRefs.current[index] = el)}
+              sx={{
+                cursor: 'pointer',
+                minHeight: maxHeight ? `${maxHeight}px` : 'auto', // Apply the calculated max height
+              }}
+            >
+              <CardContent>
+                <Typography
+                  variant="h6"
+                  align="center"
+                  gutterBottom
+                  color="#2c3e50"
+                >
+                  {prayer.title}
+                </Typography>
+                {prayer.arabic && (
+                  <>
+                    <BoldParagraph>Арабча</BoldParagraph>
+                    <Paragraph>{prayer.arabic}</Paragraph>
+                  </>
+                )}
+                {prayer.transcription && (
+                  <>
+                    <BoldParagraph>Окулушу</BoldParagraph>
+                    <Paragraph>{prayer.transcription}</Paragraph>
+                  </>
+                )}
+                <BoldParagraph>Мааниси</BoldParagraph>
+                <Paragraph>{prayer.meaning}</Paragraph>
+              </CardContent>
+            </StyledCard>
+          </SwiperSlide>
         ))}
-      </CardsContainer>
+      </Swiper>
     </Container>
   );
 };

@@ -26,6 +26,7 @@ import DetailsPage from './ProductDetails';
 import IslamicCourses from './IslamicCourses';
 import CourseDetails from './CourseDetails';
 import KhalifsCard from './KhalifsCard';
+import CaliphDetail from './CaliphDetail';
 
 const MainRouter = () => {
   return (
@@ -57,6 +58,7 @@ const MainRouter = () => {
         <Route path="/aalymdar" element={<Aalymdar />} />
         <Route path="/aalymdar/:id" element={<AalymdarDetails />} />
         <Route path="/caliphs" element={<KhalifsCard />} />
+        <Route path="/caliphs/:id" element={<CaliphDetail />} />
       </Routes>
     </Router>
   );

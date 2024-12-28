@@ -9,6 +9,7 @@ const TextBannerDua = () => {
           textAlign: 'center',
           marginTop: '1.5rem',
           marginBottom: '1.5rem',
+          borderRadius: '9px',
         }}
       >
         <Typography

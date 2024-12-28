@@ -15,11 +15,13 @@ import TextBanner2 from './components/TextBanner2';
 import ZakatCalculator from './components/ZakatCalculator';
 import TextBannerDua from './components/TextBannerDua';
 import KhalifsCard from './components/KhalifsCard';
+import Homepage from './components/UI/Homepage';
 
 const App = () => {
   return (
     <>
       <Header />
+      <Homepage />
       <Welcome />
       <Section2 />
       <Advertising />
