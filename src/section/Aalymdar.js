@@ -1,14 +1,6 @@
-// @mui
 import { Container, Box, Typography } from '@mui/material';
-// routes
-// hooks
-// _mock_
 import AalymdarCards from '../components/UI/AalymdarCards';
 import USER_LIST from '../utils/constants/aalymdar';
-// components
-// sections
-
-// ----------------------------------------------------------------------
 
 export default function Aalymdar() {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import {
   Typography,
   Container,
@@ -10,6 +10,8 @@ import {
   styled,
 } from '@mui/material';
 import caliphs from '../utils/constants/caliphs';
+import Header from './Header';
+import Welcome from './Welcome';
 
 // Custom Styled components
 const StyledCard = styled(Card)(({ theme }) => ({
@@ -50,6 +52,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
 
 const CaliphDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate(); // Use navigate for backward navigation
   const caliph = caliphs.find((caliph) => caliph.id === Number(id));
 
   if (!caliph) {
@@ -62,6 +65,8 @@ const CaliphDetail = () => {
 
   return (
     <Container maxWidth="md" sx={{ marginTop: '20px' }}>
+      <Header />
+      <Welcome />
       <StyledCard>
         <StyledCardMedia
           component="img"
@@ -78,10 +83,7 @@ const CaliphDetail = () => {
           <StyledTypography variant="body1" sx={{ marginTop: '15px' }}>
             {caliph.fullDescription}
           </StyledTypography>
-          <StyledButton
-            variant="contained"
-            onClick={() => window.history.back()}
-          >
+          <StyledButton variant="contained" onClick={() => navigate(-1)}>
             Артка
           </StyledButton>
         </CardContent>

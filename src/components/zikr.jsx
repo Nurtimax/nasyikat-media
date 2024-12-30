@@ -1,28 +1,22 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   Button,
   Typography,
-  Card,
-  CardContent,
   Box,
-  IconButton,
   Drawer,
   Grid,
-  RadioGroup,
-  FormControlLabel,
-  Radio,
+  Snackbar,
+  Alert,
+  IconButton,
+  MenuItem,
+  Select,
+  FormControl,
   Dialog,
   DialogActions,
   DialogContent,
   DialogContentText,
   DialogTitle,
-  Snackbar,
-  Alert,
-  LinearProgress,
-  MenuItem,
-  TextField,
 } from '@mui/material';
-import { styled } from '@mui/system';
 import SettingsIcon from '@mui/icons-material/Settings';
 import background1 from '../assetts/images/bgislam2.avif';
 import background2 from '../assetts/images/bgislam3.jpg';
@@ -31,21 +25,12 @@ import background4 from '../assetts/images/bgislam6.jpeg';
 import background5 from '../assetts/images/bgislam5.webp';
 import ringitoon from '../assetts/quran-audio/ringiton.mp3';
 
-// Данные для фонов и текстов
 const backgrounds = [
   background4,
   background1,
   background2,
   background3,
   background5,
-];
-const textColors = [
-  '#000000',
-  '#FF6347',
-  '#008080',
-  '#1E90FF',
-  '#FF1493',
-  '#32CD32',
 ];
 const tasbihTexts = [
   'СубханАллах',
@@ -55,90 +40,41 @@ const tasbihTexts = [
   'Лаа илааха иллаллах',
 ];
 
-const TasbihCard = styled(Card)(({ background }) => ({
-  maxWidth: '500px',
-  margin: '50px auto',
-  textAlign: 'center',
-  background: background ? `url(${background})` : '#f0f0f0',
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  color: '#fff',
-  position: 'relative',
-  padding: '20px',
-  boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
-  borderRadius: '16px',
-}));
-
-const LargeButton = styled(Button)(({ theme }) => ({
-  fontSize: '2rem',
-  width: '250px',
-  height: '250px',
-  padding: theme.spacing(2),
-  margin: theme.spacing(2),
-  color: '#fff',
-  borderRadius: '50%',
-  boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)',
-  transition: 'transform 0.2s, box-shadow 0.2s',
-  '&:active': {
-    transform: 'scale(0.95)',
-    boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)',
-  },
-}));
-
 const Zikr = () => {
   const [count, setCount] = useState(0);
   const [currentZikrIndex, setCurrentZikrIndex] = useState(0);
-  const [selectedZikrIndex, setSelectedZikrIndex] = useState(0);
   const [background, setBackground] = useState(background4);
-  const [textColor, setTextColor] = useState('#fff');
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false); // Состояние для модалки
   const audioRef = useRef(null);
 
-  // Логика для переключения тасбихов после 33 повторений
   const handleIncrement = () => {
     setCount((prevCount) => {
       const newCount = prevCount + 1;
       if (newCount % 33 === 0) {
         audioRef.current.play();
         setSnackbarOpen(true);
-        setCurrentZikrIndex(
-          (prevIndex) => (prevIndex + 1) % tasbihTexts.length
-        );
       }
       return newCount;
     });
   };
 
-  const handleDecrement = () => setCount(count > 0 ? count - 1 : 0);
+  const handleDecrement = () => {
+    setCount((prevCount) => (prevCount > 0 ? prevCount - 1 : 0));
+  };
 
-  const handleReset = () => setIsDialogOpen(true);
-
-  const confirmReset = () => {
+  const handleReset = () => {
     setCount(0);
-    setCurrentZikrIndex(selectedZikrIndex);
-    setIsDialogOpen(false);
+    setIsDialogOpen(false); // Закрыть модалку после сброса
   };
 
   const handleSelectZikr = (event) => {
-    const index = tasbihTexts.indexOf(event.target.value);
-    setSelectedZikrIndex(index);
-    setCurrentZikrIndex(index);
+    setCurrentZikrIndex(event.target.value);
+    setCount(0);
   };
 
   const handleSelectBackground = (bg) => setBackground(bg);
-
-  const handleChangeTextColor = (event) => setTextColor(event.target.value);
-
-  const toggleDrawer = (open) => () => setIsDrawerOpen(open);
-
-  const closeSnackbar = () => setSnackbarOpen(false);
-
-  useEffect(() => {
-    // Обновляем текст при изменении текущего тасбиха
-    setCurrentZikrIndex(selectedZikrIndex);
-  }, [selectedZikrIndex]);
 
   return (
     <Box
@@ -147,78 +83,91 @@ const Zikr = () => {
         backgroundImage: `url(${background})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: '#fff',
+        textAlign: 'center',
         padding: 2,
       }}
     >
-      <TasbihCard background={background} sx={{ color: textColor }}>
-        <CardContent>
-          <Typography
-            variant="h4"
-            gutterBottom
-            sx={{ fontWeight: 'bold', height: '6rem' }}
-          >
-            {tasbihTexts[currentZikrIndex]}
-          </Typography>
-          <TextField
-            select
-            value={tasbihTexts[selectedZikrIndex]}
-            onChange={handleSelectZikr}
-            fullWidth
-            variant="outlined"
-            margin="normal"
-            sx={{
-              fontSize: '1.2rem',
-              backgroundColor: '#2e2727',
-              borderRadius: '8px',
-              border: '1px solid #008080',
-              color: textColor,
-              '& .MuiInputBase-root': { color: textColor },
-            }}
-          >
-            {tasbihTexts.map((zikr, index) => (
-              <MenuItem key={index} value={zikr} style={{ color: '#fff' }}>
-                {zikr}
-              </MenuItem>
-            ))}
-          </TextField>
-          <LinearProgress
-            variant="determinate"
-            value={(count % 33) * (100 / 33)}
-            sx={{ mt: 2, borderRadius: '4px', height: '10px' }}
-          />
-          <Typography variant="h5" sx={{ mt: 2 }}>
-            {count}
-          </Typography>
-        </CardContent>
-        <CardContent>
-          <LargeButton variant="contained" onClick={handleIncrement}>
-            +
-          </LargeButton>
-          <Box>
-            <Button
-              variant="contained"
-              color="secondary"
-              onClick={handleDecrement}
-            >
-              -
-            </Button>
-            <Button variant="contained" color="error" onClick={handleReset}>
-              Сброс
-            </Button>
-          </Box>
-        </CardContent>
-        <IconButton
-          onClick={toggleDrawer(true)}
-          sx={{ position: 'absolute', bottom: 10, right: 10, color: textColor }}
+      {/* Выбор Зикра */}
+      <FormControl sx={{ mb: 3, minWidth: 200 }}>
+        <Select
+          value={currentZikrIndex}
+          onChange={handleSelectZikr}
+          sx={{
+            color: '#fff',
+            borderColor: '#fff',
+            background: 'rgba(0,0,0,0.5)',
+          }}
         >
-          <SettingsIcon />
-        </IconButton>
-      </TasbihCard>
+          {tasbihTexts.map((zikr, index) => (
+            <MenuItem value={index} key={index}>
+              {zikr}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
 
-      <Drawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer(false)}>
-        <Box sx={{ width: 320, padding: 2 }}>
+      {/* Текущий зикр */}
+      <Typography variant="h4" sx={{ mb: 3, fontWeight: 'bold' }}>
+        {tasbihTexts[currentZikrIndex]}
+      </Typography>
+
+      {/* Кнопка зикра */}
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={handleIncrement}
+        sx={{
+          width: '300px',
+          height: '300px',
+          fontSize: '2rem',
+          borderRadius: '50%',
+          boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
+          transition: 'transform 0.2s',
+          '&:active': {
+            transform: 'scale(0.95)',
+          },
+        }}
+      >
+        {count}
+      </Button>
+
+      {/* Кнопки управления */}
+      <Box sx={{ display: 'flex', gap: 2, mt: 3 }}>
+        <Button variant="contained" color="secondary" onClick={handleDecrement}>
+          -
+        </Button>
+        <Button
+          variant="contained"
+          color="error"
+          onClick={() => setIsDialogOpen(true)} // Открыть модалку при нажатии
+        >
+          Очуруу
+        </Button>
+      </Box>
+
+      {/* Настройки (фон) */}
+      <IconButton
+        onClick={() => setIsDrawerOpen(true)}
+        sx={{ position: 'fixed', bottom: 20, right: 20, color: '#fff' }}
+      >
+        <SettingsIcon fontSize="large" />
+      </IconButton>
+
+      <Drawer
+        anchor="right"
+        open={isDrawerOpen}
+        onClose={() => setIsDrawerOpen(false)}
+      >
+        <Box sx={{ width: 320, p: 2 }}>
           <Typography variant="h6">Настройки</Typography>
-          <Typography variant="h6">Фон:</Typography>
+          <Typography variant="subtitle1" sx={{ mt: 2 }}>
+            Фон:
+          </Typography>
           <Grid container spacing={2}>
             {backgrounds.map((bg, index) => (
               <Grid item xs={4} key={index}>
@@ -228,55 +177,50 @@ const Zikr = () => {
                     height: '50px',
                     backgroundImage: `url(${bg})`,
                     backgroundSize: 'cover',
-                    backgroundPosition: 'center',
                     cursor: 'pointer',
+                    borderRadius: '4px',
                   }}
                 />
               </Grid>
             ))}
           </Grid>
-          <Typography variant="h6">Цвет текста:</Typography>
-          <RadioGroup row value={textColor} onChange={handleChangeTextColor}>
-            {textColors.map((color, index) => (
-              <FormControlLabel
-                key={index}
-                value={color}
-                control={<Radio />}
-                label=""
-                sx={{ '& .MuiRadio-root': { color } }}
-              />
-            ))}
-          </RadioGroup>
         </Box>
       </Drawer>
 
-      <Dialog open={isDialogOpen} onClose={() => setIsDialogOpen(false)}>
-        <DialogTitle>Сбросить?</DialogTitle>
+      {/* Модальное окно подтверждения */}
+      <Dialog
+        open={isDialogOpen}
+        onClose={() => setIsDialogOpen(false)} // Закрыть модалку
+      >
+        <DialogTitle>Подтверждение</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Вы уверены, что хотите сбросить счетчик?
+            Вы уверены, что хотите сбросить счетчик? Это действие нельзя
+            отменить.
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => setIsDialogOpen(false)} color="primary">
+          <Button onClick={() => setIsDialogOpen(false)} color="secondary">
             Отмена
           </Button>
-          <Button onClick={confirmReset} color="error">
+          <Button onClick={handleReset} color="error">
             Сбросить
           </Button>
         </DialogActions>
       </Dialog>
 
+      {/* Уведомление */}
       <Snackbar
         open={snackbarOpen}
         autoHideDuration={3000}
-        onClose={closeSnackbar}
+        onClose={() => setSnackbarOpen(false)}
       >
-        <Alert onClose={closeSnackbar} severity="success">
-          Поздравляем! Вы завершили 33 раза: {tasbihTexts[currentZikrIndex]}!
+        <Alert onClose={() => setSnackbarOpen(false)} severity="success">
+          Вы завершили 33 раза: {tasbihTexts[currentZikrIndex]}!
         </Alert>
       </Snackbar>
 
+      {/* Аудио */}
       <audio ref={audioRef}>
         <source src={ringitoon} type="audio/mp3" />
       </audio>

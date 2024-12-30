@@ -6,7 +6,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import LinkIcon from '@mui/icons-material/Link'; // Import the link icon
+import LinkIcon from '@mui/icons-material/Link';
 import slides from '../utils/constants/reclama';
 
 // Styled components

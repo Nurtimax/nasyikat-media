@@ -28,3 +28,16 @@ code {
   height: auto;
   border-radius: 8px;
 }
+
+/* Базовые точки */
+.swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
+  background: linear-gradient(145deg, #f6ecde, #e9d0ae); /* Градиентный фон */
+  opacity: 1; /* Прозрачность для неактивных точек */
+  margin: 0 6px; /* Расстояние между точками */
+  border: 1px solid #e0e0e0; /* Тонкая обводка */
+  border-radius: 50%; /* Круглая форма */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}

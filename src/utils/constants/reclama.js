@@ -1,7 +1,7 @@
 import iteasyreclama from '../../assetts/icons/iteasyreclama.png';
 import logoiteasy from '../../assetts/icons/iteeasy.png';
-import logokurzhun from '../../assetts/icons/kurzhun.png';
-import kurzhunreclama from '../../assetts/icons/kurzhunreclama.png';
+import bookiqro from '../../assetts/icons/bookimg.png';
+import kurzhunreclama from '../../assetts/icons/bookimg.png';
 import arzanstore from '../../assetts/icons/arzanreclama.png';
 import arzanstoreimg from '../../assetts/icons/arzan.png';
 
@@ -21,14 +21,14 @@ const slides = [
   },
   {
     bgimg: kurzhunreclama,
-    title: 'Приветствуем вас в Kurzhun-shop',
-    description: 'Вашем надежном партнере в мире стильных мужских аксессуаров!',
-    avatar: logokurzhun,
-    instagramLink: 'https://www.instagram.com/kurzhun.shop/', //YouTube Link
+    title: 'Book.Iqro',
+    description: 'МОСКВА | КЫРГЫЗЧА КИТЕПТЕР 📚',
+    avatar: bookiqro,
+    instagramLink: 'https://www.instagram.com/book.iqro/',
     socialLinks: {
-      instagram: 'https://www.instagram.com/nasyikat.media/',
-      telegram: 'https://t.me/+SEJbmn8AwNViNmNi',
-      whatsapp: 'https://wa.me/996556401369',
+      instagram: 'https://www.instagram.com/book.iqro/',
+      telegram: 'https://t.me/+79263666233',
+      whatsapp: 'https://wa.me/+79263666233',
     },
   },
   {

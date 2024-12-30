@@ -45,7 +45,7 @@ const StyledContainer = styled(Box)(({ theme }) => ({
 // Стилизация карточки
 const StyledPaper = styled(Paper)(({ theme }) => ({
   textAlign: 'center',
-  width: '950px',
+  width: '100%',
   height: '350px',
   display: 'flex',
   flexDirection: 'column',
@@ -96,11 +96,11 @@ const Quote = styled(Typography)(({ theme }) => ({
 
 // Стилизация текста
 const StyledText = styled(Typography)(({ theme }) => ({
-  fontSize: '1rem',
+  fontSize: '1.5rem',
   marginTop: theme.spacing(2),
   color: '#333',
   fontFamily: 'Georgia, serif',
-  lineHeight: '1.6',
+  lineHeight: '1.2',
   height: '200px',
   overflowY: 'auto',
   padding: theme.spacing(1),
@@ -108,6 +108,6 @@ const StyledText = styled(Typography)(({ theme }) => ({
   borderLeft: '4px solid #b89c6f', // Декоративная линия слева
   paddingLeft: theme.spacing(2),
   [theme.breakpoints.down('sm')]: {
-    fontSize: '0.9rem',
+    fontSize: '1.1rem',
   },
 }));

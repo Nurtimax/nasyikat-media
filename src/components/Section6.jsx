@@ -86,6 +86,7 @@ const Section6 = () => {
                   position: 'relative',
                   overflow: 'hidden',
                   borderRadius: '12px',
+                  marginBottom: '1rem',
                   '&:hover': {
                     boxShadow: theme.shadows[10],
                   },
@@ -121,7 +122,15 @@ const Section6 = () => {
                     {card.description}
                   </Typography>
                   <Box mt={2}>
-                    <Button fullWidth>Кененирээк</Button>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      component="a"
+                      target="_blank"
+                      sx={{ width: '100%' }}
+                    >
+                      Кененирээк
+                    </Button>
                   </Box>
                   <Box
                     mt={2}

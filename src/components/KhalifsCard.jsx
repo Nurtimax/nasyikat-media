@@ -49,7 +49,7 @@ const CaliphCard = ({ caliph }) => {
         <Button
           variant="contained"
           color="primary"
-          sx={{ marginTop: '15px', width: '100%', marginBottom: '15px' }}
+          sx={{ marginTop: '15px', width: '100%', marginBottom: '25px' }}
           onClick={handleCardClick}
         >
           Окуу
