@@ -14,6 +14,7 @@ const TextBanner2 = () => {
           color: '#161c25',
           position: 'relative',
           marginBottom: '1.5rem',
+          borderRadius: '9px',
           '&:before': {
             content: '"\\201C"',
             position: 'absolute',

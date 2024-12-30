@@ -83,6 +83,7 @@ export default function AalymdarCards({ user }) {
           marginTop: '1rem',
           marginBottom: '1rem',
           textAlign: 'center',
+          fontSize: '0.8rem',
         }}
         color="textSecondary"
       >

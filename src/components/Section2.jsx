@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { styled } from '@mui/system';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -9,9 +9,25 @@ import { Container, Typography, useMediaQuery } from '@mui/material';
 import islamdyn5Parzy from './data/islamdynparzy/islamdyn5parzy';
 import { GREY } from '../theme/palette';
 import { Pagination } from 'swiper/modules';
+import '../index.css';
 
 const Section2 = () => {
   const isMobile = useMediaQuery('(max-width: 600px)');
+  const [lastSlide, setLastSlide] = useState(0); // Состояние для последнего слайда
+
+  // Восстановление состояния из localStorage
+  useEffect(() => {
+    const savedSlide = localStorage.getItem('lastSlide');
+    if (savedSlide) {
+      setLastSlide(Number(savedSlide)); // Восстановить индекс
+    }
+  }, []);
+
+  // Сохранение последнего слайда
+  const handleSlideChange = (swiper) => {
+    setLastSlide(swiper.activeIndex); // Обновляем состояние
+    localStorage.setItem('lastSlide', swiper.activeIndex); // Сохраняем в localStorage
+  };
 
   return (
     <Container maxWidth="100%">
@@ -23,6 +39,8 @@ const Section2 = () => {
           spaceBetween={20}
           slidesPerView={1}
           style={{ padding: '30px 0' }}
+          onSlideChange={handleSlideChange} // Обработчик изменения слайда
+          initialSlide={lastSlide} // Устанавливаем последний слайд
         >
           {islamdyn5Parzy.map((card, index) => (
             <SwiperSlide key={index}>
@@ -57,21 +75,28 @@ const Section2 = () => {
       )}
       <Typography
         style={{
-          background: 'linear-gradient(145deg, #f9f3e7 20%, #e9d0ae 80%)',
-          padding: '1.5rem',
-          marginBottom: '1.5rem',
-          marginTop: '1.5rem',
-          color: '#34495e',
-          border: '2px solid #ff0000',
-          borderRadius: '5px',
-          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-          fontFamily: 'Georgia, serif',
+          background: 'linear-gradient(135deg, #2c3e50 0%, #2c3e50 100%)',
+          padding: '2rem',
+          marginBottom: '2rem',
+          marginTop: '2rem',
+          color: '#edf1f5',
+          border: '1px dashed #f6ecde',
+          borderRadius: '9px',
+          boxShadow: '0 6px 12px rgba(0, 0, 0, 0.2)',
+          fontFamily: '"Playfair Display", serif',
           position: 'relative',
           textAlign: 'center',
+          lineHeight: '1.8',
+          letterSpacing: '0.05rem',
+          transition: 'all 0.3s ease',
+          ':hover': {
+            transform: 'scale(1.02)',
+            boxShadow: '0 8px 16px rgba(0, 0, 0, 0.3)',
+          },
         }}
       >
         Учурда сайтты жаңылоо иштери жүрүп жатат. Сайтта каталар пайда болушу
-        мүмкүн, биз аларды оңдоп жатабыз.
+        мүмкүн, биз аларды оңдоп жатабыз. <br /> Админ Nasyikat.media
       </Typography>
     </Container>
   );

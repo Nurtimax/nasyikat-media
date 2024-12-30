@@ -5,13 +5,13 @@ import { Box, Typography } from '@mui/material';
 import cssStyles from '../utils/cssStyles.js';
 import MyAvatar from './MyAvatar.jsx';
 import Image from './Image.jsx';
-import img1 from '../assetts/images/bgustaz.jpg';
+import img1 from '../assetts/icons/k.png';
 
 // ----------------------------------------------------------------------
 
 const RootStyle = styled('div')(({ theme }) => ({
   '&:before': {
-    ...cssStyles().bgBlur({ blur: 2, color: theme.palette.primary.darker }),
+    ...cssStyles().bgBlur({ blur: 1, color: theme.palette.primary.darker }),
     top: 0,
     zIndex: 9,
     content: "''",

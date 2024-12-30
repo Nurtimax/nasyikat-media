@@ -3,6 +3,7 @@ import matraimimg from '../../assetts/images/matraim.JPG';
 import nurtimaximg from '../../assetts/images/nurti.JPG';
 import musulmani571 from '../../assetts/icons/musulmani.jpg';
 import ustazdannasaat from '../../assetts/images/11.jpg';
+import bookiqro from '../../assetts/icons/bookimg.png';
 
 const followers = [
   {
@@ -40,6 +41,20 @@ const followers = [
     country: 'Баяндар',
     avatarUrl: ustazdannasaat,
     instagram: 'https://www.instagram.com/islam.sabaktary/',
+  },
+  {
+    id: 6,
+    name: 'Book.Iqro',
+    country: 'МОСКВА | КЫРГЫЗЧА КИТЕПТЕР 📚',
+    avatarUrl: bookiqro,
+    instagram: 'https://www.instagram.com/book.iqro/',
+  },
+  {
+    id: 7,
+    name: 'Muslim Kids Media',
+    country: 'Мультфильмы',
+    avatarUrl: ustazdannasaat,
+    instagram: 'https://www.instagram.com/muslimkids.media/',
   },
 ];
 

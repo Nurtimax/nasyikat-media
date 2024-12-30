@@ -78,6 +78,7 @@ const PartnerCard = ({ partner }) => (
       component="a"
       href={partner.link}
       target="_blank"
+      sx={{ width: '100%' }}
     >
       Сайтка өтүү
     </Button>
