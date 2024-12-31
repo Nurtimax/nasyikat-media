@@ -64,14 +64,14 @@ const SurahList = () => {
                   </Typography>
                   <Typography
                     sx={{
-                      mb: 2, // Increased bottom margin for better spacing
-                      background:
-                        'linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgb(255, 249, 214))',
-                      padding: '8px', // Increased padding for better readability
-                      borderRadius: '4px',
-                      boxShadow: 1,
-                      lineHeight: 1.4, // Improved line height for readability
-                      color: '#161c25',
+                      fontFamily: '"Amiri", serif',
+                      fontSize: '1rem',
+                      color: '#6f685b',
+                      backgroundColor: '#fff8eb',
+                      padding: '0.5rem 1rem',
+                      borderRadius: '8px',
+                      boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+                      mb: 1.5,
                     }}
                   >
                     {surah.bismillahMeaning}
@@ -92,17 +92,15 @@ const SurahList = () => {
                     {surah.bismillah}
                   </Typography>
                   <Typography
-                    variant="subtitle1"
                     sx={{
-                      mb: 2, // Increased bottom margin for better spacing
-                      color: '#555',
-                      fontSize: '1.3rem',
-                      background:
-                        'linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgb(255, 249, 214))',
-                      padding: '8px', // Increased padding for better readability
-                      borderRadius: '4px',
-                      boxShadow: 1,
-                      lineHeight: 1.4, // Improved line height for readability
+                      fontFamily: '"Amiri", serif',
+                      fontSize: '1.25rem',
+                      color: '#4a473f',
+                      backgroundColor: '#fff8eb',
+                      padding: '0.5rem 1rem',
+                      borderRadius: '8px',
+                      boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+                      mb: 1.5,
                     }}
                   >
                     {surah.arabic}
@@ -119,6 +117,7 @@ const SurahList = () => {
                       borderRadius: '4px',
                       boxShadow: 1,
                       lineHeight: 1.4, // Improved line height for readability
+                      fontFamily: '"Amiri", serif',
                     }}
                   >
                     {surah.transcription}
