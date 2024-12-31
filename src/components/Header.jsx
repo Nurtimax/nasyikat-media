@@ -36,7 +36,8 @@ const ResponsiveDrawer = styled(Drawer)(({ theme }) => ({
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)', // Add subtle shadow for depth
-    overflow: 'hidden', // Ensure background covers fully
+    overflowY: 'auto',
+    animation: 'fadeIn 0.5s ease-out',
   },
 }));
 
@@ -86,7 +87,7 @@ const Header = () => {
       <AppBar
         position="fixed"
         sx={{
-          backgroundImage: 'linear-gradient(to right, #071c6b, #304d9a)',
+          backgroundImage: 'linear-gradient(to right, #076b13, #076b13)',
           boxShadow: '0px 4px 8px rgba(0,0,0,0.3)', // Shadow for depth
         }}
       >

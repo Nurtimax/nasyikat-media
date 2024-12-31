@@ -146,7 +146,7 @@ const Donate = () => {
   };
 
   const totalAmount = 100000;
-  const collectedAmount = 15500;
+  const collectedAmount = 17000;
   const percentage = Math.round((collectedAmount / totalAmount) * 100);
 
   return (

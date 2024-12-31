@@ -13,7 +13,14 @@ import Footer from './Footer';
 
 const Duba = () => {
   return (
-    <Box sx={{ minHeight: '100vh' }}>
+    <Box
+      sx={{
+        minHeight: '100vh',
+        background: 'linear-gradient(to bottom, #16222A, #3A6073)',
+        color: '#ffffff',
+        fontFamily: '"Cairo", sans-serif',
+      }}
+    >
       <Header />
       <Box
         sx={{
@@ -28,8 +35,9 @@ const Duba = () => {
           gutterBottom
           sx={{
             fontWeight: 'bold',
-            color: '#efefef',
-            mb: 4,
+            color: '#e6e6e6',
+            marginBottom: '40px',
+            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
           }}
         >
           Дуба - бул жакшылыктардын ачкычы, момундун куралы, диндин тиреги
@@ -39,25 +47,27 @@ const Duba = () => {
             key={index}
             sx={{
               marginBottom: 2,
-              borderRadius: '8px',
-              boxShadow: 2,
+              borderRadius: '10px',
+              boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.3)',
+              background: 'rgba(255, 255, 255, 0.1)',
+              backdropFilter: 'blur(8px)',
               '&:before': { display: 'none' },
             }}
           >
             <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
+              expandIcon={<ExpandMoreIcon sx={{ color: '#ffffff' }} />}
               aria-controls={`panel-content-${index}`}
               id={`panel-header-${index}`}
               sx={{
-                borderBottom: '1px solid #ddd',
-                borderRadius: '8px 8px 0 0',
+                borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
+                borderRadius: '10px 10px 0 0',
               }}
             >
               <Typography
                 variant="h6"
                 sx={{
                   fontWeight: 'bold',
-                  color: '#efefef',
+                  color: '#ffffff',
                 }}
               >
                 {dua.title}
@@ -65,16 +75,16 @@ const Duba = () => {
             </AccordionSummary>
             <AccordionDetails
               sx={{
-                borderRadius: '0 0 8px 8px',
-                padding: '16px',
+                borderRadius: '0 0 10px 10px',
+                padding: '20px',
               }}
             >
               <Typography
                 variant="body1"
                 sx={{
-                  marginBottom: 1,
-                  lineHeight: '1.6',
-                  color: '#efefef',
+                  marginBottom: 2,
+                  lineHeight: '1.8',
+                  color: '#dcdcdc',
                 }}
               >
                 {dua.text}
@@ -82,23 +92,26 @@ const Duba = () => {
               <Typography
                 variant="body2"
                 sx={{
-                  marginBottom: 1,
-                  color: '#161c25',
-                  background: '#f6ecde',
-                  borderRadius: '5px',
-                  padding: '5px',
+                  marginBottom: 2,
+                  color: '#2c3e50',
+                  background: '#fef6e4',
+                  borderRadius: '8px',
+                  padding: '10px',
+                  fontFamily: '"Amiri", serif',
+                  fontSize: '1.2rem',
+                  textAlign: 'right',
                 }}
               >
-                Арабча: <br /> {dua.arabic}
+                {dua.arabic}
               </Typography>
               <Typography
                 variant="body2"
                 sx={{
-                  marginBottom: 1,
-                  color: '#161c25',
-                  background: '#f6ecde',
-                  borderRadius: '5px',
-                  padding: '5px',
+                  marginBottom: 2,
+                  color: '#2c3e50',
+                  background: '#fef6e4',
+                  borderRadius: '8px',
+                  padding: '10px',
                 }}
               >
                 Окулушу: <br /> {dua.transcription}
@@ -106,11 +119,11 @@ const Duba = () => {
               <Typography
                 variant="body2"
                 sx={{
-                  marginBottom: 1,
-                  color: '#161c25',
-                  background: '#f6ecde',
-                  borderRadius: '5px',
-                  padding: '5px',
+                  marginBottom: 2,
+                  color: '#2c3e50',
+                  background: '#fef6e4',
+                  borderRadius: '8px',
+                  padding: '10px',
                 }}
               >
                 Кыргызча мааниси: <br /> {dua.kyrgyz}
@@ -118,7 +131,7 @@ const Duba = () => {
               {dua.images && (
                 <Box
                   sx={{
-                    marginTop: '10px',
+                    marginTop: '15px',
                     display: 'flex',
                     justifyContent: 'center',
                   }}
@@ -127,8 +140,10 @@ const Duba = () => {
                     src={dua.images}
                     alt={`${dua.title}`}
                     style={{
-                      maxWidth: '10%',
+                      maxWidth: '80%',
                       height: 'auto',
+                      borderRadius: '10px',
+                      boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.3)',
                     }}
                   />
                 </Box>
