@@ -18,6 +18,8 @@ import { useNavigate } from 'react-router-dom';
 import bgimg from '../assetts/icons/as.jpg';
 import menuItems from '../utils/constants/menuitems.js';
 import { Verified } from '@mui/icons-material';
+import { logEvent } from 'firebase/analytics';
+import { analytics } from '../firebase/index.js';
 
 // Custom Styled Drawer with background image
 const ResponsiveDrawer = styled(Drawer)(({ theme }) => ({
@@ -79,6 +81,7 @@ const Header = () => {
 
   const handleNavigation = (path) => {
     navigate(path);
+    logEvent(analytics, `navigate_to_${path}`);
   };
 
   return (

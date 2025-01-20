@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from './components/Header';
 import Section2 from './components/Section2';
 import Section4 from './components/Section4';
@@ -16,8 +16,13 @@ import ZakatCalculator from './components/ZakatCalculator';
 import TextBannerDua from './components/TextBannerDua';
 import KhalifsCard from './components/KhalifsCard';
 import Homepage from './components/UI/Homepage';
+import { logEvent } from 'firebase/analytics';
+import { analytics } from './firebase';
 
 const App = () => {
+  useEffect(() => {
+    logEvent(analytics, 'main_page');
+  }, []);
   return (
     <>
       <Header />
